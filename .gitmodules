@@ -1,0 +1,3 @@
+[submodule "OSSGadget"]
+	path = OSSGadget
+	url = https://github.com/microsoft/OSSGadget.git
