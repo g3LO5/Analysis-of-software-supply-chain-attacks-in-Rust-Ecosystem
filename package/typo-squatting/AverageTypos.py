@@ -13,5 +13,4 @@ def count(directory):
 
     return average
 
-directory = r'C:\Users\Admin\OneDrive\Documents\GitHub\Analysis-of-software-supply-chain-attacks-in-Rust-Ecosystem\package\typo-squatting\name-typop-squatting'  # Thay thế 'your_directory' bằng đường dẫn thư mục của bạn
-print(f"Average: {count(directory)}")
+directory = r'C:\Users\Admin\OneDrive\Documents\GitHub\Analysis-of-software-supply-chain-attacks-in-Rust-Ecosystem\package\typo-squatting\name-typop-squatting' 
