@@ -1,0 +1,210 @@
+--[ Match #1 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub fn i2d_RSA_PUBKEY(k: *mut RSA, buf: *const *mut u8) -> c_int;
+  |     pub fn d2i_RSA_PUBKEY(k: *const *mut RSA, buf: *const *const u8, len: c_uint) -> *mut RSA;
+  |     pub fn i2d_RSAPrivateKey(k: *mut RSA, buf: *const *mut u8) -> c_int;
+  |     pub fn d2i_RSAPrivateKey(k: *const *mut RSA, buf: *const *const u8, len: c_uint) -> *mut RSA;
+  | }
+  | 
+  | pub mod probe;
+  | 
+
+--[ Match #2 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     pub fn i2d_RSA_PUBKEY(k: *mut RSA, buf: *const *mut u8) -> c_int;
+  |     pub fn d2i_RSA_PUBKEY(k: *const *mut RSA, buf: *const *const u8, len: c_uint) -> *mut RSA;
+  |     pub fn i2d_RSAPrivateKey(k: *mut RSA, buf: *const *mut u8) -> c_int;
+  |     pub fn d2i_RSAPrivateKey(k: *const *mut RSA, buf: *const *const u8, len: c_uint) -> *mut RSA;
+  | }
+  | 
+  | 
+
+--[ Match #3 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub fn SSL_CTX_get_ex_data(ctx: *mut SSL_CTX, idx: c_int) -> *mut c_void;
+  | 
+  |     pub fn SSL_CTX_use_certificate_file(ctx: *mut SSL_CTX, cert_file: *const c_char, file_type: c_in
+  |     pub fn SSL_CTX_use_PrivateKey_file(ctx: *mut SSL_CTX, key_file: *const c_char, file_type: c_int)
+  | 
+  |     pub fn SSL_CTX_set_cipher_list(ssl: *mut SSL_CTX, s: *const c_char) -> c_int;
+  | 
+  | 
+
+--[ Match #4 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                              user_data: *mut c_void) -> *mut X509;
+  |     pub fn PEM_write_bio_PrivateKey(bio: *mut BIO, pkey: *mut EVP_PKEY, cipher: *const EVP_CIPHER,
+  |                                     kstr: *mut c_char, klen: c_int,
+  |                                     callback: Option<PasswordCallback>,
+  |                                     user_data: *mut c_void) -> c_int;
+  |     pub fn PEM_write_bio_X509(bio: *mut BIO, x509: *mut X509) -> c_int;
+  | 
+  | 
+
+--[ Match #5 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     pub fn PEM_read_bio_X509(bio: *mut BIO, out: *mut *mut X509, callback: Option<PasswordCallback>,
+  |                              user_data: *mut c_void) -> *mut X509;
+  |     pub fn PEM_write_bio_PrivateKey(bio: *mut BIO, pkey: *mut EVP_PKEY, cipher: *const EVP_CIPHER,
+  |                                     kstr: *mut c_char, klen: c_int,
+  |                                     callback: Option<PasswordCallback>,
+  |                                     user_data: *mut c_void) -> c_int;
+  | 
+
+--[ Match #6 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub fn HMAC_Update(ctx: *mut HMAC_CTX, input: *const u8, len: c_uint);
+  | 
+  | 
+  |     pub fn PEM_read_bio_X509(bio: *mut BIO, out: *mut *mut X509, callback: Option<PasswordCallback>,
+  |                              user_data: *mut c_void) -> *mut X509;
+  |     pub fn PEM_write_bio_PrivateKey(bio: *mut BIO, pkey: *mut EVP_PKEY, cipher: *const EVP_CIPHER,
+  |                                     kstr: *mut c_char, klen: c_int,
+  | 
+
+--[ Match #7 of 14 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub type CRYPTO_EX_free = extern "C" fn(parent: *mut c_void, ptr: *mut c_void,
+  |                                         ad: *mut CRYPTO_EX_DATA, idx: c_int,
+  |                                         argl: c_long, argp: *mut c_void);
+  | pub type PasswordCallback = extern "C" fn(buf: *mut c_char, size: c_int,
+  |                                           rwflag: c_int, user_data: *mut c_void)
+  |                                           -> c_int;
+  | 
+  | 
+
+--[ Match #8 of 14 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\src\build.rs
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |     if pkg_config::find_library("openssl").is_err() {
+  |         let mut flags = " -l crypto -l ssl".to_string();
+  | 
+  |         let target = os::getenv("TARGET").unwrap();
+  | 
+  |         let win_pos = target.find_str("windows")
+  |                             .or(target.find_str("win32"))
+  | 
+
+--[ Match #9 of 14 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  | 
+  | 	http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #10 of 14 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |        distribution, then any Derivative Works that You distribute must
+  |        include a readable copy of the attribution notices contained
+  |        within such NOTICE file, excluding those notices that do not
+  |        pertain to any part of the Derivative Works, in at least one
+  |        of the following places: within a NOTICE text file distributed
+  |        as part of the Derivative Works; within the Source form or
+  |        documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #11 of 14 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    the copyright owner. For the purposes of this definition, "submitted"
+  |    means any form of electronic, verbal, or written communication sent
+  |    to the Licensor or its representatives, including but not limited to
+  |    communication on electronic mailing lists, source code control systems,
+  |    and issue tracking systems that are managed by, or on behalf of, the
+  |    Licensor for the purpose of discussing and improving the Work, but
+  |    excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #12 of 14 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #13 of 14 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |    with Licensor regarding such Contributions.
+  | 
+  | 6. Trademarks. This License does not grant permission to use the trade
+  |    names, trademarks, service marks, or product names of the Licensor,
+  |    except as required for reasonable and customary use in describing the
+  |    origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #14 of 14 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl2-sys@1.0\openssl2-sys-1.0.0\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # openssl-sys
+  | 
+  | Bindings to openssl for Rust as well as the build scripts necessary to link to
+  | it.
+  | 
+  | # License
+  | 
+
+14 matches found.

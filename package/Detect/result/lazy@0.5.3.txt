@@ -1,0 +1,76 @@
+--[ Match #1 of 5 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lazy@0.5\lazy-0.5.3\src\single.rs
+   Pattern: \.(request|post|get)\(
+  | impl<T> DerefMut for Thunk<T> {
+  |     fn deref_mut<'a>(&'a mut self) -> &'a mut T {
+  |         self.force();
+  |         match unsafe { &mut *self.inner.get() } {
+  |             &mut Evaluated(ref mut val) => val,
+  |             _ => unsafe { debug_unreachable!() }
+  |         }
+  | 
+
+--[ Match #2 of 5 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lazy@0.5\lazy-0.5.3\src\single.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     fn deref<'a>(&'a self) -> &'a T {
+  |         self.force();
+  |         match unsafe { &*self.inner.get() } {
+  |             &Evaluated(ref val) => val,
+  |             _ => unsafe { debug_unreachable!() }
+  |         }
+  | 
+
+--[ Match #3 of 5 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lazy@0.5\lazy-0.5.3\src\single.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  | 
+  |             match ptr::replace(self.inner.get(), EvaluationInProgress) {
+  |                 Unevaluated(producer) => *self.inner.get() = Evaluated(producer.invoke()),
+  |                 _ => debug_unreachable!()
+  |             };
+  |         }
+  | 
+
+--[ Match #4 of 5 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lazy@0.5\lazy-0.5.3\src\single.rs
+   Pattern: \.(request|post|get)\(
+  |                 Unevaluated(_) => ()
+  |             }
+  | 
+  |             match ptr::replace(self.inner.get(), EvaluationInProgress) {
+  |                 Unevaluated(producer) => *self.inner.get() = Evaluated(producer.invoke()),
+  |                 _ => debug_unreachable!()
+  |             };
+  | 
+
+--[ Match #5 of 5 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lazy@0.5\lazy-0.5.3\src\single.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Force evaluation of a thunk.
+  |     pub fn force(&self) {
+  |         unsafe {
+  |             match *self.inner.get() {
+  |                 Evaluated(_) => return,
+  |                 EvaluationInProgress => {
+  |                     panic!("Thunk::force called recursively. (A Thunk tried to force itself while tr
+  | 
+
+5 matches found.

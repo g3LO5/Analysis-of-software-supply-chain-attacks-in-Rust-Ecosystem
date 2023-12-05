@@ -1,0 +1,854 @@
+--[ Match #1 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "yansi"
+  | version = "0.5.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "09041cd90cf85f7f8b2df60c646f853b7f535ce68f85244eb6731cf89fa498ec"
+  | 
+
+--[ Match #2 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a"
+  | 
+  | [[package]]
+  | name = "yansi"
+  | 
+
+--[ Match #3 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnullvm"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7896dbc1f41e08872e9d5e8f8baa8fdd2677f29468c4e156210174edc7f7b953"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_msvc"
+  | 
+
+--[ Match #4 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ca2b8a661f7628cbd23440e50b05d705db3686f894fc9580820623656af974b1"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnullvm"
+  | 
+
+--[ Match #5 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4542c6e364ce21bf45d69fdd2a8e455fa38d316158cfd43b3ac1c5b1b19f8e00"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #6 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_gnu"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "622a1962a7db830d6fd0a69683c80a18fda201879f0f447f065a3b7467daa241"
+  | 
+  | [[package]]
+  | name = "windows_i686_msvc"
+  | 
+
+--[ Match #7 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b2ef27e0d7bdfcfc7b868b317c1d32c641a6fe4629c171b8928c7b08d98d7cf3"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #8 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "91ae572e1b79dba883e0d315474df7305d12f569b400fcf90581b06062f7e1bc"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #9 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-targets"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7b1eb6f0cd7c80c79759c929114ef071b87354ce476d9d94271031c0497adfd5"
+  | dependencies = [
+  |  "windows_aarch64_gnullvm",
+  |  "windows_aarch64_msvc",
+  | 
+
+--[ Match #10 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-sys"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9"
+  | dependencies = [
+  |  "windows-targets",
+  | ]
+  | 
+
+--[ Match #11 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "utf8parse"
+  | version = "0.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
+  | 
+  | [[package]]
+  | name = "windows-sys"
+  | 
+
+--[ Match #12 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b15811caf2415fb889178633e7724bad2509101cde276048e013b9def5e51fa0"
+  | 
+  | [[package]]
+  | name = "utf8parse"
+  | 
+
+--[ Match #13 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "32d41677bcbe24c20c52e7c70b0d8db04134c5d1066bf98662e2871ad200ea3e"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #14 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #15 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.37.19"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "acf8729d8542766f1b2cf77eb034d52f40d375bb8b615d0b147089946e16613d"
+  | dependencies = [
+  |  "bitflags",
+  |  "errno",
+  | 
+
+--[ Match #16 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.28"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1b9ab9c7eadfd8df19006f1cf1a4aed13540ed5cbc047010ece5826e10825488"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #17 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.59"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6aeca18b86b413c660b781aa319e4e2648a3e6f9eadc9b47e9038e6fe9f3451b"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #18 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.18.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
+  | 
+  | [[package]]
+  | name = "proc-macro2"
+  | 
+
+--[ Match #19 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.3.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519"
+  | 
+  | [[package]]
+  | name = "once_cell"
+  | 
+
+--[ Match #20 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.146"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f92be4933c13fd498862a9e02a3055f8a8d9c039ce33db97306fd5a6caa7f29b"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #21 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "is-terminal"
+  | version = "0.4.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "adcf93614601c8129ddf72e2d5633df827ba6551541c6d8c59520a371475be1f"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "io-lifetimes",
+  | 
+
+--[ Match #22 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "io-lifetimes"
+  | version = "1.0.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "eae7b9aee968036d54dce06cebaefd919e4472e753296daccd6d344e3e2df0c2"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #23 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fed44880c466736ef9a5c5b5facefb5ed0785676d0c02d612db14e54f0d84286"
+  | 
+  | [[package]]
+  | name = "io-lifetimes"
+  | 
+
+--[ Match #24 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "heck"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
+  | 
+  | [[package]]
+  | name = "hermit-abi"
+  | 
+
+--[ Match #25 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno-dragonfly"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+  | dependencies = [
+  |  "cc",
+  |  "libc",
+  | 
+
+--[ Match #26 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4bcfec3a70f97c962c307b2d2c56e358cf1d00b558d74262b5f929ee8cc7e73a"
+  | dependencies = [
+  |  "errno-dragonfly",
+  |  "libc",
+  | 
+
+--[ Match #27 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "dotenvy"
+  | version = "0.15.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1aaf95b3e5c8f23aa320147307562d361db0ae0d51242340f558153b4eb2439b"
+  | 
+  | [[package]]
+  | name = "errno"
+  | 
+
+--[ Match #28 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colorchoice"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+  | 
+  | [[package]]
+  | name = "dotenvy"
+  | 
+
+--[ Match #29 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_lex"
+  | version = "0.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2da6da31387c7e4ef160ffab6d5e7f00c42626fe39aea70a7b0f1773f7dd6c1b"
+  | 
+  | [[package]]
+  | name = "colorchoice"
+  | 
+
+--[ Match #30 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_derive"
+  | version = "4.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b8cd2b2a819ad6eec39e8f1d6b53001af1e5469f8c177579cdaeb313115b825f"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro2",
+  | 
+
+--[ Match #31 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_builder"
+  | version = "4.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "72394f3339a76daf211e57d4bcb374410f3965dcc606dd0e03738c7888766980"
+  | dependencies = [
+  |  "anstream",
+  |  "anstyle",
+  | 
+
+--[ Match #32 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "4.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "401a4694d2bf92537b6867d94de48c4842089645fdcdf6c71865b175d836e9c2"
+  | dependencies = [
+  |  "clap_builder",
+  |  "clap_derive",
+  | 
+
+--[ Match #33 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cc"
+  | version = "1.0.79"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "50d30906286121d95be3d479533b458f87493b30a4b5f79a607db8f5d11aa91f"
+  | 
+  | [[package]]
+  | name = "clap"
+  | 
+
+--[ Match #34 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "cc"
+  | 
+
+--[ Match #35 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-wincon"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "180abfa45703aebe0093f79badacc01b8fd4ea2e35118747e5811127f926e188"
+  | dependencies = [
+  |  "anstyle",
+  |  "windows-sys",
+  | 
+
+--[ Match #36 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-query"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5ca11d4be1bab0c8bc8734a9aa7bf4ee8316d462a08c6ac5052f888fef5b494b"
+  | dependencies = [
+  |  "windows-sys",
+  | ]
+  | 
+
+--[ Match #37 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-parse"
+  | version = "0.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e765fd216e48e067936442276d1d57399e37bce53c264d6fefbe298080cb57ee"
+  | dependencies = [
+  |  "utf8parse",
+  | ]
+  | 
+
+--[ Match #38 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "41ed9a86bf92ae6580e0a31281f65a1b1d867c0cc68d5346e2ae128dddfa6a7d"
+  | 
+  | [[package]]
+  | name = "anstyle-parse"
+  | 
+
+--[ Match #39 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstream"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0ca84f3628370c59db74ee214b3263d58f9aadd9b4fe7e711fd87dc452b7f163"
+  | dependencies = [
+  |  "anstyle",
+  |  "anstyle-parse",
+  | 
+
+--[ Match #40 of 56 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "d865b647f0cf795e2a698bf2a234d807abb0d945"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #41 of 56 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |   rules:
+  |     - if: $CI_COMMIT_TAG
+  |   before_script:
+  |     - apt-get update
+  |     - apt-get install -y mingw-w64 g++-aarch64-linux-gnu
+  |     - rustup target add x86_64-pc-windows-gnu x86_64-unknown-linux-gnu x86_64-unknown-linux-musl aar
+  |   script:
+  | 
+
+--[ Match #42 of 56 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | # clap require rust 1.64.0 or higher at 2023-06-07
+  | # 
+  | # link: https://github.com/clap-rs/clap/blob/v4.3.2/Cargo.toml#L17
+  | # permlink: https://github.com/clap-rs/clap/blob/475e254d2534f888966ca5a61308176a99eb4281/Cargo.toml
+  | 
+
+--[ Match #43 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | asum -a 256 target/x86_64-pc-windows-gnu/release/fenv.exe | cut -f 1 -d ' ')" >> .env
+  |     - echo "LINUX_X86_64_PATH=target/x86_64-unknown-linux-gnu/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-gnu/release/fen
+  |     - echo "LINUX_X86_64_MUSL_PATH=target/x86_64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-musl/relea
+  |     - echo "LINUX_AARCH64_MUSL_PATH=target/aarch64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_AARCH64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/aarch64-unknown-linux-musl/rel
+  |   artifacts:
+  |     paths:
+  |       - target/x86_64-pc-windows-gnu/release/fenv.exe
+  | 
+
+--[ Match #44 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | I_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_ID}/artifacts/raw" > .env
+  |     - echo "WINDOWS_64BIT_PATH=target/x86_64-pc-windows-gnu/release/fenv.exe" >> .env
+  |     - echo "WINDOWS_64BIT_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-pc-windows-gnu/release/fenv.
+  |     - echo "LINUX_X86_64_PATH=target/x86_64-unknown-linux-gnu/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-gnu/release/fen
+  |     - echo "LINUX_X86_64_MUSL_PATH=target/x86_64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-musl/relea
+  |     - echo "LINUX_AARCH64_MUSL_PATH=target/aarch64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_AARCH64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/aarch64-unknown-linux-musl/rel
+  |   artifacts:
+  | 
+
+--[ Match #45 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | --target x86_64-unknown-linux-musl
+  |     - cargo build --release --target aarch64-unknown-linux-musl --config 'target.aarch64-unknown-lin
+  |     - echo "BASE_URL=https://gitlab.com/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_I
+  |     - echo "WINDOWS_64BIT_PATH=target/x86_64-pc-windows-gnu/release/fenv.exe" >> .env
+  |     - echo "WINDOWS_64BIT_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-pc-windows-gnu/release/fenv.
+  |     - echo "LINUX_X86_64_PATH=target/x86_64-unknown-linux-gnu/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-gnu/release/fen
+  |     - echo "LINUX_X86_64_MUSL_PATH=target/x86_64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-musl/relea
+  |     - echo "LINUX_AARCH64_MUSL_PATH=target/aarch64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_AARCH64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/aarch64-unknown-linux-musl/rel
+  |   artifacts:
+  |     paths:
+  |       - target/x86_64-pc-windows-gnu/release/fenv.exe
+  |       - target/x86_64-unknown-linux-gnu/release/fenv
+  |       - target/x86_64-unknown-l
+
+--[ Match #46 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | t add x86_64-pc-windows-gnu x86_64-unknown-linux-gnu x86_64-unknown-linux-musl aarch64-unknown-linux
+  |   script:
+  |     - cargo build --release --target x86_64-pc-windows-gnu
+  |     - cargo build --release --target x86_64-unknown-linux-gnu
+  |     - cargo build --release --target x86_64-unknown-linux-musl
+  |     - cargo build --release --target aarch64-unknown-linux-musl --config 'target.aarch64-unknown-lin
+  |     - echo "BASE_URL=https://gitlab.com/${CI_PROJECT_NAMESPACE}/${CI_PROJECT_NAME}/-/jobs/${CI_JOB_I
+  |     - echo "WINDOWS_64BIT_PATH=target/x86_64-pc-windows-gnu/release/fenv.exe" >> .env
+  |     - echo "WINDOWS_64BIT_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-pc-windows-gnu/release/fenv.
+  |     - echo "LINUX_X86_64_PATH=target/x86_64-unknown-linux-gnu/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-gnu/release/fen
+  |     - echo "LINUX_X86_64_MUSL_PATH=target/x86_64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_X86_64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/x86_64-unknown-linux-musl/relea
+  |     - echo "LINUX_AARCH64_MUSL_PATH=target/aarch64-unknown-linux-musl/release/fenv" >> .env
+  |     - echo "LINUX_AARCH64_MUSL_CHECKSUM_SHA256=$(shasum -a 256 target/aa
+
+--[ Match #47 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     - if: $CI_COMMIT_TAG
+  |   before_script:
+  |     - apt-get update
+  |     - apt-get install -y mingw-w64 g++-aarch64-linux-gnu
+  |     - rustup target add x86_64-pc-windows-gnu x86_64-unknown-linux-gnu x86_64-unknown-linux-musl aar
+  |   script:
+  |     - cargo build --release --target x86_64-pc-windows-gnu
+  | 
+
+--[ Match #48 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |   rules:
+  |     - if: $CI_COMMIT_TAG
+  |   before_script:
+  |     - apt-get update
+  |     - apt-get install -y mingw-w64 g++-aarch64-linux-gnu
+  |     - rustup target add x86_64-pc-windows-gnu x86_64-unknown-linux-gnu x86_64-unknown-linux-musl aar
+  |   script:
+  | 
+
+--[ Match #49 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\.gitlab-ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |   stage: test
+  |   script:
+  |     - rustup component add rustfmt
+  |     - cargo fmt --check
+  | 
+  | build:
+  |   stage: build
+  | 
+
+--[ Match #50 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | It can also be combined.
+  | 
+  | ```bash
+  | $ cat << EOF > ~/.env
+  | ENV_A=true
+  | EOF
+  | $ fenv -f ~/.env ENV_B=true sh -c 'echo ENV_A=$ENV_A; echo ENV_B=$ENV_B'
+  | 
+
+--[ Match #51 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | ## Usage
+  | 
+  | ```
+  | env command with dotenv
+  | 
+  | Usage: fenv [OPTIONS] [ARGUMENTS]...
+  | 
+
+--[ Match #52 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ## Getting Started
+  | 
+  | ```bash
+  | $ cat << EOF > /tmp/.env.sample
+  | ENV_A=true
+  | EOF
+  | $ fenv -f /tmp/.env.sample ENV_B=true sh -c 'echo ENV_A=$ENV_A; echo ENV_B=$ENV_B'
+  | 
+
+--[ Match #53 of 56 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | name = "fenv"
+  | version = "0.2.1"
+  | edition = "2021"
+  | # clap require rust 1.64.0 or higher at 2023-06-07
+  | # 
+  | # link: https://github.com/clap-rs/clap/blob/v4.3.2/Cargo.toml#L17
+  | # permlink: https://github.com/clap-rs/clap/blob/475e254d2534f888966ca5a61308176a99eb4281/Cargo.toml
+  | 
+
+--[ Match #54 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | rust-version = "1.64"
+  | authors = ["moba1 <moba2@proton.me>"]
+  | description = """
+  | new env command with dotenv
+  | """
+  | categories = ["command-line-utilities"]
+  | documentation = "https://gitlab/moba1/fenv"
+  | 
+
+--[ Match #55 of 56 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ### Added
+  | 
+  | - colorized environment variables output
+  | - add `--color` option which control output color
+  | - restrict minimum rust version: `>= 1.64.0`
+  | 
+  | ## [0.1.0]
+  | 
+
+--[ Match #56 of 56 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-fenv@0.2\fenv-0.2.1\Cargo.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | version = "0.2.1"
+  | authors = ["moba1 <moba2@proton.me>"]
+  | description = """
+  | new env command with dotenv
+  | """
+  | homepage = "https://gitlab/moba1/fenv"
+  | documentation = "https://gitlab/moba1/fenv"
+  | 
+
+56 matches found.

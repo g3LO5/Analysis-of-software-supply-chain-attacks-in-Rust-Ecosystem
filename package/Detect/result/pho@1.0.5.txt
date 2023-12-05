@@ -1,0 +1,1133 @@
+--[ Match #1 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1a515f5799fe4961cb532f983ce2b23082366b898e52ffbce459c86f67c8378a"
+  | 
+
+--[ Match #2 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnullvm"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7896dbc1f41e08872e9d5e8f8baa8fdd2677f29468c4e156210174edc7f7b953"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_msvc"
+  | 
+
+--[ Match #3 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ca2b8a661f7628cbd23440e50b05d705db3686f894fc9580820623656af974b1"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnullvm"
+  | 
+
+--[ Match #4 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4542c6e364ce21bf45d69fdd2a8e455fa38d316158cfd43b3ac1c5b1b19f8e00"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #5 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_gnu"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "622a1962a7db830d6fd0a69683c80a18fda201879f0f447f065a3b7467daa241"
+  | 
+  | [[package]]
+  | name = "windows_i686_msvc"
+  | 
+
+--[ Match #6 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b2ef27e0d7bdfcfc7b868b317c1d32c641a6fe4629c171b8928c7b08d98d7cf3"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #7 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "91ae572e1b79dba883e0d315474df7305d12f569b400fcf90581b06062f7e1bc"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #8 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-targets"
+  | version = "0.48.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "05d4b17490f70499f20b9e791dcf6a299785ce8af4d709018206dc5b4953e95f"
+  | dependencies = [
+  |  "windows_aarch64_gnullvm",
+  |  "windows_aarch64_msvc",
+  | 
+
+--[ Match #9 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-sys"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9"
+  | dependencies = [
+  |  "windows-targets",
+  | ]
+  | 
+
+--[ Match #10 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+  | [[package]]
+  | name = "windows-sys"
+  | 
+
+--[ Match #11 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #12 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #13 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wee_alloc"
+  | version = "0.4.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dbb3b5a6b2bb17cb6ad44a2e68a43e8d2722c997da10e928665c72ec6c0a0b8e"
+  | dependencies = [
+  |  "cfg-if 0.1.10",
+  |  "libc",
+  | 
+
+--[ Match #14 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "web-sys"
+  | version = "0.3.64"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9b85cbef8c220a6abc02aefd892dfc0fc23afb1c6a426316ec33253a3877249b"
+  | dependencies = [
+  |  "js-sys",
+  |  "wasm-bindgen",
+  | 
+
+--[ Match #15 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-test-macro"
+  | version = "0.3.37"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ecb993dd8c836930ed130e020e77d9b2e65dd0fbab1b67c790b0f5d80b11a575"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #16 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-test"
+  | version = "0.3.37"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6e6e302a7ea94f83a6d09e78e7dc7d9ca7b186bc2829c24a22d0753efd680671"
+  | dependencies = [
+  |  "console_error_panic_hook",
+  |  "gg-alloc",
+  | 
+
+--[ Match #17 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-shared"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ca6ad05a4870b2bf5fe995117d3728437bd27d7cd5f06f13c17443ef369775a1"
+  | 
+  | [[package]]
+  | name = "wasm-bindgen-test"
+  | 
+
+--[ Match #18 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-macro-support"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "54681b18a46765f095758388f2d0cf16eb8d4169b639ab575a8f5693af210c7b"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #19 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-macro"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dee495e55982a3bd48105a7b947fd2a9b4a8ae3010041b9e0faab3f9cd028f1d"
+  | dependencies = [
+  |  "quote",
+  |  "wasm-bindgen-macro-support",
+  | 
+
+--[ Match #20 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-futures"
+  | version = "0.4.37"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c02dbc21516f9f1f04f187958890d7e6026df8d16540b7ad9492bc34a67cea03"
+  | dependencies = [
+  |  "cfg-if 1.0.0",
+  |  "js-sys",
+  | 
+
+--[ Match #21 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-backend"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5ef2b6d3c510e9625e5fe6f509ab07d66a760f0885d858736483c32ed7809abd"
+  | dependencies = [
+  |  "bumpalo",
+  |  "log",
+  | 
+
+--[ Match #22 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7706a72ab36d8cb1f80ffbf0e071533974a60d0a308d01a5d0375bf60499a342"
+  | dependencies = [
+  |  "cfg-if 1.0.0",
+  |  "wasm-bindgen-macro",
+  | 
+
+--[ Match #23 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
+  | 
+  | [[package]]
+  | name = "wasm-bindgen"
+  | 
+
+--[ Match #24 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "utf8parse"
+  | version = "0.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #25 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-width"
+  | version = "0.1.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c0edd1e5b14653f783770bce4a4dabb4a5108a5370a5f5d8cfe8710c361f6c8b"
+  | 
+  | [[package]]
+  | name = "utf8parse"
+  | 
+
+--[ Match #26 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "301abaae475aa91687eb82514b328ab47a211a533026cb25fc3e519b86adfc3c"
+  | 
+  | [[package]]
+  | name = "unicode-width"
+  | 
+
+--[ Match #27 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicase"
+  | version = "2.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "50f37be617794602aabbeee0be4f259dc1778fabe05e2d67ee8f79326d5cb4f6"
+  | dependencies = [
+  |  "version_check",
+  | ]
+  | 
+
+--[ Match #28 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "terminal_size"
+  | version = "0.2.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8e6bf6f19e9f8ed8d4048dc22981458ebcf406d67e94cd422e5ecd73d63b3237"
+  | dependencies = [
+  |  "rustix 0.37.23",
+  |  "windows-sys",
+  | 
+
+--[ Match #29 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.28"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "04361975b3f5e348b2189d8dc55bc942f278b2d482a6a0365de5bdd62d351567"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #30 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #31 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "scoped-tls"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e1cf6437eb19a8f4a6cc0f7dca544973b0b78843adbfeb3683d1a94a0024a294"
+  | 
+  | [[package]]
+  | name = "strsim"
+  | 
+
+--[ Match #32 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.38.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "19ed4fa021d81c8392ce04db050a3da9a60299050b7ae1cf482d862b54a7218f"
+  | dependencies = [
+  |  "bitflags 2.4.0",
+  |  "errno",
+  | 
+
+--[ Match #33 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.37.23"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4d69718bf81c6127a49dc64e44a742e8bb9213c0ff8869a22c308f84c1d4ab06"
+  | dependencies = [
+  |  "bitflags 1.3.2",
+  |  "errno",
+  | 
+
+--[ Match #34 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.32"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "50f3b39ccfb720540debaa0164757101c08ecb8d326b15358ce76a62c7e85965"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #35 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.66"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "18fb31db3f9bddb2ea821cde30a9f70117e3f119938b5ee630b7403aa6e2ead9"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #36 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.18.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
+  | 
+  | [[package]]
+  | name = "pho"
+  | 
+
+--[ Match #37 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memory_units"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8452105ba047068f40ff7093dd1d9da90898e63dd61736462e9cdda6a90ad3c3"
+  | 
+  | [[package]]
+  | name = "once_cell"
+  | 
+
+--[ Match #38 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "log"
+  | version = "0.4.19"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b06a4cde4c0f271a446782e3eff8de789548ce57dbc8eca9292c27f4a42004b4"
+  | 
+  | [[package]]
+  | name = "memory_units"
+  | 
+
+--[ Match #39 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.4.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "57bcfdad1b858c2db7c38303a6d2ad4dfaf5eb53dfeb0910128b2c26d6158503"
+  | 
+  | [[package]]
+  | name = "log"
+  | 
+
+--[ Match #40 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.3.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ef53942eb7bf7ff43a617b3e2c1c4a5ecf5944a7c1bc12d7ee39bbb15e5c1519"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #41 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.147"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #42 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "js-sys"
+  | version = "0.3.64"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c5f195fe497f702db0f318b07fdd68edb16955aed830df8363d837542f8f935a"
+  | dependencies = [
+  |  "wasm-bindgen",
+  | ]
+  | 
+
+--[ Match #43 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "is-terminal"
+  | version = "0.4.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cb0889898416213fab133e1d33a0e5858a48177452750691bde3666d0fdbaf8b"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "rustix 0.38.8",
+  | 
+
+--[ Match #44 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "io-lifetimes"
+  | version = "1.0.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "eae7b9aee968036d54dce06cebaefd919e4472e753296daccd6d344e3e2df0c2"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #45 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "443144c8cdadd93ebf52ddb4056d257f5b52c04d3c804e657d19eb73fc33668b"
+  | 
+  | [[package]]
+  | name = "io-lifetimes"
+  | 
+
+--[ Match #46 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "heck"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
+  | 
+  | [[package]]
+  | name = "hermit-abi"
+  | 
+
+--[ Match #47 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "gg-alloc"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1ee5134f1abeb59e9ba515150ddc26bf2b2207f8bce38e1f5cf8d1596efa22ba"
+  | 
+  | [[package]]
+  | name = "heck"
+  | 
+
+--[ Match #48 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno-dragonfly"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+  | dependencies = [
+  |  "cc",
+  |  "libc",
+  | 
+
+--[ Match #49 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6b30f669a7961ef1631673d2766cc92f52d64f7ef354d4fe0ddfd30ed52f0f4f"
+  | dependencies = [
+  |  "errno-dragonfly",
+  |  "libc",
+  | 
+
+--[ Match #50 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "console_error_panic_hook"
+  | version = "0.1.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a06aeb73f470f66dcdbf7223caeebb85984942f22f1adb2a088cf9668146bbbc"
+  | dependencies = [
+  |  "cfg-if 1.0.0",
+  |  "wasm-bindgen",
+  | 
+
+--[ Match #51 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colorchoice"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+  | 
+  | [[package]]
+  | name = "console_error_panic_hook"
+  | 
+
+--[ Match #52 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_lex"
+  | version = "0.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2da6da31387c7e4ef160ffab6d5e7f00c42626fe39aea70a7b0f1773f7dd6c1b"
+  | 
+  | [[package]]
+  | name = "colorchoice"
+  | 
+
+--[ Match #53 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_derive"
+  | version = "4.3.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "54a9bb5758fc5dfe728d1019941681eccaf0cf8a4189b692a0ee2f2ecf90a050"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro2",
+  | 
+
+--[ Match #54 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_builder"
+  | version = "4.3.21"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "08a9f1ab5e9f01a9b81f202e8562eb9a10de70abf9eaeac1be465c28b75aa4aa"
+  | dependencies = [
+  |  "anstream",
+  |  "anstyle",
+  | 
+
+--[ Match #55 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "4.3.21"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c27cdf28c0f604ba3f512b0c9a409f8de8513e4816705deb0498b627e7c3a3fd"
+  | dependencies = [
+  |  "clap_builder",
+  |  "clap_derive",
+  | 
+
+--[ Match #56 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "clap"
+  | 
+
+--[ Match #57 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "0.1.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4785bdd1c96b2a846b2bd7cc02e86b6b3dbf14e7e53446c4f54c92a361040822"
+  | 
+  | [[package]]
+  | name = "cfg-if"
+  | 
+
+--[ Match #58 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cc"
+  | version = "1.0.82"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "305fe645edc1442a0fa8b6726ba61d422798d37a52e12eaecf4b022ebbb88f01"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #59 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bumpalo"
+  | version = "3.13.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a3e2c3daef883ecc1b5d58c15adae93470a91d425f3532ba1695849656af3fc1"
+  | 
+  | [[package]]
+  | name = "cc"
+  | 
+
+--[ Match #60 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "2.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b4682ae6287fcf752ecaabbfcc7b6f9b72aa33933dc23a554d853aea8eea8635"
+  | 
+  | [[package]]
+  | name = "bumpalo"
+  | 
+
+--[ Match #61 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #62 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-wincon"
+  | version = "1.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c677ab05e09154296dd37acecd46420c17b9713e8366facafa8fc0885167cf4c"
+  | dependencies = [
+  |  "anstyle",
+  |  "windows-sys",
+  | 
+
+--[ Match #63 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-query"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5ca11d4be1bab0c8bc8734a9aa7bf4ee8316d462a08c6ac5052f888fef5b494b"
+  | dependencies = [
+  |  "windows-sys",
+  | ]
+  | 
+
+--[ Match #64 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-parse"
+  | version = "0.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "938874ff5980b03a87c5524b3ae5b59cf99b1d6bc836848df7bc5ada9643c333"
+  | dependencies = [
+  |  "utf8parse",
+  | ]
+  | 
+
+--[ Match #65 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3a30da5c5f2d5e72842e00bcb57657162cdabef0931f40e2deb9b4140440cecd"
+  | 
+  | [[package]]
+  | name = "anstyle-parse"
+  | 
+
+--[ Match #66 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstream"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0ca84f3628370c59db74ee214b3263d58f9aadd9b4fe7e711fd87dc452b7f163"
+  | dependencies = [
+  |  "anstyle",
+  |  "anstyle-parse",
+  | 
+
+--[ Match #67 of 76 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "f73abe04fe0af80b5098872b3ee6e10d9bdaaa5b"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #68 of 76 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ```
+  | 
+  | 
+  | ``` bash
+  | $ pho one
+  | oscar november echo
+  | ```
+  | 
+
+--[ Match #69 of 76 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | ## Usage Example...
+  | 
+  | ``` bash
+  | $ pho hi
+  | hotel india
+  | ```
+  | 
+
+--[ Match #70 of 76 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | ## Install
+  | 
+  | ``` bash
+  | cargo install pho
+  | ```
+  | 
+  | 
+
+--[ Match #71 of 76 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ```
+  | 
+  | 
+  | ``` bash
+  | $ pho one
+  | oscar november echo
+  | ```
+  | 
+
+--[ Match #72 of 76 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | ## Usage Example...
+  | 
+  | ``` bash
+  | $ pho hi
+  | hotel india
+  | ```
+  | 
+
+--[ Match #73 of 76 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | ## Install
+  | 
+  | ``` bash
+  | cargo install pho
+  | ```
+  | 
+  | 
+
+--[ Match #74 of 76 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\src\main.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | #[command(propagate_version = true)]
+  | struct Cli {
+  |     text: Vec<String>,
+  |     #[arg(short, long, env = "PHO_SEP", default_value_t = ' ')]
+  |     sep: char,
+  | }
+  | 
+  | 
+
+--[ Match #75 of 76 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | license = "GPL-3.0-or-later"
+  | repository = "https://github.com/gabrielfalcao/pho"
+  | 
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | clap = { version = "4.3.2", features = ["derive", "env", "unicode", "string", "wrap_help"] }
+  | 
+
+--[ Match #76 of 76 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pho@1.0\pho-1.0.5\Makefile
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 	cargo run one
+  | 
+  | 
+  | .PHONY: all clean cls release debug fix fmt check build test examples
+  | 
+
+76 matches found.

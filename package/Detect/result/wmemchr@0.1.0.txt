@@ -1,0 +1,252 @@
+--[ Match #1 of 17 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |         run: ${{ env.CARGO }} test --verbose --workspace ${{ env.TARGET }}
+  | 
+  |       - name: Run tests (no_std)
+  |         run: ${{ env.CARGO }} test --verbose --workspace --no-default-features ${{ env.TARGET }}
+  | 
+  |   test-miri:
+  |     name: test with miri
+  | 
+
+--[ Match #2 of 17 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |         run: ${{ env.CARGO }} build --verbose --workspace --no-default-features ${{ env.TARGET }}
+  | 
+  |       - name: Run tests
+  |         run: ${{ env.CARGO }} test --verbose --workspace ${{ env.TARGET }}
+  | 
+  |       - name: Run tests (no_std)
+  |         run: ${{ env.CARGO }} test --verbose --workspace --no-default-features ${{ env.TARGET }}
+  | 
+
+--[ Match #3 of 17 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |         run: ${{ env.CARGO }} build --verbose --workspace ${{ env.TARGET }}
+  | 
+  |       - name: Build (no_std)
+  |         run: ${{ env.CARGO }} build --verbose --workspace --no-default-features ${{ env.TARGET }}
+  | 
+  |       - name: Run tests
+  |         run: ${{ env.CARGO }} test --verbose --workspace ${{ env.TARGET }}
+  | 
+
+--[ Match #4 of 17 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |           echo "target flag: ${{ env.TARGET }}"
+  | 
+  |       - name: Build
+  |         run: ${{ env.CARGO }} build --verbose --workspace ${{ env.TARGET }}
+  | 
+  |       - name: Build (no_std)
+  |         run: ${{ env.CARGO }} build --verbose --workspace --no-default-features ${{ env.TARGET }}
+  | 
+
+--[ Match #5 of 17 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |       - name: Show command used for Cargo
+  |         run: |
+  |           echo "cargo command: ${{ env.CARGO }}"
+  |           echo "target flag: ${{ env.TARGET }}"
+  | 
+  |       - name: Build
+  |         run: ${{ env.CARGO }} build --verbose --workspace ${{ env.TARGET }}
+  | 
+
+--[ Match #6 of 17 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\README.md
+   Pattern: base64|encodedcommand|obfuscate
+  | # wmemchr
+  | 
+  | [<img alt="build status" src="https://img.shields.io/github/workflow/status/Juici/wmemchr/ci?style=f
+  | [<img alt="crates.io" src="https://img.shields.io/crates/v/wmemchr?style=for-the-badge&logo=rust" he
+  | [<img alt="docs.rs" src="https://img.shields.io/badge/docs.rs-wmemchr-4d76ae?style=for-the-badge&log
+  | 
+  | A safe alternative to `wmemchr`.
+  | 
+  | 
+
+--[ Match #7 of 17 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "1538411008c5dc0cc2a3d4a70035c6449798313e"
+  |   }
+  | }
+  | 
+
+--[ Match #8 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    Licensed under the Apache License, Version 2.0 (the "License");
+  |    you may not use this file except in compliance with the License.
+  |    You may obtain a copy of the License at
+  | 
+  |        http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #9 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |           distribution, then any Derivative Works that You distribute must
+  |           include a readable copy of the attribution notices contained
+  |           within such NOTICE file, excluding those notices that do not
+  |           pertain to any part of the Derivative Works, in at least one
+  |           of the following places: within a NOTICE text file distributed
+  |           as part of the Derivative Works; within the Source form or
+  |           documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #10 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       the copyright owner. For the purposes of this definition, "submitted"
+  |       means any form of electronic, verbal, or written communication sent
+  |       to the Licensor or its representatives, including but not limited to
+  |       communication on electronic mailing lists, source code control systems,
+  |       and issue tracking systems that are managed by, or on behalf of, the
+  |       Licensor for the purpose of discussing and improving the Work, but
+  |       excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #11 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |       "Legal Entity" shall mean the union of the acting entity and all
+  |       other entities that control, are controlled by, or are under common
+  |       control with that entity. For the purposes of this definition,
+  |       "control" means (i) the power, direct or indirect, to cause the
+  |       direction or management of such entity, whether by contract or
+  |       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #12 of 17 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       with Licensor regarding such Contributions.
+  | 
+  |    6. Trademarks. This License does not grant permission to use the trade
+  |       names, trademarks, service marks, or product names of the Licensor,
+  |       except as required for reasonable and customary use in describing the
+  |       origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #13 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | defaults:
+  |   run:
+  |     shell: bash
+  | 
+  | env:
+  |   # Coloured output from Cargo.
+  | 
+
+--[ Match #14 of 17 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           components: rustfmt
+  | 
+  |       - name: Check formatting
+  |         run: cargo fmt --all -- --check
+  | 
+
+--[ Match #15 of 17 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\.github\workflows\ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | defaults:
+  |   run:
+  |     shell: bash
+  | 
+  | env:
+  |   # Coloured output from Cargo.
+  | 
+
+--[ Match #16 of 17 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\src\macros.rs
+   Pattern: \.(request|post|get)\(
+  | #[cfg(not(rustc_1_53))]
+  | macro_rules! bsf {
+  |     ($mask:expr) => {
+  |         match ($mask).get() {
+  |             #[allow(unsafe_unsafe)]
+  |             0 => unsafe { ::core::hint::unreachable_unchecked() },
+  |             #[cfg(target_endian = "little")]
+  | 
+
+--[ Match #17 of 17 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wmemchr@0.1\wmemchr-0.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ## License
+  | 
+  | This project is licensed under either of [Apache License, Version 2.0](LICENSE-APACHE)
+  | or [MIT License](LICENSE-MIT) at your option.
+  | 
+  | ### Contribution
+  | 
+  | 
+
+17 matches found.

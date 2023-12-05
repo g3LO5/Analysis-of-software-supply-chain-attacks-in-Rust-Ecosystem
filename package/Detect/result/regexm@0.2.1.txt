@@ -1,0 +1,344 @@
+--[ Match #1 of 23 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "bc63b002003902d371923a6944326ce0b39f258f"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 23 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.6.23"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "24d5f089152e60f62d28b835fbff2cd2e8dc0baf1ac13343bef92ab7eed84548"
+  | 
+  | [[package]]
+  | name = "regexm"
+  | 
+
+--[ Match #3 of 23 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.4.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "957056ecddbeba1b26965114e191d2e8589ce74db242b6ea25fc4062427a5c19"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #4 of 23 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.3.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0ee1c47aaa256ecabcaea351eae4a9b01ef39ed810004e298d2511ed284b1525"
+  | 
+  | [[package]]
+  | name = "regex"
+  | 
+
+--[ Match #5 of 23 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "0.7.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7404febffaa47dac81aa44dba71523c9d069b1bdc50a77db41195149e17f68e5"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #6 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     fn test_capture_groups_match_2_or_less_pattern_block() {
+  |         regexm!(match "2021-01-01" {
+  |             captures(r"^(\d{4})-\d{2}-\d{2}$") => |caps| {
+  |                 let year = caps.get(1).map_or("", |m| m.as_str());
+  |                 assert_eq!(year, "2021");
+  |             }
+  |             _ => {
+  | 
+
+--[ Match #7 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     fn test_capture_groups_match_2_or_less_pattern() {
+  |         regexm!(match "2021-01-01" {
+  |             captures(r"^(\d{4})-\d{2}-\d{2}$") =>
+  |                 |caps| assert_eq!(caps.get(1).map_or("", |m| m.as_str()), "2021"),
+  |             _ => assert!(false),
+  |         });
+  | 
+  | 
+
+--[ Match #8 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |                 assert!(false);
+  |             }
+  |             captures(r"^(\d{4})-\d{2}$") => |caps| {
+  |                 let month = caps.get(1).map_or("", |m| m.as_str());
+  |                 assert_eq!(month, "2021")
+  |             }
+  |             r"^\d{4}$" => {
+  | 
+
+--[ Match #9 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     fn test_capture_groups_match_3_or_more_pattern_block() {
+  |         regexm!(match "2021-01-01" {
+  |             captures(r"^(\d{4})-\d{2}-\d{2}$") => |caps| {
+  |                 let year = caps.get(1).map_or("", |m| m.as_str());
+  |                 assert_eq!(year, "2021")
+  |             }
+  |             r"^\d{4}-\d{2}$" => {
+  | 
+
+--[ Match #10 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         regexm!(match "2021-01" {
+  |             r"^\d{4}-\d{2}-\d{2}$" => assert!(false),
+  |             captures(r"^(\d{4})-\d{2}$") =>
+  |                 |caps| assert_eq!(caps.get(1).map_or("", |m| m.as_str()), "2021"),
+  |             r"^\d{4}$" => assert!(false),
+  |             _ => assert!(false),
+  |         });
+  | 
+
+--[ Match #11 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     fn test_capture_groups_match_3_or_more_pattern() {
+  |         regexm!(match "2021-01-01" {
+  |             captures(r"^(\d{4})-\d{2}-\d{2}$") =>
+  |                 |caps| assert_eq!(caps.get(1).map_or("", |m| m.as_str()), "2021"),
+  |             r"^\d{4}-\d{2}$" => assert!(false),
+  |             _ => assert!(false),
+  |         });
+  | 
+
+--[ Match #12 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |                 "year: {}, month: {}, day: {}",
+  |                 caps.get(1).map_or("", |m| m.as_str()),
+  |                 caps.get(2).map_or("", |m| m.as_str()),
+  |                 caps.get(3).map_or("", |m| m.as_str())
+  |             )
+  |         };
+  |         closure(
+  | 
+
+--[ Match #13 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |             println!(
+  |                 "year: {}, month: {}, day: {}",
+  |                 caps.get(1).map_or("", |m| m.as_str()),
+  |                 caps.get(2).map_or("", |m| m.as_str()),
+  |                 caps.get(3).map_or("", |m| m.as_str())
+  |             )
+  |         };
+  | 
+
+--[ Match #14 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |         let closure = |caps: regex::Captures| {
+  |             println!(
+  |                 "year: {}, month: {}, day: {}",
+  |                 caps.get(1).map_or("", |m| m.as_str()),
+  |                 caps.get(2).map_or("", |m| m.as_str()),
+  |                 caps.get(3).map_or("", |m| m.as_str())
+  |             )
+  | 
+
+--[ Match #15 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  |         _ => println!("default"),
+  |     });
+  | 
+
+--[ Match #16 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |         captures(r"^(\d{4})-(\d{2})-(\d{2})$") => |caps| println!(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  |         _ => println!("default"),
+  | 
+
+--[ Match #17 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\README.md
+   Pattern: \.(request|post|get)\(
+  |         // capture groups
+  |         captures(r"^(\d{4})-(\d{2})-(\d{2})$") => |caps| println!(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  | 
+
+--[ Match #18 of 23 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\.github\workflows\ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - uses: actions/checkout@v2
+  |       - name: Install dependencies
+  |         run: |
+  |           sudo apt-get install libssl-dev
+  |       - name: Cache cargo registry
+  |         uses: actions/cache@v1
+  |         with:
+  | 
+
+--[ Match #19 of 23 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\.github\workflows\ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - name: Cargo fmt
+  |         uses: actions-rs/cargo@v1
+  |         with:
+  |           command: fmt
+  |           args: --all -- --check
+  | 
+  |   check:
+  | 
+
+--[ Match #20 of 23 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\.github\workflows\ci.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     runs-on: ubuntu-20.04
+  |     steps:
+  |       - uses: actions/checkout@v2
+  |       - name: Cargo fmt
+  |         uses: actions-rs/cargo@v1
+  |         with:
+  |           command: fmt
+  | 
+
+--[ Match #21 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\examples\capture_groups.rs
+   Pattern: \.(request|post|get)\(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  |         _ => println!("default"),
+  |     });
+  | 
+
+--[ Match #22 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\examples\capture_groups.rs
+   Pattern: \.(request|post|get)\(
+  |         captures(r"^(\d{4})-(\d{2})-(\d{2})$") => |caps| println!(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  |         _ => println!("default"),
+  | 
+
+--[ Match #23 of 23 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regexm@0.2\regexm-0.2.1\examples\capture_groups.rs
+   Pattern: \.(request|post|get)\(
+  |     regexm::regexm!(match text1 {
+  |         captures(r"^(\d{4})-(\d{2})-(\d{2})$") => |caps| println!(
+  |             "year: {}, month: {}, day: {}",
+  |             caps.get(1).map_or("", |m| m.as_str()),
+  |             caps.get(2).map_or("", |m| m.as_str()),
+  |             caps.get(3).map_or("", |m| m.as_str())
+  |         ),
+  | 
+
+23 matches found.

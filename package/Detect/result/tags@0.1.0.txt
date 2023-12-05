@@ -1,0 +1,74 @@
+--[ Match #1 of 5 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-tags@0.1\tags-0.1.0\design\tagged.svg
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |          width="512"
+  |          height="512"
+  |          preserveAspectRatio="none"
+  |          xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4STqRXhpZgAASUkqAAgAAAAHAA4B
+  |          id="image6204"
+  |          x="0"
+  |          y="0" />
+  | 
+
+--[ Match #2 of 5 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-tags@0.1\tags-0.1.0\design\tagged.svg
+   Pattern: base64|encodedcommand|obfuscate
+  |          width="512"
+  |          height="512"
+  |          preserveAspectRatio="none"
+  |          xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4STqRXhpZgAASUkqAAgAAAAHAA4B
+  |          id="image6204"
+  |          x="0"
+  |          y="0" />
+  | 
+
+--[ Match #3 of 5 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-tags@0.1\tags-0.1.0\design\tagserver.svg
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |          width="512"
+  |          height="512"
+  |          preserveAspectRatio="none"
+  |          xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4STqRXhpZgAASUkqAAgAAAAHAA4B
+  |          id="image6204"
+  |          x="0"
+  |          y="0" />
+  | 
+
+--[ Match #4 of 5 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-tags@0.1\tags-0.1.0\design\tagserver.svg
+   Pattern: base64|encodedcommand|obfuscate
+  |          width="512"
+  |          height="512"
+  |          preserveAspectRatio="none"
+  |          xlink:href="data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEBLAEsAAD/4STqRXhpZgAASUkqAAgAAAAHAA4B
+  |          id="image6204"
+  |          x="0"
+  |          y="0" />
+  | 
+
+--[ Match #5 of 5 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tags@0.1\tags-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "827028ee523212c036822455f5742ad80022efb4"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+5 matches found.

@@ -1,0 +1,45 @@
+--[ Match #1 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-future@0.1\future-0.1.3\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         let result = run_deep_thought();
+  |         promise.resolve(result);
+  |     });
+  |     let ultimate_answer_to_life_the_universe_and_everything = future.get();
+  | 	assert!(ultimate_answer_to_life_the_universe_and_everything.unwrap() == 42);
+  | }
+  | 
+
+--[ Match #2 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-future@0.1\future-0.1.3\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | ///		let result = run_deep_thought();	// May took millions of years
+  | ///		promise.resolve(result);
+  | ///	});
+  | ///	let ultimate_answer_to_life_the_universe_and_everything = future.get();
+  | ///	assert!(ultimate_answer_to_life_the_universe_and_everything.unwrap() == 42);
+  | ///
+  | pub fn make_promise<T: Send>() -> (Future<T>, Promise<T>) {
+  | 
+
+--[ Match #3 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-future@0.1\future-0.1.3\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl<T: Send> AsyncState<T> {
+  |     unsafe fn access_value(&self) -> &mut Option<AsyncResult<T>> {
+  |         &mut *self.value.get()
+  |     }
+  |     unsafe fn get_value_ref(&self) -> &AsyncResult<T> {
+  |         self.access_value().as_ref().unwrap()
+  | 
+
+3 matches found.

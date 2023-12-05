@@ -1,0 +1,31 @@
+--[ Match #1 of 2 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clam@0.1\clam-0.1.6\src\template.rs
+   Pattern: \.(request|post|get)\(
+  |             let s = xs.unwrap() + "\n";
+  |             let mut line = StrReplace::new(&s);
+  |             for cap in re.captures_iter(&s) {
+  |                 match self.data.get(&cap[1]) {
+  |                     Some(d) => {line.replace(&cap[0], d);},
+  |                     _ => {},
+  |                 }
+  | 
+
+--[ Match #2 of 2 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clam@0.1\clam-0.1.6\src\template.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                 Ok(file) => {
+  |                     html = Template::reg(&self, BufReader::new(file));
+  |                 },
+  |                 Err(_) => {println!("can't find {}", self.name)},
+  |         }
+  |         html
+  |     }
+  | 
+
+2 matches found.

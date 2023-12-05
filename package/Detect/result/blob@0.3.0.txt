@@ -1,0 +1,396 @@
+--[ Match #1 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |             type Value = Blob<C>;
+  | 
+  | 
+  | 
+  |             fn expecting(&self, f: &mut ::std::fmt::Formatter) -> ::std::fmt::Result {
+  | 
+  |                 f.write_str("base64 encoded string or byte sequence")
+  | 
+  |             }
+  | 
+  | 
+  | 
+  |             fn visit_str<E>(self, value: &str) -> Result<Self::Value, E>
+  | 
+  | 
+
+--[ Match #2 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  | 
+  | impl<C: Config> Display for Blob<C> {
+  | 
+  |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+  | 
+  |         base64::display::Base64Display::with_config(&self.data, C::CONFIG).fmt(f)
+  | 
+  |     }
+  | 
+  | }
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #3 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | }
+  | 
+  | 
+  | 
+  | impl<C: Config> FromStr for Blob<C> {
+  | 
+  |     type Err = base64::DecodeError;
+  | 
+  | 
+  | 
+  |     #[inline]
+  | 
+  |     fn from_str(s: &str) -> Result<Self, Self::Err> {
+  | 
+  | 
+
+--[ Match #4 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |         T: AsRef<[u8]>,
+  | 
+  |     {
+  | 
+  |         // perform as_ref here to only monomorphize the decoder once
+  | 
+  |         base64::decode_config_buf(encoded.as_ref(), C::CONFIG, &mut self.data)
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     /// Consume self and return the inner `Vec<u8>`
+  | 
+  | 
+
+--[ Match #5 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  | 
+  |     /// Decodes some base-64 data and appends it to the `Blob`
+  | 
+  |     #[inline]
+  | 
+  |     pub fn append_base64<T>(&mut self, encoded: T) -> Result<(), base64::DecodeError>
+  | 
+  |     where
+  | 
+  |         T: AsRef<[u8]>,
+  | 
+  |     {
+  | 
+  | 
+
+--[ Match #6 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |         T: AsRef<[u8]>,
+  | 
+  |     {
+  | 
+  |         // perform as_ref here to only monomorphize the decoder once
+  | 
+  |         base64::decode_config(encoded.as_ref(), C::CONFIG).map(Blob::from_vec)
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     /// Decodes some base-64 data and appends it to the `Blob`
+  | 
+  | 
+
+--[ Match #7 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |     }
+  | 
+  | 
+  | 
+  |     /// Decode base-64 encoded data into a `Blob`
+  | 
+  |     pub fn decode_base64<T>(encoded: T) -> Result<Blob<C>, base64::DecodeError>
+  | 
+  |     where
+  | 
+  |         T: AsRef<[u8]>,
+  | 
+  |     {
+  | 
+  | 
+
+--[ Match #8 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  | 
+  |     /// Encodes the `Blob` as base-64 to an `io::Writer`, avoiding intermediate allocations
+  | 
+  |     pub fn encode_to<W: io::Write>(&self, mut writer: W) -> io::Result<()> {
+  | 
+  |         let mut encoder = base64::write::EncoderWriter::new(&mut writer, C::CONFIG);
+  | 
+  | 
+  | 
+  |         encoder.write_all(&self.data)
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #9 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |     /// Encode the `Blob` to a base-64 string
+  | 
+  |     #[inline]
+  | 
+  |     pub fn encode_base64(&self) -> String {
+  | 
+  |         base64::encode_config(&self.data, C::CONFIG)
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     /// Encodes the `Blob` as base-64 to an `io::Writer`, avoiding intermediate allocations
+  | 
+  | 
+
+--[ Match #10 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |             pub enum $name {}
+  | 
+  | 
+  | 
+  |             impl Config for $name {
+  | 
+  |                 const CONFIG: base64::Config = base64::$config;
+  | 
+  |             }
+  | 
+  |         )*
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #11 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |             pub enum $name {}
+  | 
+  | 
+  | 
+  |             impl Config for $name {
+  | 
+  |                 const CONFIG: base64::Config = base64::$config;
+  | 
+  |             }
+  | 
+  |         )*
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #12 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | /// Trait used for statically typed Blob encoding configs
+  | 
+  | pub trait Config: Send + Sync {
+  | 
+  |     /// Associated base-64 config
+  | 
+  |     const CONFIG: base64::Config;
+  | 
+  | }
+  | 
+  | 
+  | 
+  | macro_rules! impl_configs {
+  | 
+  | 
+
+--[ Match #13 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  | 
+  | #![deny(missing_docs)]
+  | 
+  | 
+  | 
+  | extern crate base64;
+  | 
+  | extern crate serde;
+  | 
+  | 
+  | 
+  | use std::borrow::{Borrow, BorrowMut};
+  | 
+  | 
+
+--[ Match #14 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\Cargo.toml
+   Pattern: base64|encodedcommand|obfuscate
+  | categories = ["data-structures", "encoding"]
+  | license = "MIT"
+  | repository = "https://github.com/novacrazy/blob-rs"
+  | [dependencies.base64]
+  | version = "0.10"
+  | 
+  | [dependencies.serde]
+  | 
+
+--[ Match #15 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\Cargo.toml
+   Pattern: base64|encodedcommand|obfuscate
+  | description = "Blob serialization/deserialization utilities"
+  | documentation = "https://docs.rs/blob/"
+  | readme = "README.md"
+  | keywords = ["blob", "base64"]
+  | categories = ["data-structures", "encoding"]
+  | license = "MIT"
+  | repository = "https://github.com/novacrazy/blob-rs"
+  | 
+
+--[ Match #16 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\Cargo.toml.orig
+   Pattern: base64|encodedcommand|obfuscate
+  | version = "0.3.0"
+  | 
+  | 
+  | 
+  | [dependencies]
+  | 
+  | base64 = "0.10"
+  | 
+  | serde = "1"
+  | 
+  | 
+  | 
+  | [dev-dependencies]
+  | 
+  | 
+
+--[ Match #17 of 19 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\Cargo.toml.orig
+   Pattern: base64|encodedcommand|obfuscate
+  | categories = ["data-structures", "encoding"]
+  | 
+  | description = "Blob serialization/deserialization utilities"
+  | 
+  | documentation = "https://docs.rs/blob/"
+  | 
+  | keywords = ["blob", "base64"]
+  | 
+  | license = "MIT"
+  | 
+  | name = "blob"
+  | 
+  | readme = "README.md"
+  | 
+  | 
+
+--[ Match #18 of 19 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "15d58df5b72d98302ee9bbf07cd706786dcbf02a"
+  |   }
+  | }
+  | 
+
+--[ Match #19 of 19 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-blob@0.3\blob-0.3.0\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | repository = "https://github.com/novacrazy/blob-rs"
+  | 
+  | version = "0.3.0"
+  | 
+  | 
+  | 
+  | [dependencies]
+  | 
+  | base64 = "0.10"
+  | 
+  | serde = "1"
+  | 
+  | 
+  | 
+  | 
+
+19 matches found.

@@ -1,0 +1,1131 @@
+--[ Match #1 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #2 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-util"
+  | version = "0.1.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "70ec6ce85bb158151cae5e5c87f95a8e97d2c0c4b001223f33a334e3ce5de178"
+  | dependencies = [
+  |  "winapi",
+  | ]
+  | 
+
+--[ Match #3 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-util"
+  | 
+
+--[ Match #4 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #5 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "weezl"
+  | version = "0.1.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d8b77fdfd5a253be4ab714e4ffa3c49caf146b4de743e97510c0656cf90f1e8e"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #6 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5fecdca9a5291cc2b8dcf7dc02453fee791a280f3743cb0905f8822ae463b3fe"
+  | 
+  | [[package]]
+  | name = "weezl"
+  | 
+
+--[ Match #7 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vec_map"
+  | version = "0.8.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #8 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-xid"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
+  | 
+  | [[package]]
+  | name = "vec_map"
+  | 
+
+--[ Match #9 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-width"
+  | version = "0.1.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9337591893a19b88d8d87f2cec1e73fad5cdfd10e5a6f349f498ad6ea2ffb1e3"
+  | 
+  | [[package]]
+  | name = "unicode-xid"
+  | 
+
+--[ Match #10 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-segmentation"
+  | version = "1.7.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bb0d2e7be6ae3a5fa87eed5fb451aff96f2573d2694942e40543ae0bbe19c796"
+  | 
+  | [[package]]
+  | name = "unicode-width"
+  | 
+
+--[ Match #11 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tiff"
+  | version = "0.6.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a53f4706d65497df0c4349241deddf35f84cee19c87ed86ea8ca590f4464437"
+  | dependencies = [
+  |  "jpeg-decoder",
+  |  "miniz_oxide 0.4.4",
+  | 
+
+--[ Match #12 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "textwrap"
+  | version = "0.12.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "203008d98caf094106cfaba70acfed15e18ed3ddb7d94e49baec153a2b462789"
+  | dependencies = [
+  |  "unicode-width",
+  | ]
+  | 
+
+--[ Match #13 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "termcolor"
+  | version = "1.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2dfed899f0eb03f32ee8c6a0aabdb8a7949659e3466561fc0adf54e26d88c5f4"
+  | dependencies = [
+  |  "winapi-util",
+  | ]
+  | 
+
+--[ Match #14 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.72"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1e8cdbefb79a9a5a65e0db8b47b723ee907b7c7f8496c76a1770b5c310bab82"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #15 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #16 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "scopeguard"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
+  | 
+  | [[package]]
+  | name = "strsim"
+  | 
+
+--[ Match #17 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "scoped_threadpool"
+  | version = "0.1.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1d51f5df5af43ab3f1360b429fa5e0152ac5ce8c0bd6485cae490332e96846a8"
+  | 
+  | [[package]]
+  | name = "scopeguard"
+  | 
+
+--[ Match #18 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rayon-core"
+  | version = "1.9.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9ab346ac5921dc62ffa9f89b7a773907511cdfa5490c572ae9be1be33e8afa4a"
+  | dependencies = [
+  |  "crossbeam-channel",
+  |  "crossbeam-deque",
+  | 
+
+--[ Match #19 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rayon"
+  | version = "1.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8b0d8e0819fadc20c74ea8373106ead0600e3a67ef1fe8da56e39b9ae7275674"
+  | dependencies = [
+  |  "autocfg",
+  |  "crossbeam-deque",
+  | 
+
+--[ Match #20 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c3d0b9745dc2debf507c8422de05d7226cc1f0644216dfdfead988f9b1ab32a7"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #21 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.26"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a152013215dca273577e18d2bf00fa862b89b24169fb78c4c95aeb07992c9cec"
+  | dependencies = [
+  |  "unicode-xid",
+  | ]
+  | 
+
+--[ Match #22 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro-error-attr"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #23 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro-error"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c"
+  | dependencies = [
+  |  "proc-macro-error-attr",
+  |  "proc-macro2",
+  | 
+
+--[ Match #24 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "png"
+  | version = "0.16.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3c3287920cb847dee3de33d301c463fba14dda99db24214ddf93f83d3021f4c6"
+  | dependencies = [
+  |  "bitflags",
+  |  "crc32fast",
+  | 
+
+--[ Match #25 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "os_str_bytes"
+  | version = "2.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "afb2e1c3ee07430c2cf76151675e583e0f19985fa6efae47d6848a3e2c824f85"
+  | 
+  | [[package]]
+  | name = "png"
+  | 
+
+--[ Match #26 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num_cpus"
+  | version = "1.13.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "05499f3756671c15885fee9034446956fff3f243d6077b91e5767df161f766b3"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #27 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a64b1ec5cda2586e284722486d802acf1f7dbdc623e2bfc57e65ca1cd099290"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #28 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-rational"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "12ac428b1cb17fce6f731001d307d351ec70a6d202fc2e60f7d4c5e42d8f4f07"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-integer",
+  | 
+
+--[ Match #29 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-iter"
+  | version = "0.1.42"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b2021c8337a54d21aca0d59a92577a029af9431cb59b909b03252b9c164fad59"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-integer",
+  | 
+
+--[ Match #30 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-integer"
+  | version = "0.1.44"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d2cc698a63b549a70bc047073d2949cce27cd1c7b0a4a862d08a8031bc2801db"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-traits",
+  | 
+
+--[ Match #31 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "miniz_oxide"
+  | version = "0.4.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a92518e98c078586bc6c934028adcca4c92a53d6a958196de835170a01d84e4b"
+  | dependencies = [
+  |  "adler",
+  |  "autocfg",
+  | 
+
+--[ Match #32 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "miniz_oxide"
+  | version = "0.3.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "791daaae1ed6889560f8c4359194f56648355540573244a5448a83ba1ecc7435"
+  | dependencies = [
+  |  "adler32",
+  | ]
+  | 
+
+--[ Match #33 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memoffset"
+  | version = "0.6.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f83fb6581e8ed1f85fd45c116db8405483899489e38406156c25eb743554361d"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #34 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.94"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "18794a8ad5b29321f790b55d93dfba91e125cb1a9edbd4f8e3150acc771c1a5e"
+  | 
+  | [[package]]
+  | name = "memoffset"
+  | 
+
+--[ Match #35 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lazy_static"
+  | version = "1.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #36 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "jpeg-decoder"
+  | version = "0.1.22"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "229d53d58899083193af11e15917b5640cd40b29ff475a1fe4ef725deb02d0f2"
+  | dependencies = [
+  |  "rayon",
+  | ]
+  | 
+
+--[ Match #37 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "indexmap"
+  | version = "1.6.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "824845a0bf897a9042383849b02c1bc219c2383772efcd5c6f9766fa4b81aef3"
+  | dependencies = [
+  |  "autocfg",
+  |  "hashbrown",
+  | 
+
+--[ Match #38 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "image"
+  | version = "0.23.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "24ffcb7e7244a9bf19d35bf2883b9c080c4ced3c07a9895572178cdb8f13f6a1"
+  | dependencies = [
+  |  "bytemuck",
+  |  "byteorder",
+  | 
+
+--[ Match #39 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.1.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "322f4de77956e22ed0e5032c359a0f1273f1f7f0d79bfa3b8ffbc730d7fbcc5c"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #40 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "heck"
+  | version = "0.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "87cbf45460356b7deeb5e3415b5563308c0a9b057c85e12b06ad551f98d0a6ac"
+  | dependencies = [
+  |  "unicode-segmentation",
+  | ]
+  | 
+
+--[ Match #41 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashbrown"
+  | version = "0.9.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d7afe4a420e3fe79967a00898cc1f4db7c8a49a9333a29f8a4bd76a253d5cd04"
+  | 
+  | [[package]]
+  | name = "heck"
+  | 
+
+--[ Match #42 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "gif"
+  | version = "0.11.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5a668f699973d0f573d15749b7002a9ac9e1f9c6b220e7b165601334c173d8de"
+  | dependencies = [
+  |  "color_quant",
+  |  "weezl",
+  | 
+
+--[ Match #43 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "either"
+  | version = "1.6.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e78d4f1cc4ae33bbfc157ed5d5a5ef3bc29227303d595861deb238fcec4e9457"
+  | 
+  | [[package]]
+  | name = "gif"
+  | 
+
+--[ Match #44 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "deflate"
+  | version = "0.8.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73770f8e1fe7d64df17ca66ad28994a0a623ea497fa69486e14984e715c5d174"
+  | dependencies = [
+  |  "adler32",
+  |  "byteorder",
+  | 
+
+--[ Match #45 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crossbeam-utils"
+  | version = "0.8.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4feb231f0d4d6af81aed15928e58ecf5816aa62a2393e2c82f46973e92a9a278"
+  | dependencies = [
+  |  "autocfg",
+  |  "cfg-if",
+  | 
+
+--[ Match #46 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crossbeam-epoch"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "52fb27eab85b17fbb9f6fd667089e07d6a2eb8743d02639ee7f6a7a7729c9c94"
+  | dependencies = [
+  |  "cfg-if",
+  |  "crossbeam-utils",
+  | 
+
+--[ Match #47 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crossbeam-deque"
+  | version = "0.8.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "94af6efb46fef72616855b036a624cf27ba656ffc9be1b9a3c931cfc7749a9a9"
+  | dependencies = [
+  |  "cfg-if",
+  |  "crossbeam-epoch",
+  | 
+
+--[ Match #48 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crossbeam-channel"
+  | version = "0.5.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "06ed27e177f16d65f0f0c22a213e17c696ace5dd64b14258b52f9417ccb52db4"
+  | dependencies = [
+  |  "cfg-if",
+  |  "crossbeam-utils",
+  | 
+
+--[ Match #49 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crc32fast"
+  | version = "1.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "81156fece84ab6a9f2afdb109ce3ae577e42b1228441eded99bd77f627953b1a"
+  | dependencies = [
+  |  "cfg-if",
+  | ]
+  | 
+
+--[ Match #50 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "color_quant"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3d7b894f5411737b7867f4827955924d7c254fc9f4d91a6aad6b097804b1018b"
+  | 
+  | [[package]]
+  | name = "crc32fast"
+  | 
+
+--[ Match #51 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_derive"
+  | version = "3.0.0-beta.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "370f715b81112975b1b69db93e0b56ea4cd4e5002ac43b2da8474106a54096a1"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro-error",
+  | 
+
+--[ Match #52 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "3.0.0-beta.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4bd1061998a501ee7d4b6d449020df3266ca3124b941ec56cf2005c3779ca142"
+  | dependencies = [
+  |  "atty",
+  |  "bitflags",
+  | 
+
+--[ Match #53 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "clap"
+  | 
+
+--[ Match #54 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "byteorder"
+  | version = "1.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "14c189c53d098945499cdfa7ecc63567cf3886b3332b312a5b4585d8d3a6a610"
+  | 
+  | [[package]]
+  | name = "cfg-if"
+  | 
+
+--[ Match #55 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bytemuck"
+  | version = "1.5.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bed57e2090563b83ba8f83366628ce535a7584c9afa4c9fc0612a03925c6df58"
+  | 
+  | [[package]]
+  | name = "byteorder"
+  | 
+
+--[ Match #56 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
+  | 
+  | [[package]]
+  | name = "bytemuck"
+  | 
+
+--[ Match #57 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #58 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "atty"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #59 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "adler32"
+  | version = "1.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aae1277d39aeec15cb388266ecc24b11c80469deae6067e17a1a7aa9e5c1f234"
+  | 
+  | [[package]]
+  | name = "atty"
+  | 
+
+--[ Match #60 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "adler"
+  | version = "1.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
+  | 
+  | [[package]]
+  | name = "adler32"
+  | 
+
+--[ Match #61 of 75 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "61600921d049441936d683b3282c8db0120ac5cb"
+  |   }
+  | }
+  | 
+
+--[ Match #62 of 75 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\src\img.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Returns a reference to an element.
+  |     pub fn get(&self, (x, y): (u32, u32)) -> Option<&P> {
+  |         self.buf.get(self.idx((x, y)))
+  |     }
+  |     /// Returns a pair `(width, height)`.
+  |     pub fn size(&self) -> (u32, u32) {
+  | 
+
+--[ Match #63 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\src\color\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 "user-specified palette has 0 or 1 color; must have at least two"
+  |             ),
+  |             Error::RGBParse =>        write!(f, "could not parse to a RGB value: bad format. must be
+  |             Error::BadFile{path, err} => write!(f, "could not load color palette from file at path \
+  |         }
+  |     }
+  | }
+  | 
+
+--[ Match #64 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\src\color\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             Error::UnknownOption(opt) => writeln!(f, "unknown color option {}", opt),
+  |             Error::PaletteTooSmall => writeln!(
+  |                 f,
+  |                 "user-specified palette has 0 or 1 color; must have at least two"
+  |             ),
+  |             Error::RGBParse =>        write!(f, "could not parse to a RGB value: bad format. must be
+  |             Error::BadFile{path, err} => write!(f, "could not load color palette from file at path \
+  |         }
+  |     }
+  | }
+  | 
+  | impl PartialEq for Error {
+  |     fn eq(&self, other: &Self) -> bool {
+  |         use self::Error::*;
+  |         match (self, other) {
+  |             (RGBParse, RGBParse) | (PaletteTooSmall, PaletteTooSmall) => true,
+  |             (UnknownOption(a), UnknownOption(b)) => a == b,
+  |             (Bad
+
+--[ Match #65 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | ## `OUTPUT` 
+  | 
+  | the path to write the output.this will create or truncate the file at the existing location, if nece
+  | 
+  | ## `-c` , `--color` 
+  | 
+  | 
+
+--[ Match #66 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | ## usage
+  | 
+  | ``` bash
+  | dither INPUT [OUTPUT] [-v] [--dither="floyd"] [--color="bw"] [--depth="1"] [--help]
+  | ```
+  | 
+  | 
+
+--[ Match #67 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | ## CLI help:
+  | 
+  | ``` bash
+  | dither --help
+  | ```
+  | 
+  | 
+
+--[ Match #68 of 75 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | * ### Compilation from source
+  | 
+  |     - Install rust  by following the instructions at [rustup.rs](https://rustup.rs/)/
+  |     - Install dither
+  | 
+  |             cargo install dither
+  | 
+
+--[ Match #69 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     0xffffff
+  |     // BLACK
+  |     0x000000
+  |     // RED
+  |     0xff0000
+  |     // GREEN
+  |     0x00ff00
+  | 
+
+--[ Match #70 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | * BLUE
+  | * GREEN
+  | * CYAN
+  | * RED
+  | * MAGENTA
+  | * BROWN
+  | * LIGHT_GRAY
+  | 
+
+--[ Match #71 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | ## usage
+  | 
+  | ``` bash
+  | dither INPUT [OUTPUT] [-v] [--dither="floyd"] [--color="bw"] [--depth="1"] [--help]
+  | ```
+  | 
+  | 
+
+--[ Match #72 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | ## CLI help:
+  | 
+  | ``` bash
+  | dither --help
+  | ```
+  | 
+  | 
+
+--[ Match #73 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | * ### Run directly via Docker
+  | 
+  |         docker run efronlicht/dither:latest
+  | 
+  | ## CLI help:
+  | 
+  | 
+
+--[ Match #74 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\readme.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |     - Download a binary from the [binaries repository](https://gitlab.com/efronlicht/dither-binaries
+  | 
+  | * ### Run directly via Docker
+  | 
+  |         docker run efronlicht/dither:latest
+  | 
+  | 
+
+--[ Match #75 of 75 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-dither@1.3\dither-1.3.10\crayon.plt
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 1DACD6
+  | //White	  
+  | EDEDED
+  | //Violet Red	 
+  | F75394
+  | //Gray	
+  | 95918C
+  | 
+
+75 matches found.

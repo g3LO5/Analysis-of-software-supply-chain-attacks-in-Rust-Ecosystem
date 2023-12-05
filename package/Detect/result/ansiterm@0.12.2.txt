@@ -1,0 +1,637 @@
+--[ Match #1 of 42 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |   - echo [ `%BUILD_CMD%` ] & %BUILD_CMD%
+  | 
+  | test_script:
+  |   - ps: $env:TEST_CMD = $(("cargo +${env:TOOLCHAIN} test --target=${env:TARGET}", $env:TEST_OPTIONS)
+  |   - echo [ `%TEST_CMD%` ] & %TEST_CMD%
+  | 
+
+--[ Match #2 of 42 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |   - echo [ `%BUILD_CMD%` ] & %BUILD_CMD%
+  | 
+  | test_script:
+  |   - ps: $env:TEST_CMD = $(("cargo +${env:TOOLCHAIN} test --target=${env:TARGET}", $env:TEST_OPTIONS)
+  |   - echo [ `%TEST_CMD%` ] & %TEST_CMD%
+  | 
+
+--[ Match #3 of 42 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |   - ps: if ("$env:FEATURES".length) { $env:TEST_OPTIONS = $(($env:TEST_OPTIONS, "--features `"${env:
+  | 
+  | build_script:
+  |   - ps: $env:BUILD_CMD = $(("cargo +${env:TOOLCHAIN} build --target=${env:TARGET}", $env:BUILD_OPTIO
+  |   - echo [ `%BUILD_CMD%` ] & %BUILD_CMD%
+  | 
+  | test_script:
+  | 
+
+--[ Match #4 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #5 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #6 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #7 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "301abaae475aa91687eb82514b328ab47a211a533026cb25fc3e519b86adfc3c"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #8 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.29"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c324c494eba9d92503e6f1ef2e6df781e78f6a7705a0202d9801b198807d518a"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #9 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.105"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "693151e1ac27563d6dbcec9dee9fbd5da8539b20fa14ad3752b2e6d363ace360"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #10 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_derive"
+  | version = "1.0.188"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4eca7ac642d82aa35b60049a6eccb4be6be75e599bd2e9adb5f875a737654af2"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #11 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.188"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e"
+  | dependencies = [
+  |  "serde_derive",
+  | ]
+  | 
+
+--[ Match #12 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ryu"
+  | version = "1.0.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741"
+  | 
+  | [[package]]
+  | name = "serde"
+  | 
+
+--[ Match #13 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.7.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da"
+  | 
+  | [[package]]
+  | name = "ryu"
+  | 
+
+--[ Match #14 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-automata"
+  | version = "0.3.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "49530408a136e16e5b486e883fbb6ba058e8e4e8ae6621a77b048b314336e629"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #15 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "12de2eff854e5fa4b1295edd650e227e9d8fb0c9e90b12e7f36d6a6811791a29"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #16 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.33"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #17 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.66"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "18fb31db3f9bddb2ea821cde30a9f70117e3f119938b5ee630b7403aa6e2ead9"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #18 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "76fc44e2588d5b436dbc3c6cf62aef290f90dab6235744a93dfe1cc18f451e2c"
+  | 
+  | [[package]]
+  | name = "proc-macro2"
+  | 
+
+--[ Match #19 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
+  | 
+  | [[package]]
+  | name = "memchr"
+  | 
+
+--[ Match #20 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "doc-comment"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fea41bba32d969b513997752735605054bc0dfa92b4c56bf1189f2e174be7a10"
+  | 
+  | [[package]]
+  | name = "itoa"
+  | 
+
+--[ Match #21 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ansi_colours"
+  | version = "1.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6a1558bd2075d341b9ca698ec8eb6fcc55a746b1fc4255585aad5b141d918a80"
+  | 
+  | [[package]]
+  | name = "ansiterm"
+  | 
+
+--[ Match #22 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6748e8def348ed4d14996fa801f4122cd763fff530258cdc03f64b25f89d3a5a"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #23 of 42 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "b35c16ee998c18f52ffd1ef7da5a031090175017"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #24 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | There are several things to note here.
+  | Firstly, the `paint` method can take *either* an owned `String` or a borrowed `&str`.
+  | Internally, an `ANSIString` holds a copy-on-write (`Cow`) string value to deal with both owned and b
+  | This is used here to display a `String`, the result of the `format!` call, using the same mechanism 
+  | Secondly, that the `ANSIStrings` value works in the same way as its singular counterpart, with a `Di
+  | 
+  | ## Byte strings
+  | 
+  | This library also supports formatting `[u8]` byte strings; this supports applications working with t
+  | `Style` and `Colour` support painting `[u8]` values, resulting in an `ANSIByteString`.
+  | This type does not implement `Display`, as it may not contain UTF-8,
+
+--[ Match #25 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | Instead, it returns an `ANSIString` value that has a `Display` implementation that, when formatted, 
+  | This allows strings to be printed with a minimum of `String` allocations being performed behind the 
+  | 
+  | If you *do* want to get at the escape codes, then you can convert the `ANSIString` to a string as yo
+  | 
+  | ```rust
+  | use ansiterm::Colour::Red;
+  | 
+
+--[ Match #26 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | println!("This is in red: {}", Red.paint("a red string"));
+  | ```
+  | 
+  | It’s important to note that the `paint` method does *not* actually return a string with the ANSI con
+  | Instead, it returns an `ANSIString` value that has a `Display` implementation that, when formatted, 
+  | This allows strings to be printed with a minimum of `String` allocations being performed behind the 
+  | 
+  | 
+
+--[ Match #27 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ext that follows it is of a similar style.
+  | For example, if you want to have some blue text followed by some blue bold text, it’s possible to se
+  | 
+  | This crate can optimise the ANSI codes that get printed in situations like this, making life easier 
+  | The `ANSIStrings` struct takes a slice of several `ANSIString` values, and will iterate over each of
+  | 
+  | The following code snippet uses this to enclose a binary number displayed in red bold text inside so
+  | 
+  | ```rust
+  | use ansiterm::Colour::Red;
+  | 
+
+--[ Match #28 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ```rust
+  | use ansiterm::Colour::Fixed;
+  | 
+  | Fixed(134).paint("A sort of light purple");
+  | Fixed(221).on(Fixed(124)).paint("Mustard in the ketchup");
+  | ```
+  | 
+  | 
+
+--[ Match #29 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | use ansiterm::Style;
+  | use ansiterm::Colour::Red;
+  | 
+  | Red.normal().paint("yet another red string");
+  | Style::default().paint("a completely regular string");
+  | ```
+  | 
+  | 
+
+--[ Match #30 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | The complete list of styles you can use are:
+  | `bold`, `dimmed`, `italic`, `underline`, `blink`, `reverse`, `hidden`, and `on` for background colou
+  | 
+  | In some cases, you may find it easier to change the foreground on an existing `Style` rather than st
+  | You can do this using the `fg` method:
+  | 
+  | ```rust
+  | 
+
+--[ Match #31 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ```rust
+  | use ansiterm::Colour::Red;
+  | 
+  | let red_string = Red.paint("a red string").to_string();
+  | ```
+  | 
+  | **Note for Windows 10 users:** On Windows 10, the application must enable ANSI support first:
+  | 
+
+--[ Match #32 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ```rust
+  | use ansiterm::Colour::Red;
+  | 
+  | println!("This is in red: {}", Red.paint("a red string"));
+  | ```
+  | 
+  | It’s important to note that the `paint` method does *not* actually return a string with the ANSI con
+  | 
+
+--[ Match #33 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | `Color` is also available as an alias to `Colour`.
+  | 
+  | To format a string, call the `paint` method on a `Style` or a `Colour`, passing in the string you wa
+  | For example, here’s how to get some red text:
+  | 
+  | ```rust
+  | use ansiterm::Colour::Red;
+  | 
+
+--[ Match #34 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # ansiterm-rs
+  | 
+  | Continuation of the unmaintained [ansi-term](https://github.com/ogham/rust-ansi-term),
+  | a library for controlling colours and formatting, such as red bold text or blue
+  | underlined text, on ANSI terminals.
+  | Big shout-out to its creator [Benjamin Sago](https://github.com/ogham).
+  | 
+  | 
+
+--[ Match #35 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |   - if /i "%ABI%" == "msvc" if /i "%ARCH%" == "x86_64" call "C:\Program Files\Microsoft SDKs\Windows
+  |   - if /i "%ABI%" == "msvc" if /i "%ARCH%" == "x86_64" call "%VS140COMNTOOLS%\..\..\VC\vcvarsall.bat
+  |   # * show `cl` info
+  |   - if /i "%ABI%"=="msvc" ( where cl && cl 2>&1 | findstr /i /c:"version" )
+  | 
+  |   # finalize options
+  |   - ps: if ("$env:FEATURES".length) { $env:BUILD_OPTIONS = $(($env:BUILD_OPTIONS, "--features `"${en
+  | 
+
+--[ Match #36 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | # spell-checker:words POSIX repo SDK SDKs toolchain toolchains
+  | # spell-checker:ignore ARCH ABI BACKTRACE BINDIR cl COMNTOOLS dllcrt findstr maint MINGW MINGWDIR mk
+  | 
+  | version: "{build} ~ {branch}"
+  | 
+  | 
+
+--[ Match #37 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |   # * specific MinGW, if specified
+  |   - ps: if ( ! $env:MINGW_ARCHIVE -and $env:MINGW_URL ) { $env:MINGW_ARCHIVE = $($([URI]$env:MINGW_U
+  |   - ps: if ( ! $env:MINGW_ARCHIVE -and $env:MINGW_URL ) { $env:MINGW_ARCHIVE = $([URI]$env:MINGW_URL
+  |   - if defined MINGW_ARCHIVE curl --insecure -fsSL "%MINGW_URL%" -o "%CI_TEMP_DIR%\%MINGW_ARCHIVE%"
+  |   - if defined MINGW_ARCHIVE mkdir "%CI_TEMP_DIR%\MinGW" >NUL
+  |   - if defined MINGW_ARCHIVE 7z x -y "%CI_TEMP_DIR%\%MINGW_ARCHIVE%" -o"%CI_TEMP_DIR%\MinGW" >NUL
+  |   - if defined MINGW_ARCHIVE set "MSYS_MINGWDIR=%CI_TEMP_DIR%\MinGW\mingw%MSYS_BITS%"
+  | 
+
+--[ Match #38 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | NNEL: stable
+  | #     ARCH: x86_64
+  | #     ABI: gnu
+  | #     MINGW_URL: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Pe
+  | 
+  | install:
+  |   # force branch checkout (if knowable), then reset to the specific commit ## (can be needed for acc
+  |   # * this allows later apps to see the branch name using standard `git branch` operations, yet alwa
+  |   # * ref: <https://github.com/appveyor/ci/issues/1606>[`@`](https://archive.is/RVpnF)
+  |   - if DEFINED APPVEYOR_REPO_BRANCH if /I "%APPVEYOR_REPO_SCM%"=="git" ( git checkout "%APPVEYOR_REP
+  |   # ensure CWD is project main directory
+  |   - cd "%APPVEYOR_BUILD_FOLDER%"
+  |   # create a working area
+  | 
+
+--[ Match #39 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.appveyor.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | NNEL: stable
+  | #     ARCH: x86_64
+  | #     ABI: gnu
+  | #     MINGW_URL: https://sourceforge.net/projects/mingw-w64/files/Toolchains%20targetting%20Win64/Pe
+  | 
+  | install:
+  |   # force branch checkout (if knowable), then reset to the specific commit ## (can be needed for acc
+  |   # * this allows later apps to see the branch name using standard `git branch` operations, yet alwa
+  |   # * ref: <https://github.com/appveyor/ci/issues/1606>[`@`](https://archive.is/RVpnF)
+  |   - if DEFINED APPVEYOR_REPO_BRANCH if /I "%APPVEYOR_REPO_SCM%"=="git" ( git checkout "%APPVEYOR_REP
+  |   # ensure CWD is project main directory
+  |   - cd "%APPVEYOR_BUILD_FOLDER%"
+  |   # create a working area
+  | 
+
+--[ Match #40 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.github\workflows\general.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         with:
+  |           components: rustfmt
+  |       - name: Enforce formatting
+  |         run: cargo fmt --check
+  | 
+  |   clippy:
+  |      name: Clippy
+  | 
+
+--[ Match #41 of 42 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.github\dependabot.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | # To get started with Dependabot version updates, you'll need to specify which
+  | # package ecosystems to update and where the package manifests are located.
+  | # Please see the documentation for all configuration options:
+  | # https://docs.github.com/github/administering-a-repository/configuration-options-for-dependency-upd
+  | 
+  | 
+
+--[ Match #42 of 42 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ansiterm@0.12\ansiterm-0.12.2\.travis.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # load travis-cargo
+  | before_script:
+  |   - |
+  |       pip install 'travis-cargo<0.2' --user &&
+  |       export PATH=$HOME/.local/bin:$PATH
+  | 
+  | script:
+  | 
+
+42 matches found.

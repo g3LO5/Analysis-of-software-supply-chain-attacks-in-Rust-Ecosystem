@@ -1,0 +1,3280 @@
+--[ Match #1 of 219 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "72f03e05073621f713dead88f16c227187afd6f9"
+  |   },
+  |   "path_in_vcs": "time"
+  | }
+
+--[ Match #2 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |                 // Safety: `ordinal` is not zero.
+  |                 value: unsafe { NonZeroI32::new_unchecked(self.value.get() - 1) },
+  |             })
+  |         } else if self.value.get() == Self::MIN.value.get() {
+  |             None
+  |         } else {
+  |             // Safety: `ordinal` is not zero.
+  | 
+
+--[ Match #3 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |                 // Safety: `ordinal` is not zero.
+  |                 value: unsafe { NonZeroI32::new_unchecked(self.value.get() - 1) },
+  |             })
+  |         } else if self.value.get() == Self::MIN.value.get() {
+  |             None
+  |         } else {
+  |             // Safety: `ordinal` is not zero.
+  | 
+
+--[ Match #4 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |         if self.ordinal() != 1 {
+  |             Some(Self {
+  |                 // Safety: `ordinal` is not zero.
+  |                 value: unsafe { NonZeroI32::new_unchecked(self.value.get() - 1) },
+  |             })
+  |         } else if self.value.get() == Self::MIN.value.get() {
+  |             None
+  | 
+
+--[ Match #5 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |         } else {
+  |             Some(Self {
+  |                 // Safety: `ordinal` is not zero.
+  |                 value: unsafe { NonZeroI32::new_unchecked(self.value.get() + 1) },
+  |             })
+  |         }
+  |     }
+  | 
+
+--[ Match #6 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn next_day(self) -> Option<Self> {
+  |         if self.ordinal() == 366 || (self.ordinal() == 365 && !is_leap_year(self.year())) {
+  |             if self.value.get() == Self::MAX.value.get() {
+  |                 None
+  |             } else {
+  |                 // Safety: `ordinal` is not zero.
+  | 
+
+--[ Match #7 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn next_day(self) -> Option<Self> {
+  |         if self.ordinal() == 366 || (self.ordinal() == 365 && !is_leap_year(self.year())) {
+  |             if self.value.get() == Self::MAX.value.get() {
+  |                 None
+  |             } else {
+  |                 // Safety: `ordinal` is not zero.
+  | 
+
+--[ Match #8 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(date!(2019 - 12 - 31).ordinal(), 365);
+  |     /// ```
+  |     pub const fn ordinal(self) -> u16 {
+  |         (self.value.get() & 0x1FF) as _
+  |     }
+  | 
+  |     /// Get the ISO 8601 year and week number.
+  | 
+
+--[ Match #9 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(date!(2020 - 01 - 01).year(), 2020);
+  |     /// ```
+  |     pub const fn year(self) -> i32 {
+  |         self.value.get() >> 9
+  |     }
+  | 
+  |     /// Get the month.
+  | 
+
+--[ Match #10 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\format_description\well_known\iso8601\adt_hack.rs
+   Pattern: \.(request|post|get)\(
+  |             | TimePrecision::Minute { decimal_digits }
+  |             | TimePrecision::Second { decimal_digits } => match decimal_digits {
+  |                 None => 0,
+  |                 Some(decimal_digits) => decimal_digits.get(),
+  |             },
+  |         };
+  |         bytes[6] = match self.offset_precision {
+  | 
+
+--[ Match #11 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |         Some(
+  |             self.seconds
+  |                 .cmp(&(rhs.as_secs() as _))
+  |                 .then_with(|| self.nanoseconds.get().cmp(&(rhs.subsec_nanos() as _))),
+  |         )
+  |     }
+  | }
+  | 
+
+--[ Match #12 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |                 .map_err(|_| error::ConversionRange)?,
+  |             duration
+  |                 .nanoseconds
+  |                 .get()
+  |                 .try_into()
+  |                 .map_err(|_| error::ConversionRange)?,
+  |         ))
+  | 
+
+--[ Match #13 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  | 
+  |             let seconds = self.seconds.unsigned_abs();
+  |             let nanoseconds = self.nanoseconds.get().unsigned_abs();
+  | 
+  |             item!("d", seconds / Second::per(Day) as u64)?;
+  |             item!(
+  | 
+
+--[ Match #14 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn saturating_mul(self, rhs: i32) -> Self {
+  |         // Multiply nanoseconds as i64, because it cannot overflow that way.
+  |         let total_nanos = self.nanoseconds.get() as i64 * rhs as i64;
+  |         let extra_secs = total_nanos / Nanosecond::per(Second) as i64;
+  |         let nanoseconds = (total_nanos % Nanosecond::per(Second) as i64) as _;
+  |         let (seconds, overflow1) = self.seconds.overflowing_mul(rhs as _);
+  | 
+
+--[ Match #15 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  |             return Self::MIN;
+  |         }
+  |         let mut nanoseconds = self.nanoseconds.get() - rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #16 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  |             return Self::MIN;
+  |         }
+  |         let mut nanoseconds = self.nanoseconds.get() - rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #17 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  |             return Self::MIN;
+  |         }
+  |         let mut nanoseconds = self.nanoseconds.get() + rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #18 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  |             return Self::MIN;
+  |         }
+  |         let mut nanoseconds = self.nanoseconds.get() + rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #19 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             const_try_opt!(self.seconds.checked_div(rhs as i64)),
+  |             self.seconds % (rhs as i64),
+  |         );
+  |         let (mut nanos, extra_nanos) = (self.nanoseconds.get() / rhs, self.nanoseconds.get() % rhs);
+  |         nanos += ((extra_secs * (Nanosecond::per(Second) as i64) + extra_nanos as i64)
+  |             / (rhs as i64)) as i32;
+  | 
+  | 
+
+--[ Match #20 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             const_try_opt!(self.seconds.checked_div(rhs as i64)),
+  |             self.seconds % (rhs as i64),
+  |         );
+  |         let (mut nanos, extra_nanos) = (self.nanoseconds.get() / rhs, self.nanoseconds.get() % rhs);
+  |         nanos += ((extra_secs * (Nanosecond::per(Second) as i64) + extra_nanos as i64)
+  |             / (rhs as i64)) as i32;
+  | 
+  | 
+
+--[ Match #21 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn checked_mul(self, rhs: i32) -> Option<Self> {
+  |         // Multiply nanoseconds as i64, because it cannot overflow that way.
+  |         let total_nanos = self.nanoseconds.get() as i64 * rhs as i64;
+  |         let extra_secs = total_nanos / Nanosecond::per(Second) as i64;
+  |         let nanoseconds = (total_nanos % Nanosecond::per(Second) as i64) as _;
+  |         let seconds = const_try_opt!(
+  | 
+
+--[ Match #22 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn checked_sub(self, rhs: Self) -> Option<Self> {
+  |         let mut seconds = const_try_opt!(self.seconds.checked_sub(rhs.seconds));
+  |         let mut nanoseconds = self.nanoseconds.get() - rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #23 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn checked_sub(self, rhs: Self) -> Option<Self> {
+  |         let mut seconds = const_try_opt!(self.seconds.checked_sub(rhs.seconds));
+  |         let mut nanoseconds = self.nanoseconds.get() - rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #24 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn checked_add(self, rhs: Self) -> Option<Self> {
+  |         let mut seconds = const_try_opt!(self.seconds.checked_add(rhs.seconds));
+  |         let mut nanoseconds = self.nanoseconds.get() + rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #25 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn checked_add(self, rhs: Self) -> Option<Self> {
+  |         let mut seconds = const_try_opt!(self.seconds.checked_add(rhs.seconds));
+  |         let mut nanoseconds = self.nanoseconds.get() + rhs.nanoseconds.get();
+  | 
+  |         if nanoseconds >= Nanosecond::per(Second) as _ || seconds < 0 && nanoseconds > 0 {
+  |             nanoseconds -= Nanosecond::per(Second) as i32;
+  | 
+
+--[ Match #26 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!((-1.000_000_400).seconds().subsec_nanoseconds(), -400);
+  |     /// ```
+  |     pub const fn subsec_nanoseconds(self) -> i32 {
+  |         self.nanoseconds.get()
+  |     }
+  | 
+  |     /// Get the number of nanoseconds past the number of whole seconds.
+  | 
+
+--[ Match #27 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!((-1).nanoseconds().whole_nanoseconds(), -1);
+  |     /// ```
+  |     pub const fn whole_nanoseconds(self) -> i128 {
+  |         self.seconds as i128 * Nanosecond::per(Second) as i128 + self.nanoseconds.get() as i128
+  |     }
+  | 
+  |     /// Get the number of nanoseconds past the number of whole seconds.
+  | 
+
+--[ Match #28 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!((-1.0004).seconds().subsec_microseconds(), -400);
+  |     /// ```
+  |     pub const fn subsec_microseconds(self) -> i32 {
+  |         self.nanoseconds.get() / Nanosecond::per(Microsecond) as i32
+  |     }
+  | 
+  |     /// Get the number of nanoseconds in the duration.
+  | 
+
+--[ Match #29 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn whole_microseconds(self) -> i128 {
+  |         self.seconds as i128 * Microsecond::per(Second) as i128
+  |             + self.nanoseconds.get() as i128 / Nanosecond::per(Microsecond) as i128
+  |     }
+  | 
+  |     /// Get the number of microseconds past the number of whole seconds.
+  | 
+
+--[ Match #30 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     // Allow the lint, as the value is guaranteed to be less than 1000.
+  |     pub const fn subsec_milliseconds(self) -> i16 {
+  |         (self.nanoseconds.get() / Nanosecond::per(Millisecond) as i32) as _
+  |     }
+  | 
+  |     /// Get the number of whole microseconds in the duration.
+  | 
+
+--[ Match #31 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn whole_milliseconds(self) -> i128 {
+  |         self.seconds as i128 * Millisecond::per(Second) as i128
+  |             + self.nanoseconds.get() as i128 / Nanosecond::per(Millisecond) as i128
+  |     }
+  | 
+  |     /// Get the number of milliseconds past the number of whole seconds.
+  | 
+
+--[ Match #32 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!((-1.5).seconds().as_seconds_f32(), -1.5);
+  |     /// ```
+  |     pub fn as_seconds_f32(self) -> f32 {
+  |         self.seconds as f32 + self.nanoseconds.get() as f32 / Nanosecond::per(Second) as f32
+  |     }
+  | 
+  |     /// Get the number of whole milliseconds in the duration.
+  | 
+
+--[ Match #33 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!((-1.5).seconds().as_seconds_f64(), -1.5);
+  |     /// ```
+  |     pub fn as_seconds_f64(self) -> f64 {
+  |         self.seconds as f64 + self.nanoseconds.get() as f64 / Nanosecond::per(Second) as f64
+  |     }
+  | 
+  |     /// Get the number of fractional seconds in the duration.
+  | 
+
+--[ Match #34 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             // Safety: `nanoseconds` is positive with a minimum of -999,999,999, so subtracting a
+  |             // billion from it is guaranteed to result in an in-range value.
+  |             nanoseconds = unsafe {
+  |                 Nanoseconds::new_unchecked(nanoseconds.get() - Nanosecond::per(Second) as i32)
+  |             };
+  |         }
+  | 
+  | 
+
+--[ Match #35 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             nanoseconds = unsafe {
+  |                 Nanoseconds::new_unchecked(nanoseconds.get() + Nanosecond::per(Second) as i32)
+  |             };
+  |         } else if seconds < 0 && nanoseconds.get() > 0 {
+  |             // `seconds` cannot overflow here because it is negative.
+  |             seconds += 1;
+  |             // Safety: `nanoseconds` is positive with a minimum of -999,999,999, so subtracting a
+  | 
+
+--[ Match #36 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |             // Safety: `nanoseconds` is negative with a maximum of 999,999,999, so adding a billion
+  |             // to it is guaranteed to result in an in-range value.
+  |             nanoseconds = unsafe {
+  |                 Nanoseconds::new_unchecked(nanoseconds.get() + Nanosecond::per(Second) as i32)
+  |             };
+  |         } else if seconds < 0 && nanoseconds.get() > 0 {
+  |             // `seconds` cannot overflow here because it is negative.
+  | 
+
+--[ Match #37 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Create a new `Duration` with the provided seconds and nanoseconds.
+  |     pub(crate) const fn new_ranged(mut seconds: i64, mut nanoseconds: Nanoseconds) -> Self {
+  |         if seconds > 0 && nanoseconds.get() < 0 {
+  |             // `seconds` cannot overflow here because it is positive.
+  |             seconds -= 1;
+  |             // Safety: `nanoseconds` is negative with a maximum of 999,999,999, so adding a billion
+  | 
+
+--[ Match #38 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |         if seconds < 0 {
+  |             debug_assert!(nanoseconds.get() <= 0);
+  |         } else if seconds > 0 {
+  |             debug_assert!(nanoseconds.get() >= 0);
+  |         }
+  | 
+  |         Self {
+  | 
+
+--[ Match #39 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Create a new `Duration` without checking the validity of the components.
+  |     pub(crate) const fn new_ranged_unchecked(seconds: i64, nanoseconds: Nanoseconds) -> Self {
+  |         if seconds < 0 {
+  |             debug_assert!(nanoseconds.get() <= 0);
+  |         } else if seconds > 0 {
+  |             debug_assert!(nanoseconds.get() >= 0);
+  |         }
+  | 
+
+--[ Match #40 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn unsigned_abs(self) -> StdDuration {
+  |         StdDuration::new(
+  |             self.seconds.unsigned_abs(),
+  |             self.nanoseconds.get().unsigned_abs(),
+  |         )
+  |     }
+  |     // endregion abs
+  | 
+
+--[ Match #41 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!(-1).seconds().is_positive());
+  |     /// ```
+  |     pub const fn is_positive(self) -> bool {
+  |         self.seconds > 0 || self.nanoseconds.get() > 0
+  |     }
+  |     // endregion is_{sign}
+  | 
+  | 
+
+--[ Match #42 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!1.seconds().is_negative());
+  |     /// ```
+  |     pub const fn is_negative(self) -> bool {
+  |         self.seconds < 0 || self.nanoseconds.get() < 0
+  |     }
+  | 
+  |     /// Check if a duration is positive.
+  | 
+
+--[ Match #43 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\duration.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!1.nanoseconds().is_zero());
+  |     /// ```
+  |     pub const fn is_zero(self) -> bool {
+  |         self.seconds == 0 && self.nanoseconds.get() == 0
+  |     }
+  | 
+  |     /// Check if a duration is negative.
+  | 
+
+--[ Match #44 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date_time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         self.date
+  |     }
+  | 
+  |     pub const fn time(self) -> Time {
+  |         self.time
+  |     }
+  | 
+  | 
+
+--[ Match #45 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\date_time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         let seconds_within_day = timestamp.rem_euclid(Second::per(Day) as _);
+  |         // Safety: All values are in range.
+  |         let time = unsafe {
+  |             Time::__from_hms_nanos_unchecked(
+  |                 (seconds_within_day / Second::per(Hour) as i64) as _,
+  |                 ((seconds_within_day % Second::per(Hour) as i64) / Minute::per(Hour) as i64) as _,
+  | 
+
+--[ Match #46 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\format_description\well_known\iso8601.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// An [`Iso8601`] that handles only the date, but is otherwise the same as [`Config::DEFAULT`].
+  |     pub const DATE = Config::DEFAULT.set_formatted_components(FormattedComponents::Date);
+  |     /// An [`Iso8601`] that handles only the time, but is otherwise the same as [`Config::DEFAULT`].
+  |     pub const TIME = Config::DEFAULT.set_formatted_components(FormattedComponents::Time);
+  |     /// An [`Iso8601`] that handles only the UTC offset, but is otherwise the same as
+  |     /// [`Config::DEFAULT`].
+  |     pub const OFFSET = Config::DEFAULT.set_formatted_components(FormattedComponents::Offset);
+  | 
+
+--[ Match #47 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  |         let seconds = hour_diff as i64 * Second::per(Hour) as i64
+  |             + minute_diff as i64 * Second::per(Minute) as i64
+  | 
+
+--[ Match #48 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  |         let seconds = hour_diff as i64 * Second::per(Hour) as i64
+  |             + minute_diff as i64 * Second::per(Minute) as i64
+  | 
+
+--[ Match #49 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  |         let seconds = hour_diff as i64 * Second::per(Hour) as i64
+  | 
+
+--[ Match #50 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  |         let seconds = hour_diff as i64 * Second::per(Hour) as i64
+  | 
+
+--[ Match #51 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  | 
+
+--[ Match #52 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+  | 
+
+--[ Match #53 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(0:00) - time!(23:00), (-23).hours());
+  |     /// ```
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+
+--[ Match #54 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(0:00) - time!(23:00), (-23).hours());
+  |     /// ```
+  |     fn sub(self, rhs: Self) -> Self::Output {
+  |         let hour_diff = (self.hour.get() as i8) - (rhs.hour.get() as i8);
+  |         let minute_diff = (self.minute.get() as i8) - (rhs.minute.get() as i8);
+  |         let second_diff = (self.second.get() as i8) - (rhs.second.get() as i8);
+  |         let nanosecond_diff = (self.nanosecond.get() as i32) - (rhs.nanosecond.get() as i32);
+  | 
+
+--[ Match #55 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             ":",
+  |             self.minute.get() => width(2) fill('0'),
+  |             ":",
+  |             self.second.get() => width(2) fill('0'),
+  |             ".",
+  |         ) + subsecond_width;
+  | 
+  | 
+
+--[ Match #56 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let formatted_width = smart_display::padded_width_of!(
+  |             self.hour.get(),
+  |             ":",
+  |             self.minute.get() => width(2) fill('0'),
+  |             ":",
+  |             self.second.get() => width(2) fill('0'),
+  |             ".",
+  | 
+
+--[ Match #57 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         };
+  | 
+  |         let formatted_width = smart_display::padded_width_of!(
+  |             self.hour.get(),
+  |             ":",
+  |             self.minute.get() => width(2) fill('0'),
+  |             ":",
+  | 
+
+--[ Match #58 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.second.get() as i8 - (duration.as_secs() % Second::per(Minute) as u64) as i8;
+  |         let mut minute = self.minute.get() as i8
+  |             - ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as i8;
+  |         let mut hour = self.hour.get() as i8
+  |             - ((duration.as_secs() / Second::per(Hour) as u64) % Hour::per(Day) as u64) as i8;
+  |         let mut is_previous_day = false;
+  | 
+  | 
+
+--[ Match #59 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut nanosecond = self.nanosecond.get() as i32 - duration.subsec_nanos() as i32;
+  |         let mut second =
+  |             self.second.get() as i8 - (duration.as_secs() % Second::per(Minute) as u64) as i8;
+  |         let mut minute = self.minute.get() as i8
+  |             - ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as i8;
+  |         let mut hour = self.hour.get() as i8
+  |             - ((duration.as_secs() / Second::per(Hour) as u64) % Hour::per(Day) as u64) as i8;
+  | 
+
+--[ Match #60 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub(crate) const fn adjusting_sub_std(self, duration: StdDuration) -> (bool, Self) {
+  |         let mut nanosecond = self.nanosecond.get() as i32 - duration.subsec_nanos() as i32;
+  |         let mut second =
+  |             self.second.get() as i8 - (duration.as_secs() % Second::per(Minute) as u64) as i8;
+  |         let mut minute = self.minute.get() as i8
+  |             - ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as i8;
+  |         let mut hour = self.hour.get() as i8
+  | 
+
+--[ Match #61 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Subtract the sub-day time of the [`std::time::Duration`] to the `Time`. Wraps on overflow,
+  |     /// returning whether the date is the previous date as the first element of the tuple.
+  |     pub(crate) const fn adjusting_sub_std(self, duration: StdDuration) -> (bool, Self) {
+  |         let mut nanosecond = self.nanosecond.get() as i32 - duration.subsec_nanos() as i32;
+  |         let mut second =
+  |             self.second.get() as i8 - (duration.as_secs() % Second::per(Minute) as u64) as i8;
+  |         let mut minute = self.minute.get() as i8
+  | 
+
+--[ Match #62 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.second.get() + (duration.as_secs() % Second::per(Minute) as u64) as u8;
+  |         let mut minute = self.minute.get()
+  |             + ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as u8;
+  |         let mut hour = self.hour.get()
+  |             + ((duration.as_secs() / Second::per(Hour) as u64) % Hour::per(Day) as u64) as u8;
+  |         let mut is_next_day = false;
+  | 
+  | 
+
+--[ Match #63 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut nanosecond = self.nanosecond.get() + duration.subsec_nanos();
+  |         let mut second =
+  |             self.second.get() + (duration.as_secs() % Second::per(Minute) as u64) as u8;
+  |         let mut minute = self.minute.get()
+  |             + ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as u8;
+  |         let mut hour = self.hour.get()
+  |             + ((duration.as_secs() / Second::per(Hour) as u64) % Hour::per(Day) as u64) as u8;
+  | 
+
+--[ Match #64 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub(crate) const fn adjusting_add_std(self, duration: StdDuration) -> (bool, Self) {
+  |         let mut nanosecond = self.nanosecond.get() + duration.subsec_nanos();
+  |         let mut second =
+  |             self.second.get() + (duration.as_secs() % Second::per(Minute) as u64) as u8;
+  |         let mut minute = self.minute.get()
+  |             + ((duration.as_secs() / Second::per(Minute) as u64) % Minute::per(Hour) as u64) as u8;
+  |         let mut hour = self.hour.get()
+  | 
+
+--[ Match #65 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Add the sub-day time of the [`std::time::Duration`] to the `Time`. Wraps on overflow,
+  |     /// returning whether the date is the previous date as the first element of the tuple.
+  |     pub(crate) const fn adjusting_add_std(self, duration: StdDuration) -> (bool, Self) {
+  |         let mut nanosecond = self.nanosecond.get() + duration.subsec_nanos();
+  |         let mut second =
+  |             self.second.get() + (duration.as_secs() % Second::per(Minute) as u64) as u8;
+  |         let mut minute = self.minute.get()
+  | 
+
+--[ Match #66 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut minutes =
+  |             self.minute.get() as i8 - (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  |             self.hour.get() as i8 - (duration.whole_hours() % Hour::per(Day) as i64) as i8;
+  |         let mut date_adjustment = DateAdjustment::None;
+  | 
+  |         cascade!(nanoseconds in 0..Nanosecond::per(Second) as _ => seconds);
+  | 
+
+--[ Match #67 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut seconds =
+  |             self.second.get() as i8 - (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  |             self.minute.get() as i8 - (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  |             self.hour.get() as i8 - (duration.whole_hours() % Hour::per(Day) as i64) as i8;
+  |         let mut date_adjustment = DateAdjustment::None;
+  | 
+
+--[ Match #68 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub(crate) const fn adjusting_sub(self, duration: Duration) -> (DateAdjustment, Self) {
+  |         let mut nanoseconds = self.nanosecond.get() as i32 - duration.subsec_nanoseconds();
+  |         let mut seconds =
+  |             self.second.get() as i8 - (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  |             self.minute.get() as i8 - (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  | 
+
+--[ Match #69 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Subtract the sub-day time of the [`Duration`] to the `Time`. Wraps on overflow, returning
+  |     /// whether the date is different.
+  |     pub(crate) const fn adjusting_sub(self, duration: Duration) -> (DateAdjustment, Self) {
+  |         let mut nanoseconds = self.nanosecond.get() as i32 - duration.subsec_nanoseconds();
+  |         let mut seconds =
+  |             self.second.get() as i8 - (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  | 
+
+--[ Match #70 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut minutes =
+  |             self.minute.get() as i8 + (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  |             self.hour.get() as i8 + (duration.whole_hours() % Hour::per(Day) as i64) as i8;
+  |         let mut date_adjustment = DateAdjustment::None;
+  | 
+  |         cascade!(nanoseconds in 0..Nanosecond::per(Second) as _ => seconds);
+  | 
+
+--[ Match #71 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut seconds =
+  |             self.second.get() as i8 + (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  |             self.minute.get() as i8 + (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  |             self.hour.get() as i8 + (duration.whole_hours() % Hour::per(Day) as i64) as i8;
+  |         let mut date_adjustment = DateAdjustment::None;
+  | 
+
+--[ Match #72 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub(crate) const fn adjusting_add(self, duration: Duration) -> (DateAdjustment, Self) {
+  |         let mut nanoseconds = self.nanosecond.get() as i32 + duration.subsec_nanoseconds();
+  |         let mut seconds =
+  |             self.second.get() as i8 + (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  |             self.minute.get() as i8 + (duration.whole_minutes() % Minute::per(Hour) as i64) as i8;
+  |         let mut hours =
+  | 
+
+--[ Match #73 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Add the sub-day time of the [`Duration`] to the `Time`. Wraps on overflow, returning whether
+  |     /// the date is different.
+  |     pub(crate) const fn adjusting_add(self, duration: Duration) -> (DateAdjustment, Self) {
+  |         let mut nanoseconds = self.nanosecond.get() as i32 + duration.subsec_nanoseconds();
+  |         let mut seconds =
+  |             self.second.get() as i8 + (duration.whole_seconds() % Second::per(Minute) as i64) as i8;
+  |         let mut minutes =
+  | 
+
+--[ Match #74 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59.999_999_999).nanosecond(), 999_999_999);
+  |     /// ```
+  |     pub const fn nanosecond(self) -> u32 {
+  |         self.nanosecond.get()
+  |     }
+  |     // endregion getters
+  | 
+  | 
+
+--[ Match #75 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59.999_999).microsecond(), 999_999);
+  |     /// ```
+  |     pub const fn microsecond(self) -> u32 {
+  |         self.nanosecond.get() / Nanosecond::per(Microsecond) as u32
+  |     }
+  | 
+  |     /// Get the nanoseconds within the second.
+  | 
+
+--[ Match #76 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59.999).millisecond(), 999);
+  |     /// ```
+  |     pub const fn millisecond(self) -> u16 {
+  |         (self.nanosecond.get() / Nanosecond::per(Millisecond)) as _
+  |     }
+  | 
+  |     /// Get the microseconds within the second.
+  | 
+
+--[ Match #77 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).second(), 59);
+  |     /// ```
+  |     pub const fn second(self) -> u8 {
+  |         self.second.get()
+  |     }
+  | 
+  |     /// Get the milliseconds within the second.
+  | 
+
+--[ Match #78 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).minute(), 59);
+  |     /// ```
+  |     pub const fn minute(self) -> u8 {
+  |         self.minute.get()
+  |     }
+  | 
+  |     /// Get the second within the minute.
+  | 
+
+--[ Match #79 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).hour(), 23);
+  |     /// ```
+  |     pub const fn hour(self) -> u8 {
+  |         self.hour.get()
+  |     }
+  | 
+  |     /// Get the minute within the hour.
+  | 
+
+--[ Match #80 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get(),
+  |         )
+  |     }
+  | 
+  | 
+
+--[ Match #81 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get(),
+  |         )
+  |     }
+  | 
+
+--[ Match #82 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn as_hms_nano(self) -> (u8, u8, u8, u32) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get(),
+  |         )
+  | 
+
+--[ Match #83 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn as_hms_nano(self) -> (u8, u8, u8, u32) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get(),
+  | 
+
+--[ Match #84 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get() / Nanosecond::per(Microsecond) as u32,
+  |         )
+  |     }
+  | 
+  | 
+
+--[ Match #85 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get() / Nanosecond::per(Microsecond) as u32,
+  |         )
+  |     }
+  | 
+
+--[ Match #86 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn as_hms_micro(self) -> (u8, u8, u8, u32) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get() / Nanosecond::per(Microsecond) as u32,
+  |         )
+  | 
+
+--[ Match #87 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn as_hms_micro(self) -> (u8, u8, u8, u32) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             self.nanosecond.get() / Nanosecond::per(Microsecond) as u32,
+  | 
+
+--[ Match #88 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             (self.nanosecond.get() / Nanosecond::per(Millisecond)) as u16,
+  |         )
+  |     }
+  | 
+  | 
+
+--[ Match #89 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             (self.nanosecond.get() / Nanosecond::per(Millisecond)) as u16,
+  |         )
+  |     }
+  | 
+
+--[ Match #90 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn as_hms_milli(self) -> (u8, u8, u8, u16) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             (self.nanosecond.get() / Nanosecond::per(Millisecond)) as u16,
+  |         )
+  | 
+
+--[ Match #91 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// ```
+  |     pub const fn as_hms_milli(self) -> (u8, u8, u8, u16) {
+  |         (
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             (self.nanosecond.get() / Nanosecond::per(Millisecond)) as u16,
+  | 
+
+--[ Match #92 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).as_hms(), (23, 59, 59));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (u8, u8, u8) {
+  |         (self.hour.get(), self.minute.get(), self.second.get())
+  |     }
+  | 
+  |     /// Get the clock hour, minute, second, and millisecond.
+  | 
+
+--[ Match #93 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).as_hms(), (23, 59, 59));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (u8, u8, u8) {
+  |         (self.hour.get(), self.minute.get(), self.second.get())
+  |     }
+  | 
+  |     /// Get the clock hour, minute, second, and millisecond.
+  | 
+
+--[ Match #94 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(time!(23:59:59).as_hms(), (23, 59, 59));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (u8, u8, u8) {
+  |         (self.hour.get(), self.minute.get(), self.second.get())
+  |     }
+  | 
+  |     /// Get the clock hour, minute, second, and millisecond.
+  | 
+
+--[ Match #95 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             nano_bytes[3],
+  |             self.second.get(),
+  |             self.minute.get(),
+  |             self.hour.get(),
+  |             self.padding as u8,
+  |         ]);
+  |     }
+  | 
+
+--[ Match #96 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             nano_bytes[2],
+  |             nano_bytes[3],
+  |             self.second.get(),
+  |             self.minute.get(),
+  |             self.hour.get(),
+  |             self.padding as u8,
+  |         ]);
+  | 
+
+--[ Match #97 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             nano_bytes[1],
+  |             nano_bytes[2],
+  |             nano_bytes[3],
+  |             self.second.get(),
+  |             self.minute.get(),
+  |             self.hour.get(),
+  |             self.padding as u8,
+  | 
+
+--[ Match #98 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |             self.padding as u8,
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             nano_bytes[0],
+  |             nano_bytes[1],
+  |             nano_bytes[2],
+  | 
+
+--[ Match #99 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         return u64::from_be_bytes([
+  |             self.padding as u8,
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             nano_bytes[0],
+  |             nano_bytes[1],
+  | 
+
+--[ Match #100 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |         #[cfg(target_endian = "big")]
+  |         return u64::from_be_bytes([
+  |             self.padding as u8,
+  |             self.hour.get(),
+  |             self.minute.get(),
+  |             self.second.get(),
+  |             nano_bytes[0],
+  | 
+
+--[ Match #101 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \.(request|post|get)\(
+  |     ///
+  |     /// This representation can be used to do comparisons equality testing or hashing.
+  |     const fn as_u64(self) -> u64 {
+  |         let nano_bytes = self.nanosecond.get().to_ne_bytes();
+  | 
+  |         #[cfg(target_endian = "big")]
+  |         return u64::from_be_bytes([
+  | 
+
+--[ Match #102 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | impl_sub_assign!(Time: Duration, StdDuration);
+  | 
+  | impl Sub for Time {
+  |     type Output = Duration;
+  | 
+  |     /// Subtract two `Time`s, returning the [`Duration`] between. This assumes both `Time`s are in
+  | 
+
+--[ Match #103 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl Sub<StdDuration> for Time {
+  |     type Output = Self;
+  | 
+  |     /// Subtract the sub-day time of the [`std::time::Duration`] from the `Time`. Wraps on overflow.
+  | 
+
+--[ Match #104 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | impl_add_assign!(Time: Duration, StdDuration);
+  | 
+  | impl Sub<Duration> for Time {
+  |     type Output = Self;
+  | 
+  |     /// Subtract the sub-day time of the [`Duration`] from the `Time`. Wraps on overflow.
+  | 
+
+--[ Match #105 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl Add<StdDuration> for Time {
+  |     type Output = Self;
+  | 
+  |     /// Add the sub-day time of the [`std::time::Duration`] to the `Time`. Wraps on overflow.
+  | 
+
+--[ Match #106 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | // endregion formatting & parsing
+  | 
+  | // region: trait impls
+  | impl Add<Duration> for Time {
+  |     type Output = Self;
+  | 
+  |     /// Add the sub-day time of the [`Duration`] to the `Time`. Wraps on overflow.
+  | 
+
+--[ Match #107 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl fmt::Debug for Time {
+  |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+  |         fmt::Display::fmt(self, f)
+  |     }
+  | 
+
+--[ Match #108 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl fmt::Display for Time {
+  |     fn fmt(&self, f: &mut fmt::Formatter<'_>) -> fmt::Result {
+  |         SmartDisplay::fmt(self, f)
+  |     }
+  | 
+
+--[ Match #109 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | }
+  | use private::TimeMetadata;
+  | 
+  | impl SmartDisplay for Time {
+  |     type Metadata = TimeMetadata;
+  | 
+  |     fn metadata(&self, _: FormatterOptions) -> Metadata<Self> {
+  | 
+
+--[ Match #110 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | }
+  | 
+  | #[cfg(feature = "parsing")]
+  | impl Time {
+  |     /// Parse a `Time` from the input using the provided [format
+  |     /// description](crate::format_description).
+  |     ///
+  | 
+
+--[ Match #111 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | // region: formatting & parsing
+  | #[cfg(feature = "formatting")]
+  | impl Time {
+  |     /// Format the `Time` using the provided [format description](crate::format_description).
+  |     pub fn format_into(
+  |         self,
+  | 
+
+--[ Match #112 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl Time {
+  |     /// Provides an u64 based representation **of the correct endianness**
+  |     ///
+  |     /// This representation can be used to do comparisons equality testing or hashing.
+  | 
+
+--[ Match #113 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl Ord for Time {
+  |     fn cmp(&self, other: &Self) -> core::cmp::Ordering {
+  |         self.as_u64().cmp(&other.as_u64())
+  |     }
+  | 
+
+--[ Match #114 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl PartialOrd for Time {
+  |     fn partial_cmp(&self, other: &Self) -> Option<core::cmp::Ordering> {
+  |         Some(self.cmp(other))
+  |     }
+  | 
+
+--[ Match #115 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl PartialEq for Time {
+  |     fn eq(&self, other: &Self) -> bool {
+  |         self.as_u64().eq(&other.as_u64())
+  |     }
+  | 
+
+--[ Match #116 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     nanosecond: Nanoseconds,
+  | }
+  | 
+  | impl core::hash::Hash for Time {
+  |     fn hash<H: core::hash::Hasher>(&self, state: &mut H) {
+  |         self.as_u64().hash(state)
+  |     }
+  | 
+
+--[ Match #117 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | /// When comparing two `Time`s, they are assumed to be in the same calendar date.
+  | #[derive(Clone, Copy, Eq)]
+  | #[repr(C)]
+  | pub struct Time {
+  |     // The order of this struct's fields matter!
+  |     // Do not change them.
+  | 
+  | 
+
+--[ Match #118 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\component.rs
+   Pattern: \.(request|post|get)\(
+  |     modifiers: modifier::Ignore,
+  | ) -> Option<ParsedItem<'_, ()>> {
+  |     let modifier::Ignore { count } = modifiers;
+  |     let input = input.get((count.get() as usize)..)?;
+  |     Some(ParsedItem(input, ()))
+  | }
+  | 
+  | 
+
+--[ Match #119 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\component.rs
+   Pattern: \.(request|post|get)\(
+  |     modifiers: modifier::Ignore,
+  | ) -> Option<ParsedItem<'_, ()>> {
+  |     let modifier::Ignore { count } = modifiers;
+  |     let input = input.get((count.get() as usize)..)?;
+  |     Some(ParsedItem(input, ()))
+  | }
+  | 
+  | 
+
+--[ Match #120 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\formatting\mod.rs
+   Pattern: \.(request|post|get)\(
+  | ) -> io::Result<usize> {
+  |     match digits_after_decimal {
+  |         Some(digits_after_decimal) => {
+  |             let digits_after_decimal = digits_after_decimal.get() as usize;
+  |             let width = digits_before_decimal as usize + 1 + digits_after_decimal;
+  |             write!(output, "{value:0>width$.digits_after_decimal$}")?;
+  |             Ok(width)
+  | 
+
+--[ Match #121 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\LICENSE-Apache
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    Licensed under the Apache License, Version 2.0 (the "License");
+  |    you may not use this file except in compliance with the License.
+  |    You may obtain a copy of the License at
+  | 
+  |        http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #122 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\LICENSE-Apache
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |           distribution, then any Derivative Works that You distribute must
+  |           include a readable copy of the attribution notices contained
+  |           within such NOTICE file, excluding those notices that do not
+  |           pertain to any part of the Derivative Works, in at least one
+  |           of the following places: within a NOTICE text file distributed
+  |           as part of the Derivative Works; within the Source form or
+  |           documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #123 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\LICENSE-Apache
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       the copyright owner. For the purposes of this definition, "submitted"
+  |       means any form of electronic, verbal, or written communication sent
+  |       to the Licensor or its representatives, including but not limited to
+  |       communication on electronic mailing lists, source code control systems,
+  |       and issue tracking systems that are managed by, or on behalf of, the
+  |       Licensor for the purpose of discussing and improving the Work, but
+  |       excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #124 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\LICENSE-Apache
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |       "Legal Entity" shall mean the union of the acting entity and all
+  |       other entities that control, are controlled by, or are under common
+  |       control with that entity. For the purposes of this definition,
+  |       "control" means (i) the power, direct or indirect, to cause the
+  |       direction or management of such entity, whether by contract or
+  |       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #125 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\LICENSE-Apache
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       with Licensor regarding such Contributions.
+  | 
+  |    6. Trademarks. This License does not grant permission to use the trade
+  |       names, trademarks, service marks, or product names of the Licensor,
+  |       except as required for reasonable and customary use in describing the
+  |       origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #126 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let date = Month::from_number(month)
+  |             .and_then(|month| Date::from_calendar_date(year as _, month, day))
+  |             .map_err(TryFromParsed::ComponentRange)?;
+  |         let time = Time::from_hms_nano(hour, minute, second, nanosecond)
+  |             .map_err(TryFromParsed::ComponentRange)?;
+  |         let offset = maybe_offset_from_offset::<O>(offset);
+  |         let dt = DateTime { date, time, offset };
+  | 
+
+--[ Match #127 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             any_digit, ascii_char, ascii_char_ignore_case, exactly_n_digits, sign,
+  |         };
+  | 
+  |         let dash = ascii_char::<b'-'>;
+  |         let colon = ascii_char::<b':'>;
+  | 
+  |         let ParsedItem(input, year) =
+  | 
+
+--[ Match #128 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             any_digit, ascii_char, ascii_char_ignore_case, exactly_n_digits, sign,
+  |         };
+  | 
+  |         let dash = ascii_char::<b'-'>;
+  |         let colon = ascii_char::<b':'>;
+  | 
+  |         let input = exactly_n_digits::<4, u32>(input)
+  | 
+
+--[ Match #129 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         let dt = (|| {
+  |             let date = Date::from_calendar_date(year as _, month, day)?;
+  |             let time = Time::from_hms_nano(hour, minute, second, nanosecond)?;
+  |             let offset = UtcOffset::from_hms(offset_hour, offset_minute, 0)?;
+  |             Ok(DateTime {
+  |                 date,
+  | 
+
+--[ Match #130 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             } => {
+  |                 write!(
+  |                     f,
+  |                     "{what} is not supported in {context} at byte index {index}"
+  |                 )
+  |             }
+  |         }
+  | 
+
+--[ Match #131 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 what: expected,
+  |                 index,
+  |             } => {
+  |                 write!(f, "expected {expected} at byte index {index}")
+  |             }
+  |             NotSupported {
+  |                 what,
+  | 
+
+--[ Match #132 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             MissingRequiredModifier { name, index } => {
+  |                 write!(
+  |                     f,
+  |                     "missing required modifier `{name}` for component at byte index {index}"
+  |                 )
+  |             }
+  |             Expected {
+  | 
+
+--[ Match #133 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 write!(f, "invalid modifier `{value}` at byte index {index}")
+  |             }
+  |             MissingComponentName { index } => {
+  |                 write!(f, "missing component name at byte index {index}")
+  |             }
+  |             MissingRequiredModifier { name, index } => {
+  |                 write!(
+  | 
+
+--[ Match #134 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 write!(f, "invalid component name `{name}` at byte index {index}")
+  |             }
+  |             InvalidModifier { value, index } => {
+  |                 write!(f, "invalid modifier `{value}` at byte index {index}")
+  |             }
+  |             MissingComponentName { index } => {
+  |                 write!(f, "missing component name at byte index {index}")
+  | 
+
+--[ Match #135 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 write!(f, "unclosed opening bracket at byte index {index}")
+  |             }
+  |             InvalidComponentName { name, index } => {
+  |                 write!(f, "invalid component name `{name}` at byte index {index}")
+  |             }
+  |             InvalidModifier { value, index } => {
+  |                 write!(f, "invalid modifier `{value}` at byte index {index}")
+  | 
+
+--[ Match #136 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\error\invalid_format_description.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         use InvalidFormatDescription::*;
+  |         match self {
+  |             UnclosedOpeningBracket { index } => {
+  |                 write!(f, "unclosed opening bracket at byte index {index}")
+  |             }
+  |             InvalidComponentName { name, index } => {
+  |                 write!(f, "invalid component name `{name}` at byte index {index}")
+  | 
+
+--[ Match #137 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |                 return Err(crate::error::ComponentRange {
+  |                     name: stringify!($value),
+  |                     minimum: $type::MIN.get() as i64 / $factor as i64,
+  |                     maximum: $type::MAX.get() as i64 / $factor as i64,
+  |                     value: $value as _,
+  |                     conditional_range: false,
+  |                 });
+  | 
+
+--[ Match #138 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |             None => {
+  |                 return Err(crate::error::ComponentRange {
+  |                     name: stringify!($value),
+  |                     minimum: $type::MIN.get() as i64 / $factor as i64,
+  |                     maximum: $type::MAX.get() as i64 / $factor as i64,
+  |                     value: $value as _,
+  |                     conditional_range: false,
+  | 
+
+--[ Match #139 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |                     return Err(crate::error::ComponentRange {
+  |                         name: stringify!($value),
+  |                         minimum: $type::MIN.get() as i64 / $factor as i64,
+  |                         maximum: $type::MAX.get() as i64 / $factor as i64,
+  |                         value: $value as _,
+  |                         conditional_range: false,
+  |                     });
+  | 
+
+--[ Match #140 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |                     #[allow(trivial_numeric_casts)]
+  |                     return Err(crate::error::ComponentRange {
+  |                         name: stringify!($value),
+  |                         minimum: $type::MIN.get() as i64 / $factor as i64,
+  |                         maximum: $type::MAX.get() as i64 / $factor as i64,
+  |                         value: $value as _,
+  |                         conditional_range: false,
+  | 
+
+--[ Match #141 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |                 return Err(crate::error::ComponentRange {
+  |                     name: stringify!($value),
+  |                     minimum: $type::MIN.get() as _,
+  |                     maximum: $type::MAX.get() as _,
+  |                     value: $value as _,
+  |                     conditional_range: false,
+  |                 });
+  | 
+
+--[ Match #142 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\internal_macros.rs
+   Pattern: \.(request|post|get)\(
+  |                 #[allow(trivial_numeric_casts)]
+  |                 return Err(crate::error::ComponentRange {
+  |                     name: stringify!($value),
+  |                     minimum: $type::MIN.get() as _,
+  |                     maximum: $type::MAX.get() as _,
+  |                     value: $value as _,
+  |                     conditional_range: false,
+  | 
+
+--[ Match #143 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\serde\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl<'a> Deserialize<'a> for Time {
+  |     fn deserialize<D: Deserializer<'a>>(deserializer: D) -> Result<Self, D::Error> {
+  |         if cfg!(feature = "serde-human-readable") && deserializer.is_human_readable() {
+  |             deserializer.deserialize_any(Visitor::<Self>(PhantomData))
+  | 
+
+--[ Match #144 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\serde\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     FormatItem::Component(Component::Subsecond(<modifier::Subsecond>::default())),
+  | ];
+  | 
+  | impl Serialize for Time {
+  |     fn serialize<S: Serializer>(&self, serializer: S) -> Result<S::Ok, S::Error> {
+  |         #[cfg(feature = "serde-human-readable")]
+  |         if serializer.is_human_readable() {
+  | 
+
+--[ Match #145 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_negative());
+  |     /// ```
+  |     pub const fn is_negative(self) -> bool {
+  |         self.hours.get() < 0 || self.minutes.get() < 0 || self.seconds.get() < 0
+  |     }
+  |     // endregion is_{sign}
+  | 
+  | 
+
+--[ Match #146 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_negative());
+  |     /// ```
+  |     pub const fn is_negative(self) -> bool {
+  |         self.hours.get() < 0 || self.minutes.get() < 0 || self.seconds.get() < 0
+  |     }
+  |     // endregion is_{sign}
+  | 
+  | 
+
+--[ Match #147 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_negative());
+  |     /// ```
+  |     pub const fn is_negative(self) -> bool {
+  |         self.hours.get() < 0 || self.minutes.get() < 0 || self.seconds.get() < 0
+  |     }
+  |     // endregion is_{sign}
+  | 
+  | 
+
+--[ Match #148 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_positive());
+  |     /// ```
+  |     pub const fn is_positive(self) -> bool {
+  |         self.hours.get() > 0 || self.minutes.get() > 0 || self.seconds.get() > 0
+  |     }
+  | 
+  |     /// Check if the offset is negative, or west of UTC.
+  | 
+
+--[ Match #149 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_positive());
+  |     /// ```
+  |     pub const fn is_positive(self) -> bool {
+  |         self.hours.get() > 0 || self.minutes.get() > 0 || self.seconds.get() > 0
+  |     }
+  | 
+  |     /// Check if the offset is negative, or west of UTC.
+  | 
+
+--[ Match #150 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(!offset!(UTC).is_positive());
+  |     /// ```
+  |     pub const fn is_positive(self) -> bool {
+  |         self.hours.get() > 0 || self.minutes.get() > 0 || self.seconds.get() > 0
+  |     }
+  | 
+  |     /// Check if the offset is negative, or west of UTC.
+  | 
+
+--[ Match #151 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(offset!(UTC).is_utc());
+  |     /// ```
+  |     pub const fn is_utc(self) -> bool {
+  |         self.hours.get() == 0 && self.minutes.get() == 0 && self.seconds.get() == 0
+  |     }
+  | 
+  |     /// Check if the offset is positive, or east of UTC.
+  | 
+
+--[ Match #152 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(offset!(UTC).is_utc());
+  |     /// ```
+  |     pub const fn is_utc(self) -> bool {
+  |         self.hours.get() == 0 && self.minutes.get() == 0 && self.seconds.get() == 0
+  |     }
+  | 
+  |     /// Check if the offset is positive, or east of UTC.
+  | 
+
+--[ Match #153 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert!(offset!(UTC).is_utc());
+  |     /// ```
+  |     pub const fn is_utc(self) -> bool {
+  |         self.hours.get() == 0 && self.minutes.get() == 0 && self.seconds.get() == 0
+  |     }
+  | 
+  |     /// Check if the offset is positive, or east of UTC.
+  | 
+
+--[ Match #154 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).seconds_past_minute(), -3);
+  |     /// ```
+  |     pub const fn seconds_past_minute(self) -> i8 {
+  |         self.seconds.get()
+  |     }
+  |     // endregion getters
+  | 
+  | 
+
+--[ Match #155 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn whole_seconds(self) -> i32 {
+  |         self.hours.get() as i32 * Second::per(Hour) as i32
+  |             + self.minutes.get() as i32 * Second::per(Minute) as i32
+  |             + self.seconds.get() as i32
+  |     }
+  | 
+  |     /// Obtain the number of seconds past the minute the offset is from UTC. A positive value
+  | 
+
+--[ Match #156 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     // would let them construct a `Duration` directly.
+  |     pub const fn whole_seconds(self) -> i32 {
+  |         self.hours.get() as i32 * Second::per(Hour) as i32
+  |             + self.minutes.get() as i32 * Second::per(Minute) as i32
+  |             + self.seconds.get() as i32
+  |     }
+  | 
+  | 
+
+--[ Match #157 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     // This may be useful for anyone manually implementing arithmetic, as it
+  |     // would let them construct a `Duration` directly.
+  |     pub const fn whole_seconds(self) -> i32 {
+  |         self.hours.get() as i32 * Second::per(Hour) as i32
+  |             + self.minutes.get() as i32 * Second::per(Minute) as i32
+  |             + self.seconds.get() as i32
+  |     }
+  | 
+
+--[ Match #158 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).minutes_past_hour(), -2);
+  |     /// ```
+  |     pub const fn minutes_past_hour(self) -> i8 {
+  |         self.minutes.get()
+  |     }
+  | 
+  |     /// Obtain the number of whole seconds the offset is from UTC. A positive value indicates an
+  | 
+
+--[ Match #159 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).whole_minutes(), -62);
+  |     /// ```
+  |     pub const fn whole_minutes(self) -> i16 {
+  |         self.hours.get() as i16 * Minute::per(Hour) as i16 + self.minutes.get() as i16
+  |     }
+  | 
+  |     /// Obtain the number of minutes past the hour the offset is from UTC. A positive value
+  | 
+
+--[ Match #160 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).whole_minutes(), -62);
+  |     /// ```
+  |     pub const fn whole_minutes(self) -> i16 {
+  |         self.hours.get() as i16 * Minute::per(Hour) as i16 + self.minutes.get() as i16
+  |     }
+  | 
+  |     /// Obtain the number of minutes past the hour the offset is from UTC. A positive value
+  | 
+
+--[ Match #161 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).whole_hours(), -1);
+  |     /// ```
+  |     pub const fn whole_hours(self) -> i8 {
+  |         self.hours.get()
+  |     }
+  | 
+  |     /// Obtain the number of whole minutes the offset is from UTC. A positive value indicates an
+  | 
+
+--[ Match #162 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).as_hms(), (-1, -2, -3));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (i8, i8, i8) {
+  |         (self.hours.get(), self.minutes.get(), self.seconds.get())
+  |     }
+  | 
+  |     /// Obtain the UTC offset as its hours, minutes, and seconds. The sign of all three components
+  | 
+
+--[ Match #163 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).as_hms(), (-1, -2, -3));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (i8, i8, i8) {
+  |         (self.hours.get(), self.minutes.get(), self.seconds.get())
+  |     }
+  | 
+  |     /// Obtain the UTC offset as its hours, minutes, and seconds. The sign of all three components
+  | 
+
+--[ Match #164 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(offset!(-1:02:03).as_hms(), (-1, -2, -3));
+  |     /// ```
+  |     pub const fn as_hms(self) -> (i8, i8, i8) {
+  |         (self.hours.get(), self.minutes.get(), self.seconds.get())
+  |     }
+  | 
+  |     /// Obtain the UTC offset as its hours, minutes, and seconds. The sign of all three components
+  | 
+
+--[ Match #165 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             {
+  |                 Hours::MAX.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MAX.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MAX.get() as i32
+  |             },
+  |         >;
+  |         ensure_ranged!(WholeSeconds: seconds);
+  | 
+
+--[ Match #166 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             },
+  |             {
+  |                 Hours::MAX.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MAX.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MAX.get() as i32
+  |             },
+  |         >;
+  | 
+
+--[ Match #167 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |                     + Seconds::MIN.get() as i32
+  |             },
+  |             {
+  |                 Hours::MAX.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MAX.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MAX.get() as i32
+  |             },
+  | 
+
+--[ Match #168 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             {
+  |                 Hours::MIN.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MIN.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MIN.get() as i32
+  |             },
+  |             {
+  |                 Hours::MAX.get() as i32 * Second::per(Hour) as i32
+  | 
+
+--[ Match #169 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         type WholeSeconds = RangedI32<
+  |             {
+  |                 Hours::MIN.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MIN.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MIN.get() as i32
+  |             },
+  |             {
+  | 
+
+--[ Match #170 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     pub const fn from_whole_seconds(seconds: i32) -> Result<Self, error::ComponentRange> {
+  |         type WholeSeconds = RangedI32<
+  |             {
+  |                 Hours::MIN.get() as i32 * Second::per(Hour) as i32
+  |                     + Minutes::MIN.get() as i32 * Second::per(Minute) as i32
+  |                     + Seconds::MIN.get() as i32
+  |             },
+  | 
+
+--[ Match #171 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  |             seconds = seconds.neg();
+  |         }
+  | 
+
+--[ Match #172 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  |             seconds = seconds.neg();
+  |         }
+  | 
+
+--[ Match #173 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  |             seconds = seconds.neg();
+  | 
+
+--[ Match #174 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  |             seconds = seconds.neg();
+  | 
+
+--[ Match #175 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  | 
+
+--[ Match #176 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  |         {
+  | 
+
+--[ Match #177 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  | 
+
+--[ Match #178 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  |             || (hours.get() < 0 && seconds.get() > 0)
+  |             || (minutes.get() > 0 && seconds.get() < 0)
+  |             || (minutes.get() < 0 && seconds.get() > 0)
+  | 
+
+--[ Match #179 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         mut minutes: Minutes,
+  |         mut seconds: Seconds,
+  |     ) -> Self {
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  | 
+
+--[ Match #180 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         mut minutes: Minutes,
+  |         mut seconds: Seconds,
+  |     ) -> Self {
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  | 
+
+--[ Match #181 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         mut minutes: Minutes,
+  |         mut seconds: Seconds,
+  |     ) -> Self {
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  | 
+
+--[ Match #182 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         mut minutes: Minutes,
+  |         mut seconds: Seconds,
+  |     ) -> Self {
+  |         if (hours.get() > 0 && minutes.get() < 0) || (hours.get() < 0 && minutes.get() > 0) {
+  |             minutes = minutes.neg();
+  |         }
+  |         if (hours.get() > 0 && seconds.get() < 0)
+  | 
+
+--[ Match #183 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if minutes.get() < 0 {
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if minutes.get() > 0 {
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  | 
+  |         Self {
+  | 
+
+--[ Match #184 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  |         if minutes.get() < 0 {
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if minutes.get() > 0 {
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  | 
+  | 
+
+--[ Match #185 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  |         if minutes.get() < 0 {
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if minutes.get() > 0 {
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  | 
+
+--[ Match #186 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             debug_assert!(minutes.get() >= 0);
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  |         if minutes.get() < 0 {
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if minutes.get() > 0 {
+  |             debug_assert!(seconds.get() >= 0);
+  | 
+
+--[ Match #187 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  |             debug_assert!(minutes.get() >= 0);
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  |         if minutes.get() < 0 {
+  |             debug_assert!(seconds.get() <= 0);
+  | 
+
+--[ Match #188 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |             debug_assert!(minutes.get() <= 0);
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  |             debug_assert!(minutes.get() >= 0);
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  |         if minutes.get() < 0 {
+  | 
+
+--[ Match #189 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         if hours.get() < 0 {
+  |             debug_assert!(minutes.get() <= 0);
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  |             debug_assert!(minutes.get() >= 0);
+  |             debug_assert!(seconds.get() >= 0);
+  |         }
+  | 
+
+--[ Match #190 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |     ) -> Self {
+  |         if hours.get() < 0 {
+  |             debug_assert!(minutes.get() <= 0);
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  |             debug_assert!(minutes.get() >= 0);
+  |             debug_assert!(seconds.get() >= 0);
+  | 
+
+--[ Match #191 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         seconds: Seconds,
+  |     ) -> Self {
+  |         if hours.get() < 0 {
+  |             debug_assert!(minutes.get() <= 0);
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  |             debug_assert!(minutes.get() >= 0);
+  | 
+
+--[ Match #192 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\utc_offset.rs
+   Pattern: \.(request|post|get)\(
+  |         minutes: Minutes,
+  |         seconds: Seconds,
+  |     ) -> Self {
+  |         if hours.get() < 0 {
+  |             debug_assert!(minutes.get() <= 0);
+  |             debug_assert!(seconds.get() <= 0);
+  |         } else if hours.get() > 0 {
+  | 
+
+--[ Match #193 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\rand.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | use crate::{Date, Duration, Month, OffsetDateTime, PrimitiveDateTime, Time, UtcOffset, Weekday};
+  | 
+  | impl Distribution<Time> for Standard {
+  |     fn sample<R: Rng + ?Sized>(&self, rng: &mut R) -> Time {
+  |         Time::from_hms_nanos_ranged(rng.gen(), rng.gen(), rng.gen(), rng.gen())
+  |     }
+  | }
+  | 
+
+--[ Match #194 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\formatting\formattable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             bytes += iso8601::format_date::<CONFIG>(output, date)?;
+  |         }
+  |         if Self::FORMAT_TIME {
+  |             let time = time.ok_or(error::Format::InsufficientTypeInformation)?;
+  |             bytes += iso8601::format_time::<CONFIG>(output, time)?;
+  |         }
+  |         if Self::FORMAT_OFFSET {
+  | 
+
+--[ Match #195 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\formatting\formattable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         offset: Option<UtcOffset>,
+  |     ) -> Result<usize, error::Format> {
+  |         let date = date.ok_or(error::Format::InsufficientTypeInformation)?;
+  |         let time = time.ok_or(error::Format::InsufficientTypeInformation)?;
+  |         let offset = offset.ok_or(error::Format::InsufficientTypeInformation)?;
+  | 
+  |         let mut bytes = 0;
+  | 
+
+--[ Match #196 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\formatting\formattable.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         offset: Option<UtcOffset>,
+  |     ) -> Result<usize, error::Format> {
+  |         let date = date.ok_or(error::Format::InsufficientTypeInformation)?;
+  |         let time = time.ok_or(error::Format::InsufficientTypeInformation)?;
+  |         let offset = offset.ok_or(error::Format::InsufficientTypeInformation)?;
+  | 
+  |         let mut bytes = 0;
+  | 
+
+--[ Match #197 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\quickcheck.rs
+   Pattern: \.(request|post|get)\(
+  |                 .map(|(mut nanoseconds, seconds)| {
+  |                     // Coerce the sign if necessary.
+  |                     if (seconds > 0 && nanoseconds.get() < 0)
+  |                         || (seconds < 0 && nanoseconds.get() > 0)
+  |                     {
+  |                         nanoseconds = nanoseconds.neg();
+  |                     }
+  | 
+
+--[ Match #198 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\quickcheck.rs
+   Pattern: \.(request|post|get)\(
+  |                 .shrink()
+  |                 .map(|(mut nanoseconds, seconds)| {
+  |                     // Coerce the sign if necessary.
+  |                     if (seconds > 0 && nanoseconds.get() < 0)
+  |                         || (seconds < 0 && nanoseconds.get() > 0)
+  |                     {
+  |                         nanoseconds = nanoseconds.neg();
+  | 
+
+--[ Match #199 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\quickcheck.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl Arbitrary for Time {
+  |     fn arbitrary(g: &mut Gen) -> Self {
+  |         Self::from_hms_nanos_ranged(
+  |             <_>::arbitrary(g),
+  | 
+
+--[ Match #200 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\Cargo.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     "LICENSE-*",
+  |     "README.md",
+  | ]
+  | description = "Date and time library. Fully interoperable with the standard library. Mostly compatib
+  | homepage = "https://time-rs.github.io"
+  | readme = "README.md"
+  | keywords = [
+  | 
+
+--[ Match #201 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\primitive_date_time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// # use time_macros::{datetime, time};
+  |     /// assert_eq!(datetime!(2019-01-01 0:00).time(), time!(0:00));
+  |     /// ```
+  |     pub const fn time(self) -> Time {
+  |         self.0.time()
+  |     }
+  |     // endregion component getters
+  | 
+
+--[ Match #202 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\offset_date_time.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     ///     time!(23:00)
+  |     /// );
+  |     /// ```
+  |     pub const fn time(self) -> Time {
+  |         self.0.time()
+  |     }
+  | 
+  | 
+
+--[ Match #203 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ]
+  | readme = "../README.md"
+  | license = "MIT OR Apache-2.0"
+  | description = "Date and time library. Fully interoperable with the standard library. Mostly compatib
+  | include = ["src/**/*", "LICENSE-*", "README.md"]
+  | 
+  | [lib]
+  | 
+
+--[ Match #204 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |             (_, Some(hour), Some(false)) if hour.get() == 12 => 0,
+  |             (_, Some(hour), Some(true)) if hour.get() == 12 => 12,
+  |             (_, Some(hour), Some(false)) => hour.get(),
+  |             (_, Some(hour), Some(true)) => hour.get() + 12,
+  |             _ => return Err(InsufficientInformation),
+  |         };
+  | 
+  | 
+
+--[ Match #205 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |             (Some(hour), _, _) => hour,
+  |             (_, Some(hour), Some(false)) if hour.get() == 12 => 0,
+  |             (_, Some(hour), Some(true)) if hour.get() == 12 => 12,
+  |             (_, Some(hour), Some(false)) => hour.get(),
+  |             (_, Some(hour), Some(true)) => hour.get() + 12,
+  |             _ => return Err(InsufficientInformation),
+  |         };
+  | 
+
+--[ Match #206 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |         let hour = match (parsed.hour_24(), parsed.hour_12(), parsed.hour_12_is_pm()) {
+  |             (Some(hour), _, _) => hour,
+  |             (_, Some(hour), Some(false)) if hour.get() == 12 => 0,
+  |             (_, Some(hour), Some(true)) if hour.get() == 12 => 12,
+  |             (_, Some(hour), Some(false)) => hour.get(),
+  |             (_, Some(hour), Some(true)) => hour.get() + 12,
+  |             _ => return Err(InsufficientInformation),
+  | 
+
+--[ Match #207 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |     fn try_from(parsed: Parsed) -> Result<Self, Self::Error> {
+  |         let hour = match (parsed.hour_24(), parsed.hour_12(), parsed.hour_12_is_pm()) {
+  |             (Some(hour), _, _) => hour,
+  |             (_, Some(hour), Some(false)) if hour.get() == 12 => 0,
+  |             (_, Some(hour), Some(true)) if hour.get() == 12 => 12,
+  |             (_, Some(hour), Some(false)) => hour.get(),
+  |             (_, Some(hour), Some(true)) => hour.get() + 12,
+  | 
+
+--[ Match #208 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |             (year, month, day) => Ok(Self::from_calendar_date(year, month, day.get())?),
+  |             (iso_year, iso_week_number, weekday) => Ok(Self::from_iso_week_date(
+  |                 iso_year,
+  |                 iso_week_number.get(),
+  |                 weekday,
+  |             )?),
+  |             (year, sunday_week_number, weekday) => Ok(Self::from_ordinal_date(
+  | 
+
+--[ Match #209 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         match_! {
+  |             (year, ordinal) => Ok(Self::from_ordinal_date(year, ordinal.get())?),
+  |             (year, month, day) => Ok(Self::from_calendar_date(year, month, day.get())?),
+  |             (iso_year, iso_week_number, weekday) => Ok(Self::from_iso_week_date(
+  |                 iso_year,
+  |                 iso_week_number.get(),
+  | 
+
+--[ Match #210 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  |         // currently constructed from the information known.
+  | 
+  |         match_! {
+  |             (year, ordinal) => Ok(Self::from_ordinal_date(year, ordinal.get())?),
+  |             (year, month, day) => Ok(Self::from_calendar_date(year, month, day.get())?),
+  |             (iso_year, iso_week_number, weekday) => Ok(Self::from_iso_week_date(
+  |                 iso_year,
+  | 
+
+--[ Match #211 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Set the `hour_12` component and return `self`.
+  |     pub const fn with_hour_12(mut self, value: NonZeroU8) -> Option<Self> {
+  |         self.hour_12 = OptionRangedU8::Some(const_try_opt!(RangedU8::new(value.get())));
+  |         Some(self)
+  |     }
+  | 
+  | 
+
+--[ Match #212 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Set the `day` component and return `self`.
+  |     pub const fn with_day(mut self, value: NonZeroU8) -> Option<Self> {
+  |         self.day = OptionRangedU8::Some(const_try_opt!(RangedU8::new(value.get())));
+  |         Some(self)
+  |     }
+  | 
+  | 
+
+--[ Match #213 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Set the `ordinal` component and return `self`.
+  |     pub const fn with_ordinal(mut self, value: NonZeroU16) -> Option<Self> {
+  |         self.ordinal = OptionRangedU16::Some(const_try_opt!(RangedU16::new(value.get())));
+  |         Some(self)
+  |     }
+  | 
+  | 
+
+--[ Match #214 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Set the `iso_week_number` component and return `self`.
+  |     pub const fn with_iso_week_number(mut self, value: NonZeroU8) -> Option<Self> {
+  |         self.iso_week_number = OptionRangedU8::Some(const_try_opt!(RangedU8::new(value.get())));
+  |         Some(self)
+  |     }
+  | 
+  | 
+
+--[ Match #215 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\parsing\parsed.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | impl TryFrom<Parsed> for Time {
+  |     type Error = error::TryFromParsed;
+  | 
+  |     fn try_from(parsed: Parsed) -> Result<Self, Self::Error> {
+  | 
+
+--[ Match #216 of 219 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\src\month.rs
+   Pattern: \.(request|post|get)\(
+  | impl Month {
+  |     /// Create a `Month` from its numerical value.
+  |     pub(crate) const fn from_number(n: NonZeroU8) -> Result<Self, error::ComponentRange> {
+  |         match n.get() {
+  |             1 => Ok(January),
+  |             2 => Ok(February),
+  |             3 => Ok(March),
+  | 
+
+--[ Match #217 of 219 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | - [Apache License, Version 2.0](https://github.com/time-rs/time/blob/main/LICENSE-Apache)
+  | - [MIT license](https://github.com/time-rs/time/blob/main/LICENSE-MIT)
+  | 
+  | at your option.
+  | 
+  | Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in
+  | 
+
+--[ Match #218 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | at your option.
+  | 
+  | Unless you explicitly state otherwise, any contribution intentionally submitted for inclusion in
+  | time by you, as defined in the Apache-2.0 license, shall be dual licensed as above, without any
+  | additional terms or conditions.
+  | 
+
+--[ Match #219 of 219 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-time@0.3\time-0.3.30\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # time
+  | 
+  | [![minimum rustc: 1.67](https://img.shields.io/badge/minimum%20rustc-1.67-yellowgreen?logo=rust&styl
+  | [![version](https://img.shields.io/crates/v/time?color=blue&logo=rust&style=flat-square)](https://cr
+  | 
+
+219 matches found.

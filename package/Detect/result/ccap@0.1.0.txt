@@ -1,0 +1,535 @@
+--[ Match #1 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "cb6f2a5024365da08fe73f3c533fe0cc441823ae"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #2 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #3 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #4 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #5 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vec_map"
+  | version = "0.8.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f1bddf1187be692e79c5ffeab891132dfb0f236ed36a43c7ed39f1165ee20191"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #6 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-width"
+  | version = "0.1.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9337591893a19b88d8d87f2cec1e73fad5cdfd10e5a6f349f498ad6ea2ffb1e3"
+  | 
+  | [[package]]
+  | name = "vec_map"
+  | 
+
+--[ Match #7 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "textwrap"
+  | version = "0.11.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d326610f408c7a4eb6f51c37c330e496b08506c9457c9d34287ecc38809fb060"
+  | dependencies = [
+  |  "unicode-width",
+  | ]
+  | 
+
+--[ Match #8 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.8.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8ea5119cdb4c55b55d432abb513a0429384878c15dde60cc77b1c99de1a95a6a"
+  | 
+  | [[package]]
+  | name = "textwrap"
+  | 
+
+--[ Match #9 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.6.25"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
+  | 
+  | [[package]]
+  | name = "strsim"
+  | 
+
+--[ Match #10 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.5.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d07a8629359eb56f1e2fb1652bb04212c072a87ba68546a04065d525673ac461"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #11 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b16bd47d9e329435e309c58469fe0791c2d0d1ba96ec0954152a5ae2b04387dc"
+  | 
+  | [[package]]
+  | name = "regex"
+  | 
+
+--[ Match #12 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.98"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "320cfe77175da3a483efed4bc0adc1968ca050b098ce4f2f1c13a56626128790"
+  | 
+  | [[package]]
+  | name = "memchr"
+  | 
+
+--[ Match #13 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lazy_static"
+  | version = "1.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #14 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.1.19"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "62b467343b94ba476dcb2500d242dadbb39557df889310ac77c5d99100aaac33"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #15 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "2.33.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "37e58ac78573c40708d45522f0d80fa2f01cc4f9b4e2bf749807255454312002"
+  | dependencies = [
+  |  "ansi_term",
+  |  "atty",
+  | 
+
+--[ Match #16 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
+  | 
+  | [[package]]
+  | name = "ccap"
+  | 
+
+--[ Match #17 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "atty"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #18 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ansi_term"
+  | version = "0.11.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ee49baf6cb617b853aa8d93bf420db2383fab46d314482ca2803b40d5fde979b"
+  | dependencies = [
+  |  "winapi",
+  | ]
+  | 
+
+--[ Match #19 of 36 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "0.7.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #20 of 36 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |             if let Some(n1) = s.chars().position(|x| x == ']') {
+  |                 // Valid Speaker
+  |                 let speaker = s.get((n0 + 1)..n1).unwrap().to_string();
+  |                 let text = s.get((n1 + 2)..).unwrap().to_string();
+  |                 return Ok((Some(speaker.to_string()), text.to_string()));
+  |             }
+  |             else {
+  | 
+
+--[ Match #21 of 36 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  |             if let Some(n1) = s.chars().position(|x| x == ']') {
+  |                 // Valid Speaker
+  |                 let speaker = s.get((n0 + 1)..n1).unwrap().to_string();
+  |                 let text = s.get((n1 + 2)..).unwrap().to_string();
+  |                 return Ok((Some(speaker.to_string()), text.to_string()));
+  |             }
+  | 
+
+--[ Match #22 of 36 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |                 },
+  |             };
+  |             let (start, end) = VttParser::block_header_timestamps(
+  |                 match s.get(first_loc..) {
+  |                     Some(s) => s,
+  |                     None => {
+  |                         return Err(VttParserError::BlockHeaderInvalid(
+  | 
+
+--[ Match #23 of 36 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |                 },
+  |             };
+  |             // Find the name, which is everything preceding the space
+  |             let name = match s.get(..first_loc - 1) {
+  |                 Some(x) => x,
+  |                 _ => {
+  |                     return Err(VttParserError::BlockHeaderInvalid(
+  | 
+
+--[ Match #24 of 36 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |                         String::from(s)))?,
+  |             };
+  |             // Make sure we have a space before
+  |             match s.get(first_loc - 1..first_loc) {
+  |                 Some(" ") => {},
+  |                 _ => {
+  |                     return Err(VttParserError::BlockHeaderInvalid(String::from(s)));
+  | 
+
+--[ Match #25 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                     speaker: None,
+  |                     start: SimpleTime::from_milliseconds(0),
+  |                     end: SimpleTime::from_milliseconds(1000),
+  |                     text: "John Dies at the End".to_string(),
+  |                 })
+  |             };
+  |             let c2 = Caption {
+  | 
+
+--[ Match #26 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                         speaker: None,
+  |                         start: SimpleTime::from_milliseconds(0),
+  |                         end: SimpleTime::from_milliseconds(1000),
+  |                         text: "John Dies at the End".to_string(),
+  |                     },
+  |                     CaptionBlock {
+  |                         speaker: None,
+  | 
+
+--[ Match #27 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                     speaker: None,
+  |                     start: SimpleTime::from_milliseconds(0),
+  |                     end: SimpleTime::from_milliseconds(1000),
+  |                     text: "John Dies at the End".to_string(),
+  |                 })
+  |             };
+  |             c.offset_milliseconds(500).expect("Should be fine");
+  | 
+
+--[ Match #28 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     pub fn from(speaker: Option<String>, start: SimpleTime, end: SimpleTime, text: String) -> Result
+  |         // Verify start is less than end
+  |         let diff = (end.to_milliseconds() as i128) - (start.to_milliseconds() as i128);
+  |         if diff < 0 {
+  |             Err(CaptionBlockError::EndsBeforeStart(start, end))
+  |         }
+  |         else {
+  | 
+
+--[ Match #29 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\lib.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// Construct a CaptionBlock from its parts
+  |     pub fn from(speaker: Option<String>, start: SimpleTime, end: SimpleTime, text: String) -> Result
+  |         // Verify start is less than end
+  |         let diff = (end.to_milliseconds() as i128) - (start.to_milliseconds() as i128);
+  |         if diff < 0 {
+  |             Err(CaptionBlockError::EndsBeforeStart(start, end))
+  |         }
+  | 
+
+--[ Match #30 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\src\main.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | };
+  | 
+  | fn parse_time(time: Option<&str>, as_millis: bool) -> Result<Option<SimpleTime>, Box<dyn Error>> {
+  |     let t = match time {
+  |         Some(t) => {
+  |             if as_millis {
+  |                 Some(SimpleTime::from_milliseconds(t.parse::<usize>()?))
+  | 
+
+--[ Match #31 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | documentation = "https://docs.rs/ccap"
+  | repository = "https://github.com/jbteves/ccap"
+  | 
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | clap = "2.33"
+  | 
+
+--[ Match #32 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - offset a caption by some amount of time (useful for if you place a video of known length and NO ca
+  | 
+  | This was done mostly because at the time I was learning some Rust and
+  | wanted to try my hand at writing a full program.
+  | If you would like a format added or have a feature request feel free to
+  | open an issue.
+  | 
+
+--[ Match #33 of 36 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - get information about a caption file, including speaker talk time
+  | - offset a caption by some amount of time (useful for if you place a video of known length and NO ca
+  | 
+  | This was done mostly because at the time I was learning some Rust and
+  | wanted to try my hand at writing a full program.
+  | If you would like a format added or have a feature request feel free to
+  | open an issue.
+  | 
+
+--[ Match #34 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | - get information about a caption file, including speaker talk time
+  | - offset a caption by some amount of time (useful for if you place a video of known length and NO ca
+  | 
+  | This was done mostly because at the time I was learning some Rust and
+  | wanted to try my hand at writing a full program.
+  | If you would like a format added or have a feature request feel free to
+  | open an issue.
+  | 
+
+--[ Match #35 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | - converting captions between srt and vtt formats
+  | - crop captions between two timestamps or millisecond values
+  | - get information about a caption file, including speaker talk time
+  | - offset a caption by some amount of time (useful for if you place a video of known length and NO ca
+  | 
+  | This was done mostly because at the time I was learning some Rust and
+  | wanted to try my hand at writing a full program.
+  | 
+
+--[ Match #36 of 36 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-ccap@0.1\ccap-0.1.0\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | - concatenating multiple caption files (useful for when you stitch multiple videos into one)
+  | - converting captions between srt and vtt formats
+  | - crop captions between two timestamps or millisecond values
+  | - get information about a caption file, including speaker talk time
+  | - offset a caption by some amount of time (useful for if you place a video of known length and NO ca
+  | 
+  | This was done mostly because at the time I was learning some Rust and
+  | 
+
+36 matches found.

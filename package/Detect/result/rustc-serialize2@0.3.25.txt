@@ -1,0 +1,479 @@
+--[ Match #1 of 32 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\base64.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  | #[cfg(test)]
+  | mod tests {
+  |     use base64::{Config, Newline, FromBase64, ToBase64, STANDARD, URL_SAFE};
+  | 
+  |     #[test]
+  |     fn test_to_base64_basic() {
+  | 
+
+--[ Match #2 of 32 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\Cargo.toml
+   Pattern: base64|encodedcommand|obfuscate
+  | name = "rustc-serialize2"
+  | version = "0.3.25"
+  | authors = ["The Rust Project Developers"]
+  | description = "Generic serialization/deserialization support corresponding to the\n`derive(RustcEnco
+  | homepage = "https://github.com/rust-lang/rustc-serialize"
+  | documentation = "https://doc.rust-lang.org/rustc-serialize"
+  | readme = "README.md"
+  | 
+
+--[ Match #3 of 32 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\benches\base64.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | extern crate test;
+  | extern crate rustc_serialize;
+  | 
+  | use rustc_serialize::base64::{FromBase64, ToBase64, STANDARD};
+  | use test::Bencher;
+  | 
+  | #[bench]
+  | 
+
+--[ Match #4 of 32 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\Cargo.toml.orig
+   Pattern: base64|encodedcommand|obfuscate
+  | description = """
+  | Generic serialization/deserialization support corresponding to the
+  | `derive(RustcEncodable, RustcDecodable)` mode in the compiler. Also includes
+  | support for hex, base64, and json encoding and decoding.
+  | 
+  | This crate is deprecated in favor of serde.
+  | 
+  | 
+
+--[ Match #5 of 32 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\lib.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | mod serialize;
+  | mod collection_impls;
+  | 
+  | pub mod base64;
+  | pub mod hex;
+  | pub mod json;
+  | 
+  | 
+
+--[ Match #6 of 32 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\appveyor.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |   - TARGET: i686-pc-windows-msvc
+  |   - TARGET: i686-pc-windows-gnu
+  | install:
+  |   - ps: Start-FileDownload "https://static.rust-lang.org/dist/rust-nightly-${env:TARGET}.exe"
+  |   - rust-nightly-%TARGET%.exe /VERYSILENT /NORESTART /DIR="C:\Program Files (x86)\Rust"
+  |   - SET PATH=%PATH%;C:\Program Files (x86)\Rust\bin
+  |   - SET PATH=%PATH%;C:\MinGW\bin
+  | 
+
+--[ Match #7 of 32 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "c0ca24dded33e65193e6aa97729fce5820e0a7a7"
+  |   }
+  | }
+  | 
+
+--[ Match #8 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Key("foo")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #9 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Index(1), Key("foo")]));
+  |         assert!(stack.ends_with(&[Key("foo")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  |     }
+  | 
+  | 
+
+--[ Match #10 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  |         assert!(stack.get(2) == Key("bar"));
+  | 
+  |         stack.pop();
+  | 
+  | 
+
+--[ Match #11 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Index(1), Key("foo"), Key("bar")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  |         assert!(stack.get(2) == Key("bar"));
+  | 
+  |         stack.pop();
+  | 
+
+--[ Match #12 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Key("foo"), Key("bar")]));
+  |         assert!(stack.ends_with(&[Index(1), Key("foo"), Key("bar")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  |         assert!(stack.get(2) == Key("bar"));
+  | 
+  | 
+
+--[ Match #13 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Key("foo")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  | 
+  |         stack.push_key("bar".to_string());
+  | 
+  | 
+
+--[ Match #14 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.ends_with(&[Index(1), Key("foo")]));
+  |         assert!(stack.ends_with(&[Key("foo")]));
+  |         assert!(!stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  |         assert!(stack.get(1) == Key("foo"));
+  | 
+  |         stack.push_key("bar".to_string());
+  | 
+
+--[ Match #15 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(stack.starts_with(&[Index(1)]));
+  |         assert!(stack.ends_with(&[Index(1)]));
+  |         assert!(stack.last_is_index());
+  |         assert!(stack.get(0) == Index(1));
+  | 
+  |         stack.push_key("foo".to_string());
+  | 
+  | 
+
+--[ Match #16 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |         if self.stack.len() < rhs.len() { return false; }
+  |         let offset = self.stack.len() - rhs.len();
+  |         for i in 0..rhs.len() {
+  |             if self.get(i + offset) != rhs[i] { return false; }
+  |         }
+  |         return true;
+  |     }
+  | 
+
+--[ Match #17 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |     pub fn starts_with(&self, rhs: &[StackElement]) -> bool {
+  |         if self.stack.len() < rhs.len() { return false; }
+  |         for i in 0..rhs.len() {
+  |             if self.get(i) != rhs[i] { return false; }
+  |         }
+  |         return true;
+  |     }
+  | 
+
+--[ Match #18 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |     pub fn is_equal_to(&self, rhs: &[StackElement]) -> bool {
+  |         if self.stack.len() != rhs.len() { return false; }
+  |         for i in 0..rhs.len() {
+  |             if self.get(i) != rhs[i] { return false; }
+  |         }
+  |         return true;
+  |     }
+  | 
+
+--[ Match #19 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |     pub fn search<'a>(&'a self, key: &str) -> Option<&'a Json> {
+  |         match self {
+  |             &Json::Object(ref map) => {
+  |                 match map.get(key) {
+  |                     Some(json_value) => Some(json_value),
+  |                     None => {
+  |                         for (_, v) in map.iter() {
+  | 
+
+--[ Match #20 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Otherwise, returns None.
+  |     pub fn find<'a>(&'a self, key: &str) -> Option<&'a Json>{
+  |         match self {
+  |             &Json::Object(ref map) => map.get(key),
+  |             _ => None
+  |         }
+  |     }
+  | 
+
+--[ Match #21 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \.(request|post|get)\(
+  | //!     // object? true
+  | //!
+  | //!     let obj = data.as_object().unwrap();
+  | //!     let foo = obj.get("foo").unwrap();
+  | //!
+  | //!     println!("array? {:?}", foo.as_array());
+  | //!     // array? None
+  | 
+
+--[ Match #22 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         InvalidEscape => "invalid escape",
+  |         UnrecognizedHex => "invalid \\u{ esc}ape (unrecognized hex)",
+  |         NotFourDigit => "invalid \\u{ esc}ape (not four digits)",
+  |         ControlCharacterInString => "unescaped control character in string",
+  |         NotUtf8 => "contents not utf-8",
+  |         InvalidUnicodeCodePoint => "invalid Unicode code point",
+  |         LoneLeadingSurrogateInHexEscape => "lone leading surrogate in hex escape",
+  | 
+
+--[ Match #23 of 32 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\json.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | macro_rules! expect {
+  |     ($e:expr, Null) => ({
+  |         match try!($e) {
+  |             Json::Null => Ok(()),
+  | 
+
+--[ Match #24 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\base64.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+  |         match *self {
+  |             InvalidBase64Byte(ch, idx) =>
+  |                 write!(f, "Invalid character '{}' at position {}", ch, idx),
+  |             InvalidBase64Length => write!(f, "Invalid length"),
+  |         }
+  |     }
+  | 
+
+--[ Match #25 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  | 
+  | 	http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #26 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |        distribution, then any Derivative Works that You distribute must
+  |        include a readable copy of the attribution notices contained
+  |        within such NOTICE file, excluding those notices that do not
+  |        pertain to any part of the Derivative Works, in at least one
+  |        of the following places: within a NOTICE text file distributed
+  |        as part of the Derivative Works; within the Source form or
+  |        documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #27 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    the copyright owner. For the purposes of this definition, "submitted"
+  |    means any form of electronic, verbal, or written communication sent
+  |    to the Licensor or its representatives, including but not limited to
+  |    communication on electronic mailing lists, source code control systems,
+  |    and issue tracking systems that are managed by, or on behalf of, the
+  |    Licensor for the purpose of discussing and improving the Work, but
+  |    excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #28 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #29 of 32 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |    with Licensor regarding such Contributions.
+  | 
+  | 6. Trademarks. This License does not grant permission to use the trade
+  |    names, trademarks, service marks, or product names of the Licensor,
+  |    except as required for reasonable and customary use in describing the
+  |    origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #30 of 32 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\hex.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     fn fmt(&self, f: &mut fmt::Formatter) -> fmt::Result {
+  |         match *self {
+  |             InvalidHexCharacter(ch, idx) =>
+  |                 write!(f, "Invalid character '{}' at position {}", ch, idx),
+  |             InvalidHexLength => write!(f, "Invalid input length"),
+  |         }
+  |     }
+  | 
+
+--[ Match #31 of 32 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\.travis.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |   - nightly
+  | sudo: false
+  | before_script:
+  |   - pip install 'travis-cargo<0.2' --user && export PATH=$HOME/.local/bin:$PATH
+  | script:
+  |   - cargo build --verbose
+  |   - cargo test --verbose
+  | 
+
+--[ Match #32 of 32 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rustc-serialize2@0.3\rustc-serialize2-0.3.25\src\serialize.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl<T: Encodable + Copy> Encodable for Cell<T> {
+  |     fn encode<S: Encoder>(&self, s: &mut S) -> Result<(), S::Error> {
+  |         self.get().encode(s)
+  |     }
+  | }
+  | 
+  | 
+
+32 matches found.

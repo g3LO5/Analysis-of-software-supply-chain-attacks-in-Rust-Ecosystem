@@ -1,0 +1,1064 @@
+--[ Match #1 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winnow"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "deac0939bd6e4f24ab5919fbf751c97a8cfc8543bb083a305ed5c0c10bb241d1"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #2 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9aec5da331524158c6d1a4ac0ab1541149c0b9505fde06423b02f5ef0106b9f0"
+  | 
+  | [[package]]
+  | name = "winnow"
+  | 
+
+--[ Match #3 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnullvm"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "26d41b46a36d453748aedef1486d5c7a85db22e56aff34643984ea85514e94a3"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_msvc"
+  | 
+
+--[ Match #4 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8de912b8b8feb55c064867cf047dda097f92d51efad5b491dfb98f6bbb70cb36"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnullvm"
+  | 
+
+--[ Match #5 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_msvc"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "44d840b6ec649f480a41c8d80f9c65108b92d89345dd94027bfe06ac444d1060"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #6 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_gnu"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c61d927d8da41da96a81f029489353e68739737d3beca43145c8afec9a31a84f"
+  | 
+  | [[package]]
+  | name = "windows_i686_msvc"
+  | 
+
+--[ Match #7 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e08e8864a60f06ef0d0ff4ba04124db8b0fb3be5776a5cd47641e942e58c4d43"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #8 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "597a5118570b68bc08d8d59125332c54f1ba9d9adeedeef5b99b02ba2b0698f8"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #9 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-targets"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8e5180c00cd44c9b1c88adb3693291f1cd93605ded80c250a75d472756b4d071"
+  | dependencies = [
+  |  "windows_aarch64_gnullvm",
+  |  "windows_aarch64_msvc",
+  | 
+
+--[ Match #10 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-sys"
+  | version = "0.45.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "75283be5efb2831d37ea142365f009c02ec203cd29a3ebecbc093d52315b66d0"
+  | dependencies = [
+  |  "windows-targets",
+  | ]
+  | 
+
+--[ Match #11 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+  | [[package]]
+  | name = "windows-sys"
+  | 
+
+--[ Match #12 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-util"
+  | version = "0.1.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "70ec6ce85bb158151cae5e5c87f95a8e97d2c0c4b001223f33a334e3ce5de178"
+  | dependencies = [
+  |  "winapi",
+  | ]
+  | 
+
+--[ Match #13 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-util"
+  | 
+
+--[ Match #14 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #15 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #16 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e5464a87b239f13a63a501f2701565754bae92d243d4bb7eb12f6d57d2269bf4"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #17 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ucd-trie"
+  | version = "0.1.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9e79c4d996edb816c91e4308506774452e55e95c3c9de07b6729e17e15a5ef81"
+  | 
+  | [[package]]
+  | name = "unicode-ident"
+  | 
+
+--[ Match #18 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "typenum"
+  | version = "1.16.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "497961ef93d974e23eb6f433eb5fe1b7930b659f06d12dec6fc44a8f554c0bba"
+  | 
+  | [[package]]
+  | name = "ucd-trie"
+  | 
+
+--[ Match #19 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "toml_edit"
+  | version = "0.19.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "239410c8609e8125456927e6707163a3b1fdb40561e4b803bc041f466ccfdc13"
+  | dependencies = [
+  |  "indexmap",
+  |  "serde",
+  | 
+
+--[ Match #20 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "toml_datetime"
+  | version = "0.6.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3ab8ed2edee10b50132aed5f331333428b011c99402b5a534154ed15746f9622"
+  | dependencies = [
+  |  "serde",
+  | ]
+  | 
+
+--[ Match #21 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "toml"
+  | version = "0.7.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b403acf6f2bb0859c93c7f0d967cb4a75a7ac552100f9322faf64dc047669b21"
+  | dependencies = [
+  |  "serde",
+  |  "serde_spanned",
+  | 
+
+--[ Match #22 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thiserror-impl"
+  | version = "1.0.40"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f9456a42c5b0d803c8cd86e73dd7cc9edd429499f37a3550d286d5e86720569f"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #23 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thiserror"
+  | version = "1.0.40"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "978c9a314bd8dc99be594bc3c175faaa9794be04a5a5e153caba6915336cebac"
+  | dependencies = [
+  |  "thiserror-impl",
+  | ]
+  | 
+
+--[ Match #24 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "termcolor"
+  | version = "1.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "be55cf8942feac5c765c2c993422806843c9a9a45d4d5c407ad6dd2ea95eb9b6"
+  | dependencies = [
+  |  "winapi-util",
+  | ]
+  | 
+
+--[ Match #25 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bcc02725fd69ab9f26eab07fad303e2497fad6fb9eba4f96c4d1687bdf704ad9"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #26 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.109"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #27 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #28 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "sha2"
+  | version = "0.10.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "82e6b795fe2e3b1e845bafcb27aa35405c4d47cdfc92af5fc8d3002f76cebdc0"
+  | dependencies = [
+  |  "cfg-if",
+  |  "cpufeatures",
+  | 
+
+--[ Match #29 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_spanned"
+  | version = "0.6.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0efd8caf556a6cebd3b285caf480045fcc1ac04f6bd786b09a6f11af30c4fcf4"
+  | dependencies = [
+  |  "serde",
+  | ]
+  | 
+
+--[ Match #30 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.94"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1c533a59c9d8a93a09c6ab31f0fd5e5f4dd1b8fc9434804029839884765d04ea"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #31 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_derive"
+  | version = "1.0.158"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e801c1712f48475582b7696ac71e0ca34ebb30e09338425384269d9717c62cad"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #32 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.158"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "771d4d9c4163ee138805e12c710dd365e4f44be8be0503cb1bb9eb989425d9c9"
+  | dependencies = [
+  |  "serde_derive",
+  | ]
+  | 
+
+--[ Match #33 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ryu"
+  | version = "1.0.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f91339c0467de62360649f8d3e185ca8de4224ff281f66000de5eb2a77a79041"
+  | 
+  | [[package]]
+  | name = "serde"
+  | 
+
+--[ Match #34 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.36.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "db4165c9963ab29e422d6c26fbc1d37f15bace6b2810221f9d925023480fcf0e"
+  | dependencies = [
+  |  "bitflags",
+  |  "errno",
+  | 
+
+--[ Match #35 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.26"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4424af4bf778aae2051a77b60283332f386554255d722233d09fbfc7e30da2fc"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #36 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.53"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ba466839c78239c09faf015484e5cc04860f88242cff4d03eb038f04b4699b73"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #37 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pest_meta"
+  | version = "2.5.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5e3b284b1f13a20dc5ebc90aff59a51b8d7137c221131b52a7260c08cbc1cc80"
+  | dependencies = [
+  |  "once_cell",
+  |  "pest",
+  | 
+
+--[ Match #38 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pest_generator"
+  | version = "2.5.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "75a1ef20bf3193c15ac345acb32e26b3dc3223aff4d77ae4fc5359567683796b"
+  | dependencies = [
+  |  "pest",
+  |  "pest_meta",
+  | 
+
+--[ Match #39 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pest_derive"
+  | version = "2.5.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a81186863f3d0a27340815be8f2078dd8050b14cd71913db9fbda795e5f707d7"
+  | dependencies = [
+  |  "pest",
+  |  "pest_generator",
+  | 
+
+--[ Match #40 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pest"
+  | version = "2.5.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8cbd939b234e95d72bc393d51788aec68aeeb5d51e748ca08ff3aad58cb722f7"
+  | dependencies = [
+  |  "thiserror",
+  |  "ucd-trie",
+  | 
+
+--[ Match #41 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "os_str_bytes"
+  | version = "6.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ceedf44fb00f2d1984b0bc98102627ce622e083e49a5bacdb3e514fa4238e267"
+  | 
+  | [[package]]
+  | name = "pest"
+  | 
+
+--[ Match #42 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.17.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b7e5500299e16ebb147ae15a00a942af264cf3688f47923b8fc2cd5858f23ad3"
+  | 
+  | [[package]]
+  | name = "os_str_bytes"
+  | 
+
+--[ Match #43 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2dffe52ecf27772e601905b7522cb4ef790d2cc203488bbd0e2fe85fcb74566d"
+  | 
+  | [[package]]
+  | name = "once_cell"
+  | 
+
+--[ Match #44 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "log"
+  | version = "0.4.17"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "abb12e687cfb44aa40f41fc3978ef76448f9b6038cad6aef4259d3c095a2382e"
+  | dependencies = [
+  |  "cfg-if",
+  | ]
+  | 
+
+--[ Match #45 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.1.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f051f77a7c8e6957c0696eac88f26b0117e54f52d3fc682ab19397a8812846a4"
+  | 
+  | [[package]]
+  | name = "log"
+  | 
+
+--[ Match #46 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.140"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "99227334921fae1a979cf0bfdfcc6b3e5ce376ef57e16fb6fb3ea2ed6095f80c"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #47 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "1.0.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "453ad9f582a441959e5f0d088b02ce04cfe8d51a8eaf077f12ac6d3e94164ca6"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #48 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "is-terminal"
+  | version = "0.4.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8687c819457e979cc940d09cb16e42a1bf70aa6b60a549de6d3a62a0ee90c69e"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "io-lifetimes",
+  | 
+
+--[ Match #49 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "io-lifetimes"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "09270fd4fa1111bc614ed2246c7ef56239a3063d5be0d1ec3b589c505d400aeb"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #50 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "indexmap"
+  | version = "1.9.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1885e79c1fc4b10f0e172c475f458b7f7b93061064d98c3293e98c5ba0c8b399"
+  | dependencies = [
+  |  "autocfg",
+  |  "hashbrown",
+  | 
+
+--[ Match #51 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fed44880c466736ef9a5c5b5facefb5ed0785676d0c02d612db14e54f0d84286"
+  | 
+  | [[package]]
+  | name = "indexmap"
+  | 
+
+--[ Match #52 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "heck"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
+  | 
+  | [[package]]
+  | name = "hermit-abi"
+  | 
+
+--[ Match #53 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashbrown"
+  | version = "0.12.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8a9ee70c43aaf417c914396645a0fa852624801b24ebb7ae78fe8272889ac888"
+  | 
+  | [[package]]
+  | name = "heck"
+  | 
+
+--[ Match #54 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "handlebars"
+  | version = "4.3.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "035ef95d03713f2c347a72547b7cd38cbc9af7cd51e6099fb62d586d4a6dee3a"
+  | dependencies = [
+  |  "log",
+  |  "pest",
+  | 
+
+--[ Match #55 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "generic-array"
+  | version = "0.14.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bff49e947297f3312447abdca79f45f4738097cc82b06e72054d2223f601f1b9"
+  | dependencies = [
+  |  "typenum",
+  |  "version_check",
+  | 
+
+--[ Match #56 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno-dragonfly"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+  | dependencies = [
+  |  "cc",
+  |  "libc",
+  | 
+
+--[ Match #57 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno"
+  | version = "0.2.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f639046355ee4f37944e44f60642c6f3a7efa3cf6b78c78a0d989a8ce6c396a1"
+  | dependencies = [
+  |  "errno-dragonfly",
+  |  "libc",
+  | 
+
+--[ Match #58 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "digest"
+  | version = "0.10.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8168378f4e5023e7218c89c891c0fd8ecdb5e5e4f18cb78f38cf245dd021e76f"
+  | dependencies = [
+  |  "block-buffer",
+  |  "crypto-common",
+  | 
+
+--[ Match #59 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crypto-common"
+  | version = "0.1.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1bfb12502f3fc46cca1bb51ac28df9d618d813cdc3d2f25b9fe775a34af26bb3"
+  | dependencies = [
+  |  "generic-array",
+  |  "typenum",
+  | 
+
+--[ Match #60 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cpufeatures"
+  | version = "0.2.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "28d997bd5e24a5928dd43e46dc529867e207907fe0b239c3477d924f7f2ca320"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #61 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_lex"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "033f6b7a4acb1f358c742aaca805c939ee73b4c6209ae4318ec7aca81c42e646"
+  | dependencies = [
+  |  "os_str_bytes",
+  | ]
+  | 
+
+--[ Match #62 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_derive"
+  | version = "4.1.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a932373bab67b984c790ddf2c9ca295d8e3af3b7ef92de5a5bacdccdee4b09b"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro2",
+  | 
+
+--[ Match #63 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "4.1.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3c911b090850d79fc64fe9ea01e28e465f65e821e08813ced95bced72f7a8a9b"
+  | dependencies = [
+  |  "bitflags",
+  |  "clap_derive",
+  | 
+
+--[ Match #64 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "clap"
+  | 
+
+--[ Match #65 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cc"
+  | version = "1.0.79"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "50d30906286121d95be3d479533b458f87493b30a4b5f79a607db8f5d11aa91f"
+  | 
+  | [[package]]
+  | name = "cfg-if"
+  | 
+
+--[ Match #66 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "block-buffer"
+  | version = "0.10.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3078c7629b62d3f0439517fa394996acacc5cbc91c5a20d8c658e77abd503a71"
+  | dependencies = [
+  |  "generic-array",
+  | ]
+  | 
+
+--[ Match #67 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "block-buffer"
+  | 
+
+--[ Match #68 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #69 of 71 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "7995ebd535f64b68e445c68fcc5b726374096d9e"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #70 of 71 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\src\cli.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | }
+  | 
+  | fn render(input: String, output: String) -> Result<(), Box<dyn Error>> {
+  |     let reg = Handlebars::new();
+  |     let env_table = parse_env();
+  | 
+  |     let config: String = fs::read_to_string(input.clone())?.parse()?;
+  | 
+
+--[ Match #71 of 71 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tompl@0.0\tompl-0.0.1\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | description = "cli utility for rendering templates with toml args"
+  | repository = "https://github.com/semichkin/tompl"
+  | 
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | clap = { version = "4.1.11", features = ["derive"]}
+  | 
+
+71 matches found.

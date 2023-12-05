@@ -1,0 +1,14 @@
+--[ Match #1 of 1 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-fermion@0.2\fermion-0.2.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "daa604ab3ac68ef96720addd67bd8480eee429d0"
+  |   }
+  | }
+  | 
+
+1 matches found.

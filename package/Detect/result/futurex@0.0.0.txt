@@ -1,0 +1,14 @@
+--[ Match #1 of 1 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-futurex@0.0\futurex-0.0.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "fc0a079568bb7c23d89e3fe190df2a0cae331d08"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+1 matches found.

@@ -1,0 +1,192 @@
+--[ Match #1 of 11 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | ///     0x6c, 0x90, 0xa5, 0x73, 0xa8, 0x10, 0xe4, 0x94, 
+  | 
+  | /// ];
+  | 
+  | /// let nonce = [0u8; 8];
+  | 
+  | /// let mut stream = ChaCha::new_chacha20(&secret_key, &nonce);
+  | 
+  | ///
+  | 
+  | /// let mut buffer = *b"abcdef";
+  | 
+  | /// stream.xor_read(&mut buffer[..]).expect("hit end of stream far too soon");
+  | 
+  | 
+
+--[ Match #2 of 11 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | /// ```
+  | 
+  | /// use chacha::{ChaCha, KeyStream};
+  | 
+  | ///
+  | 
+  | /// let secret_key = [
+  | 
+  | ///     0x29, 0xfa, 0x35, 0x60, 0x88, 0x45, 0xc6, 0xf9, 
+  | 
+  | ///     0xd8, 0xfe, 0x65, 0xe3, 0x22, 0x0e, 0x5b, 0x05, 
+  | 
+  | ///     0x03, 0x4a, 0xa0, 0x9f, 0x9e, 0x27, 0xad, 0x0f, 
+  | 
+  | 
+
+--[ Match #3 of 11 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             0x6c, 0x90, 0xa5, 0x73, 0xa8, 0x10, 0xe4, 0x94, 
+  | 
+  |         ];
+  | 
+  |         let nonce = [0u8; 8];
+  | 
+  |         let mut stream = ChaCha::new_chacha20(&secret_key, &nonce);
+  | 
+  | 
+  | 
+  |         let mut buffer = *b"abcdef";
+  | 
+  |         println!("Plaintext = {:?}", buffer);
+  | 
+  | 
+
+--[ Match #4 of 11 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     use chacha::{ChaCha, KeyStream};
+  | 
+  | 
+  | 
+  |     fn main() {
+  | 
+  |         let secret_key = [
+  | 
+  |             0x29, 0xfa, 0x35, 0x60, 0x88, 0x45, 0xc6, 0xf9, 
+  | 
+  |             0xd8, 0xfe, 0x65, 0xe3, 0x22, 0x0e, 0x5b, 0x05, 
+  | 
+  |             0x03, 0x4a, 0xa0, 0x9f, 0x9e, 0x27, 0xad, 0x0f, 
+  | 
+  | 
+
+--[ Match #5 of 11 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "7e7c936974654dc50d3900e2263c58470aec89dd"
+  |   }
+  | }
+  | 
+
+--[ Match #6 of 11 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  | 
+  | 	http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #7 of 11 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |        distribution, then any Derivative Works that You distribute must
+  |        include a readable copy of the attribution notices contained
+  |        within such NOTICE file, excluding those notices that do not
+  |        pertain to any part of the Derivative Works, in at least one
+  |        of the following places: within a NOTICE text file distributed
+  |        as part of the Derivative Works; within the Source form or
+  |        documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #8 of 11 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    the copyright owner. For the purposes of this definition, "submitted"
+  |    means any form of electronic, verbal, or written communication sent
+  |    to the Licensor or its representatives, including but not limited to
+  |    communication on electronic mailing lists, source code control systems,
+  |    and issue tracking systems that are managed by, or on behalf of, the
+  |    Licensor for the purpose of discussing and improving the Work, but
+  |    excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #9 of 11 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #10 of 11 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |    with Licensor regarding such Contributions.
+  | 
+  | 6. Trademarks. This License does not grant permission to use the trade
+  |    names, trademarks, service marks, or product names of the Licensor,
+  |    except as required for reasonable and customary use in describing the
+  |    origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #11 of 11 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-chacha@0.3\chacha-0.3.0\COPYRIGHT
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | Licensed under the Apache License, Version 2.0
+  | <LICENSE-APACHE or
+  | http://www.apache.org/licenses/LICENSE-2.0> or the MIT
+  | license <LICENSE-MIT or http://opensource.org/licenses/MIT>,
+  | at your option. All files in the project carrying such
+  | notice may not be copied, modified, or distributed except
+  | according to those terms.
+  | 
+
+11 matches found.

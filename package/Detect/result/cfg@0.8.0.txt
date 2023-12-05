@@ -1,0 +1,656 @@
+--[ Match #1 of 44 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "ab55f04a1f084e86823034ee5f2abc385e931807"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #2 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\random.rs
+   Pattern: \.(request|post|get)\(
+  |                         }
+  |                     }
+  |                 }
+  |             } else if let Some(forbidden) = negative.get(&sym) {
+  |                 debug!("NEGATIVE: forbidden {:?} at {:?}", forbidden, string.len());
+  |                 backtracking
+  |                     .entry(string.len() + forbidden.len())
+  | 
+
+--[ Match #3 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\random.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                 backtracking_attempts.entry(string.len()).or_insert(0);
+  |             } else {
+  |                 let rhs = weighted.pick_rhs(sym, rng);
+  |                 debug!("PICK RHS: from {:?} at {:?}", rhs, string.len());
+  |                 for sym in rhs.iter().cloned().rev() {
+  |                     work.push_front_mut(sym);
+  |                 }
+  | 
+
+--[ Match #4 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\random.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |                     }
+  |                 }
+  |             } else if let Some(forbidden) = negative.get(&sym) {
+  |                 debug!("NEGATIVE: forbidden {:?} at {:?}", forbidden, string.len());
+  |                 backtracking
+  |                     .entry(string.len() + forbidden.len())
+  |                     .or_insert(vec![])
+  | 
+
+--[ Match #5 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\distance.rs
+   Pattern: \.(request|post|get)\(
+  |                 if let &LinkedHistoryNode::Distances { ref events } = node {
+  |                     positions = &events[..];
+  |                 }
+  |                 history = &self.grammar.history_graph()[prev.get()];
+  |             }
+  |             for &position in positions {
+  |                 let (min, _) = self.update_rule_distances(0, &rule.rhs()[..position as usize], idx);
+  | 
+
+--[ Match #6 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\distance.rs
+   Pattern: \.(request|post|get)\(
+  |     fn immediate_minimal_distances(&mut self) {
+  |         // Calculates distances within rules.
+  |         for (idx, rule) in self.grammar.rules().enumerate() {
+  |             let mut history = &self.grammar.history_graph()[rule.history_id().get()];
+  |             let mut positions = &[][..];
+  |             while let &HistoryNode::Linked { prev, ref node } = history {
+  |                 if let &LinkedHistoryNode::Distances { ref events } = node {
+  | 
+
+--[ Match #7 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\distance.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             let mut history = &self.grammar.history_graph()[rule.history_id().get()];
+  |             let mut positions = &[][..];
+  |             while let &HistoryNode::Linked { prev, ref node } = history {
+  |                 if let &LinkedHistoryNode::Distances { ref events } = node {
+  |                     positions = &events[..];
+  |                 }
+  |                 history = &self.grammar.history_graph()[prev.get()];
+  | 
+
+--[ Match #8 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\distance.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         for (idx, rule) in self.grammar.rules().enumerate() {
+  |             let mut history = &self.grammar.history_graph()[rule.history_id().get()];
+  |             let mut positions = &[][..];
+  |             while let &HistoryNode::Linked { prev, ref node } = history {
+  |                 if let &LinkedHistoryNode::Distances { ref events } = node {
+  |                     positions = &events[..];
+  |                 }
+  | 
+
+--[ Match #9 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\history.rs
+   Pattern: \.(request|post|get)\(
+  |                     prev,
+  |                     node: ref linked_node,
+  |                 } => {
+  |                     let mut prev_history = result[prev.get()].clone();
+  |                     match linked_node {
+  |                         &LinkedHistoryNode::AssignPrecedence { looseness: _, .. } => prev_history,
+  |                         &LinkedHistoryNode::Binarize { depth, .. } => prev_history.binarize(depth),
+  | 
+
+--[ Match #10 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\history.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     pub fn final_history(&self) -> Vec<History> {
+  |         let mut result: Vec<History> = Vec::with_capacity(self.history_graph().capacity());
+  |         for node in self.history_graph().iter() {
+  |             let new_history = match node {
+  |                 &HistoryNode::Linked {
+  |                     prev,
+  |                     node: ref linked_node,
+  | 
+
+--[ Match #11 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\history.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | impl BinarizedGrammar {
+  |     pub fn final_history(&self) -> Vec<History> {
+  |         let mut result: Vec<History> = Vec::with_capacity(self.history_graph().capacity());
+  |         for node in self.history_graph().iter() {
+  |             let new_history = match node {
+  |                 &HistoryNode::Linked {
+  |                     prev,
+  | 
+
+--[ Match #12 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\binarized_grammar.rs
+   Pattern: \.(request|post|get)\(
+  |             if !usefulness.all_useful() {
+  |                 // for useless in usefulness.useless_rules() {
+  |                 //     let rhs: Vec<_> = useless.rule.rhs().iter().map(|t| tok.get(t.usize())).colle
+  |                 //     println!("lhs:{:?} rhs:{:?} unreachable:{} unproductive:{}", tok.get(useless.
+  |                 // }
+  |                 println!("warning: grammar has useless rules");
+  |                 usefulness.remove_useless_rules();
+  | 
+
+--[ Match #13 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\binarized_grammar.rs
+   Pattern: \.(request|post|get)\(
+  |             let mut usefulness = Usefulness::new(&mut *self).reachable([start]);
+  |             if !usefulness.all_useful() {
+  |                 // for useless in usefulness.useless_rules() {
+  |                 //     let rhs: Vec<_> = useless.rule.rhs().iter().map(|t| tok.get(t.usize())).colle
+  |                 //     println!("lhs:{:?} rhs:{:?} unreachable:{} unproductive:{}", tok.get(useless.
+  |                 // }
+  |                 println!("warning: grammar has useless rules");
+  | 
+
+--[ Match #14 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\binarized_grammar.rs
+   Pattern: \.(request|post|get)\(
+  |             return None;
+  |         }
+  |         let is_start_rule = |rule: &RuleRef| rule.lhs() == self.start();
+  |         let rhs1 = |rule: RuleRef| rule.rhs().get(1).cloned();
+  |         self.rules().find(is_start_rule).and_then(rhs1)
+  |     }
+  | 
+  | 
+
+--[ Match #15 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\earley\binarized_grammar.rs
+   Pattern: \.(request|post|get)\(
+  |             return None;
+  |         }
+  |         let is_start_rule = |rule: &RuleRef| rule.lhs() == self.start();
+  |         let rhs0 = |rule: RuleRef| rule.rhs().get(0).cloned();
+  |         self.rules().find(is_start_rule).and_then(rhs0)
+  |     }
+  | 
+  | 
+
+--[ Match #16 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \.(request|post|get)\(
+  |     where
+  |         R: GenRange,
+  |     {
+  |         if let Some(weighted_rhs_list) = self.weights.get(&lhs) {
+  |             if weighted_rhs_list.rhs_list.len() == 1 {
+  |                 return &weighted_rhs_list.rhs_list[0].rhs[..];
+  |             }
+  | 
+
+--[ Match #17 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \.(request|post|get)\(
+  |             let mut history_id = rule.history_id();
+  |             let mut result = None;
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  |                     result = Some(weight);
+  | 
+
+--[ Match #18 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \.(request|post|get)\(
+  |             let mut history_id = rule.history_id();
+  |             let mut result = None;
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  |                     result = Some(weight);
+  | 
+
+--[ Match #19 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  |                     result = Some(weight);
+  |                     break;
+  |                 }
+  | 
+
+--[ Match #20 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         for rule in self.rules() {
+  |             let mut history_id = rule.history_id();
+  |             let mut result = None;
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  | 
+
+--[ Match #21 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  |                     result = Some(weight);
+  |                     break;
+  |                 }
+  | 
+
+--[ Match #22 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\generation\weighted\weighted_rhs_by_lhs.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         for rule in self.rules() {
+  |             let mut history_id = rule.history_id();
+  |             let mut result = None;
+  |             while let &HistoryNode::Linked { prev, ref node } =
+  |                 &self.history_graph()[history_id.get()]
+  |             {
+  |                 if let &LinkedHistoryNode::Weight { weight } = node {
+  | 
+
+--[ Match #23 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\ll.rs
+   Pattern: \.(request|post|get)\(
+  |                 entry.push(rule_idx);
+  |             }
+  |             if rhs_first_set.contains(&None) {
+  |                 let lhs_follow_set = follow.follow_sets().get(&rule.lhs()).unwrap();
+  |                 for &terminal in lhs_follow_set.iter().flat_map(identity) {
+  |                     let key = LlParseTableKey {
+  |                         nonterminal: rule.lhs(),
+  | 
+
+--[ Match #24 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\sequence\rewrite.rs
+   Pattern: \.(request|post|get)\(
+  |                 self.stack.push(Sequence { lhs, ..*seq });
+  |                 lhs
+  |             }
+  |             Entry::Occupied(lhs) => *lhs.get(),
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #25 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  | 
+  | 	http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #26 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |        distribution, then any Derivative Works that You distribute must
+  |        include a readable copy of the attribution notices contained
+  |        within such NOTICE file, excluding those notices that do not
+  |        pertain to any part of the Derivative Works, in at least one
+  |        of the following places: within a NOTICE text file distributed
+  |        as part of the Derivative Works; within the Source form or
+  |        documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #27 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    the copyright owner. For the purposes of this definition, "submitted"
+  |    means any form of electronic, verbal, or written communication sent
+  |    to the Licensor or its representatives, including but not limited to
+  |    communication on electronic mailing lists, source code control systems,
+  |    and issue tracking systems that are managed by, or on behalf of, the
+  |    Licensor for the purpose of discussing and improving the Work, but
+  |    excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #28 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #29 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |    with Licensor regarding such Contributions.
+  | 
+  | 6. Trademarks. This License does not grant permission to use the trade
+  |    names, trademarks, service marks, or product names of the Licensor,
+  |    except as required for reasonable and customary use in describing the
+  |    origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #30 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\cyclical.rs
+   Pattern: \.(request|post|get)\(
+  |                 }
+  |                 let mut rhs = rhs.to_vec();
+  |                 for sym in &mut rhs {
+  |                     if let Some(&Some(new_sym)) = translation.get(sym) {
+  |                         *sym = new_sym;
+  |                         changed = true;
+  |                     }
+  | 
+
+--[ Match #31 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\cyclical.rs
+   Pattern: \.(request|post|get)\(
+  |             let mut rewritten_rules = vec![];
+  |             self.grammar.retain(|mut lhs, rhs, history| {
+  |                 let mut changed = false;
+  |                 if let Some(&Some(new_lhs)) = translation.get(&lhs) {
+  |                     lhs = new_lhs;
+  |                     changed = true;
+  |                 }
+  | 
+
+--[ Match #32 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\tests\test_random_math.rs
+   Pattern: \.(request|post|get)\(
+  |     // let string = syms.map(|sym_list| {
+  |     //     sym_list
+  |     //         .into_iter()
+  |     //         .map(|s| sym_map.get(&s).cloned().unwrap_or('X'))
+  |     //         .collect::<String>()
+  |     // });
+  |     let expected = Ok("(5/3*(8-2)/3614/990*(98)-(7/615))-3/1-7+((4179*683)/1)".to_string());
+  | 
+
+--[ Match #33 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\tests\test_random_math.rs
+   Pattern: \.(request|post|get)\(
+  |         sym: neg,
+  |         chars: "0",
+  |     };
+  |     let to_char = |sym, _: &mut _| sym_map.get(&sym).cloned();
+  |     let string = binarized
+  |         .random(start, Some(1_000_000), &mut rng, &[neg], to_char)
+  |         .map(|(_syms, chars)| chars.into_iter().collect());
+  | 
+
+--[ Match #34 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\tests\test_random_math.rs
+   Pattern: \.(request|post|get)\(
+  |     let binarized = grammar.binarize();
+  | 
+  |     let mut rng = SmallRng::seed_from_u64(42);
+  |     let to_char = |s, _: &mut _| sym_map.get(&s).cloned();
+  |     let string = binarized
+  |         .random(start, Some(1_000_000), &mut rng, &[], to_char)
+  |         .map(|(_syms, chars)| chars.into_iter().collect());
+  | 
+
+--[ Match #35 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\follow.rs
+   Pattern: \.(request|post|get)\(
+  |                         followed.extend(follow_set.iter().cloned());
+  |                         changed |= prev_cardinality != followed.len();
+  | 
+  |                         let first_set = first_sets.get(&sym).unwrap();
+  |                         if !first_set.contains(&None) {
+  |                             follow_set.clear();
+  |                         }
+  | 
+
+--[ Match #36 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\follow.rs
+   Pattern: \.(request|post|get)\(
+  |             changed = false;
+  |             let terminal_set = SymbolBitSet::terminal_set(&grammar);
+  |             for rule in grammar.rules() {
+  |                 let mut follow_set = this.map.get(&rule.lhs()).unwrap().clone();
+  | 
+  |                 for &sym in rule.rhs().iter().rev() {
+  |                     if terminal_set.has_sym(sym) {
+  | 
+
+--[ Match #37 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\first.rs
+   Pattern: \.(request|post|get)\(
+  |             if self.terminal_set.has_sym(sym) {
+  |                 self.lookahead.push(Some(sym));
+  |             } else {
+  |                 match self.map.get(&sym) {
+  |                     None => {
+  |                         // This should only happen during set construction; it
+  |                         // corresponds to an entry that has not yet been
+  | 
+
+--[ Match #38 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\prediction\first.rs
+   Pattern: \.(request|post|get)\(
+  |             if self.terminal_set.has_sym(sym) {
+  |                 result.insert(Some(sym));
+  |             } else {
+  |                 let first_set = self.map.get(&sym).unwrap();
+  |                 for &maybe_terminal in first_set {
+  |                     if maybe_terminal.is_some() {
+  |                         result.insert(maybe_terminal);
+  | 
+
+--[ Match #39 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\rule_container.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             let _: Symbol = new_grammar.sym();
+  |         }
+  | 
+  |         for node in self.history_graph().iter() {
+  |             new_grammar.add_history_node(node.clone());
+  |         }
+  | 
+  | 
+
+--[ Match #40 of 44 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License Version 2.0:
+  | http://www.apache.org/licenses/LICENSE-2.0, or the MIT license:
+  | http://opensource.org/licenses/MIT, at your option.
+  | 
+
+--[ Match #41 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\lr.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     fn id_of(&mut self, items: Rc<Lr0Items>) -> SetId {
+  |         match self.cached_sets.get(&items) {
+  |             None => {
+  |                 let id = self.cached_sets.len() as SetId;
+  |                 self.introduce_set(items, id);
+  | 
+
+--[ Match #42 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\lr.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     fn nonterminal_postdot(&self, item: &Lr0Item) -> Option<Symbol> {
+  |         match item.rhs.get(item.dot as usize) {
+  |             Some(&postdot) => {
+  |                 if !self.terminal_set.has_sym(postdot) {
+  |                     Some(postdot)
+  | 
+
+--[ Match #43 of 44 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\src\classification\lr.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     fn postdot(&self, item: &Lr0Item) -> Option<Symbol> {
+  |         item.rhs.get(item.dot as usize).cloned()
+  |     }
+  | 
+  |     fn nonterminal_postdot(&self, item: &Lr0Item) -> Option<Symbol> {
+  | 
+
+--[ Match #44 of 44 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-cfg@0.8\cfg-0.8.0\.travis.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # load travis-cargo
+  | before_script:
+  |   - |
+  |       pip install 'travis-cargo<0.2' --user &&
+  |       export PATH=$HOME/.local/bin:$PATH
+  | script:
+  |   - |
+  | 
+
+44 matches found.

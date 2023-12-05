@@ -1,0 +1,3009 @@
+--[ Match #1 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             init.arg("-o").arg(format!("Compression={}", arg));
+  |         }
+  | 
+  |         if let Some(ssh_auth_sock) = self.ssh_auth_sock.as_deref() {
+  |             init.env("SSH_AUTH_SOCK", ssh_auth_sock);
+  |         }
+  | 
+  | 
+
+--[ Match #2 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             get_default_control_dir()?
+  |         };
+  | 
+  |         let prefix = ".ssh-connection";
+  | 
+  |         if self.clean_history_control_dir {
+  |             let _ = clean_history_control_dir(socketdir, prefix);
+  | 
+
+--[ Match #3 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// builder (but does not change the builder).
+  |     ///
+  |     /// If connecting requires interactive authentication based on `STDIN` (such as reading a
+  |     /// password), the connection will fail. Consider setting up keypair-based authentication
+  |     /// instead.
+  |     #[cfg(feature = "native-mux")]
+  |     #[cfg_attr(docsrs, doc(cfg(feature = "native-mux")))]
+  | 
+
+--[ Match #4 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// builder (but does not change the builder).
+  |     ///
+  |     /// If connecting requires interactive authentication based on `STDIN` (such as reading a
+  |     /// password), the connection will fail. Consider setting up keypair-based authentication
+  |     /// instead.
+  |     #[cfg(feature = "process-mux")]
+  |     #[cfg_attr(docsrs, doc(cfg(feature = "process-mux")))]
+  | 
+
+--[ Match #5 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ///
+  |     /// The default is `None`.
+  |     pub fn ssh_auth_sock(&mut self, ssh_auth_sock: impl AsRef<Path>) -> &mut Self {
+  |         self.ssh_auth_sock = Some(ssh_auth_sock.as_ref().to_owned().into_boxed_path());
+  |         self
+  |     }
+  | 
+  | 
+
+--[ Match #6 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// The path provided may use tilde notation (`~`) to refer to the user's
+  |     /// home directory.
+  |     ///
+  |     /// The default is `~/.ssh/known_hosts` and `~/.ssh/known_hosts2`.
+  |     pub fn user_known_hosts_file(&mut self, user_known_hosts_file: impl AsRef<Path>) -> &mut Self {
+  |         self.user_known_hosts_file =
+  |             Some(user_known_hosts_file.as_ref().to_owned().into_boxed_path());
+  | 
+
+--[ Match #7 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// The path provided may use tilde notation (`~`) to refer to the user's
+  |     /// home directory.
+  |     ///
+  |     /// The default is `~/.ssh/known_hosts` and `~/.ssh/known_hosts2`.
+  |     pub fn user_known_hosts_file(&mut self, user_known_hosts_file: impl AsRef<Path>) -> &mut Self {
+  |         self.user_known_hosts_file =
+  |             Some(user_known_hosts_file.as_ref().to_owned().into_boxed_path());
+  | 
+
+--[ Match #8 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// Note that configuration directives specified by [`SessionBuilder`]
+  |     /// do not apply to the jump hosts.
+  |     ///
+  |     /// Use ~/.ssh/config to specify configuration for jump hosts.
+  |     pub fn jump_hosts<T: AsRef<str>>(&mut self, hosts: impl IntoIterator<Item = T>) -> &mut Self {
+  |         self.jump_hosts = hosts
+  |             .into_iter()
+  | 
+
+--[ Match #9 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ///
+  |     /// By default, ssh uses configure value set in `~/.ssh/config`.
+  |     ///
+  |     /// If `~/.ssh/config` does not enable compression, then it is disabled
+  |     /// by default.
+  |     pub fn compression(&mut self, compression: bool) -> &mut Self {
+  |         self.compression = Some(compression);
+  | 
+
+--[ Match #10 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ///
+  |     /// Note that the ssh server can forcibly disable the compression.
+  |     ///
+  |     /// By default, ssh uses configure value set in `~/.ssh/config`.
+  |     ///
+  |     /// If `~/.ssh/config` does not enable compression, then it is disabled
+  |     /// by default.
+  | 
+
+--[ Match #11 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     /// Set an alternative per-user configuration file.
+  |     ///
+  |     /// By default, ssh uses `~/.ssh/config`. This is equivalent to `ssh -F <p>`.
+  |     ///
+  |     /// Defaults to `None`.
+  |     pub fn config_file(&mut self, p: impl AsRef<Path>) -> &mut Self {
+  | 
+
+--[ Match #12 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         self
+  |     }
+  | 
+  |     /// Clean up the temporary directories with the `.ssh-connection` prefix
+  |     /// in directory specified by [`SessionBuilder::control_directory`], created by
+  |     /// previous `openssh::Session` that is not cleaned up for some reasons
+  |     /// (e.g. process getting killed, abort on panic, etc)
+  | 
+
+--[ Match #13 of 200 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\command.rs
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |     ///
+  |     /// The command to be executed on the remote machine should not explicitly
+  |     /// set environment variables or the current working directory. It errors if the source command
+  |     /// has environment variables or a current working directory set, since `openssh` doesn't (yet) 
+  |     /// a method to set environment variables and `ssh` doesn't support setting a current working di
+  |     /// outside of `bash/dash/zsh` (which is not always available).
+  |     ///
+  | 
+
+--[ Match #14 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | //!
+  | //! # Authentication
+  | //!
+  | //! This library supports only password-less authentication schemes. If running `ssh` to a target
+  | //! host requires you to provide input on standard input (`STDIN`), then this crate will not work
+  | //! for you. You should set up keypair-based authentication instead.
+  | //!
+  | 
+
+--[ Match #15 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\lib.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | //!
+  | //! This crate wraps the OpenSSH remote login client (`ssh` on most machines), and provides
+  | //! a convenient mechanism for running commands on remote hosts. Since all commands are executed
+  | //! through the `ssh` command, all your existing configuration (e.g., in `.ssh/config`) should
+  | //! continue to work as expected.
+  | //!
+  | //! # Executing remote processes
+  | 
+
+--[ Match #16 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         }
+  | 
+  |         // NOTE: we may want to provide more structured connection errors than just io::Error?
+  |         // NOTE: can we re-use this method for non-connect cases?
+  |         Error::Connect(io::Error::new(kind, stderr))
+  |     }
+  | }
+  | 
+  | #[cfg(test)]
+  | mod tests {
+  |     use super::{io, Error};
+  | 
+  |     #[test]
+  |     fn parse_error() {
+  |         let err = "ssh: Warning: Permanently added \'login.csail.mit.edu,128.52.131.0\' (ECDSA) to t
+  |         let err = Error::interpret_ssh_error(err);
+  |         let target = io::Error::new(io::ErrorKind::PermissionDenied, "openssh-tester@login.csail.mit
+  |         if let Error::Connect(e) = err {
+  |             assert_eq!(e.kind(), target.kind());
+  |             assert_eq!(format!("{}", e), format!("{}", target));
+  | 
+
+--[ Match #17 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     #[test]
+  |     fn parse_error() {
+  |         let err = "ssh: Warning: Permanently added \'login.csail.mit.edu,128.52.131.0\' (ECDSA) to t
+  |         let err = Error::interpret_ssh_error(err);
+  |         let target = io::Error::new(io::ErrorKind::PermissionDenied, "openssh-tester@login.csail.mit
+  |         if let Error::Connect(e) = err {
+  | 
+
+--[ Match #18 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\session.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// specified as either `[user@]hostname` or a URI of the form `ssh://[user@]hostname[:port]`.
+  |     ///
+  |     /// If connecting requires interactive authentication based on `STDIN` (such as reading a
+  |     /// password), the connection will fail. Consider setting up keypair-based authentication
+  |     /// instead.
+  |     ///
+  |     /// For more options, see [`SessionBuilder`].
+  | 
+
+--[ Match #19 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\session.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// specified as either `[user@]hostname` or a URI of the form `ssh://[user@]hostname[:port]`.
+  |     ///
+  |     /// If connecting requires interactive authentication based on `STDIN` (such as reading a
+  |     /// password), the connection will fail. Consider setting up keypair-based authentication
+  |     /// instead.
+  |     ///
+  |     /// For more options, see [`SessionBuilder`].
+  | 
+
+--[ Match #20 of 200 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | This crate wraps the OpenSSH remote login client (`ssh` on most machines), and provides
+  | a convenient mechanism for running commands on remote hosts. Since all commands are executed
+  | through the `ssh` command, all your existing configuration (e.g., in `.ssh/config`) should
+  | continue to work as expected.
+  | 
+  | The library's API is modeled closely after that of [`std::process::Command`], since `ssh` also
+  | 
+
+--[ Match #21 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
+  | 
+
+--[ Match #22 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnullvm"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0b7b52767868a23d5bab768e390dc5f5c55825b6d30b86c844ff2dc7414044cc"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_msvc"
+  | 
+
+--[ Match #23 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "53d40abd2583d23e4718fddf1ebec84dbff8381c07cae67ff7768bbf19c6718e"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnullvm"
+  | 
+
+--[ Match #24 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8f55c233f70c4b27f66c523580f78f1004e8b5a8b659e05a4eb49d4166cca406"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #25 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_gnu"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a75915e7def60c94dcef72200b9a8e58e5091744960da64ec734a6c6e9b3743e"
+  | 
+  | [[package]]
+  | name = "windows_i686_msvc"
+  | 
+
+--[ Match #26 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #27 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #28 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-targets"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a2fa6e2155d7247be68c096456083145c183cbbbc2764150dda45a87197940c"
+  | dependencies = [
+  |  "windows_aarch64_gnullvm",
+  |  "windows_aarch64_msvc",
+  | 
+
+--[ Match #29 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-sys"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9"
+  | dependencies = [
+  |  "windows-targets",
+  | ]
+  | 
+
+--[ Match #30 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.11.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
+  | 
+  | [[package]]
+  | name = "windows-sys"
+  | 
+
+--[ Match #31 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vec-strings"
+  | version = "0.4.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c8509489e2a7ee219522238ad45fd370bec6808811ac15ac6b07453804e77659"
+  | dependencies = [
+  |  "serde",
+  |  "thin-vec",
+  | 
+
+--[ Match #32 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
+  | 
+  | [[package]]
+  | name = "vec-strings"
+  | 
+
+--[ Match #33 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "typed-builder-macro"
+  | version = "0.16.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f03ca4cb38206e2bef0700092660bb74d696f808514dae47fa1467cbfe26e96e"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #34 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "typed-builder"
+  | version = "0.16.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "34085c17941e36627a879208083e25d357243812c30e7d7387c3b954f30ade16"
+  | dependencies = [
+  |  "typed-builder-macro",
+  | ]
+  | 
+
+--[ Match #35 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "triomphe"
+  | version = "0.1.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0eee8098afad3fb0c54a9007aab6804558410503ad676d4633f9c2559a00ac0f"
+  | dependencies = [
+  |  "arc-swap",
+  |  "serde",
+  | 
+
+--[ Match #36 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio-util"
+  | version = "0.7.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1d68074620f57a0b21594d9735eb2e98ab38b17f80d3fcb189fca266771ca60d"
+  | dependencies = [
+  |  "bytes",
+  |  "futures-core",
+  | 
+
+--[ Match #37 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio-pipe"
+  | version = "0.2.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f213a84bffbd61b8fa0ba8a044b4bbe35d471d0b518867181e82bd5c15542784"
+  | dependencies = [
+  |  "libc",
+  |  "tokio",
+  | 
+
+--[ Match #38 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio-macros"
+  | version = "2.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "630bdcf245f78637c13ec01ffae6187cca34625e8c63150d424b59e55af2675e"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #39 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio-io-utility"
+  | version = "0.7.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8d672654d175710e52c7c41f6aec77c62b3c0954e2a7ebce9049d1e94ed7c263"
+  | dependencies = [
+  |  "bytes",
+  |  "tokio",
+  | 
+
+--[ Match #40 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio"
+  | version = "1.32.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "17ed6077ed6cd6c74735e21f37eb16dc3935f96878b1fe961074089cc80893f9"
+  | dependencies = [
+  |  "backtrace",
+  |  "bytes",
+  | 
+
+--[ Match #41 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thiserror-impl"
+  | version = "1.0.49"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "10712f02019e9288794769fba95cd6847df9874d49d871d062172f9dd41bc4cc"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #42 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thiserror"
+  | version = "1.0.49"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1177e8c6d7ede7afde3585fd2513e611227efd6481bd78d2e82ba1ce16557ed4"
+  | dependencies = [
+  |  "thiserror-impl",
+  | ]
+  | 
+
+--[ Match #43 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thin-vec"
+  | version = "0.2.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aac81b6fd6beb5884b0cf3321b8117e6e5d47ecb6fc89f414cfdcca8b2fe2dd8"
+  | 
+  | [[package]]
+  | name = "thiserror"
+  | 
+
+--[ Match #44 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tempfile"
+  | version = "3.8.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cb94d2f3cc536af71caac6b6fcebf65860b347e7ce0cc9ebe8f70d3e521054ef"
+  | dependencies = [
+  |  "cfg-if",
+  |  "fastrand",
+  | 
+
+--[ Match #45 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.38"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e96b79aaa137db8f61e26363a0c9b47d8b4ec75da28b7d1d614c2303e232408b"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #46 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.109"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #47 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "stable_deref_trait"
+  | version = "1.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a8f112729512f8e442d81f95a8a7ddf2b7c6b8a1a6f509a95864142b30cab2d3"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #48 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ssh_format_error"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "be3c6519de7ca611f71ef7e8a56eb57aa1c818fecb5242d0a0f39c83776c210c"
+  | dependencies = [
+  |  "serde",
+  | ]
+  | 
+
+--[ Match #49 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ssh_format"
+  | version = "0.14.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "24ab31081d1c9097c327ec23550858cb5ffb4af6b866c1ef4d728455f01f3304"
+  | dependencies = [
+  |  "bytes",
+  |  "serde",
+  | 
+
+--[ Match #50 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "socket2"
+  | version = "0.5.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4031e820eb552adee9295814c0ced9e5cf38ddf1e8b7d566d6de8e2538ea989e"
+  | dependencies = [
+  |  "libc",
+  |  "windows-sys",
+  | 
+
+--[ Match #51 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "smallvec"
+  | version = "1.11.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "942b4a808e05215192e39f4ab80813e599068285906cc91aa64f923db842bd5a"
+  | 
+  | [[package]]
+  | name = "socket2"
+  | 
+
+--[ Match #52 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "signal-hook-registry"
+  | version = "1.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d8229b473baa5980ac72ef434c4415e70c4b5e71b423043adb4ba059f89c99a1"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #53 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "shell-escape"
+  | version = "0.1.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "45bb67a18fa91266cc7807181f62f9178a6873bfad7dc788c42e6430db40184f"
+  | 
+  | [[package]]
+  | name = "signal-hook-registry"
+  | 
+
+--[ Match #54 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_derive"
+  | version = "1.0.188"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4eca7ac642d82aa35b60049a6eccb4be6be75e599bd2e9adb5f875a737654af2"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #55 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.188"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf9e0fcba69a370eed61bcf2b728575f726b50b55cba78064753d708ddc7549e"
+  | dependencies = [
+  |  "serde_derive",
+  | ]
+  | 
+
+--[ Match #56 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "sendfd"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "604b71b8fc267e13bb3023a2c901126c8f349393666a6d98ac1ae5729b701798"
+  | dependencies = [
+  |  "libc",
+  |  "tokio",
+  | 
+
+--[ Match #57 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "scopeguard"
+  | version = "1.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "94143f37725109f92c262ed2cf5e59bce7498c01bcc1502d7b9afe439a4e9f49"
+  | 
+  | [[package]]
+  | name = "sendfd"
+  | 
+
+--[ Match #58 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.38.17"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f25469e9ae0f3d0047ca8b93fc56843f38e6774f0914a107ff8b41be8be8e0b7"
+  | dependencies = [
+  |  "bitflags 2.4.0",
+  |  "errno",
+  | 
+
+--[ Match #59 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustc-demangle"
+  | version = "0.1.23"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d626bb9dae77e28219937af045c257c28bfd3f69333c512553507f5f9798cb76"
+  | 
+  | [[package]]
+  | name = "rustix"
+  | 
+
+--[ Match #60 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.7.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dbb5fb1acd8a1a18b3dd5be62d25485eb770e05afb408a9627d14d451bae12da"
+  | 
+  | [[package]]
+  | name = "rustc-demangle"
+  | 
+
+--[ Match #61 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-automata"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "59b23e92ee4318893fa3fe3e6fb365258efbfe6ac6ab30f090cdcbb7aa37efa9"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #62 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.9.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ebee201405406dbf528b8b672104ae6d6d63e6d118cb10e4d51abbc7b58044ff"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #63 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "redox_users"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b033d837a7cf162d7993aded9304e30a83213c648b6e389db233191f891e5c2b"
+  | dependencies = [
+  |  "getrandom",
+  |  "redox_syscall 0.2.16",
+  | 
+
+--[ Match #64 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "redox_syscall"
+  | version = "0.3.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "567664f262709473930a4bf9e51bf2ebf3348f2e748ccc50dea20646858f8f29"
+  | dependencies = [
+  |  "bitflags 1.3.2",
+  | ]
+  | 
+
+--[ Match #65 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "redox_syscall"
+  | version = "0.2.16"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fb5a58c1855b4b6819d59012155603f0b22ad30cad752600aadfcb695265519a"
+  | dependencies = [
+  |  "bitflags 1.3.2",
+  | ]
+  | 
+
+--[ Match #66 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.33"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #67 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.68"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5b1106fec09662ec6dd98ccac0f81cef56984d0b49f75c92d8cbad76e20c005c"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #68 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pin-project-lite"
+  | version = "0.2.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8afb450f006bf6385ca15ef45d71d2288452bc3683ce2e2cacc0d18e4be60b58"
+  | 
+  | [[package]]
+  | name = "proc-macro2"
+  | 
+
+--[ Match #69 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pin-project-internal"
+  | version = "1.1.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4359fd9c9171ec6e8c62926d6faaf553a8dc3f64e1507e76da7911b4f6a04405"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #70 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pin-project"
+  | version = "1.1.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fda4ed1c6c173e3fc7a83629421152e01d7b1f9b7f65fb301e490e8cfc656422"
+  | dependencies = [
+  |  "pin-project-internal",
+  | ]
+  | 
+
+--[ Match #71 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "parking_lot_core"
+  | version = "0.9.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "93f00c865fe7cabf650081affecd3871070f26767e7b2070a3ffae14c654b447"
+  | dependencies = [
+  |  "cfg-if",
+  |  "libc",
+  | 
+
+--[ Match #72 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "parking_lot"
+  | version = "0.12.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3742b2c103b9f06bc9fff0a37ff4912935851bee6d36f3c02bcc755bcfec228f"
+  | dependencies = [
+  |  "lock_api",
+  |  "parking_lot_core",
+  | 
+
+--[ Match #73 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "option-ext"
+  | version = "0.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "04744f49eae99ab78e0d5c0b603ab218f515ea8cfe5a456d7629ad883a3b6e7d"
+  | 
+  | [[package]]
+  | name = "parking_lot"
+  | 
+
+--[ Match #74 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-sftp-protocol-error"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0719269eb3f037866ae07ec89cb44ed2c1d63b72b2390cef8e1aa3016a956ff8"
+  | dependencies = [
+  |  "serde",
+  |  "thiserror",
+  | 
+
+--[ Match #75 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-sftp-protocol"
+  | version = "0.24.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bf38532d784978966f95d241226223823f351d5bb2a4bebcf6b20b9cb1e393e0"
+  | dependencies = [
+  |  "bitflags 2.4.0",
+  |  "num-derive",
+  | 
+
+--[ Match #76 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-sftp-error"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f4c3356e914b8006417188efd534105d5bcb230b4a9fd67782a6b4a4e15fa006"
+  | dependencies = [
+  |  "awaitable-error",
+  |  "openssh-sftp-protocol-error",
+  | 
+
+--[ Match #77 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-sftp-client-lowlevel"
+  | version = "0.5.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f4975d0a824e82d4f61e3edf870254ce97bd7f8154751d2afdd97c7f43e57dff"
+  | dependencies = [
+  |  "awaitable",
+  |  "bytes",
+  | 
+
+--[ Match #78 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-sftp-client"
+  | version = "0.14.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7b1e5fe136dc7c9e08aa4b2f1124971964733826445572c06b04ba8a35a06d6b"
+  | dependencies = [
+  |  "bytes",
+  |  "derive_destructure2",
+  | 
+
+--[ Match #79 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-mux-client-error"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "015d49e592f4d2a456033e6ec48036588e8e58c8908424b1bc40994de58ae648"
+  | dependencies = [
+  |  "ssh_format_error",
+  |  "thiserror",
+  | 
+
+--[ Match #80 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "openssh-mux-client"
+  | version = "0.17.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e171eac47982c2878c8b113f79355fc5f80a384e80ee7cf5dfabcd6f9e5f21af"
+  | dependencies = [
+  |  "cfg-if",
+  |  "non-zero-byte-slice",
+  | 
+
+--[ Match #81 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.18.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
+  | 
+  | [[package]]
+  | name = "openssh"
+  | 
+
+--[ Match #82 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "object"
+  | version = "0.32.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9cf5f9dd3933bd50a9e1f149ec995f39ae2c496d31fd772c1fd45ebc27e902b0"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #83 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num_cpus"
+  | version = "1.16.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4161fcb6d602d4d2081af7c3a45852d875a03dd337a6bfdd6e06407b61342a43"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #84 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.17"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #85 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-derive"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "876a53fff98e03a936a674b29568b0e605f06b29372c2489ff4de23f1949743d"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #86 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "non-zero-byte-slice"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "89daa1daa11c9df05d1181bcd0936d8066f8543144d77b09808eb78d65e38024"
+  | dependencies = [
+  |  "serde",
+  | ]
+  | 
+
+--[ Match #87 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "mio"
+  | version = "0.8.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "927a765cd3fc26206e66b296465fa9d3e5ab003e651c1b3c060e7956d96b19d2"
+  | dependencies = [
+  |  "libc",
+  |  "wasi",
+  | 
+
+--[ Match #88 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "miniz_oxide"
+  | version = "0.7.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e7810e0be55b428ada41041c41f32c9f1a42817901b4ccf45fa3d4b6561e74c7"
+  | dependencies = [
+  |  "adler",
+  | ]
+  | 
+
+--[ Match #89 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.6.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd71e126420da8274909a0167"
+  | 
+  | [[package]]
+  | name = "miniz_oxide"
+  | 
+
+--[ Match #90 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lock_api"
+  | version = "0.4.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c1cc9717a20b1bb222f333e6a92fd32f7d8a18ddc5a3191a11af45dcbf4dcd16"
+  | dependencies = [
+  |  "autocfg",
+  |  "scopeguard",
+  | 
+
+--[ Match #91 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.4.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3852614a3bd9ca9804678ba6be5e3b8ce76dfc902cae004e3e0c44051b6e88db"
+  | 
+  | [[package]]
+  | name = "lock_api"
+  | 
+
+--[ Match #92 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.149"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a08173bc88b7955d1b3145aa561539096c421ac8debde8cbc3612ec635fee29b"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #93 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d77f7ec81a6d05a3abb01ab6eb7590f6083d08449fe5a1c8b1e620283546ccb7"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #94 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "gimli"
+  | version = "0.28.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6fb8d784f27acf97159b40fc4db5ecd8aa23b9ad5ef69cdd136d3bc80665f0c0"
+  | 
+  | [[package]]
+  | name = "hermit-abi"
+  | 
+
+--[ Match #95 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "getrandom"
+  | version = "0.2.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "be4136b2a15dd319360be1c07d9933517ccf0be8f16bf62a3bee4f0d618df427"
+  | dependencies = [
+  |  "cfg-if",
+  |  "libc",
+  | 
+
+--[ Match #96 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "futures-sink"
+  | version = "0.3.28"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f43be4fe21a13b9781a69afa4985b0f6ee0e1afab2c6f454a8cf30e2b2237b6e"
+  | 
+  | [[package]]
+  | name = "getrandom"
+  | 
+
+--[ Match #97 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "futures-core"
+  | version = "0.3.28"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4bca583b7e26f571124fe5b7561d49cb2868d79116cfa0eefce955557c6fee8c"
+  | 
+  | [[package]]
+  | name = "futures-sink"
+  | 
+
+--[ Match #98 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fastrand"
+  | version = "2.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "25cbce373ec4653f1a01a31e8a5e5ec0c622dc27ff9c4e6606eefef5cbbed4a5"
+  | 
+  | [[package]]
+  | name = "futures-core"
+  | 
+
+--[ Match #99 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno-dragonfly"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+  | dependencies = [
+  |  "cc",
+  |  "libc",
+  | 
+
+--[ Match #100 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno"
+  | version = "0.3.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "add4f07d43996f76ef320709726a556a9d4f965d9410d8d0271132d2f8293480"
+  | dependencies = [
+  |  "errno-dragonfly",
+  |  "libc",
+  | 
+
+--[ Match #101 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "dirs-sys"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "520f05a5cbd335fae5a99ff7a6ab8627577660ee5cfd6a94a6a929b52ff0321c"
+  | dependencies = [
+  |  "libc",
+  |  "option-ext",
+  | 
+
+--[ Match #102 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "dirs"
+  | version = "5.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "44c45a9d03d6676652bcb5e724c7e988de1acad23a711b5217ab9cbecbec2225"
+  | dependencies = [
+  |  "dirs-sys",
+  | ]
+  | 
+
+--[ Match #103 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "derive_destructure2"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac4b68190bad25c00b64ea19767b2321a037fc0e5bea7563d5d8e35e04b19c95"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #104 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "concurrent_arena"
+  | version = "0.1.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c529c2d4ecc249ae15d317c9a8b9e7d86f87e80d4417de6cfa8f4d6030f37daf"
+  | dependencies = [
+  |  "arc-swap",
+  |  "parking_lot",
+  | 
+
+--[ Match #105 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "concurrent_arena"
+  | 
+
+--[ Match #106 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cc"
+  | version = "1.0.83"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f1174fb0b6ec23863f8b971027804a42614e347eafb0a95bf0b12cdae21fc4d0"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #107 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bytes"
+  | version = "1.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a2bd12c1caf447e69cd4528f47f94d203fd2582878ecb9e9465484c4148a8223"
+  | 
+  | [[package]]
+  | name = "cc"
+  | 
+
+--[ Match #108 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "2.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b4682ae6287fcf752ecaabbfcc7b6f9b72aa33933dc23a554d853aea8eea8635"
+  | 
+  | [[package]]
+  | name = "bytes"
+  | 
+
+--[ Match #109 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #110 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "backtrace"
+  | version = "0.3.69"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2089b7e3f35b9dd2d0ed921ead4f6d318c27680d4a5bd167b3ee120edb105837"
+  | dependencies = [
+  |  "addr2line",
+  |  "cc",
+  | 
+
+--[ Match #111 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "awaitable-error"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d5b3469636cdf8543cceab175efca534471f36eee12fb8374aba00eb5e7e7f8a"
+  | 
+  | [[package]]
+  | name = "backtrace"
+  | 
+
+--[ Match #112 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "awaitable"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "70af449c9a763cb655c6a1e5338b42d99c67190824ff90658c1e30be844c0775"
+  | dependencies = [
+  |  "awaitable-error",
+  |  "cfg-if",
+  | 
+
+--[ Match #113 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+  | 
+  | [[package]]
+  | name = "awaitable"
+  | 
+
+--[ Match #114 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "arc-swap"
+  | version = "1.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bddcadddf5e9015d310179a59bb28c4d4b9920ad0f11e8e14dbadf654890c9a6"
+  | 
+  | [[package]]
+  | name = "autocfg"
+  | 
+
+--[ Match #115 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "1.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ea5d730647d4fadd988536d06fecce94b7b4f2a7efdae548f1cf4b63205518ab"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #116 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "adler"
+  | version = "1.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
+  | 
+  | [[package]]
+  | name = "aho-corasick"
+  | 
+
+--[ Match #117 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "addr2line"
+  | version = "0.21.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb"
+  | dependencies = [
+  |  "gimli",
+  | ]
+  | 
+
+--[ Match #118 of 200 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "9a1856c7524bb330761eb136ad59d136f9241c9e"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #119 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\process_impl\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         // NOTE: we pass -p 9 nine here (the "discard" port) to ensure that ssh does not
+  |         // succeed in establishing a _new_ connection if the master connection has failed.
+  | 
+  |         let mut cmd = self.new_cmd(&["-T", "-p", "9", "-s"]);
+  |         cmd.arg("--").arg(program);
+  | 
+  |         Command::new(cmd)
+  | 
+
+--[ Match #120 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\process_impl\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         // NOTE: we pass -p 9 nine here (the "discard" port) to ensure that ssh does not
+  |         // succeed in establishing a _new_ connection if the master connection has failed.
+  | 
+  |         let mut cmd = self.new_cmd(&["-T", "-p", "9"]);
+  |         cmd.arg("--").arg(program);
+  | 
+  |         Command::new(cmd)
+  | 
+
+--[ Match #121 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\process_impl\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             // `-S &*self.ctl`.
+  |             // It is tested on OpenSSH 8.2p1, 8.9p1, 9.0p1
+  |             .arg("none");
+  |         cmd
+  |     }
+  | 
+  |     fn new_cmd(&self, args: &[impl AsRef<OsStr>]) -> process::Command {
+  | 
+
+--[ Match #122 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\process_impl\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     }
+  | 
+  |     fn new_std_cmd(&self, args: &[impl AsRef<OsStr>]) -> std::process::Command {
+  |         let mut cmd = std::process::Command::new("ssh");
+  |         cmd.stdin(Stdio::null())
+  |             .arg("-S")
+  |             .arg(&*self.ctl)
+  | 
+
+--[ Match #123 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    Licensed under the Apache License, Version 2.0 (the "License");
+  |    you may not use this file except in compliance with the License.
+  |    You may obtain a copy of the License at
+  | 
+  |        http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #124 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |           distribution, then any Derivative Works that You distribute must
+  |           include a readable copy of the attribution notices contained
+  |           within such NOTICE file, excluding those notices that do not
+  |           pertain to any part of the Derivative Works, in at least one
+  |           of the following places: within a NOTICE text file distributed
+  |           as part of the Derivative Works; within the Source form or
+  |           documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #125 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       the copyright owner. For the purposes of this definition, "submitted"
+  |       means any form of electronic, verbal, or written communication sent
+  |       to the Licensor or its representatives, including but not limited to
+  |       communication on electronic mailing lists, source code control systems,
+  |       and issue tracking systems that are managed by, or on behalf of, the
+  |       Licensor for the purpose of discussing and improving the Work, but
+  |       excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #126 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |       "Legal Entity" shall mean the union of the acting entity and all
+  |       other entities that control, are controlled by, or are under common
+  |       control with that entity. For the purposes of this definition,
+  |       "control" means (i) the power, direct or indirect, to cause the
+  |       direction or management of such entity, whether by contract or
+  |       otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #127 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       with Licensor regarding such Contributions.
+  | 
+  |    6. Trademarks. This License does not grant permission to use the trade
+  |       names, trademarks, service marks, or product names of the Licensor,
+  |       except as required for reasonable and customary use in describing the
+  |       origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #128 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\features.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |       - uses: taiki-e/install-action@cargo-hack
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - name: cargo hack
+  | 
+
+--[ Match #129 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: .userInfo
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #130 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  |       - name: Compile tests
+  |         run: cargo test --all-features --workspace --no-run
+  | 
+
+--[ Match #131 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  |         if: ${{ failure() }}
+  |     services:
+  |       openssh:
+  | 
+
+--[ Match #132 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  |         if: ${{ failure() }}
+  |     services:
+  | 
+
+--[ Match #133 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  |         if: ${{ failure() }}
+  |     services:
+  | 
+
+--[ Match #134 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  |         if: ${{ failure() }}
+  |     services:
+  | 
+
+--[ Match #135 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  |         if: ${{ failure() }}
+  |     services:
+  | 
+
+--[ Match #136 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  | 
+
+--[ Match #137 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  | 
+
+--[ Match #138 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') cat /config/logs/open
+  |         name: ssh server log
+  | 
+
+--[ Match #139 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         env:
+  |           XDG_RUNTIME_DIR: /tmp
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  |         if: ${{ failure() }}
+  | 
+
+--[ Match #140 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: cargo test --all-features
+  |         env:
+  |           XDG_RUNTIME_DIR: /tmp
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  | 
+
+--[ Match #141 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: cargo test --all-features
+  |         env:
+  |           XDG_RUNTIME_DIR: /tmp
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  | 
+
+--[ Match #142 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: cargo test --all-features
+  |         env:
+  |           XDG_RUNTIME_DIR: /tmp
+  |       - run: docker logs $(docker ps | grep openssh-server | awk '{print $1}')
+  |         name: ssh container log
+  |         if: ${{ failure() }}
+  |       - run: docker exec $(docker ps | grep openssh-server | awk '{print $1}') ls -R /config/logs/
+  | 
+
+--[ Match #143 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  |           echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> $GITHUB_ENV
+  |           cat .test-key | ssh-add -
+  |         name: Set up ssh-agent
+  |       - run: cargo test --all-features
+  |         env:
+  | 
+
+--[ Match #144 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  | 
+
+--[ Match #145 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #146 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  | 
+
+--[ Match #147 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\test.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  | 
+
+--[ Match #148 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\style.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - run: cargo +nightly doc --no-deps --all-features
+  | 
+
+--[ Match #149 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\style.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - run: cargo fmt --check
+  | 
+
+--[ Match #150 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\style.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - run: cargo fmt --check
+  |       - name: cargo clippy
+  |         uses: actions-rs/clippy-check@v1
+  |         if: always()
+  | 
+
+--[ Match #151 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let sessions = connects().await;
+  |     for (session, port) in sessions.iter().zip([1433, 1432]) {
+  |         eprintln!("Creating remote process");
+  |         let cmd = format!(
+  |             "echo -e '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n' | nc -l -p {} >/dev/stderr",
+  |             port
+  |         );
+  | 
+
+--[ Match #152 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             .unwrap();
+  | 
+  |         eprintln!("Creating remote process");
+  |         let cmd = format!(
+  |             "echo -e '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n' | nc localhost {} >/dev/stderr",
+  |             port
+  |         );
+  | 
+
+--[ Match #153 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             .await
+  |             .unwrap();
+  | 
+  |         let sftp = Sftp::new(
+  |             child.stdin().take().unwrap(),
+  |             child.stdout().take().unwrap(),
+  |             Default::default(),
+  | 
+
+--[ Match #154 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     for (session, port) in sessions.iter().zip([1433, 1432]) {
+  |         eprintln!("Creating remote process");
+  |         let cmd = format!(
+  |             "echo -e '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n' | nc -l -p {} >/dev/stderr",
+  |             port
+  |         );
+  |         let child = session
+  | 
+
+--[ Match #155 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         eprintln!("Creating remote process");
+  |         let cmd = format!(
+  |             "echo -e '0\n1\n2\n3\n4\n5\n6\n7\n8\n9\n10\n' | nc localhost {} >/dev/stderr",
+  |             port
+  |         );
+  |         let child = session
+  | 
+
+--[ Match #156 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         assert_eq!(child.stdout, b"$SHELL\n");
+  | 
+  |         let child = session
+  |             .shell(r#"echo $USER | grep -c test"#)
+  |             .status()
+  |             .await
+  |             .unwrap();
+  | 
+
+--[ Match #157 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let mut command = std::process::Command::new("echo")
+  |             .arg("\"\'\' foo \'\'\"")
+  |             .over_ssh(&session)
+  |             .expect("No env vars or current working dir is set.");
+  | 
+  |         let child = command.output().await.unwrap();
+  |         assert_eq!(child.stdout, b"\"\'\' foo \'\'\"\n");
+  | 
+
+--[ Match #158 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\tests\openssh.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let mut command = std::process::Command::new("echo")
+  |             .arg("foo")
+  |             .over_ssh(&session)
+  |             .expect("No env vars or current working dir is set.");
+  | 
+  |         let child = command.output().await.unwrap();
+  |         assert_eq!(child.stdout, b"foo\n");
+  | 
+
+--[ Match #159 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\tsp.rs
+   Pattern: .userInfo
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | }
+  | 
+
+--[ Match #160 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\tsp.rs
+   Pattern: .userInfo
+  |         String::from_utf8(ls.stdout).expect("server output was not valid UTF-8")
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | 
+
+--[ Match #161 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\tsp.rs
+   Pattern: .userInfo
+  |         String::from_utf8(ls.stdout).expect("server output was not valid UTF-8")
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | 
+
+--[ Match #162 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\contributing.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+  |  * MIT license
+  |    ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+  | 
+  | at your option.
+  | 
+  | ## Contribution
+  | 
+
+--[ Match #163 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\contributing.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | Requires `docker` and [`cargo-hack`].
+  | 
+  | Check [getting Docker guide](https://docs.docker.com/get-docker/) on how to install docker,
+  | and use `cargo install cargo-hack` to install [`cargo-hack`].
+  | 
+  | ```
+  | 
+
+--[ Match #164 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | [badges]
+  | azure-devops = { project = "jonhoo/jonhoo", pipeline = "openssh", build = "23" }
+  | codecov = { repository = "jonhoo/openssh-rs", branch = "master", service = "github" }
+  | maintenance = { status = "experimental" }
+  | 
+  | # docs.rs-specific configuration, shamelessly copied from
+  | 
+
+--[ Match #165 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         use std::error::Error as _;
+  | 
+  |         let ioe = || io::Error::new(io::ErrorKind::Other, "test");
+  |         let expect = ioe();
+  | 
+  |         let e = Error::Master(ioe());
+  |         assert!(!format!("{}", e).is_empty());
+  | 
+
+--[ Match #166 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |     /// The command expects to be in a specific working directory in remote.
+  |     /// However, OverSsh does not support setting a working directory for commands to be executed ov
+  |     #[error("rejected runing a command over ssh that expects a specific working directory to be carr
+  |     CommandHasCwd,
+  | }
+  | 
+  | 
+
+--[ Match #167 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |     /// The command has some env variables that it expects to carry over ssh.
+  |     /// However, OverSsh does not support passing env variables over ssh.
+  |     #[error("rejected runing a command over ssh that expects env variables to be carried over to rem
+  |     CommandHasEnv,
+  | 
+  |     /// The command expects to be in a specific working directory in remote.
+  | 
+
+--[ Match #168 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |     /// The command has some env variables that it expects to carry over ssh.
+  |     /// However, OverSsh does not support passing env variables over ssh.
+  |     #[error("rejected runing a command over ssh that expects env variables to be carried over to rem
+  |     CommandHasEnv,
+  | 
+  |     /// The command expects to be in a specific working directory in remote.
+  | 
+
+--[ Match #169 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     RemoteProcessTerminated,
+  | 
+  |     /// Failed to remove temporary dir where ssh socket and output is stored.
+  |     #[error("failed to remove temporary ssh session directory")]
+  |     Cleanup(#[source] io::Error),
+  | 
+  |     /// IO Error when creating/reading/writing from ChildStdin, ChildStdout, ChildStderr.
+  | 
+
+--[ Match #170 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// Failed to connect to the ssh multiplex server.
+  |     #[cfg(feature = "native-mux")]
+  |     #[cfg_attr(docsrs, doc(cfg(feature = "native-mux")))]
+  |     #[error("failed to connect to the ssh multiplex server")]
+  |     SshMux(#[source] openssh_mux_client::Error),
+  | 
+  |     /// Invalid command that contains null byte.
+  | 
+
+--[ Match #171 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// Failed to run the `ssh` command locally.
+  |     #[cfg(feature = "process-mux")]
+  |     #[cfg_attr(docsrs, doc(cfg(feature = "process-mux")))]
+  |     #[error("the local ssh command could not be executed")]
+  |     Ssh(#[source] io::Error),
+  | 
+  |     /// Failed to connect to the ssh multiplex server.
+  | 
+
+--[ Match #172 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\Cargo.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | [badges.codecov]
+  | branch = "master"
+  | repository = "jonhoo/openssh-rs"
+  | service = "github"
+  | 
+  | [badges.maintenance]
+  | 
+
+--[ Match #173 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     pub fn shell<S: AsRef<str>>(&self, command: S) -> OwningCommand<&'_ Self> {
+  |         let mut cmd = self.command("sh");
+  |         cmd.arg("-c").arg(command.as_ref());
+  |         cmd
+  |     }
+  | 
+  |     /// Request to open a local/remote port forwarding.
+  | 
+
+--[ Match #174 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\session.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     ///   [this article]: https://mywiki.wooledge.org/Arguments
+  |     ///   [`shell-escape`]: https://crates.io/crates/shell-escape
+  |     pub fn shell<S: AsRef<str>>(&self, command: S) -> OwningCommand<&'_ Self> {
+  |         let mut cmd = self.command("sh");
+  |         cmd.arg("-c").arg(command.as_ref());
+  |         cmd
+  |     }
+  | 
+
+--[ Match #175 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    ([LICENSE-APACHE](LICENSE-APACHE) or http://www.apache.org/licenses/LICENSE-2.0)
+  |  * MIT license
+  |    ([LICENSE-MIT](LICENSE-MIT) or http://opensource.org/licenses/MIT)
+  | 
+  | at your option.
+  | 
+  | ## Contribution
+  | 
+
+--[ Match #176 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | Requires `docker` and [`cargo-hack`].
+  | 
+  | Check [getting Docker guide](https://docs.docker.com/get-docker/) on how to install docker,
+  | and use `cargo install cargo-hack` to install [`cargo-hack`].
+  | 
+  | ```
+  | 
+
+--[ Match #177 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | [![Documentation](https://docs.rs/openssh/badge.svg)](https://docs.rs/openssh/)
+  | [![Codecov](https://codecov.io/github/openssh-rust/openssh/coverage.svg?branch=master)](https://code
+  | 
+  | Scriptable SSH through OpenSSH.
+  | 
+  | This crate wraps the OpenSSH remote login client (`ssh` on most machines), and provides
+  | a convenient mechanism for running commands on remote hosts. Since all commands are executed
+  | 
+
+--[ Match #178 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\msrv.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: cargo update -Zminimal-versions
+  |         run: cargo +nightly -Zminimal-versions update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - name: cargo +1.63.0 check
+  | 
+
+--[ Match #179 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\msrv.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |           rustup default 1.63
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: cargo update -Zminimal-versions
+  |         run: cargo +nightly -Zminimal-versions update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  | 
+
+--[ Match #180 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: .userInfo
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #181 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: cargo update -Zminimal-versions
+  |         run: cargo +nightly -Zminimal-versions update
+  |       - uses: Swatinem/rust-cache@v2
+  |       - name: Compile tests
+  |         run: cargo test --all-features --workspace --no-run
+  | 
+
+--[ Match #182 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |           rustup toolchain install nightly --no-self-update --profile minimal
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: cargo update -Zminimal-versions
+  |         run: cargo +nightly -Zminimal-versions update
+  |       - uses: Swatinem/rust-cache@v2
+  |       - name: Compile tests
+  | 
+
+--[ Match #183 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - 'run_ci_tests.sh'
+  |       - 'start_sshd.sh'
+  |       - 'stop_sshd.sh'
+  | name: With dependencies at minimal versions
+  | 
+  | concurrency:
+  |   group: ${{ github.workflow }}-${{ github.event.pull_request.number || github.sha }}
+  | 
+
+--[ Match #184 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  |           echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> $GITHUB_ENV
+  |           cat .test-key | ssh-add -
+  |         name: Set up ssh-agent
+  |       - name: cargo test
+  |         run: |
+  | 
+
+--[ Match #185 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  | 
+
+--[ Match #186 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #187 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  | 
+
+--[ Match #188 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\minimal.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user 127.0.0.1 -o StrictHostKeyChecking=accept-new -o 
+  | 
+
+--[ Match #189 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\native-mux_tsp.rs
+   Pattern: .userInfo
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | }
+  | 
+
+--[ Match #190 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\native-mux_tsp.rs
+   Pattern: .userInfo
+  |         String::from_utf8(ls.stdout).expect("server output was not valid UTF-8")
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | 
+
+--[ Match #191 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\examples\native-mux_tsp.rs
+   Pattern: .userInfo
+  |         String::from_utf8(ls.stdout).expect("server output was not valid UTF-8")
+  |     );
+  | 
+  |     let whoami = session.command("whoami").output().await.unwrap();
+  |     assert_eq!(whoami.stdout, b"jon\n");
+  | 
+  |     session.close().await.unwrap();
+  | 
+
+--[ Match #192 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\src\native_mux_impl\command.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |             stderr.as_raw_fd_or_null_fd()?,
+  |         ];
+  | 
+  |         let cmd = NonZeroByteSlice::new(&self.cmd).ok_or(Error::InvalidCommand)?;
+  | 
+  |         let session = Session::builder()
+  |             .cmd(Cow::Borrowed(cmd))
+  | 
+
+--[ Match #193 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\os-check.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       - uses: actions/checkout@v4
+  | 
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - name: cargo test
+  | 
+
+--[ Match #194 of 200 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: .userInfo
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user localhost -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #195 of 200 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         uses: taiki-e/install-action@cargo-llvm-cov
+  | 
+  |       - name: Create Cargo.lock for caching
+  |         run: cargo update
+  |       - uses: Swatinem/rust-cache@v2
+  | 
+  |       - run: |
+  | 
+
+--[ Match #196 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  |           echo "SSH_AGENT_PID=$SSH_AGENT_PID" >> $GITHUB_ENV
+  |           cat .test-key | ssh-add -
+  |         name: Set up ssh-agent
+  |       - name: Generate code coverage
+  |         run: cargo llvm-cov --all-features --lcov --output-path lcov.info
+  | 
+
+--[ Match #197 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user localhost -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  |           echo "SSH_AUTH_SOCK=$SSH_AUTH_SOCK" >> $GITHUB_ENV
+  | 
+
+--[ Match #198 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user localhost -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  |       - run: |
+  |           eval $(ssh-agent)
+  | 
+
+--[ Match #199 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user localhost -o StrictHostKeyChecking=accept-new -o 
+  |         name: Test ssh connectivity
+  | 
+
+--[ Match #200 of 200 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssh@0.10\openssh-0.10.1\.github\workflows\coverage.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |       - run: |
+  |           # Wait for startup of openssh-server
+  |           timeout 15 ./wait_for_sshd_start_up.sh
+  |           chmod 600 .test-key
+  |           mkdir /tmp/openssh-rs
+  |           ssh -i .test-key -v -p 2222 -l test-user localhost -o StrictHostKeyChecking=accept-new -o 
+  | 
+
+200 matches found.

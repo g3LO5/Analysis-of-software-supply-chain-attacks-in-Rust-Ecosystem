@@ -1,0 +1,31 @@
+--[ Match #1 of 2 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-toykio@0.2\toykio-0.2.2\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     fn next_task(&self) -> (TaskId, LocalWaker) {
+  |         let counter = self.counter.get();
+  |         let w = Arc::new(Token(counter));
+  |         self.counter.set(counter + 1);
+  |         (counter, unsafe { futures::task::local_waker(w) })
+  | 
+
+--[ Match #2 of 2 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-toykio@0.2\toykio-0.2.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | This is a greatly simplified implementation
+  | 
+  | - [x] futures 0.3 compatible executor on top of select(2) event loop
+  | - [x] AsyncRead/AsyncWrite TcpStream implementations
+  | 
+  | todo:
+  | 
+
+2 matches found.

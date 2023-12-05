@@ -1,0 +1,194 @@
+--[ Match #1 of 13 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "70f382a4642e28f80900af3df1c801e5b2ca0ff6"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\behavior.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl Behavior for Chase {
+  |     fn next_command(&mut self, analyzer: &Analyzer) -> Option<GameCommand> {
+  |         if let Some(target) = self.target.get(analyzer) {
+  |             let distance_to_target = analyzer.own_player().distance(target);
+  |             if distance_to_target > self.distance {
+  |                 let angle = analyzer.own_player().angle_to(target);
+  | 
+
+--[ Match #3 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\behavior.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  | 
+  |         if self.times > 0 {
+  |             if let Some(target) = self.target.get(analyzer) {
+  |                 self.times -= 1;
+  |                 // TODO: Easy win! This assumes the target is stationary, which
+  |                 // is probably not the case. Improve the logic by taking the
+  | 
+
+--[ Match #4 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\behavior.rs
+   Pattern: \.(request|post|get)\(
+  | impl Behavior for Rotate {
+  |     fn next_command(&mut self, analyzer: &Analyzer) -> Option<GameCommand> {
+  |         if (analyzer.own_player().angle.positive() - self.angle.positive()).abs() > self.margin {
+  |             Some(GameCommand::Rotate(self.angle.positive().get()))
+  |         } else {
+  |             None
+  |         }
+  | 
+
+--[ Match #5 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\behavior.rs
+   Pattern: \.(request|post|get)\(
+  | impl Behavior for Noop {
+  |     fn next_command(&mut self, analyzer: &Analyzer) -> Option<GameCommand> {
+  |         // Rotate to the current angle; thus no effect.
+  |         Some(GameCommand::Rotate(analyzer.own_player().angle.positive().get()))
+  |     }
+  | 
+  |     fn box_clone(&self) -> Box<Behavior> {
+  | 
+
+--[ Match #6 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\analyzer\player.rs
+   Pattern: \.(request|post|get)\(
+  |     /// beginning of each `tick()` method.
+  |     pub fn last_velocity(&self) -> Vector {
+  |         let (last_position, last_time) = self.positions.last().unwrap();
+  |         if let Some((prev_position, prev_time)) = self.positions.get(self.positions.len() - 2) {
+  |             prev_position.velocity_to(last_position, *last_time - *prev_time)
+  |         } else {
+  |             // No idea, just return zeros.
+  | 
+
+--[ Match #7 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\analyzer\player.rs
+   Pattern: \.(request|post|get)\(
+  |         self.position = Point::new(state.x, state.y);
+  |         self.velocity = Vector::with_angle(self.angle) * state.throttle * PLAYER_BASE_SPEED;
+  |         self.trajectory.push(self.position.clone(), time);
+  |         self.score_history.push(*scoreboard.get(&state.id).unwrap_or(&0), time);
+  |     }
+  | 
+  |     /// Returns the current score of the `Player`.
+  | 
+
+--[ Match #8 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\analyzer\player.rs
+   Pattern: \.(request|post|get)\(
+  |         trajectory.push(position.clone(), time);
+  | 
+  |         let mut score_history = ScoreHistory::default();
+  |         score_history.push(*scoreboard.get(&state.id).unwrap_or(&0), time);
+  | 
+  |         Self {
+  |             id: state.id,
+  | 
+
+--[ Match #9 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\src\analyzer.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Returns the `Player` specified by an ID.
+  |     pub fn player(&self, id: u32) -> Option<&Player> {
+  |         self.players.get(&id)
+  |     }
+  | 
+  |     /// Returns your own `Player`.
+  | 
+
+--[ Match #10 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\examples\jakebot.rs
+   Pattern: \.(request|post|get)\(
+  |             if self.analyzer.own_bullets().count() < 1 {
+  |                 let angle = me.angle_to(closest);
+  |                 self.state = Some(State::Spray(3, angle - Angle::degrees(SPRAY_ANGLE)));
+  |                 Some(GameCommand::Rotate(angle.get()))
+  |             } else {
+  |                 self.approach_closest()
+  |             }
+  | 
+
+--[ Match #11 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\examples\jakebot.rs
+   Pattern: \.(request|post|get)\(
+  |             Some(GameCommand::Rotate((me.angle + Angle::degrees(90.0)).get()))
+  |         } else if let Some(State::Spray(count, angle)) = self.state {
+  |             if (me.angle - angle).abs() > Angle::degrees(1.0) {
+  |                 Some(GameCommand::Rotate(angle.get()))
+  |             } else {
+  |                 self.state = if count > 1 {
+  |                     Some(State::Spray(count - 1, angle + Angle::degrees(SPRAY_ANGLE)))
+  | 
+
+--[ Match #12 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\examples\jakebot.rs
+   Pattern: \.(request|post|get)\(
+  |             Some(GameCommand::Throttle(1.0))
+  |         } else if self.analyzer.bullets_colliding(Duration::from_millis(2000)).count() > 0 {
+  |             self.state = Some(State::Dodging(5));
+  |             Some(GameCommand::Rotate((me.angle + Angle::degrees(90.0)).get()))
+  |         } else if let Some(State::Spray(count, angle)) = self.state {
+  |             if (me.angle - angle).abs() > Angle::degrees(1.0) {
+  |                 Some(GameCommand::Rotate(angle.get()))
+  | 
+
+--[ Match #13 of 13 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokyo@1.0\tokyo-1.0.0\examples\jakebot.rs
+   Pattern: \.(request|post|get)\(
+  |             } else {
+  |                 let angle = me.angle_to(closest);
+  |                 if (me.angle - angle).abs() > Angle::degrees(1.0) {
+  |                     Some(GameCommand::Rotate(angle.get()))
+  |                 } else {
+  |                     Some(GameCommand::Throttle(1.0))
+  |                 }
+  | 
+
+13 matches found.

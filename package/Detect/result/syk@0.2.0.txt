@@ -1,0 +1,2156 @@
+--[ Match #1 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\store.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     use super::{create_storage, lock, sync_store, unlock, Store};
+  | 
+  |     const EXPECTED: &[u8] = br#"{"data":{"1":{"user":"test@gmail.com","password":"123","description"
+  | 
+  |     #[test]
+  |     fn it_works() {}
+  | 
+
+--[ Match #2 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | #[test]
+  | fn test_remove() -> Result<()> {
+  |     const CONTENT: &[u8] = br#"{"data":{"1":{"user":"test@gmail.com","password":"123","description":
+  |     let tmp = assert_fs::TempDir::new()?;
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+
+--[ Match #3 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | #[test]
+  | fn test_lock_unlock() -> Result<()> {
+  |     const CONTENT: &[u8] = br#"{"data":{"1":{"user":"test@gmail.com","password":"123","description":
+  |     let tmp = assert_fs::TempDir::new()?;
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+
+--[ Match #4 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | #[test]
+  | fn test_list() -> Result<()> {
+  |     const CONTENT: &[u8] = br#"{"data":{"1":{"user":"test@gmail.com","password":"123","description":
+  |     let tmp = assert_fs::TempDir::new()?;
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+
+--[ Match #5 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | #[test]
+  | fn test_size() -> Result<()> {
+  |     const CONTENT: &[u8] = br#"{"data":{"1":{"user":"test@gmail.com","password":"123","description":
+  |     let tmp = assert_fs::TempDir::new()?;
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+
+--[ Match #6 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             let mut st = load_store(&mut file)?;
+  |             let item = Item::new(
+  |                 Some(user.as_str()),
+  |                 Some(password.as_str()),
+  |                 Some(description.as_str()),
+  |             );
+  |             add_item(&mut st, item)?;
+  | 
+
+--[ Match #7 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         Commands::Insert {
+  |             storage,
+  |             user,
+  |             password,
+  |             description,
+  |         } => {
+  |             let mut file = File::open(&storage)?;
+  | 
+
+--[ Match #8 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                     let user = item.user.as_deref().unwrap_or_default();
+  |                     let password = item.password.as_deref().unwrap_or_default();
+  |                     let description = item.description.as_deref().unwrap_or_default();
+  |                     let v = ItemTable::new(id, user, password, description);
+  |                     items.push(v);
+  |                 });
+  | 
+  | 
+
+--[ Match #9 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 storage.iter().for_each(|(id, item)| {
+  |                     let id = *id;
+  |                     let user = item.user.as_deref().unwrap_or_default();
+  |                     let password = item.password.as_deref().unwrap_or_default();
+  |                     let description = item.description.as_deref().unwrap_or_default();
+  |                     let v = ItemTable::new(id, user, password, description);
+  |                     items.push(v);
+  | 
+
+--[ Match #10 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 storage.iter().for_each(|(id, item)| {
+  |                     let id = *id;
+  |                     let user = item.user.as_deref().unwrap_or_default();
+  |                     let password = item.password.as_deref().unwrap_or_default();
+  |                     let description = item.description.as_deref().unwrap_or_default();
+  |                     let v = ItemTable::new(id, user, password, description);
+  |                     items.push(v);
+  | 
+
+--[ Match #11 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         /// The username
+  |         user: String,
+  |         /// The password
+  |         password: String,
+  |         /// The description
+  |         description: String,
+  |     },
+  | 
+
+--[ Match #12 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         storage: String,
+  |         /// The username
+  |         user: String,
+  |         /// The password
+  |         password: String,
+  |         /// The description
+  |         description: String,
+  | 
+
+--[ Match #13 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         Self {
+  |             id,
+  |             user,
+  |             password,
+  |             description,
+  |         }
+  |     }
+  | 
+
+--[ Match #14 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | }
+  | 
+  | impl<'a> ItemTable<'a> {
+  |     fn new(id: usize, user: &'a str, password: &'a str, description: &'a str) -> Self {
+  |         Self {
+  |             id,
+  |             user,
+  | 
+
+--[ Match #15 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\cli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | struct ItemTable<'a> {
+  |     id: usize,
+  |     user: &'a str,
+  |     password: &'a str,
+  |     description: &'a str,
+  | }
+  | 
+  | 
+
+--[ Match #16 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.toml.orig
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | name = "syk"
+  | version = "0.2.0"
+  | edition = "2021"
+  | description = "A key value tool to persist your passwords"
+  | authors = ["Julio Gardona <jcbritobr@gmail.com>"]
+  | readme = "README.md"
+  | repository = "https://github.com/jgardona/syk"
+  | 
+
+--[ Match #17 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         // test display conversion
+  |         let expected = format!(
+  |             "{:>30}{:>30}{:>30}",
+  |             "jcbritobr@gmail.com", "123", "A password"
+  |         );
+  |         let result = format!("{item}");
+  |         assert_eq!(expected, result);
+  | 
+
+--[ Match #18 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     #[test]
+  |     fn test_item_workflow() {
+  |         let item = Item::new(Some("jcbritobr@gmail.com"), Some("123"), Some("A password"));
+  |         // test display conversion
+  |         let expected = format!(
+  |             "{:>30}{:>30}{:>30}",
+  | 
+
+--[ Match #19 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         let password = self.password.as_deref().unwrap_or_default();
+  |         let description = self.description.as_deref().unwrap_or_default();
+  | 
+  |         write!(f, "{user:>30}{password:>30}{description:>30}")
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #20 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | impl Display for Item {
+  |     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+  |         let user = self.user.as_deref().unwrap_or_default();
+  |         let password = self.password.as_deref().unwrap_or_default();
+  |         let description = self.description.as_deref().unwrap_or_default();
+  | 
+  |         write!(f, "{user:>30}{password:>30}{description:>30}")
+  | 
+
+--[ Match #21 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | impl Display for Item {
+  |     fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+  |         let user = self.user.as_deref().unwrap_or_default();
+  |         let password = self.password.as_deref().unwrap_or_default();
+  |         let description = self.description.as_deref().unwrap_or_default();
+  | 
+  |         write!(f, "{user:>30}{password:>30}{description:>30}")
+  | 
+
+--[ Match #22 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> Self {
+  |         Self {
+  |             user: user.map(|s| s.into()),
+  |             password: password.map(|s| s.into()),
+  |             description: description.map(|s| s.into()),
+  |         }
+  |     }
+  | 
+
+--[ Match #23 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> Self {
+  |         Self {
+  |             user: user.map(|s| s.into()),
+  |             password: password.map(|s| s.into()),
+  |             description: description.map(|s| s.into()),
+  |         }
+  |     }
+  | 
+
+--[ Match #24 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | impl Item {
+  |     pub fn new<I: Into<String>>(
+  |         user: Option<I>,
+  |         password: Option<I>,
+  |         description: Option<I>,
+  |     ) -> Self {
+  |         Self {
+  | 
+
+--[ Match #25 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\src\model.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | #[derive(Serialize, Deserialize, Debug)]
+  | pub struct Item {
+  |     pub user: Option<String>,
+  |     pub password: Option<String>,
+  |     pub description: Option<String>,
+  | }
+  | 
+  | 
+
+--[ Match #26 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.toml
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | name = "syk"
+  | version = "0.2.0"
+  | authors = ["Julio Gardona <jcbritobr@gmail.com>"]
+  | description = "A key value tool to persist your passwords"
+  | readme = "README.md"
+  | keywords = [
+  |     "storage",
+  | 
+
+--[ Match #27 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | ```
+  | $ syk read ~/.storage -l
+  | +----+---------------------+-----------------+-----------------------------+
+  | | id | user                | password        | description                 |
+  | +----+---------------------+-----------------+-----------------------------+
+  | | 3  | test@gmail.com      | zxcffddxxssdddd | bbbbbbbbbbb                 |
+  | +----+---------------------+-----------------+-----------------------------+
+  | 
+
+--[ Match #28 of 144 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | ```
+  | $ syk -h
+  | A key value tool to persist your passwords
+  | 
+  | Usage: syk <COMMAND>
+  | 
+  | 
+
+--[ Match #29 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ed94fce61571a4006852b7389a063ab983c02eb1bb37b47f8272ce92d06d9538"
+  | 
+
+--[ Match #30 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnullvm"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0b7b52767868a23d5bab768e390dc5f5c55825b6d30b86c844ff2dc7414044cc"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_msvc"
+  | 
+
+--[ Match #31 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "53d40abd2583d23e4718fddf1ebec84dbff8381c07cae67ff7768bbf19c6718e"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnullvm"
+  | 
+
+--[ Match #32 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8f55c233f70c4b27f66c523580f78f1004e8b5a8b659e05a4eb49d4166cca406"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #33 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_i686_gnu"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a75915e7def60c94dcef72200b9a8e58e5091744960da64ec734a6c6e9b3743e"
+  | 
+  | [[package]]
+  | name = "windows_i686_msvc"
+  | 
+
+--[ Match #34 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #35 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #36 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-targets"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a2fa6e2155d7247be68c096456083145c183cbbbc2764150dda45a87197940c"
+  | dependencies = [
+  |  "windows_aarch64_gnullvm",
+  |  "windows_aarch64_msvc",
+  | 
+
+--[ Match #37 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows-sys"
+  | version = "0.48.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "677d2418bec65e3338edb076e806bc1ec15693c5d0104683f2efe857f61056a9"
+  | dependencies = [
+  |  "windows-targets",
+  | ]
+  | 
+
+--[ Match #38 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+  | [[package]]
+  | name = "windows-sys"
+  | 
+
+--[ Match #39 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-util"
+  | version = "0.1.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f29e6f9198ba0d26b4c9f07dbe6f9ed633e1f3d5b8b414090084349e46a52596"
+  | dependencies = [
+  |  "winapi",
+  | ]
+  | 
+
+--[ Match #40 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-util"
+  | 
+
+--[ Match #41 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #42 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.11.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #43 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "walkdir"
+  | version = "2.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d71d857dc86794ca4c280d616f7da00d2dbfd8cd788846559a6813e6aa4b54ee"
+  | dependencies = [
+  |  "same-file",
+  |  "winapi-util",
+  | 
+
+--[ Match #44 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wait-timeout"
+  | version = "0.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9f200f5b12eb75f8c1ed65abd4b2db8a6e1b138a20de009dacee265a2498f3f6"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #45 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
+  | 
+  | [[package]]
+  | name = "wait-timeout"
+  | 
+
+--[ Match #46 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "utf8parse"
+  | version = "0.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "711b9620af191e0cdc7468a8d14e709c3dcdb115b36f838e601583af800a370a"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #47 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "universal-hash"
+  | version = "0.5.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fc1de2c688dc15305988b563c3854064043356019f97a4b46276fe734c4f07ea"
+  | dependencies = [
+  |  "crypto-common",
+  |  "subtle",
+  | 
+
+--[ Match #48 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-width"
+  | version = "0.1.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e51733f11c9c4f72aa0c160008246859e340b00807569a0da0e7a1079b27ba85"
+  | 
+  | [[package]]
+  | name = "universal-hash"
+  | 
+
+--[ Match #49 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-ident"
+  | version = "1.0.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3354b9ac3fae1ff6755cb6db53683adb661634f67557942dea4facebec0fee4b"
+  | 
+  | [[package]]
+  | name = "unicode-width"
+  | 
+
+--[ Match #50 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "typenum"
+  | version = "1.17.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "42ff0bf0c66b8238c6f3b578df37d0b7848e55df8577b3f74f92a69acceeb825"
+  | 
+  | [[package]]
+  | name = "unicode-ident"
+  | 
+
+--[ Match #51 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thread_local"
+  | version = "1.1.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3fdd6f064ccff2d6567adcb3873ca630700f00b5ad3f060c25b5dcfd9a4ce152"
+  | dependencies = [
+  |  "cfg-if",
+  |  "once_cell",
+  | 
+
+--[ Match #52 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "termtree"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3369f5ac52d5eb6ab48c6b4ffdc8efbcad6b89c765749064ba298f2c68a16a76"
+  | 
+  | [[package]]
+  | name = "thread_local"
+  | 
+
+--[ Match #53 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tempfile"
+  | version = "3.8.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7ef1adac450ad7f4b3c28589471ade84f25f731a7a0fe30d71dfa9f60fd808e5"
+  | dependencies = [
+  |  "cfg-if",
+  |  "fastrand",
+  | 
+
+--[ Match #54 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tabled_derive"
+  | version = "0.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "99f688a08b54f4f02f0a3c382aefdb7884d3d69609f785bd253dc033243e3fe4"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro-error",
+  | 
+
+--[ Match #55 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tabled"
+  | version = "0.14.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dfe9c3632da101aba5131ed63f9eed38665f8b3c68703a6bb18124835c1a5d22"
+  | dependencies = [
+  |  "papergrid",
+  |  "tabled_derive",
+  | 
+
+--[ Match #56 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "2.0.38"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e96b79aaa137db8f61e26363a0c9b47d8b4ec75da28b7d1d614c2303e232408b"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #57 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.109"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "72b64191b275b66ffe2469e8af2c1cfe3bafa67b529ead792a6d0160888b4237"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #58 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "subtle"
+  | version = "2.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
+  | 
+  | [[package]]
+  | name = "syk"
+  | 
+
+--[ Match #59 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "strsim"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "73473c0e59e6d5812c5dfe2a064a6444949f089e20eec9a2e5506596494e4623"
+  | 
+  | [[package]]
+  | name = "subtle"
+  | 
+
+--[ Match #60 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.107"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6b420ce6e3d8bd882e9b243c6eed35dbc9a6110c9769e74b584e0d68d1f20c65"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #61 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_derive"
+  | version = "1.0.190"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "67c5609f394e5c2bd7fc51efda478004ea80ef42fee983d5c67a65e34f32c0e3"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #62 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.190"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "91d3c334ca1ee894a2c6f6ad698fe8c435b76d504b13d436f0685d648d6d96f7"
+  | dependencies = [
+  |  "serde_derive",
+  | ]
+  | 
+
+--[ Match #63 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "same-file"
+  | version = "1.0.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "93fc1dc3aaa9bfed95e02e6eadabb4baf7e3078b0bd1b4d7b6b0b68378900502"
+  | dependencies = [
+  |  "winapi-util",
+  | ]
+  | 
+
+--[ Match #64 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ryu"
+  | version = "1.0.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1ad4cc8da4ef723ed60bced201181d83791ad433213d8c24efffda1eec85d741"
+  | 
+  | [[package]]
+  | name = "same-file"
+  | 
+
+--[ Match #65 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustix"
+  | version = "0.38.21"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2b426b0506e5d50a7d8dafcf2e81471400deb602392c7dd110815afb4eaf02a3"
+  | dependencies = [
+  |  "bitflags 2.4.1",
+  |  "errno",
+  | 
+
+--[ Match #66 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.8.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c08c74e62047bb2de4ff487b251e4a92e24f48745648451635cec7d591162d9f"
+  | 
+  | [[package]]
+  | name = "rustix"
+  | 
+
+--[ Match #67 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-automata"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5f804c7828047e88b2d32e2d7fe5a105da8ee3264f01902f796c8e067dc2483f"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #68 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.10.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #69 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "redox_syscall"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4722d768eff46b75989dd134e5c353f0d6296e5aaa3132e776cbdb56be7731aa"
+  | dependencies = [
+  |  "bitflags 1.3.2",
+  | ]
+  | 
+
+--[ Match #70 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_core"
+  | version = "0.6.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
+  | dependencies = [
+  |  "getrandom",
+  | ]
+  | 
+
+--[ Match #71 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.33"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #72 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.69"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "134c189feb4956b20f6f547d2cf727d4c0fe06722b20a0eec87ed445a97f92da"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #73 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro-error-attr"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #74 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro-error"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "da25490ff9892aab3fcf7c36f08cfb902dd3e71ca0f9f9517bea02a73a5ce38c"
+  | dependencies = [
+  |  "proc-macro-error-attr",
+  |  "proc-macro2",
+  | 
+
+--[ Match #75 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "predicates-tree"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "368ba315fb8c5052ab692e68a0eefec6ec57b23a36959c14496f0b0df2c0cecf"
+  | dependencies = [
+  |  "predicates-core",
+  |  "termtree",
+  | 
+
+--[ Match #76 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "predicates-core"
+  | version = "1.0.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b794032607612e7abeb4db69adb4e33590fa6cf1149e95fd7cb00e634b92f174"
+  | 
+  | [[package]]
+  | name = "predicates-tree"
+  | 
+
+--[ Match #77 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "predicates"
+  | version = "3.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6dfc28575c2e3f19cb3c73b93af36460ae898d426eba6fc15b9bd2a5220758a0"
+  | dependencies = [
+  |  "anstyle",
+  |  "difflib",
+  | 
+
+--[ Match #78 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "polyval"
+  | version = "0.6.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d52cff9d1d4dee5fe6d03729099f4a310a41179e0a10dbf542039873f2e826fb"
+  | dependencies = [
+  |  "cfg-if",
+  |  "cpufeatures",
+  | 
+
+--[ Match #79 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "papergrid"
+  | version = "0.10.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a2ccbe15f2b6db62f9a9871642746427e297b0ceb85f9a7f1ee5ff47d184d0c8"
+  | dependencies = [
+  |  "bytecount",
+  |  "fnv",
+  | 
+
+--[ Match #80 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "opaque-debug"
+  | version = "0.3.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "624a8340c38c1b80fd549087862da4ba43e08858af025b236e509b6649fc13d5"
+  | 
+  | [[package]]
+  | name = "papergrid"
+  | 
+
+--[ Match #81 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.18.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dd8b5dd2ae5ed71462c540258bedcb51965123ad7e7ccf4b9a8cafaa4a63576d"
+  | 
+  | [[package]]
+  | name = "opaque-debug"
+  | 
+
+--[ Match #82 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.17"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "39e3200413f237f41ab11ad6d161bc7239c84dcb631773ccd7de3dfe4b5c267c"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #83 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "normalize-line-endings"
+  | version = "0.3.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "61807f77802ff30975e01f4f071c8ba10c022052f98b3294119f3e615d13e5be"
+  | 
+  | [[package]]
+  | name = "num-traits"
+  | 
+
+--[ Match #84 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "miniz_oxide"
+  | version = "0.7.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e7810e0be55b428ada41041c41f32c9f1a42817901b4ccf45fa3d4b6561e74c7"
+  | dependencies = [
+  |  "adler",
+  | ]
+  | 
+
+--[ Match #85 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.6.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f665ee40bc4a3c5590afb1e9677db74a508659dfd71e126420da8274909a0167"
+  | 
+  | [[package]]
+  | name = "miniz_oxide"
+  | 
+
+--[ Match #86 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "log"
+  | version = "0.4.20"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
+  | 
+  | [[package]]
+  | name = "memchr"
+  | 
+
+--[ Match #87 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "linux-raw-sys"
+  | version = "0.4.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "da2479e8c062e40bf0066ffa0bc823de0a9368974af99c9f6df941d2c231e03f"
+  | 
+  | [[package]]
+  | name = "log"
+  | 
+
+--[ Match #88 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.149"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a08173bc88b7955d1b3145aa561539096c421ac8debde8cbc3612ec635fee29b"
+  | 
+  | [[package]]
+  | name = "linux-raw-sys"
+  | 
+
+--[ Match #89 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lazy_static"
+  | version = "1.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #90 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "af150ab688ff2122fcef229be89cb50dd66af9e01a4ff320cc137eecc9bacc38"
+  | 
+  | [[package]]
+  | name = "lazy_static"
+  | 
+
+--[ Match #91 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itertools"
+  | version = "0.11.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b1c173a5686ce8bfa551b3563d0c2170bf24ca44da99c7ca4bfdab5418c3fe57"
+  | dependencies = [
+  |  "either",
+  | ]
+  | 
+
+--[ Match #92 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "inout"
+  | version = "0.1.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a0c10553d664a4d0bcff9f4215d0aac67a639cc68ef660840afe309b807bc9f5"
+  | dependencies = [
+  |  "generic-array",
+  | ]
+  | 
+
+--[ Match #93 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ignore"
+  | version = "0.4.20"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dbe7873dab538a9a44ad79ede1faf5f30d49f9a5c883ddbab48bce81b64b7492"
+  | dependencies = [
+  |  "globset",
+  |  "lazy_static",
+  | 
+
+--[ Match #94 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "heck"
+  | version = "0.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "95505c38b4572b2d910cecb0281560f54b440a19336cbbcb27bf6ce6adc6f5a8"
+  | 
+  | [[package]]
+  | name = "ignore"
+  | 
+
+--[ Match #95 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "globwalk"
+  | version = "0.8.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "93e3af942408868f6934a7b85134a3230832b9977cf66125df2f9edcfce4ddcc"
+  | dependencies = [
+  |  "bitflags 1.3.2",
+  |  "ignore",
+  | 
+
+--[ Match #96 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "globset"
+  | version = "0.4.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "759c97c1e17c55525b57192c06a267cda0ac5210b222d6b82189a2338fa1c13d"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "bstr",
+  | 
+
+--[ Match #97 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ghash"
+  | version = "0.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d930750de5717d2dd0b8c0d42c076c0e884c81a73e6cab859bbd2339c71e3e40"
+  | dependencies = [
+  |  "opaque-debug",
+  |  "polyval",
+  | 
+
+--[ Match #98 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "getrandom"
+  | version = "0.2.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "be4136b2a15dd319360be1c07d9933517ccf0be8f16bf62a3bee4f0d618df427"
+  | dependencies = [
+  |  "cfg-if",
+  |  "libc",
+  | 
+
+--[ Match #99 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "generic-array"
+  | version = "0.14.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a"
+  | dependencies = [
+  |  "typenum",
+  |  "version_check",
+  | 
+
+--[ Match #100 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fnv"
+  | version = "1.0.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3f9eec918d3f24069decb9af1554cad7c880e2da24a9afd88aca000531ab82c1"
+  | 
+  | [[package]]
+  | name = "generic-array"
+  | 
+
+--[ Match #101 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "float-cmp"
+  | version = "0.9.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "98de4bbd547a563b716d8dfa9aad1cb19bfab00f4fa09a6a4ed21dbcf44ce9c4"
+  | dependencies = [
+  |  "num-traits",
+  | ]
+  | 
+
+--[ Match #102 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "flate2"
+  | version = "1.0.28"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "46303f565772937ffe1d394a4fac6f411c6013172fadde9dcdb1e147a086940e"
+  | dependencies = [
+  |  "crc32fast",
+  |  "miniz_oxide",
+  | 
+
+--[ Match #103 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fastrand"
+  | version = "2.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "25cbce373ec4653f1a01a31e8a5e5ec0c622dc27ff9c4e6606eefef5cbbed4a5"
+  | 
+  | [[package]]
+  | name = "flate2"
+  | 
+
+--[ Match #104 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno"
+  | version = "0.3.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3e13f66a2f95e32a39eaa81f6b95d42878ca0e1db0c7543723dfe12557e860"
+  | dependencies = [
+  |  "libc",
+  |  "windows-sys",
+  | 
+
+--[ Match #105 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "either"
+  | version = "1.9.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a26ae43d7bcc3b814de94796a5e736d4029efb0ee900c12e2d54c993ad1a1e07"
+  | 
+  | [[package]]
+  | name = "errno"
+  | 
+
+--[ Match #106 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "doc-comment"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fea41bba32d969b513997752735605054bc0dfa92b4c56bf1189f2e174be7a10"
+  | 
+  | [[package]]
+  | name = "either"
+  | 
+
+--[ Match #107 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "difflib"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6184e33543162437515c2e2b48714794e37845ec9851711914eec9d308f6ebe8"
+  | 
+  | [[package]]
+  | name = "doc-comment"
+  | 
+
+--[ Match #108 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ctr"
+  | version = "0.9.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0369ee1ad671834580515889b80f2ea915f23b8be8d0daa4bbaf2ac5c7590835"
+  | dependencies = [
+  |  "cipher",
+  | ]
+  | 
+
+--[ Match #109 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crypto-common"
+  | version = "0.1.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1bfb12502f3fc46cca1bb51ac28df9d618d813cdc3d2f25b9fe775a34af26bb3"
+  | dependencies = [
+  |  "generic-array",
+  |  "rand_core",
+  | 
+
+--[ Match #110 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crc32fast"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b540bd8bc810d3885c6ea91e2018302f68baba2129ab3e88f32389ee9370880d"
+  | dependencies = [
+  |  "cfg-if",
+  | ]
+  | 
+
+--[ Match #111 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cpufeatures"
+  | version = "0.2.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ce420fe07aecd3e67c5f910618fe65e94158f6dcc0adf44e00d69ce2bdfe0fd0"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #112 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colorchoice"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+  | 
+  | [[package]]
+  | name = "cpufeatures"
+  | 
+
+--[ Match #113 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_lex"
+  | version = "0.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "702fc72eb24e5a1e48ce58027a675bc24edd52096d5397d4aea7c6dd9eca0bd1"
+  | 
+  | [[package]]
+  | name = "colorchoice"
+  | 
+
+--[ Match #114 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_derive"
+  | version = "4.4.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf9804afaaf59a91e75b022a30fb7229a7901f60c755489cc61c9b423b836442"
+  | dependencies = [
+  |  "heck",
+  |  "proc-macro2",
+  | 
+
+--[ Match #115 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_builder"
+  | version = "4.4.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c77ed9a32a62e6ca27175d00d29d05ca32e396ea1eb5fb01d8256b669cec7663"
+  | dependencies = [
+  |  "anstream",
+  |  "anstyle",
+  | 
+
+--[ Match #116 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap"
+  | version = "4.4.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac495e00dcec98c83465d5ad66c5c4fabd652fd6686e7c6269b117e729a6f17b"
+  | dependencies = [
+  |  "clap_builder",
+  |  "clap_derive",
+  | 
+
+--[ Match #117 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cipher"
+  | version = "0.4.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "773f3b9af64447d2ce9850330c473515014aa235e6a783b02db81ff39e4a3dad"
+  | dependencies = [
+  |  "crypto-common",
+  |  "inout",
+  | 
+
+--[ Match #118 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "cipher"
+  | 
+
+--[ Match #119 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bytecount"
+  | version = "0.6.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e1e5f035d16fc623ae5f74981db80a439803888314e3a555fd6f04acd51a3205"
+  | 
+  | [[package]]
+  | name = "cfg-if"
+  | 
+
+--[ Match #120 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bstr"
+  | version = "1.7.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c79ad7fb2dd38f3dabd76b09c6a5a20c038fc0213ef1e9afd30eb777f120f019"
+  | dependencies = [
+  |  "memchr",
+  |  "regex-automata",
+  | 
+
+--[ Match #121 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "2.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "327762f6e5a765692301e5bb513e0d9fef63be86bbc14528052b1cd3e6f03e07"
+  | 
+  | [[package]]
+  | name = "bstr"
+  | 
+
+--[ Match #122 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #123 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #124 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "assert_fs"
+  | version = "1.0.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f070617a68e5c2ed5d06ee8dd620ee18fb72b99f6c094bed34cf8ab07c875b48"
+  | dependencies = [
+  |  "anstyle",
+  |  "doc-comment",
+  | 
+
+--[ Match #125 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "assert_cmd"
+  | version = "2.0.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "88903cb14723e4d4003335bb7f8a14f27691649105346a0f0957466c096adfe6"
+  | dependencies = [
+  |  "anstyle",
+  |  "bstr",
+  | 
+
+--[ Match #126 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anyhow"
+  | version = "1.0.75"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a4668cab20f66d8d020e1fbc0ebe47217433c1b6c8f2040faf858554e394ace6"
+  | 
+  | [[package]]
+  | name = "assert_cmd"
+  | 
+
+--[ Match #127 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-wincon"
+  | version = "3.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f0699d10d2f4d628a98ee7b57b289abbc98ff3bad977cb3152709d4bf2330628"
+  | dependencies = [
+  |  "anstyle",
+  |  "windows-sys",
+  | 
+
+--[ Match #128 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-query"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5ca11d4be1bab0c8bc8734a9aa7bf4ee8316d462a08c6ac5052f888fef5b494b"
+  | dependencies = [
+  |  "windows-sys",
+  | ]
+  | 
+
+--[ Match #129 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle-parse"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "317b9a89c1868f5ea6ff1d9539a69f45dffc21ce321ac1fd1160dfa48c8e2140"
+  | dependencies = [
+  |  "utf8parse",
+  | ]
+  | 
+
+--[ Match #130 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstyle"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7079075b41f533b8c61d2a4d073c4676e1f8b249ff94a393b0595db304e0dd87"
+  | 
+  | [[package]]
+  | name = "anstyle-parse"
+  | 
+
+--[ Match #131 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "anstream"
+  | version = "0.6.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2ab91ebe16eb252986481c5b62f6098f3b698a45e34b5b98200cf20dd2484a44"
+  | dependencies = [
+  |  "anstyle",
+  |  "anstyle-parse",
+  | 
+
+--[ Match #132 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "1.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b2969dcb958b36655471fc61f7e416fa76033bdd4bfed0678d8fee1e2d07a1f0"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #133 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aes-gcm"
+  | version = "0.10.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "831010a0f742e1209b3bcea8fab6a8e149051ba6099432c8cb2cc117dec3ead1"
+  | dependencies = [
+  |  "aead",
+  |  "aes",
+  | 
+
+--[ Match #134 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aes"
+  | version = "0.8.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac1f845298e95f983ff1944b728ae08b8cebab80d684f0a832ed0fc74dfa27e2"
+  | dependencies = [
+  |  "cfg-if",
+  |  "cipher",
+  | 
+
+--[ Match #135 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aead"
+  | version = "0.5.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d122413f284cf2d62fb1b7db97e02edb8cda96d769b16e443a4f6195e35662b0"
+  | dependencies = [
+  |  "crypto-common",
+  |  "generic-array",
+  | 
+
+--[ Match #136 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "adler"
+  | version = "1.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f26201604c87b1e01bd3d98f8d5d9a8fcbb815e8cedb41ffccbeb4bf593a35fe"
+  | 
+  | [[package]]
+  | name = "aead"
+  | 
+
+--[ Match #137 of 144 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "02d9cb44588d5f12719ee3da62af7c658162b061"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #138 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("remove")
+  |         .arg(file.path())
+  |         .arg("1")
+  | 
+
+--[ Match #139 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("lock")
+  |         .arg(file.path())
+  |         .arg(tmp.path().join("output.json"))
+  | 
+
+--[ Match #140 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("read")
+  |         .arg(file.path())
+  |         .arg("-l")
+  | 
+
+--[ Match #141 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let file = tmp.child("test_size.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("read")
+  |         .arg(file.path())
+  |         .arg("-s")
+  | 
+
+--[ Match #142 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     let file = tmp.child("test_insert.json");
+  |     file.write_binary(CONTENT)?;
+  | 
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("insert")
+  |         .arg(file.path())
+  |         .arg("user1")
+  | 
+
+--[ Match #143 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\tests\integration.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | #[test]
+  | fn test_create_store() -> Result<()> {
+  |     let mut cmd = Command::cargo_bin("syk")?;
+  |     cmd.arg("create").arg(FILE_PATH).assert();
+  |     let path = Path::new(FILE_PATH);
+  |     assert!(path.exists());
+  | 
+
+--[ Match #144 of 144 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-syk@0.2\syk-0.2.0\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | keywords = ["storage", "key", "crypto", "cli"]
+  | categories = ["command-line-utilities"]
+  | 
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | tabled = "0.14.0"
+  | 
+
+144 matches found.

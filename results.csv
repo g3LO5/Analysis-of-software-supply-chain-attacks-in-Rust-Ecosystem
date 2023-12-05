@@ -1,0 +1,13 @@
+package_name,total_tags,unique_tags
+acc@0.1.2,78,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.DataExfiltration"
+ansi@0.1.0,1,Security.Backdoor.LOLBAS.Linux
+ansiterm@0.12.2,42,"Security.Backdoor.DataExfiltration.Environment, Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.LOLBAS.Linux"
+aovec@1.1.0,3,Security.Backdoor.DataExfiltration
+api@0.2.0,3,"Security.Backdoor.LOLBAS.Linux, Security.Backdoor.DataExfiltration"
+array-vec@0.1.3,2,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings"
+arty@0.1.2,181,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.Obfuscation, Security.Backdoor.LOLBAS.Linux"
+atto@0.0.4,13,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.LOLBAS.Linux"
+attr@0.1.0,30,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.LOLBAS.Linux, Security.Backdoor.DataExfiltration"
+backtrace@0.3.69,133,"Security.Backdoor.LOLBAS.Linux, Security.Backdoor.DataExfiltration, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.DataExfiltration.Environment, Security.Backdoor.LOLBAS.Windows"
+backtrack@0.3.0,77,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings, Security.Backdoor.LOLBAS.Linux"
+base62@2.0.2,2,"Security.Backdoor.LOLBAS.Windows, Security.Backdoor.Obfuscation.LongStrings"

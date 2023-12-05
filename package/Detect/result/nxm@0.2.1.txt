@@ -1,0 +1,121 @@
+--[ Match #1 of 8 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |         let pki_data = object!{
+  |         "public_key" => public,
+  |         "private_key" => private,
+  |         "public_key_encoded" => public_key_enc,
+  |         "cid" => cid
+  |         };
+  | 
+
+--[ Match #2 of 8 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |         let private_pem = Pem {
+  |             tag: String::from("RSA PRIVATE KEY"),
+  |             contents: private_key,
+  |         };
+  |         let private = encode(&private_pem);
+  | 
+  | 
+
+--[ Match #3 of 8 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | 
+  |         let public_key = rsa.public_key_to_der().unwrap();
+  |         let private_key = rsa.private_key_to_der().unwrap();
+  | 
+  |         let private_pem = Pem {
+  |             tag: String::from("RSA PRIVATE KEY"),
+  | 
+
+--[ Match #4 of 8 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | 
+  |         let public_key = rsa.public_key_to_der().unwrap();
+  |         let private_key = rsa.private_key_to_der().unwrap();
+  | 
+  |         let private_pem = Pem {
+  |             tag: String::from("RSA PRIVATE KEY"),
+  | 
+
+--[ Match #5 of 8 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  |         let public = encode(&public_pem);
+  | 
+  |         let public_key_enc = BASE64.encode(public.as_bytes());
+  |         hasher.input_str(&public);
+  |         let cid = hasher.result_str();
+  | 
+  | 
+
+--[ Match #6 of 8 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\src\pki\mod.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | 
+  |     use crypto::digest::Digest;
+  |     use crypto::sha2::Sha256;
+  |     use data_encoding::BASE64;
+  |     pub fn create_pki() -> String{
+  |         let mut hasher = Sha256::new();
+  |         let rsa = Rsa::generate(2048).unwrap();
+  | 
+
+--[ Match #7 of 8 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | license = "MIT"
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | openssl = "0.10"
+  | openssl-sys = "0.9.52"
+  | pem ="0.7.0"
+  | 
+
+--[ Match #8 of 8 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-nxm@0.2\nxm-0.2.1\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | edition = "2018"
+  | description = "a library that returns rsa 2048 pki pair"
+  | license = "MIT"
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | openssl = "0.10"
+  | 
+
+8 matches found.

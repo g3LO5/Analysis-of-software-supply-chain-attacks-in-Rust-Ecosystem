@@ -1,0 +1,44 @@
+--[ Match #1 of 3 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-voidy@0.2\voidy-0.2.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "4853baffc6ff9f2e0cb6ec96bb2ed8b5146f52b0"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 3 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-voidy@0.2\voidy-0.2.0\src\http\status_code.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | const INTERNAL_SERVER_ERROR: &[u8] = b"500 Internal Server Error";
+  | const NOT_IMPLEMENTED: &[u8] = b"501 Not Implemented";
+  | const BAD_GATEWAY: &[u8] = b"502 Bad Gateway";
+  | const SERVICE_UNAVAIBLE: &[u8] = b"503 Service Unavailable";
+  | const GATEWAY_TIMEOUT: &[u8] = b"504 Gateway Timeout";
+  | const HTTP_VERSION_NOT_SUPPORTED: &[u8] = b"505 HTTP Version Not Supported";
+  | const VARIANT_ALSO_NEGOTIATES: &[u8] = b"506 Variant Also Negotiates";
+  | 
+
+--[ Match #3 of 3 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-voidy@0.2\voidy-0.2.0\src\http\method.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     fn try_from(bytes: &[u8]) -> Result<Self, Self::Error> {
+  |         match bytes {
+  |             GET => Ok(Self::Get),
+  |             HEAD => Ok(Self::Head),
+  |             POST => Ok(Self::Post),
+  |             PUT => Ok(Self::Put),
+  |             DELETE => Ok(Self::Delete),
+  | 
+
+3 matches found.
