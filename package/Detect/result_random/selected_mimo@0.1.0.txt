@@ -1,0 +1,14 @@
+--[ Match--[ Match #1 of 1 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-mimo@0.1\mimo-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "8be4e9c64ec3c02e255899191408a68adeab76ca"
+  |   }
+  | }
+  | 
+
+1 matches found.

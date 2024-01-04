@@ -1,0 +1,912 @@
+--[ Match #13 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\args.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     #[inline]
+  | 
+  |     fn index(&self, arg_name: &str) -> &Self::Output {
+  | 
+  |         self.get(arg_name)
+  | 
+  |             .unwrap_or_else(|| panic!("cannot find argument: `{}`", arg_name))
+  | 
+  |     }
+  | 
+  | }
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #9 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\args.rs
+   Pattern: \.(request|post|get)\(
+  |     ///     .parse_from(vec!["10"])
+  | 
+  |     ///     .unwrap();
+  | 
+  |     ///
+  | 
+  |     /// assert_eq!(result.args().get("numbers").unwrap().convert::<i64>().ok(), Some(10));
+  | 
+  |     ///
+  | 
+  |     /// // This only fails if feature `typing` is enable, otherwise the value will be converted
+  | 
+  |     /// #[cfg(feature = "typing")]
+  | 
+  | 
+
+--[ Match #38 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .contains("a"));
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("replace")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_args()
+  | 
+  |             .get("to")
+  | 
+  | 
+
+--[ Match #47 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Gets the value of the argument of the given option.
+  | 
+  |     pub fn value_of_option(&self, option_name: &str) -> Option<&str> {
+  | 
+  |         self.options
+  | 
+  |             .get(option_name)
+  | 
+  |             .map(|opt| opt.get_arg())
+  | 
+  |             .flatten()
+  | 
+  |             .map(|arg| arg.get_values())
+  | 
+  | 
+
+--[ Match #88 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parser.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |     #[inline]
+  | 
+  |     fn position(&self) -> usize {
+  | 
+  |         self.index.get()
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     #[inline]
+  | 
+  | 
+
+--[ Match #24 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |         let result1 = parse_with("10", command.clone()).unwrap();
+  | 
+  |         assert!(result1.args.get("min").unwrap().contains("1"));
+  | 
+  |         assert!(result1.args.get("max").unwrap().contains("10"));
+  | 
+  | 
+  | 
+  |         let result2 = parse_with("5 12", command.clone()).unwrap();
+  | 
+  |         assert!(result2.args.get("min").unwrap().contains("5"));
+  | 
+  | 
+
+--[ Match #51 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                     .arg(Argument::with_name("color").valid_values(&["red", "blue", "green"])),
+  | 
+  |             );
+  | 
+  | 
+  | 
+  |         let result = parse_with("--repeat 2 -c red hello world!", command.clone()).unwrap();
+  | 
+  |         assert!(result.options().contains("repeat"));
+  | 
+  |         assert!(result.options().contains("r"));
+  | 
+  |         assert!(result.options().contains("color"));
+  | 
+  | 
+
+--[ Match #78 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\context.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  | 
+  |         for child in self.root().get_subcommands() {
+  |             if let Some(opt) = child.get_options().get(name_or_alias) {
+  |                 return Some(opt);
+  |             }
+  |         }
+  | 
+
+--[ Match #19 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .options()
+  | 
+  |             .get_args("range")
+  | 
+  |             .unwrap()
+  | 
+  |             .get("start")
+  | 
+  |             .unwrap()
+  | 
+  |             .contains("10"));
+  | 
+  |         assert!(result2
+  | 
+  | 
+
+--[ Match #36 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .unwrap()
+  | 
+  |             .contains("A"));
+  | 
+  |         assert_eq!(
+  | 
+  |             result.args().get("min").unwrap().convert::<i64>().ok(),
+  | 
+  |             Some(2)
+  | 
+  |         );
+  | 
+  |         assert_eq!(
+  | 
+  | 
+
+--[ Match #73 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     fn index(&self, index: &str) -> &Self::Output {
+  | 
+  |         match self.get(index) {
+  | 
+  |             Some(option) => option,
+  | 
+  |             None => panic!("cannot find option named: `{}`", index),
+  | 
+  |         }
+  | 
+  |     }
+  | 
+  | }
+  | 
+  | 
+
+--[ Match #33 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |         );
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("letters")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_arg()
+  | 
+  |             .unwrap()
+  | 
+  | 
+
+--[ Match #67 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Returns the `ArgumentList` of the option with the given name or alias, or `None`
+  | 
+  |     /// if the option canno tbe found.
+  | 
+  |     pub fn get_args<S: AsRef<str>>(&self, option: S) -> Option<&ArgumentList> {
+  | 
+  |         self.get(option.as_ref()).map(|o| o.get_args())
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     /// Returns `true` if there is an option with the given name or alias.
+  | 
+  | 
+
+--[ Match #72 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \.(request|post|get)\(
+  |     ///     .parse_from(vec!["--copy", "/src/file.txt", "/src/utils/"])
+  | 
+  |     ///     .unwrap();
+  | 
+  |     ///
+  | 
+  |     /// assert!(result.options().get_args("copy").unwrap().get("from").unwrap().contains("/src/file.
+  | 
+  |     /// assert!(result.options().get_args("copy").unwrap().get("to").unwrap().contains("/src/utils/"
+  | 
+  |     /// ```
+  | 
+  |     pub fn arg(mut self, mut arg: Argument) -> Self {
+  | 
+  | 
+
+--[ Match #2 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\serde.rs
+   Pattern: \.(request|post|get)\(
+  |                 Some("Shows the version of the app")
+  | 
+  |             );
+  | 
+  | 
+  | 
+  |             let option = command.get_options().get("color").unwrap();
+  | 
+  |             assert_eq!(option.get_name(), "color");
+  | 
+  | 
+  | 
+  |             let option_arg = option.get_arg().unwrap();
+  | 
+  | 
+
+--[ Match #22 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |         let result2 = parse_with("5 12", command.clone()).unwrap();
+  | 
+  |         assert!(result2.args.get("min").unwrap().contains("5"));
+  | 
+  |         assert!(result2.args.get("max").unwrap().contains("12"));
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     #[test]
+  | 
+  | 
+
+--[ Match #25 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .arg(Argument::with_name("max"));
+  | 
+  | 
+  | 
+  |         let result1 = parse_with("10", command.clone()).unwrap();
+  | 
+  |         assert!(result1.args.get("min").unwrap().contains("1"));
+  | 
+  |         assert!(result1.args.get("max").unwrap().contains("10"));
+  | 
+  | 
+  | 
+  |         let result2 = parse_with("5 12", command.clone()).unwrap();
+  | 
+  | 
+
+--[ Match #48 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |     /// Gets an iterator over the values of the argument with the given name.
+  | 
+  |     pub fn values_of(&self, arg_name: &str) -> Option<Values<'_>> {
+  | 
+  |         if let Some(arg) = self.args.get(arg_name) {
+  | 
+  |             Some(Values {
+  | 
+  |                 values: arg.get_values(),
+  | 
+  |             })
+  | 
+  | 
+
+--[ Match #26 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |         let res2 = parse_with("--enable false", command.clone()).unwrap();
+  | 
+  |         assert_eq!(
+  | 
+  |             res2.options()
+  | 
+  |                 .get("enable")
+  | 
+  |                 .unwrap()
+  | 
+  |                 .get_arg()
+  | 
+  |                 .unwrap()
+  | 
+  | 
+
+--[ Match #61 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \.(request|post|get)\(
+  |         assert_eq!(options.get("version"), Some(&CommandOption::new("version")));
+  | 
+  |         assert_eq!(options.get("v"), Some(&CommandOption::new("version")));
+  | 
+  |         assert_eq!(options.get("author"), Some(&CommandOption::new("author")));
+  | 
+  |         assert_eq!(options.get("ve"), None);
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     #[test]
+  | 
+  | 
+
+--[ Match #6 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\args.rs
+   Pattern: \.(request|post|get)\(
+  |     ///
+  | 
+  |     /// // This only fails if feature `typing` is enable, otherwise the values will be converted
+  | 
+  |     /// #[cfg(feature = "typing")]
+  | 
+  |     /// assert!(result.args().get("numbers").unwrap().convert_all::<f32>().is_err());
+  | 
+  |     /// ```
+  | 
+  |     pub fn convert_all<T>(&self) -> Result<Vec<T>>
+  | 
+  |     where
+  | 
+  | 
+
+--[ Match #74 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             },
+  | 
+  |             None => Err(Error::new(
+  | 
+  |                 ErrorKind::Other,
+  | 
+  |                 format!("cannot find option named '{}'", option))
+  | 
+  |             )
+  | 
+  |         }
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #79 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\context.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Returns the `CommandOption` with the given name or alias or `None` if not found.
+  |     pub fn get_option(&self, name_or_alias: &str) -> Option<&CommandOption> {
+  |         if let Some(opt) = self.root().get_options().get(name_or_alias) {
+  |             return Some(opt);
+  |         }
+  | 
+  | 
+
+--[ Match #49 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Gets the value of the argument with the given name.
+  | 
+  |     pub fn value_of(&self, arg_name: &str) -> Option<&str> {
+  | 
+  |         self.args
+  | 
+  |             .get(arg_name)
+  | 
+  |             .map(|arg| arg.get_values())
+  | 
+  |             .filter(|values| values.len() == 1)
+  | 
+  |             .map(|values| values[0].as_str())
+  | 
+  | 
+
+--[ Match #52 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\command.rs
+   Pattern: \.(request|post|get)\(
+  |             Some(&CommandOption::new("version"))
+  | 
+  |         );
+  | 
+  |         assert_eq!(
+  | 
+  |             cmd.get_options().get("v"),
+  | 
+  |             Some(&CommandOption::new("version"))
+  | 
+  |         );
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #89 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parser.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | 
+  |                 return Err(Error::new(
+  | 
+  |                     ErrorKind::Other,
+  | 
+  |                     format!("there is no option that expect arguments but `{}` was found", value)
+  | 
+  |                 ));
+  | 
+  |             } else {
+  | 
+  |                 self.cursor.as_ref().unwrap().next();
+  | 
+  | 
+
+89 matches found.
+
+
+--[ Match #86 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parser.rs
+   Pattern: \.(request|post|get)\(
+  |     fn next(&self) -> Option<&Token> {
+  | 
+  |         let token = self.current();
+  | 
+  |         if token.is_some() {
+  | 
+  |             self.index.set(self.index.get() + 1);
+  | 
+  |         }
+  | 
+  |         token
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #76 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\command_line.rs
+   Pattern: \.(request|post|get)\(
+  |             if parse_result.options().contains(help_option.get_name()) {
+  | 
+  |                 let arg = parse_result
+  | 
+  |                     .options()
+  | 
+  |                     .get(help_option.get_name())
+  | 
+  |                     .unwrap()
+  | 
+  |                     .get_arg();
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #41 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |         assert!(result.options().contains("second"));
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("enable")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_arg()
+  | 
+  |             .unwrap()
+  | 
+  | 
+
+--[ Match #31 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .contains("b"));
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("letters")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_arg()
+  | 
+  |             .unwrap()
+  | 
+  | 
+
+--[ Match #77 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\tokenizer.rs
+   Pattern: \.(request|post|get)\(
+  |                     tokens.extend(args.into_iter().map(Token::Arg));
+  | 
+  |                 } else if let Some(opt) = current_command
+  | 
+  |                     .get_options()
+  | 
+  |                     .get(context.trim_prefix(&prefixed_option))
+  | 
+  |                 {
+  | 
+  |                     for arg in opt.get_args() {
+  | 
+  |                         let max_arg_count = arg.get_values_count().max_or_default();
+  | 
+  | 
+
+--[ Match #40 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |         let result = parse_with("--replace a A -- 2 10", command.clone()).unwrap();
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("replace")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_args()
+  | 
+  |             .get("from")
+  | 
+  | 
+
+--[ Match #8 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\args.rs
+   Pattern: \.(request|post|get)\(
+  |     ///
+  | 
+  |     /// // This only fails if feature `typing` is enable, otherwise the value will be converted
+  | 
+  |     /// #[cfg(feature = "typing")]
+  | 
+  |     /// assert!(result.args().get("numbers").unwrap().convert::<f32>().is_err());
+  | 
+  |     /// ```
+  | 
+  |     pub fn convert<T>(&self) -> Result<T>
+  | 
+  |     where
+  | 
+  | 
+
+--[ Match #60 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\command.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     fn command_test1() {
+  | 
+  |         let cmd = Command::new("time")
+  | 
+  |             .description("Shows the time")
+  | 
+  |             .usage("Sets the time or show it");
+  | 
+  | 
+  | 
+  |         assert_eq!(cmd.get_name(), "time");
+  | 
+  |         assert_eq!(cmd.get_description(), Some("Shows the time"));
+  | 
+  | 
+
+--[ Match #16 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |         assert_eq!(result.command_name(), "echo");
+  | 
+  |         assert!(result.options().get_arg("color").unwrap().contains("red"));
+  | 
+  |         assert!(result.args().get("values").unwrap().contains("hello"));
+  | 
+  |         assert!(result.args().get("values").unwrap().contains("world"));
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     #[test]
+  | 
+  | 
+
+--[ Match #62 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\option.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |         assert_eq!(options.get("version"), Some(&CommandOption::new("version")));
+  | 
+  |         assert_eq!(options.get("v"), Some(&CommandOption::new("version")));
+  | 
+  |         assert_eq!(options.get("author"), Some(&CommandOption::new("author")));
+  | 
+  |         assert_eq!(options.get("ve"), None);
+  | 
+  |     }
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #37 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .get("replace")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_args()
+  | 
+  |             .get("to")
+  | 
+  |             .unwrap()
+  | 
+  |             .contains("A"));
+  | 
+  |         assert_eq!(
+  | 
+  | 
+
+--[ Match #4 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\args.rs
+   Pattern: \.(request|post|get)\(
+  |         T: FromStr + 'static,
+  | 
+  |         <T as FromStr>::Err: Display,
+  | 
+  |     {
+  | 
+  |         match &self.get(arg_name) {
+  | 
+  |             Some(arg) => arg.convert_all(),
+  | 
+  |             None => Err(Error::new(
+  | 
+  |                 ErrorKind::Other,
+  | 
+  | 
+
+--[ Match #85 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parser.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  |     fn current(&self) -> Option<&Token> {
+  | 
+  |         let tokens = self.tokens.as_slice();
+  | 
+  |         let index = self.index.get();
+  | 
+  | 
+  | 
+  |         if index >= tokens.len() {
+  | 
+  |             None
+  | 
+  | 
+
+--[ Match #29 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .contains("d"));
+  | 
+  |         assert!(result
+  | 
+  |             .options()
+  | 
+  |             .get("letters")
+  | 
+  |             .unwrap()
+  | 
+  |             .get_arg()
+  | 
+  |             .unwrap()
+  | 
+  | 
+
+--[ Match #59 of 89 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\command.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | 
+  |         assert_eq!(cmd.get_name(), "time");
+  | 
+  |         assert_eq!(cmd.get_description(), Some("Shows the time"));
+  | 
+  |         assert_eq!(cmd.get_usage(), Some("Sets the time or show it"));
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     #[test]
+  | 
+  | 
+
+--[ Match #21 of 89 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-clapi@0.1\clapi-0.1.2\src\parse_result.rs
+   Pattern: \.(request|post|get)\(
+  |             .options()
+  | 
+  |             .get_args("range")
+  | 
+  |             .unwrap()
+  | 
+  |             .get("start")
+  | 
+  |             .unwrap()
+  | 
+  |             .contains("1"));
+  | 
+  |         assert!(result1
+  | 
+  | 

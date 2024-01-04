@@ -1,0 +1,627 @@
+--[ Match #57 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  |     /// assert_eq!(shorter_names.get(f1).map(|v| *v), Some("eter"));
+  |     ///
+  |     /// assert_eq!(orig.get(f2), None);
+  |     /// assert_eq!(shorter_names.get(f2), None);
+  |     /// ```
+  |     fn map<F, TargetT>(&self, f: F) -> adaptors::Map<'_, Self, F>
+  | 
+
+--[ Match #70 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\adaptors.rs
+   Pattern: \.(request|post|get)\(
+  |     type Ret<'s> = Self::Target where Self: 's;
+  | 
+  |     fn get(&self, handle: H) -> Option<Value<Self::Ret<'_>, Self::Target>> {
+  |         self.inner.get(handle)
+  |             .map(|v| (&self.mapper)(v).into())
+  |     }
+  | }
+  | 
+
+--[ Match #18 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "leer"
+  | version = "0.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "871cf649c68d0de75f884c31fb2fcda431e289e8afb76da7d131ffc6ec1569f8"
+  | dependencies = [
+  |  "leer-macros",
+  | ]
+  | 
+
+--[ Match #22 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+  | 
+  | [[package]]
+  | name = "bytemuck"
+  | 
+
+--[ Match #9 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.26"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a152013215dca273577e18d2bf00fa862b89b24169fb78c4c95aeb07992c9cec"
+  | dependencies = [
+  |  "unicode-xid",
+  | ]
+  | 
+
+--[ Match #48 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\LICENSE-APACHE
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |    with Licensor regarding such Contributions.
+  | 
+  | 6. Trademarks. This License does not grant permission to use the trade
+  |    names, trademarks, service marks, or product names of the Licensor,
+  |    except as required for reasonable and customary use in describing the
+  |    origin of the Work and reproducing the content of the NOTICE file.
+  | 
+  | 
+
+--[ Match #23 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ahash"
+  | version = "0.8.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2c99f64d1e06488f620f932677e24bc6e2897582980441ae90a671415bd7ec2f"
+  | dependencies = [
+  |  "cfg-if",
+  |  "getrandom",
+  | 
+
+--[ Match #65 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(orig.get(f0).map(|v| *v), Some("Anna"));
+  |     /// assert_eq!(name_lens.get(f0).map(|v| *v), Some(4));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  |     /// assert_eq!(name_lens.get(f1).map(|v| *v), Some(5));
+  |     ///
+  |     /// assert_eq!(orig.get(f2), None);
+  | 
+
+--[ Match #3 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-xid"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8ccb82d61f80a663efe1f787a51b16b5a51e3314d6ac365b08639f52387b33f3"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #30 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vb -- vg => [fv, fy], interior;
+  |                         vc -- vd => [fx, fz], interior;
+  |                         vc -- vh => [fx, fy], interior;
+  |                         vd -- vi => [fx, fz], interior;
+  |                         ve -- vf => [fu, fw], interior;
+  |                         ve -- vj => [fw, fz], interior;
+  |                         vf -- vg => [fv, fw], interior;
+  | 
+
+--[ Match #38 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vf => [fy],         [vd, vi],     boundary;
+  |                         vg => [fx, fz, fy], [vd, ve, vj], interior;
+  |                         vh => [fz],         [ve, vk],     boundary;
+  |                         vi => [fy],         [vf, vl],     boundary;
+  |                         vj => [fy, fz],     [vg, vm, vl], boundary;
+  |                         vk => [fz],         [vh, vm],     boundary;
+  |                         vl => [fy],         [vi, vj],     boundary;
+  | 
+
+--[ Match #42 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\tests.rs
+   Pattern: \.(request|post|get)\(
+  |                 assert_eq!(left.get_mut(h), Some(&mut right[pos].1));
+  |                 assert_eq!(&mut left[h], &mut right[pos].1);
+  |             } else {
+  |                 assert_eq!(left.get(h), None);
+  |                 assert_eq!(left.get_ref(h), None);
+  |                 assert_eq!(left.get_mut(h), None);
+  |             }
+  | 
+
+--[ Match #24 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "80c0e20a5a3ae42ffc09f1f12980c7c6a100c2a5"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #25 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\util.rs
+   Pattern: \.(request|post|get)\(
+  |     (@neighbor_check {$($n:ident),* ... $(; $len:expr)? }) => {
+  |         NeighborCheck::Partial {
+  |             partial_neighbors: vec![$($n),*],
+  |             len: [$($len)?].get(0).copied(),
+  |         }
+  |     };
+  |     (@neighbor_check {$($n:ident),*}) => {
+  | 
+
+--[ Match #29 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vf -- vg => [fv, fw], interior;
+  |                         vg -- vk => [fw, fy], interior;
+  |                         vh -- vm => [fx, fy], interior;
+  |                         vi -- vn => [fx, fz], interior;
+  |                         vj -- vk => [fw, fz], interior;
+  |                         vk -- vl => [fy, fz], interior;
+  |                         vl -- vm => [fy, fz], interior;
+  | 
+
+--[ Match #55 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\half_edge\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             Some(prev) => prev,
+  |             None => {
+  |                 self.find_incoming_he(he.twin(), |incoming| self[incoming].next == he)
+  |                     .expect("internal HEM error: could not find `prev` half edge")
+  |             }
+  |         }
+  |     }
+  | 
+
+--[ Match #49 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\algo\mod.rs
+   Pattern: \.(request|post|get)\(
+  |             }
+  | 
+  |             let pos_of = |vh: VertexHandle| {
+  |                 vertex_positions.get(vh)
+  |                     .unwrap_or_else(|| panic!("vertex position for {:?} missing in Dijkstra", vh))
+  |                     .to_point3()
+  |             };
+  | 
+
+--[ Match #67 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// // length of the string.
+  |     /// let name_lens = orig.map(|s| s.len());
+  |     ///
+  |     /// assert_eq!(orig.get(f0).map(|v| *v), Some("Anna"));
+  |     /// assert_eq!(name_lens.get(f0).map(|v| *v), Some(4));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  | 
+
+--[ Match #61 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// // But we can also reborrow the value's contents.
+  |     /// let shorter_names = orig.map(|s| &s[1..]);
+  |     ///
+  |     /// assert_eq!(orig.get(f0).map(|v| *v), Some("Anna"));
+  |     /// assert_eq!(shorter_names.get(f0).map(|v| *v), Some("nna"));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  | 
+
+--[ Match #10 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "optional"
+  | version = "0.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "978aa494585d3ca4ad74929863093e87cac9790d81fe7aba2b3dc2890643a0fc"
+  | 
+  | [[package]]
+  | name = "proc-macro2"
+  | 
+
+--[ Match #54 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\half_edge\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         // was found, it's stored here.
+  |         let mut last_edge: Option<Checked<HalfEdgeHandle>> = None;
+  | 
+  |         for vi in 0..vertices.len() {
+  |             let from = vertices[vi];
+  |             let to = vertices[(vi + 1) % vertices.len()];
+  | 
+  | 
+
+--[ Match #19 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "getrandom"
+  | version = "0.2.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c85e1d9ab2eadba7e5040d4e09cbd6d072b76a557ad64e797c2cb9d4da21d7e4"
+  | dependencies = [
+  |  "cfg-if",
+  |  "libc",
+  | 
+
+--[ Match #5 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.72"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1e8cdbefb79a9a5a65e0db8b47b723ee907b7c7f8496c76a1770b5c310bab82"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #58 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// assert_eq!(shorter_names.get(f0).map(|v| *v), Some("nna"));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  |     /// assert_eq!(shorter_names.get(f1).map(|v| *v), Some("eter"));
+  |     ///
+  |     /// assert_eq!(orig.get(f2), None);
+  |     /// assert_eq!(shorter_names.get(f2), None);
+  | 
+
+--[ Match #72 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\.gitignore
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | /target/
+  | Cargo.lock
+  | 
+  | # Top level mesh files are generally ignored
+  | /*.ply
+  | /*.PLY
+  | /*.obj
+  | 
+
+--[ Match #36 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vf -- vi => [fy],     boundary;
+  |                         vg -- vj => [fy, fz], interior;
+  |                         vh -- vk => [fz],     boundary;
+  |                         vi -- vl => [fy],     boundary;
+  |                         vj -- vl => [fy],     boundary;
+  |                         vj -- vm => [fz],     boundary;
+  |                         vk -- vm => [fz],     boundary;
+  | 
+
+--[ Match #11 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "once_cell"
+  | version = "1.17.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b7e5500299e16ebb147ae15a00a942af264cf3688f47923b8fc2cd5858f23ad3"
+  | 
+  | [[package]]
+  | name = "optional"
+  | 
+
+--[ Match #26 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\util.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         EdgeInfo {
+  |             vertices: [$va, $vb],
+  |             handle: [$($eh)?].get(0).copied(),
+  |             boundary: check_mesh!(@is_boundary $boundary),
+  |             adjacent_faces: check_mesh!(@neighbor_check $nf),
+  |         }
+  | 
+
+--[ Match #73 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\directed_edge\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         // Find the end half edges of the blades BIB.
+  |                         let bib_end = self.circulate_around_vertex(vh).find(|&outgoing| {
+  |                             self[outgoing].twin.as_next_boundary_he() == Some(incoming_outer)
+  |                         }).expect("internal DEM bug: couldn't find `bib_end`");
+  | 
+  |                         // Here we remove the "incoming blade" from the cycle.
+  |                         // Situation after this assignment:
+  | 
+
+--[ Match #6 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "stable-vec"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "80dfb7bb28f3d2fa50566793349d633b33f938543154be8071610ea9f590d8ca"
+  | dependencies = [
+  |  "no-std-compat",
+  | ]
+  | 
+
+--[ Match #47 of 74 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #60 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let shorter_names = orig.map(|s| &s[1..]);
+  |     ///
+  |     /// assert_eq!(orig.get(f0).map(|v| *v), Some("Anna"));
+  |     /// assert_eq!(shorter_names.get(f0).map(|v| *v), Some("nna"));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  |     /// assert_eq!(shorter_names.get(f1).map(|v| *v), Some("eter"));
+  | 
+
+--[ Match #2 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "49874b5167b65d7193b8aba1567f5c7d93d001cafc34600cee003eda787e483f"
+  | 
+  | [[package]]
+  | name = "wasi"
+  | 
+
+--[ Match #31 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vf => [fu, fv, fw], [va, vg, ve], interior;
+  |                         vg => [fv, fy, fw], [vk, vf, vb], interior;
+  |                         vh => [fx, fy],     [vc, vm],     interior;
+  |                         vi => [fx, fz],     [vd, vn],     interior;
+  |                         vj => [fw, fz],     [ve, vk],     interior;
+  |                         vk => [fw, fy, fz], [vj, vg, vl], interior;
+  |                         vl => [fy, fz],     [vk, vm],     interior;
+  | 
+
+--[ Match #35 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vf => [fy],         [vd, vi],     boundary;
+  |                         vg => [fx, fz, fy], [vd, ve, vj], interior;
+  |                         vh => [fz],         [ve, vk],     boundary;
+  |                         vi => [fy],         [vf, vl],     boundary;
+  |                         vj => [fy, fz, fw], [vg, vm, vl], interior;
+  |                         vk => [fz],         [vh, vm],     boundary;
+  |                         vl => [fy, fw],     [vi, vj, vm], boundary;
+  | 
+
+--[ Match #43 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\sparse.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl<H: Handle + Hash, T> PropStore<H> for SparseMap<H, T> {
+  |     fn get_ref(&self, handle: H) -> Option<&Self::Output> {
+  |         self.0.get(&handle)
+  |     }
+  | 
+  |     fn num_props(&self) -> hsize {
+  | 
+
+--[ Match #8 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c3d0b9745dc2debf507c8422de05d7226cc1f0644216dfdfead988f9b1ab32a7"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #46 of 74 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    the copyright owner. For the purposes of this definition, "submitted"
+  |    means any form of electronic, verbal, or written communication sent
+  |    to the Licensor or its representatives, including but not limited to
+  |    communication on electronic mailing lists, source code control systems,
+  |    and issue tracking systems that are managed by, or on behalf of, the
+  |    Licensor for the purpose of discussing and improving the Work, but
+  |    excluding communication that is conspicuously marked or otherwise
+  | 
+
+--[ Match #20 of 74 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cfg-if"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "baf1de4339761588bc0619e3cbc0120ee582ebb74b53b4efbf79117bd2da40fd"
+  | 
+  | [[package]]
+  | name = "getrandom"
+  | 
+
+--[ Match #32 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                 let vf = m.add_vertex();
+  |                 let vg = m.add_vertex();
+  |                 let vh = m.add_vertex();
+  |                 let vi = m.add_vertex();
+  |                 let vj = m.add_vertex();
+  |                 let vk = m.add_vertex();
+  |                 let vl = m.add_vertex();
+  | 
+
+--[ Match #34 of 74 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\core\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                         vd -- vg => [fx, fy], interior;
+  |                         ve -- vg => [fx, fz], interior;
+  |                         ve -- vh => [fz],     boundary;
+  |                         vf -- vi => [fy],     boundary;
+  |                         vg -- vj => [fy, fz], interior;
+  |                         vh -- vk => [fz],     boundary;
+  |                         vi -- vl => [fy],     boundary;
+  | 
+
+--[ Match #66 of 74 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-lox@0.1\lox-0.1.1\src\map\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let name_lens = orig.map(|s| s.len());
+  |     ///
+  |     /// assert_eq!(orig.get(f0).map(|v| *v), Some("Anna"));
+  |     /// assert_eq!(name_lens.get(f0).map(|v| *v), Some(4));
+  |     ///
+  |     /// assert_eq!(orig.get(f1).map(|v| *v), Some("Peter"));
+  |     /// assert_eq!(name_lens.get(f1).map(|v| *v), Some(5));
+  | 

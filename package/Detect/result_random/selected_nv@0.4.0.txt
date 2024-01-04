@@ -1,0 +1,629 @@
+--[ Match #280 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "impl-codec"
+  | version = "0.4.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1be51a921b067b0eaca2fad532d9400041561aa922221cc65f95a85641c6bf53"
+  | dependencies = [
+  |  "parity-scale-codec",
+  | ]
+  | 
+
+--[ Match #41 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\repo.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             let mnemonic = mnemonic::prompt()?;
+  |             let start = std::time::Instant::now();
+  |             match seed::mnemonic(&password, mnemonic.as_slice(), opt.diff) {
+  |                 Some(password) => {
+  |                     if opt.debug {
+  |                         println!("Hash computed in {:?}", start.elapsed());
+  |                     }
+  | 
+
+--[ Match #374 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "0.7.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #63 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\password.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | pub fn prompt(confirm: bool) -> std::io::Result<String> {
+  |     if confirm {
+  |         Password::with_theme(&ColorfulTheme::default())
+  |             .with_prompt("Password")
+  |             .with_confirmation("Repeat password", "Error: the passwords don't match.")
+  |             .interact()
+  | 
+
+--[ Match #251 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "nix"
+  | version = "0.20.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f5e06129fb611568ef4e868c14b326274959aa70ff7776e9d55323531c374945"
+  | dependencies = [
+  |  "bitflags",
+  |  "cc",
+  | 
+
+--[ Match #209 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_isaac"
+  | version = "0.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ded997c9d5f13925be2a6fd7e66bf1872597f759fd9dd93513dd7e92e5a5ee08"
+  | dependencies = [
+  |  "rand_core 0.3.1",
+  | ]
+  | 
+
+--[ Match--[ Match #1 of 385 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: base64|encodedcommand|obfuscate
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b25a18b1bf7387f0145e7f8324e700805aade3842dd3db2e74e4cdeb4677c09e"
+  | dependencies = [
+  |  "base64 0.10.1",
+  |  "log",
+  |  "ring",
+  |  "sct",
+  | 
+
+--[ Match #292 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashbrown"
+  | version = "0.11.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ab5ef0d4909ef3724cc8cce6ccc8572c5c817592e9285f5464f8e86f8bd3726e"
+  | 
+  | [[package]]
+  | name = "heck"
+  | 
+
+--[ Match #263 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "maybe-uninit"
+  | version = "2.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "60302e4db3a61da70c0cb7991976248362f30319e88850c487b9b95bbf059e00"
+  | 
+  | [[package]]
+  | name = "memchr"
+  | 
+
+--[ Match #35 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\repo.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 zbox::Error::RepoOpened => {
+  |                     println!("Repository is already opened.");
+  |                     println!("Opening in read only mode.");
+  |                     return Ok((open_repo(&opt, &password, true)?, password.to_string()));
+  |                 }
+  |                 err => {
+  |                     println!("Error: {}.", err);
+  | 
+
+--[ Match #61 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\password.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     if confirm {
+  |         Password::with_theme(&ColorfulTheme::default())
+  |             .with_prompt("Password")
+  |             .with_confirmation("Repeat password", "Error: the passwords don't match.")
+  |             .interact()
+  |     } else {
+  |         Password::with_theme(&ColorfulTheme::default())
+  | 
+
+--[ Match #239 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "parity-scale-codec"
+  | version = "1.3.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a4b26b16c7687c3075982af47719e481815df30bc544f7a6690763a25ca16e9d"
+  | dependencies = [
+  |  "arrayvec 0.5.2",
+  |  "bitvec",
+  | 
+
+--[ Match #143 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio"
+  | version = "0.1.22"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5a09c0b5bb588872ab2f09afa13ee6e9dac11e10a0ec9e8e3ba39a5a5d530af6"
+  | dependencies = [
+  |  "bytes",
+  |  "futures",
+  | 
+
+--[ Match #207 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_os"
+  | version = "0.1.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7b75f676a1e053fc562eafbb47838d67c84801e38fc1ba459e8f180deabd5071"
+  | dependencies = [
+  |  "cloudabi",
+  |  "fuchsia-cprng",
+  | 
+
+--[ Match #161 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "string"
+  | version = "0.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d24114bfcceb867ca7f71a0d3fe45d45619ec47a6fbfa98cb14e14250bfa5d6d"
+  | dependencies = [
+  |  "bytes",
+  | ]
+  | 
+
+--[ Match #304 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "flate2"
+  | version = "1.0.22"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1e6988e897c1c9c485f43b47a529cef42fde0547f9d8d41a7062518f1d8fc53f"
+  | dependencies = [
+  |  "cfg-if 1.0.0",
+  |  "crc32fast",
+  | 
+
+--[ Match #136 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tokio-sync"
+  | version = "0.1.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "edfe50152bc8164fcc456dab7891fa9bf8beaf01c5ee7e1dd43a397c3cf87dee"
+  | dependencies = [
+  |  "fnv",
+  |  "futures",
+  | 
+
+--[ Match #86 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\seed.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         let bytes = rand_bytes(sbytes);
+  |         let mnemonic = mnemonic::to_string(&bytes);
+  | 
+  |         match salt::mine(&password, &bytes, diff, round) {
+  |             Some(salt) => {
+  |                 let salt = argon2d_simple(&password, &salt).encode_hex::<String>();
+  |                 return (mnemonic, salt);
+  | 
+
+--[ Match #364 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "backtrace"
+  | version = "0.3.62"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "091bcdf2da9950f96aa522681ce805e6857f6ca8df73833d35736ab2dc78e152"
+  | dependencies = [
+  |  "addr2line",
+  |  "cc",
+  | 
+
+--[ Match #358 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "blake2b_simd"
+  | version = "0.5.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "afa748e348ad3be8263be728124b24a24f268266f6f5d58af9d75f6a40b5c587"
+  | dependencies = [
+  |  "arrayref",
+  |  "arrayvec 0.5.2",
+  | 
+
+--[ Match #6 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\app.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             zbox::MemLimit::Sensitive,
+  |         )?;
+  | 
+  |         app.password = password;
+  | 
+  |         Ok(None)
+  |     }
+  | 
+
+--[ Match #176 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "semver"
+  | version = "0.9.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1d7eb9ef2c18661902cc47e535f9bc51b78acd254da71d375c2f6720d9a40403"
+  | dependencies = [
+  |  "semver-parser",
+  | ]
+  | 
+
+--[ Match #289 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hex"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+  | 
+  | [[package]]
+  | name = "http"
+  | 
+
+--[ Match #199 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.5.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d07a8629359eb56f1e2fb1652bb04212c072a87ba68546a04065d525673ac461"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #38 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\repo.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             }
+  |         };
+  | 
+  |         let repo = open_repo(opt, &password, false);
+  |         match repo {
+  |             Ok(repo) => {
+  |                 return Ok((repo, password));
+  | 
+
+--[ Match #184 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustversion"
+  | version = "1.0.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "61b3909d758bb75c79f23d4736fac9433868679d3ad2ea7a61e3c25cfda9a088"
+  | 
+  | [[package]]
+  | name = "rustyline"
+  | 
+
+--[ Match #151 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "termcolor"
+  | version = "1.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2dfed899f0eb03f32ee8c6a0aabdb8a7949659e3466561fc0adf54e26d88c5f4"
+  | dependencies = [
+  |  "winapi-util",
+  | ]
+  | 
+
+--[ Match #43 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\repo.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         }
+  | 
+  |         let password = if opt.create {
+  |             seed::create(opt, &password)?
+  |         } else {
+  |             let mnemonic = mnemonic::prompt()?;
+  |             let start = std::time::Instant::now();
+  | 
+
+--[ Match #68 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | * `clear` - clear the current screen
+  | * `cp` - copy contents of file to clipboard
+  | * `gen` - generate random password and save to path
+  | * `info` - print password repository information
+  | * `ls` - list all files in directory
+  | * `mkdir` - create a directory
+  | * `pwd` - print current working directory
+  | 
+
+--[ Match #90 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "zbox"
+  | version = "0.9.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7264b05ab5e67c2bd99bbdda334be8c094d4434f974f4b8a8d224ce7528ffa8e"
+  | dependencies = [
+  |  "cc",
+  |  "cfg-if 1.0.0",
+  | 
+
+--[ Match #130 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "uint"
+  | version = "0.8.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9db035e67dfaf7edd9aebfe8676afcd63eed53c8a4044fed514c8cccf1835177"
+  | dependencies = [
+  |  "byteorder",
+  |  "crunchy",
+  | 
+
+--[ Match #342 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clipboard-win"
+  | version = "2.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e3a093d6fed558e5fe24c3dfc85a68bb68f1c824f440d3ba5aca189e2998786b"
+  | dependencies = [
+  |  "winapi 0.3.9",
+  | ]
+  | 
+
+--[ Match #81 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\seed.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     Some(argon2d_simple(&password, &salt).encode_hex::<String>())
+  | }
+  | 
+  | pub fn create(opt: &Opt, password: &str) -> std::io::Result<String> {
+  |     let mut mined = 0;
+  |     loop {
+  |         let start = std::time::Instant::now();
+  | 
+
+--[ Match #354 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "byte-slice-cast"
+  | version = "0.3.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b0a5e3906bcbf133e33c1d4d95afc664ad37fbdb9f6568d8043e7ea8c27d93d3"
+  | 
+  | [[package]]
+  | name = "byteorder"
+  | 
+
+--[ Match #25 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\app.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             opt,
+  |             cwd: "/".into(),
+  |             repo: Arc::new(RefCell::new(repo)),
+  |             password,
+  |         })
+  |     }
+  | 
+  | 
+
+--[ Match #256 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "mio"
+  | version = "0.6.23"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4afd66f5b91bf2a3bc13fad0e21caedac168ca4c707504e75585648ae80e4cc4"
+  | dependencies = [
+  |  "cfg-if 0.1.10",
+  |  "fuchsia-zircon",
+  | 
+
+--[ Match #24 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\src\app.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     use crate::{
+  |         app::{Application, Args, Time},
+  |         common::{confirm_prompt, rand_password, secret_prompt},
+  |         errors::{Error, Result},
+  |         password, seed,
+  |     };
+  | 
+
+--[ Match #71 of 385 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | Secure password store highly resistant to brute-force attacks.
+  | 
+  | Implements ideas from both blockchain and proof of work for creating a password repository and hashi
+  | 
+  | # install
+  | 
+  | 
+
+--[ Match #249 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "nodrop"
+  | version = "0.1.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "72ef4a56884ca558e5ddb05a1d1e7e1bfd9a68d9ed024c21704cc98872dae1bb"
+  | 
+  | [[package]]
+  | name = "num-integer"
+  | 
+
+--[ Match #126 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-segmentation"
+  | version = "1.8.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8895849a949e7845e06bd6dc1aa51731a103c42707010a5b591c0038fb73385b"
+  | 
+  | [[package]]
+  | name = "unicode-width"
+  | 
+
+--[ Match #283 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hyper-rustls"
+  | version = "0.17.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "719d85c7df4a7f309a77d145340a063ea929dcb2e025bae46a80345cffec2952"
+  | dependencies = [
+  |  "bytes",
+  |  "ct-logs",
+  | 
+
+--[ Match #155 of 385 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-nv@0.4\nv-0.4.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "take_mut"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f764005d11ee5f36500a149ace24e00e3da98b0158b3e2d53a7495660d3f4d60"
+  | 
+  | [[package]]
+  | name = "tar"
+  | 

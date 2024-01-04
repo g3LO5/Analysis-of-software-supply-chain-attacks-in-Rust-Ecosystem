@@ -1,0 +1,629 @@
+--[ Match #105 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tinyvec_macros"
+  | version = "0.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1f3ccbac311fea05f86f61904b462b55fb3df8837a366dfc601a0161d0532f20"
+  | 
+  | [[package]]
+  | name = "typenum"
+  | 
+
+--[ Match #47 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             data.to_vec()
+  |         }
+  | 
+  |         fn check_password_rev_3_4(document_u: &[u8], id: &[u8], key: &[u8]) -> bool {
+  |             compute_u_rev_3_4(id, key) == document_u[..16]
+  |         }
+  | 
+  | 
+
+--[ Match #259 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\object\types.rs
+   Pattern: \.(request|post|get)\(
+  | impl Dest {
+  |     fn from_array(array: &[Primitive], resolve: &impl Resolve) -> Result<Self> {
+  |         let page = Object::from_primitive(try_opt!(array.get(0)).clone(), resolve)?;
+  |         let kind = try_opt!(array.get(1));
+  |         let view = match kind.as_name()? {
+  |             "XYZ" => DestView::XYZ {
+  |                 left: match *try_opt!(array.get(2)) {
+  | 
+
+--[ Match #61 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\file.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | {
+  |     fn load_data(backend: B, password: &[u8], options: ParseOptions, object_cache: OC, stream_cache:
+  |         let mut storage = Storage::with_cache(backend, options, object_cache, stream_cache)?;
+  |         let trailer = storage.load_storage_and_trailer_password(password)?;
+  |         let trailer = t!(Trailer::from_primitive(
+  |             Primitive::Dictionary(trailer),
+  |             &storage,
+  | 
+
+--[ Match #235 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\font.rs
+   Pattern: \.(request|post|get)\(
+  |     #[allow(clippy::float_cmp)]  // TODO
+  |     fn set(&mut self, cid: usize, width: f32) {
+  |         self._set(cid, width);
+  |         debug_assert_eq!(self.get(cid), width);
+  |     }
+  |     fn _set(&mut self, cid: usize, width: f32) {
+  |         use std::iter::repeat;
+  | 
+
+--[ Match #166 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "block-padding"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a8894febbff9f758034a5b8e12d87918f56dfc64a8e1fe757d65e29041538d93"
+  | dependencies = [
+  |  "generic-array",
+  | ]
+  | 
+
+--[ Match #257 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\object\types.rs
+   Pattern: \.(request|post|get)\(
+  |                     Primitive::Number(f) => Some(f),
+  |                     ref p => return Err(PdfError::UnexpectedPrimitive { expected: "Number | Integer 
+  |                 },
+  |                 top: match *try_opt!(array.get(3)) {
+  |                     Primitive::Null => None,
+  |                     Primitive::Integer(n) => Some(n as f32),
+  |                     Primitive::Number(f) => Some(f),
+  | 
+
+--[ Match #86 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_gnu"
+  | version = "0.42.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8de912b8b8feb55c064867cf047dda097f92d51efad5b491dfb98f6bbb70cb36"
+  | 
+  | [[package]]
+  | name = "windows_x86_64_gnu"
+  | 
+
+--[ Match #135 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "instant"
+  | version = "0.1.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7a5bbe824c507c5da5956355e86a746d82e0e1464f65d862cc5e71da70e94b2c"
+  | dependencies = [
+  |  "cfg-if",
+  | ]
+  | 
+
+--[ Match #181 of 275 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\content.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     Transform { matrix: Matrix },
+  | 
+  |     LineWidth { width: f32 },
+  |     Dash { pattern: Vec<f32>, phase: f32 },
+  |     LineJoin { join: LineJoin },
+  |     LineCap { cap: LineCap },
+  |     MiterLimit { limit: f32 },
+  | 
+
+--[ Match #145 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fax"
+  | version = "0.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b2cec1797683c06c2f3de5edb3fde4d99c70e96f3204f6aaff944078353e5c55"
+  | dependencies = [
+  |  "fax_derive",
+  | ]
+  | 
+
+--[ Match #148 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "errno-dragonfly"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "aa68f1b12764fab894d2755d2518754e71b4fd80ecfb822714a1206c2aab39bf"
+  | dependencies = [
+  |  "cc",
+  |  "libc",
+  | 
+
+--[ Match #29 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |             let password_unicode =
+  |                 t!(String::from_utf8(pass.to_vec()).map_err(|_| PdfError::InvalidPassword));
+  |             let password_prepped =
+  |                 t!(stringprep::saslprep(&password_unicode).map_err(|_| PdfError::InvalidPassword));
+  |             let mut password_encoded = password_prepped.as_bytes();
+  | 
+  | 
+
+--[ Match #52 of 275 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\enc.rs
+   Pattern: \.get\(.*(fromhex|decode)
+  | }
+  | 
+  | pub fn jpx_decode(data: &[u8]) -> Result<Vec<u8>> {
+  |     JPX_DECODER.get().ok_or_else(|| PdfError::Other { msg: "jp2k decoder not set".into()})?(data)
+  | }
+  | pub fn jbig2_decode(data: &[u8]) -> Result<Vec<u8>> {
+  |     JBIG2_DECODER.get().ok_or_else(|| PdfError::Other { msg: "jbig2 decoder not set".into()})?(data)
+  | 
+
+--[ Match #121 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pdf_derive"
+  | version = "0.1.22"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7f4007262775d0798de87b15cbc64cf1aed5f7ee87eec847e297b69d8ed4b4f8"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #23 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             let mut password_encoded = password_prepped.as_bytes();
+  | 
+  |             if password_encoded.len() > 127 {
+  |                 password_encoded = &password_encoded[..127];
+  |             }
+  | 
+  |             let ue = t!(dict.ue.as_ref().ok_or_else(|| PdfError::MissingEntry {
+  | 
+
+--[ Match #169 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d468802bab17cbc0cc575e9b053f41e72aa36bfa6b7f55e3529ffa43161b97fa"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #234 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\font.rs
+   Pattern: \.(request|post|get)\(
+  | impl Font {
+  |     pub fn embedded_data(&self, resolve: &impl Resolve) -> Option<Result<Arc<[u8]>>> {
+  |         match self.data {
+  |             FontData::Type0(ref t) => t.descendant_fonts.get(0).and_then(|f| f.embedded_data(resolve
+  |             FontData::CIDFontType0(ref c) | FontData::CIDFontType2(ref c) => c.font_descriptor.data(
+  |             FontData::Type1(ref t) | FontData::TrueType(ref t) => t.font_descriptor.as_ref().and_the
+  |             _ => None
+  | 
+
+--[ Match #161 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cpufeatures"
+  | version = "0.2.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "280a9f2d8b3a38871a3c8a46fb80db65e5e5ed97da80c4d08bf27fb63e35e181"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #158 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crossbeam-epoch"
+  | version = "0.9.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "46bd5f3f85273295a9d14aedfb86f6aadbff6d8f5295c4a9edb08e819dcf5695"
+  | dependencies = [
+  |  "autocfg",
+  |  "cfg-if",
+  | 
+
+--[ Match #206 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\tests\integration.rs
+   Pattern: \.(request|post|get)\(
+  |     use pdf::object::NoResolve;
+  |     let file = run!(FileOptions::cached().open(file_path!("xelatex.pdf")));
+  |     // .. we know that object 13 of that file is an ObjectStream
+  |     let obj_stream: RcRef<ObjectStream> = run!(file.get(Ref::new(PlainRef {id: 13, gen: 0})));
+  |     for i in 0..obj_stream.n_objects() {
+  |         let (data, range) = run!(obj_stream.get_object_slice(i, &file));
+  |         let slice = &data[range];
+  | 
+
+--[ Match #19 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                     )
+  |                 } else {
+  |                     let owner_hash_computed =
+  |                         Self::revision_6_kdf(password_encoded, owner_validation_salt, u);
+  |                     if owner_hash_computed == owner_hash {
+  |                         (
+  |                             Self::revision_6_kdf(password_encoded, owner_key_salt, u).into(),
+  | 
+
+--[ Match #186 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\enc.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub fn jpx_decode(data: &[u8]) -> Result<Vec<u8>> {
+  |     JPX_DECODER.get().ok_or_else(|| PdfError::Other { msg: "jp2k decoder not set".into()})?(data)
+  | }
+  | pub fn jbig2_decode(data: &[u8]) -> Result<Vec<u8>> {
+  |     JBIG2_DECODER.get().ok_or_else(|| PdfError::Other { msg: "jbig2 decoder not set".into()})?(data)
+  | 
+
+--[ Match #24 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 t!(stringprep::saslprep(&password_unicode).map_err(|_| PdfError::InvalidPassword));
+  |             let mut password_encoded = password_prepped.as_bytes();
+  | 
+  |             if password_encoded.len() > 127 {
+  |                 password_encoded = &password_encoded[..127];
+  |             }
+  | 
+  | 
+
+--[ Match #231 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\examples\read.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     let file = FileOptions::cached().open(&path).unwrap();
+  |     if let Some(ref info) = file.trailer.info_dict {
+  |         let title = info.get("Title").and_then(|p| p.to_string_lossy().ok());
+  |         let author = info.get("Author").and_then(|p| p.to_string_lossy().ok());
+  | 
+  |         let descr = match (title, author) {
+  | 
+
+--[ Match #274 of 275 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\error.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     #[snafu(display("Hex decode error. Position {}, bytes {:?}", pos, bytes))]
+  |     HexDecode {pos: usize, bytes: [u8; 2]},
+  | 
+  |     #[snafu(display("Ascii85 tail error"))]
+  |     Ascii85TailError,
+  | 
+  |     #[snafu(display("Failed to convert '{}' into PredictorType", n))]
+  | 
+
+--[ Match #199 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\parser\mod.rs
+   Pattern: \.(request|post|get)\(
+  |             let dict = primitive.into_dictionary().unwrap();
+  | 
+  |             assert_eq!(dict.len(), 1);
+  |             assert_eq!(dict.get("").unwrap().as_bool().unwrap(), true);
+  |         }
+  | 
+  |         {
+  | 
+
+--[ Match #27 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             let password_unicode =
+  |                 t!(String::from_utf8(pass.to_vec()).map_err(|_| PdfError::InvalidPassword));
+  |             let password_prepped =
+  |                 t!(stringprep::saslprep(&password_unicode).map_err(|_| PdfError::InvalidPassword));
+  |             let mut password_encoded = password_prepped.as_bytes();
+  | 
+  |             if password_encoded.len() > 127 {
+  | 
+
+--[ Match #70 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\file.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     OC: Cache<Result<AnySync, Arc<PdfError>>>,
+  |     SC: Cache<Result<Arc<[u8]>, Arc<PdfError>>>
+  | {
+  |     pub fn password(self, password: &'a [u8]) -> FileOptions<'a, OC, SC> {
+  |         FileOptions {
+  |             password,
+  |             .. self
+  | 
+
+--[ Match #203 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\parser\mod.rs
+   Pattern: \.(request|post|get)\(
+  |             let dict = primitive.into_dictionary().unwrap();
+  | 
+  |             assert_eq!(dict.len(), 1);
+  |             let app_dict = dict.get("App").unwrap().clone().into_dictionary().unwrap();
+  |             assert_eq!(app_dict.len(), 1);
+  |             let name = app_dict.get("Name").unwrap().as_name().unwrap();
+  |             assert_eq!(name, "");
+  | 
+
+--[ Match #49 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         }
+  |     }
+  | 
+  |     pub fn from_password(dict: &CryptDict, id: &[u8], pass: &[u8]) -> Result<Decoder> {
+  |         fn compute_u_rev_2(key: &[u8]) -> Vec<u8> {
+  |             // algorithm 4
+  |             let mut data = PADDING.to_vec();
+  | 
+
+--[ Match #168 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "block-buffer"
+  | 
+
+--[ Match #184 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: \.(request|post|get)\(
+  |             4 | 5 | 6 => {
+  |                 let default = dict
+  |                     .crypt_filters
+  |                     .get(try_opt!(dict.default_crypt_filter.as_ref()).as_str())
+  |                     .ok_or_else(|| other!("missing crypt filter entry {:?}", dict.default_crypt_filt
+  | 
+  |                 match default.method {
+  | 
+
+--[ Match #68 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\file.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | {
+  |     pub fn password(self, password: &'a [u8]) -> FileOptions<'a, OC, SC> {
+  |         FileOptions {
+  |             password,
+  |             .. self
+  |         }
+  |     }
+  | 
+
+--[ Match #214 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\object\function.rs
+   Pattern: \.(request|post|get)\(
+  |                 let input_range = (raw.domain[0], raw.domain[1]);
+  |                 for dim in 0 .. n_dim {
+  |                     let output_range = (
+  |                         raw.range.as_ref().and_then(|r| r.get(2*dim).cloned()).unwrap_or(-INFINITY),
+  |                         raw.range.as_ref().and_then(|r| r.get(2*dim+1).cloned()).unwrap_or(INFINITY)
+  |                     );
+  |                     let c0 = f2.c0.as_ref().and_then(|c0| c0.get(dim).cloned()).unwrap_or(0.0);
+  | 
+
+--[ Match #201 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\parser\mod.rs
+   Pattern: \.(request|post|get)\(
+  |             let dict = stream.info;
+  | 
+  |             assert_eq!(dict.len(), 2);
+  |             let app_dict = dict.get("App").unwrap().clone().into_dictionary().unwrap();
+  |             assert_eq!(app_dict.len(), 1);
+  |             let name = app_dict.get("Name").unwrap().as_name().unwrap();
+  |             assert_eq!(name, "");
+  | 
+
+--[ Match #246 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\file.rs
+   Pattern: \.(request|post|get)\(
+  |         let (refs, trailer) = t!(self.backend.read_xref_table_and_trailer(self.start_offset, self));
+  |         self.refs = refs;
+  | 
+  |         if let Some(crypt) = trailer.get("Encrypt") {
+  |             let key = trailer
+  |                 .get("ID")
+  |                 .ok_or(PdfError::MissingEntry {
+  | 
+
+--[ Match #76 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\file.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         self.load_storage_and_trailer_password(b"")
+  |     }
+  | 
+  |     pub fn load_storage_and_trailer_password(&mut self, password: &[u8]) -> Result<Dictionary> {
+  |         let (refs, trailer) = t!(self.backend.read_xref_table_and_trailer(self.start_offset, self));
+  |         self.refs = refs;
+  | 
+  | 
+
+--[ Match #4 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             let aes = Aes128CbcEnc::new(&key, &iv);
+  |             let data_repeat_len = password.len() + block_size + u.len();
+  |             data[..password.len()].copy_from_slice(password);
+  |             data[password.len()..password.len() + block_size].copy_from_slice(&block[..block_size]);
+  |             data[password.len() + block_size..data_repeat_len].copy_from_slice(u);
+  |             for j in 1..64 {
+  |                 data.copy_within(..data_repeat_len, j * data_repeat_len);
+  | 
+
+--[ Match #126 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memmap2"
+  | version = "0.5.10"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "83faa42c0a078c393f6b29d5db232d8be22776a891f8f56e5284faee4a20b327"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #270 of 275 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\error.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     #[snafu(display("{}", msg))]
+  |     Other { msg: String },
+  | 
+  |     #[snafu(display("NoneError at {}:{}:{}:{}", file, line, column, context))]
+  |     NoneError { file: &'static str, line: u32, column: u32, context: Context },
+  | 
+  |     #[snafu(display("Try at {}:{}:{}:{}", file, line, column, context))]
+  | 
+
+--[ Match #18 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-pdf@0.8\pdf-0.8.1\src\crypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                         Self::revision_6_kdf(password_encoded, owner_validation_salt, u);
+  |                     if owner_hash_computed == owner_hash {
+  |                         (
+  |                             Self::revision_6_kdf(password_encoded, owner_key_salt, u).into(),
+  |                             oe,
+  |                         )
+  |                     } else {
+  | 

@@ -1,0 +1,668 @@
+--[ Match #61 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "1.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "112c678d4050afce233f4f2852bb2eb519230b3cf12f33585275537d7e41578d"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #32 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "termcolor"
+  | version = "1.1.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bab24d30b911b2376f3a13cc2cd443142f0c81dda04c118693e35b3835757755"
+  | dependencies = [
+  |  "winapi-util",
+  | ]
+  | 
+
+--[ Match #49 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand"
+  | version = "0.3.23"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "64ac302d8f83c0c1974bf758f6b041c6c8ada916fbb44a609158ca8b064cc76c"
+  | dependencies = [
+  |  "libc",
+  |  "rand 0.4.6",
+  | 
+
+--[ Match #29 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "thiserror-impl"
+  | version = "1.0.31"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0396bc89e626244658bef819e22d0cc459e795a5ebe878e6ec336d1674a8d79a"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #95 of 104 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\src\browser\windows.rs
+   Pattern: \.(request|post|get)\(
+  |             Ok(Cookie {
+  | 
+  |                 host: row.get(0)?,
+  | 
+  |                 path: row.get(1)?,
+  | 
+  |                 name: row.get(2)?,
+  | 
+  |                 value: row.get(3)?,
+  | 
+  |                 encrypted_value: row.get(4)?,
+  | 
+  |             })
+  | 
+  | 
+
+--[ Match #65 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashlink"
+  | version = "0.8.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d452c155cb93fecdfb02a73dd57b5d8e442c2063bd7aac72f1bc5e4263a43086"
+  | dependencies = [
+  |  "hashbrown",
+  | ]
+  | 
+
+--[ Match #93 of 104 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\src\browser\windows.rs
+   Pattern: \.(request|post|get)\(
+  |                 path: row.get(1)?,
+  | 
+  |                 name: row.get(2)?,
+  | 
+  |                 value: row.get(3)?,
+  | 
+  |                 encrypted_value: row.get(4)?,
+  | 
+  |             })
+  | 
+  |         })?;
+  | 
+  |         let mut site_cookie = SiteCookie::new();
+  | 
+  | 
+
+--[ Match #41 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rust-crypto"
+  | version = "0.2.36"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f76d05d3993fd5f4af9434e8e436db163a12a9d40e1a58a726f27a01dfd12a2a"
+  | dependencies = [
+  |  "gcc",
+  |  "libc",
+  | 
+
+--[ Match #34 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "subtle"
+  | version = "2.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6bdef32e8150c2a081110b42772ffe7d7c9032b606bc226c8260fd97e0976601"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #19 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vcpkg"
+  | version = "0.2.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #83 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "cc"
+  | version = "1.0.73"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2fff2a6927b3bb87f9595d67196a70493f627687a71d87a0d692242c33f58c11"
+  | 
+  | [[package]]
+  | name = "cfg-if"
+  | 
+
+--[ Match #87 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "atty"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #96 of 104 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\src\browser\windows.rs
+   Pattern: \.(request|post|get)\(
+  |         let rows = stmt.query_map([], |row: &Row| {
+  | 
+  |             Ok(Cookie {
+  | 
+  |                 host: row.get(0)?,
+  | 
+  |                 path: row.get(1)?,
+  | 
+  |                 name: row.get(2)?,
+  | 
+  |                 value: row.get(3)?,
+  | 
+  |                 encrypted_value: row.get(4)?,
+  | 
+  | 
+
+--[ Match #6 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_x86_64_msvc"
+  | version = "0.38.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "890c3c6341d441ffb38f705f47196e3665dc6dd79f6d72fa185d937326730561"
+  | 
+
+--[ Match #27 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tinyvec"
+  | version = "1.6.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "87cc5ceb3875bb20c2890005a4e226a4651264a5c75edb2421b52861a0a0cb50"
+  | dependencies = [
+  |  "tinyvec_macros",
+  | ]
+  | 
+
+--[ Match #66 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashbrown"
+  | version = "0.12.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8a9ee70c43aaf417c914396645a0fa852624801b24ebb7ae78fe8272889ac888"
+  | dependencies = [
+  |  "ahash",
+  | ]
+  | 
+
+--[ Match #79 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "clap_lex"
+  | version = "0.2.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2850f2f5a82cbf437dd5af4d49848fbdfc27c157c3d010345776f952765261c5"
+  | dependencies = [
+  |  "os_str_bytes",
+  | ]
+  | 
+
+--[ Match #37 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.82"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "82c2c1fdcd807d1098552c5b9a36e425e42e9fbd7c6a37a8425f390f781f7fa7"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #45 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rdrand"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "678054eb77286b51581ba43620cc911abf02758c91f93f479767aed0f90458b2"
+  | dependencies = [
+  |  "rand_core 0.3.1",
+  | ]
+  | 
+
+--[ Match #3 of 104 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\src\browser\windows.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |         let json: serde_json::Value =
+  | 
+  |             serde_json::from_reader(file).expect("Local State should be JSON");
+  | 
+  |         let v = &json["os_crypt"]["encrypted_key"];
+  | 
+  |         let v = base64::decode(v.as_str().unwrap()).unwrap();
+  | 
+  |         Ok(crypt_unprotect_data(&v[5..])?)
+  | 
+  |     }
+  | 
+  |     pub fn get_site_cookie(&self, host: &str) -> SqlResult<String> {
+  | 
+  | 
+
+--[ Match #103 of 104 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | 
+  | ## Development
+  | 
+  | 
+  | 
+  | ```shell
+  | 
+  | git clone https://github.com/22earth/gcookie
+  | 
+  | 
+  | 
+  | # Build
+  | 
+  | 
+
+--[ Match #40 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rustc-serialize"
+  | version = "0.3.24"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dcf128d1287d2ea9d80910b5f1120d0b8eede3fbf1abe91c40d39ea7d51e6fda"
+  | 
+  | [[package]]
+  | name = "ryu"
+  | 
+
+--[ Match #84 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.3.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "bef38d45163c2f1dde094a7dfd33ccf595c92905c8f8f4fdc18d06fb1037718a"
+  | 
+  | [[package]]
+  | name = "cc"
+  | 
+
+--[ Match #69 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "generic-array"
+  | version = "0.14.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fd48d33ec7f05fbfa152300fdad764757cbded343c1aa1cff2fbaf4134851803"
+  | dependencies = [
+  |  "typenum",
+  |  "version_check",
+  | 
+
+--[ Match #72 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "form_urlencoded"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5fc25a87fa4fd2094bffb06925852034d90a17f0d1e05197d4956d3555752191"
+  | dependencies = [
+  |  "matches",
+  |  "percent-encoding",
+  | 
+
+--[ Match #74 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fallible-iterator"
+  | version = "0.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4443176a9f2c162692bd3d352d745ef9413eec5782a80d8fd6f8a1ac692a07f7"
+  | 
+  | [[package]]
+  | name = "fallible-streaming-iterator"
+  | 
+
+--[ Match #73 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fallible-streaming-iterator"
+  | version = "0.1.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7360491ce676a36bf9bb3c56c1aa791658183a54d2744120f27285738d90465a"
+  | 
+  | [[package]]
+  | name = "form_urlencoded"
+  | 
+
+--[ Match #28 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "time"
+  | version = "0.1.44"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6db9e6914ab8b1ae1c260a4ae7a49b6c5611b40328a735b21862567685e73255"
+  | dependencies = [
+  |  "libc",
+  |  "wasi 0.10.0+wasi-snapshot-preview1",
+  | 
+
+--[ Match #4 of 104 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.toml
+   Pattern: base64|encodedcommand|obfuscate
+  | name = "gcookie"
+  | test = false
+  | 
+  | [dependencies.base64]
+  | version = "0.13.0"
+  | 
+  | [dependencies.clap]
+  | 
+
+--[ Match #26 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tinyvec_macros"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cda74da7e1a664f795bb1f8a87ec406fb89a02522cf6e50620d016add6dbbf5c"
+  | 
+  | [[package]]
+  | name = "typenum"
+  | 
+
+--[ Match #67 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ghash"
+  | version = "0.4.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1583cc1656d7839fd3732b80cf4f38850336cdb9b8ded1cd399ca62958de3c99"
+  | dependencies = [
+  |  "opaque-debug",
+  |  "polyval",
+  | 
+
+--[ Match #15 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #50 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.20"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3bcdf212e9776fbcb2d23ab029360416bb1706b1aea2d1a5ba002727cbcab804"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #98 of 104 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\src\browser\mod.rs
+   Pattern: \.(request|post|get)\(
+  |                 host: row.get(0)?,
+  | 
+  |                 path: row.get(1)?,
+  | 
+  |                 name: row.get(2)?,
+  | 
+  |                 value: row.get(3)?,
+  | 
+  |                 encrypted_value: vec![],
+  | 
+  |             })
+  | 
+  |         })?;
+  | 
+  | 
+
+--[ Match #48 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand"
+  | version = "0.4.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "552840b97013b1a26992c11eac34bdd778e464601a4c2054b5f0bff7c6761293"
+  | dependencies = [
+  |  "fuchsia-cprng",
+  |  "libc",
+  | 
+
+--[ Match #5 of 104 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.toml.orig
+   Pattern: base64|encodedcommand|obfuscate
+  | rust-crypto = "0.2.36"
+  | rusqlite = { version = "0.28.0", features = ["bundled"] }
+  | serde_json = "1.0"
+  | base64 = "0.13.0"
+  | url = "2.2.2"
+  | 
+  | [target.'cfg(windows)'.dependencies]
+  | 
+
+--[ Match #11 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows"
+  | version = "0.38.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0c47017195a790490df51a3e27f669a7d4f285920d90d03ef970c5d886ef0af1"
+  | dependencies = [
+  |  "windows_aarch64_msvc",
+  |  "windows_i686_gnu",
+  | 
+
+--[ Match #71 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fuchsia-cprng"
+  | version = "0.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a06f77d526c1a601b7c4cdd98f54b5eaabffc14d5f2f0296febdc7f357c6d3ba"
+  | 
+  | [[package]]
+  | name = "gcc"
+  | 
+
+--[ Match #17 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.10.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1a143597ca7c7793eff794def352d41792a93c481eb1042423ff7ff72ba2c31f"
+  | 
+  | [[package]]
+  | name = "wasi"
+  | 
+
+--[ Match #43 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "redox_users"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b033d837a7cf162d7993aded9304e30a83213c648b6e389db233191f891e5c2b"
+  | dependencies = [
+  |  "getrandom",
+  |  "redox_syscall",
+  | 
+
+--[ Match #16 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.11.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9c8d87e72b64a3b4db28d11ce29237c246188f4f51057d65a7eab63b7987e423"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #89 of 104 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-gcookie@0.0\gcookie-0.0.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aes-gcm"
+  | version = "0.9.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "df5f85a83a7d8b0442b6aa7b504b8212c1733da07b98aae43d4bc21b2cb3cdf6"
+  | dependencies = [
+  |  "aead",
+  |  "aes",
+  | 

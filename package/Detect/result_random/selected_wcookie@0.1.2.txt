@@ -1,0 +1,617 @@
+--[ Match--[ Match #1 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "e74a47dfc657526a7ca117c3c52add3d7955baad"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #3 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #4 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #5 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.10.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1a143597ca7c7793eff794def352d41792a93c481eb1042423ff7ff72ba2c31f"
+  | 
+  | [[package]]
+  | name = "wcookie"
+  | 
+
+--[ Match #6 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "time"
+  | version = "0.1.44"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6db9e6914ab8b1ae1c260a4ae7a49b6c5611b40328a735b21862567685e73255"
+  | dependencies = [
+  |  "libc",
+  |  "wasi",
+  | 
+
+--[ Match #7 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.6.25"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f497285884f3fcff424ffc933e56d7cbca511def0c9831a7f9b5f6153e3cc89b"
+  | 
+  | [[package]]
+  | name = "time"
+  | 
+
+--[ Match #8 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.5.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d07a8629359eb56f1e2fb1652bb04212c072a87ba68546a04065d525673ac461"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #9 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9a64b1ec5cda2586e284722486d802acf1f7dbdc623e2bfc57e65ca1cd099290"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #10 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-integer"
+  | version = "0.1.44"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d2cc698a63b549a70bc047073d2949cce27cd1c7b0a4a862d08a8031bc2801db"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-traits",
+  | 
+
+--[ Match #11 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.4.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "308cc39be01b73d0d18f82a0e7b2a3df85245f84af96fdddc5d202d27e47b86a"
+  | 
+  | [[package]]
+  | name = "num-integer"
+  | 
+
+--[ Match #12 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.112"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1b03d17f364a3a042d5e5d46b053bbbf82c92c9430c592dd4c064dc6ee997125"
+  | 
+  | [[package]]
+  | name = "memchr"
+  | 
+
+--[ Match #13 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lazy_static"
+  | version = "1.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #14 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "chrono"
+  | version = "0.4.19"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "670ad68c9088c2a963aaa298cb369688cf3f9465ce5e2d4ca10e6e0098a1ce73"
+  | dependencies = [
+  |  "libc",
+  |  "num-integer",
+  | 
+
+--[ Match #15 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+  | 
+  | [[package]]
+  | name = "chrono"
+  | 
+
+--[ Match #16 of 41 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "0.7.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1e37cfd5e7657ada45f742d6e99ca5788580b5c529dc78faf11ece6dc702656f"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #17 of 41 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\lib.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             return Some(self.created.add(duration));
+  |         }        
+  |         if let Some(date) = self.expires {
+  |             let time = date.timestamp();
+  |             if let Ok(utime) = u64::try_from(time) {
+  |                 return Some(SystemTime::UNIX_EPOCH.add(Duration::from_secs(utime)));
+  |             } else { // Time before UNIX Epoch, it is expired
+  | 
+
+--[ Match #18 of 41 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\test.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let naive =
+  |             NaiveDate::from_ymd(2023,11,15)
+  |             .and_hms(9,13,29);
+  |         let time = DateTime::<Utc>::from_utc(naive, Utc);
+  |        
+  |         assert_eq!(date,time);
+  |     } else {
+  | 
+
+--[ Match #19 of 41 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\test.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let naive =
+  |             NaiveDate::from_ymd(1994,11,06)
+  |             .and_hms(8,49,37);
+  |         let time = DateTime::<Utc>::from_utc(naive, Utc);
+  |        
+  |         assert_eq!(date, time);
+  |     } else {
+  | 
+
+--[ Match #20 of 41 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\test.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let naive =
+  |             NaiveDate::from_ymd(1994,11,6)
+  |             .and_hms(8,49,37);
+  |         let time = DateTime::<Utc>::from_utc(naive, Utc);
+  |         
+  |         assert_eq!(date, time);
+  |     } else {
+  | 
+
+--[ Match #21 of 41 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\test.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let naive =
+  |             NaiveDate::from_ymd(1994,11,6)
+  |             .and_hms(8,49,37);
+  |         let time = DateTime::<Utc>::from_utc(naive, Utc);
+  |        
+  |         assert_eq!(date, time);
+  |     } else {
+  | 
+
+--[ Match #22 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  |         let naive = NaiveDate::from_ymd(year, month, day).and_hms(hour,min,secs);
+  | 
+  | 
+
+--[ Match #23 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  |         year+= if year < 70 {2000} else if year < 100 {1900} else {0};
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  |         let naive = NaiveDate::from_ymd(year, month, day).and_hms(hour,min,secs);
+  | 
+
+--[ Match #24 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  |         // Fix millenium, for 2 digit year
+  |         year+= if year < 70 {2000} else if year < 100 {1900} else {0};
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  | 
+
+--[ Match #25 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  |             _ => return Err(ParseError::new("Invalid date"))
+  |         };
+  | 
+  |         let mut year: i32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  |         // Fix millenium, for 2 digit year
+  |         year+= if year < 70 {2000} else if year < 100 {1900} else {0};
+  | 
+  | 
+
+--[ Match #26 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  |     if let Some(captures) = RE.captures(date) {
+  |         // Capture 0 is the full match and  1 is the day of the week name
+  |         let day : u32 = captures.get(2).unwrap().as_str().parse().unwrap();
+  |         let month = match captures.get(3).unwrap().as_str() {
+  |             "Jan" => 1,
+  |             "Feb" => 2,
+  |             "Mar" => 3,
+  | 
+
+--[ Match #27 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_850.rs
+   Pattern: \.(request|post|get)\(
+  |     
+  |     if let Some(captures) = RE.captures(date) {
+  |         // Capture 0 is the full match and  1 is the day of the week name
+  |         let day : u32 = captures.get(2).unwrap().as_str().parse().unwrap();
+  |         let month = match captures.get(3).unwrap().as_str() {
+  |             "Jan" => 1,
+  |             "Feb" => 2,
+  | 
+
+--[ Match #28 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  |         let min :  u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  | 
+  |         let year: i32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  |        
+  |         let naive = NaiveDate::from_ymd(year, month, day).and_hms(hour,min,secs);
+  | 
+  | 
+
+--[ Match #29 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  |         
+  |         let hour : u32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  |         let min :  u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  | 
+  |         let year: i32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  |        
+  | 
+
+--[ Match #30 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  |         let day : u32 = captures.get(3).unwrap().as_str().parse().unwrap();
+  |         
+  |         let hour : u32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  |         let min :  u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  | 
+  |         let year: i32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+
+--[ Match #31 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         let day : u32 = captures.get(3).unwrap().as_str().parse().unwrap();
+  |         
+  |         let hour : u32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  |         let min :  u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  | 
+  | 
+
+--[ Match #32 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  |             _ => return Err(ParseError::new("Invalid date"))
+  |         };
+  | 
+  |         let day : u32 = captures.get(3).unwrap().as_str().parse().unwrap();
+  |         
+  |         let hour : u32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  |         let min :  u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  | 
+
+--[ Match #33 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\asct.rs
+   Pattern: \.(request|post|get)\(
+  |     
+  |     if let Some(captures) = RE.captures(date) {
+  |         // Capture 0 is the full match and  1 is the day of the week name
+  |         let month = match captures.get(2).unwrap().as_str() {
+  |             "Jan" => 1,
+  |             "Feb" => 2,
+  |             "Mar" => 3,
+  | 
+
+--[ Match #34 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  |         let naive = NaiveDate::from_ymd(year, month, day).and_hms(hour,min,secs);
+  |         return Ok(DateTime::<Utc>::from_utc(naive, Utc));
+  | 
+
+--[ Match #35 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  |         let year: i32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  |         let naive = NaiveDate::from_ymd(year, month, day).and_hms(hour,min,secs);
+  | 
+
+--[ Match #36 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         let year: i32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  |         let secs : u32 = captures.get(7).unwrap().as_str().parse().unwrap();
+  | 
+  | 
+
+--[ Match #37 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  |             _ => return Err(ParseError::new("Invalid date"))
+  |         };
+  | 
+  |         let year: i32 = captures.get(4).unwrap().as_str().parse().unwrap();
+  | 
+  |         let hour : u32 = captures.get(5).unwrap().as_str().parse().unwrap();
+  |         let min : u32 = captures.get(6).unwrap().as_str().parse().unwrap();
+  | 
+
+--[ Match #38 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  |     if let Some(captures) = RE.captures(date) {
+  |         // Capture 0 is the full match and  1 is the day of the week name
+  |         let day : u32 = captures.get(2).unwrap().as_str().parse().unwrap();
+  |         let month = match captures.get(3).unwrap().as_str() {
+  |             "Jan" => 1,
+  |             "Feb" => 2,
+  |             "Mar" => 3,
+  | 
+
+--[ Match #39 of 41 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\src\rfc_1123.rs
+   Pattern: \.(request|post|get)\(
+  |     
+  |     if let Some(captures) = RE.captures(date) {
+  |         // Capture 0 is the full match and  1 is the day of the week name
+  |         let day : u32 = captures.get(2).unwrap().as_str().parse().unwrap();
+  |         let month = match captures.get(3).unwrap().as_str() {
+  |             "Jan" => 1,
+  |             "Feb" => 2,
+  | 
+
+--[ Match #40 of 41 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | Licensed under the Apache License, Version 2.0 (the "License");
+  | you may not use this file except in compliance with the License.
+  | You may obtain a copy of the License at
+  | 
+  | http://www.apache.org/licenses/LICENSE-2.0
+  | 
+  | 
+
+--[ Match #41 of 41 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wcookie@0.1\wcookie-0.1.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | # Rust Web Cookie (wcookie)
+  | 
+  | `wcookie` is an HTTP Cookie implementation written in Rust.
+  | 
+  | Cookie semantics is defined in [RFC6265](https://datatracker.ietf.org/doc/html/rfc6265):
+  | 
+  | * Cookies are sent from web servers to user agents in `Set-Cookie` HTTP Response headers as defined 
+  | * User agents, can incluide Cookies in `Cookie` HTTP request headers when some criteria are met, as 
+  | 
+  | `wcookie` can be use for managing cookies at both web client and server implementations.
+  | 
+  | # Related projects
+  | 
+  | 
+
+41 matches found.

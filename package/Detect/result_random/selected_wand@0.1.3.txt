@@ -1,0 +1,209 @@
+--[ Match--[ Match #1 of 14 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "dc8100f2ed39713bca120b78efafee830944a486"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\core.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     pub fn get_fps(&self) -> u32 {
+  |         self.counter.borrow().get()
+  |     }
+  | 
+  | }
+  | 
+
+--[ Match #3 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\core.rs
+   Pattern: \.(request|post|get)\(
+  |     pub fn render_tick(&self) {
+  |         // Clear first?
+  |         self.context.clear_rect(0., 0., self.canvas.width() as f64, self.canvas.height() as f64);
+  |         let scene = self.scenes.get(&self.path).unwrap();
+  |         scene.render_tick(&self.context);
+  |     }
+  | 
+  | 
+
+--[ Match #4 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\core.rs
+   Pattern: \.(request|post|get)\(
+  |             self.scenes.clear();
+  |         }
+  |         let path = scene.path.clone();
+  |         if self.scenes.get(&path).is_none() {
+  |             self.scenes.insert(scene.path.clone(), scene);
+  |             self.path = path;
+  |         }
+  | 
+
+--[ Match #5 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\core.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     pub fn fetch_span(&self, name: &str) -> Option<SpanRef> {
+  |         match self.spans.get(name) {
+  |             Some(item) => item.upgrade(),
+  |             None => None,
+  |         }
+  | 
+
+--[ Match #6 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\core.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     pub fn fetch_section(&self, name: &str) -> Option<SectionRef> {
+  |         match self.sections.get(name) {
+  |             Some(item) => item.upgrade(),
+  |             None => None,
+  |         }
+  | 
+
+--[ Match #7 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\input.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /*
+  |     pub fn axis(&self, key: &str) -> f32 {
+  |         match self.axis.get(key) {
+  |             Some(v) => v.clone(),
+  |             None => 0.,
+  |         }
+  | 
+
+--[ Match #8 of 14 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\component.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | 
+  |     pub fn in_area(&self, left: f64, top: f64, right: f64, bottom: f64) -> bool {
+  |         self.0 > left && self.0 < right && self.1 > top && self.1 < bottom
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #9 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  |             // Resize the camera projection
+  |             let c_store = self.state.component_store.borrow();
+  |             let mut cameras = c_store.get_mut::<CameraComponent>();
+  |             let active_camera = self.state.active_camera.get();
+  |             match cameras.get_mut(&active_camera).unwrap() {
+  |                 Camera::Perspective { ref mut projection } => {
+  |                     projection.set_aspect((vp.2 / vp.3) as f32);
+  | 
+
+--[ Match #10 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  |             self.ctx.set_fill_style(&JsValue::from_str("grey"));
+  |             self.ctx.set_stroke_style(&JsValue::from_str("darkgreen"));
+  |             for (entity, widget) in widgets.iter() {
+  |                 let translate = transforms.get(entity).unwrap().position();
+  |                 let position = vp.transform_point(&translate);
+  |                 let scale = project_size!(1f32, &translate);
+  |                 match widget {
+  | 
+
+--[ Match #11 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  |        
+  |         let mut polygons = Vec::new();
+  |         for (mesh, transform) in meshes.iter().filter(|entity| transforms.contains_key(entity.0)).ma
+  |             (mesh, transforms.get(entity).unwrap())
+  |         }) {
+  |             let model = transform.matrix();
+  |             let mvp = vp * model;
+  | 
+
+--[ Match #12 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  |         let camera = cameras.get(&active_camera).unwrap();
+  |         let meshes = c_store.get::<MeshComponent>();
+  |         let transforms = c_store.get::<TransformComponent>();
+  |         let camera_transform = transforms.get(&active_camera).unwrap()
+  |             .isometry().inverse().to_homogeneous();
+  |         let vp = self.viewport * camera.as_matrix() * camera_transform;
+  | 
+  | 
+
+--[ Match #13 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  |         let shape_store = self.state.shape_store.borrow();
+  |         let active_camera = self.state.active_camera.get();
+  |         let cameras = c_store.get::<CameraComponent>();
+  |         let camera = cameras.get(&active_camera).unwrap();
+  |         let meshes = c_store.get::<MeshComponent>();
+  |         let transforms = c_store.get::<TransformComponent>();
+  |         let camera_transform = transforms.get(&active_camera).unwrap()
+  | 
+
+--[ Match #14 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wand@0.1\wand-0.1.3\src\span\world_span\renderer.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         let c_store = self.state.component_store.borrow();
+  |         let shape_store = self.state.shape_store.borrow();
+  |         let active_camera = self.state.active_camera.get();
+  |         let cameras = c_store.get::<CameraComponent>();
+  |         let camera = cameras.get(&active_camera).unwrap();
+  |         let meshes = c_store.get::<MeshComponent>();
+  | 
+
+14 matches found.

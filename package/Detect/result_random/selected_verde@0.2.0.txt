@@ -1,0 +1,917 @@
+--[ Match #31 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 		}
+  | 
+  | 		EXECUTED.store(true, Ordering::Relaxed);
+  | 
+  | 
+  | 
+  | 		let s = ctx.get(id);
+  | 
+  | 		TrackedStruct {
+  | 
+  | 			id: s.id,
+  | 
+  | 			value: s.value * 2,
+  | 
+  | 
+
+--[ Match #33 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 		let first_sum = sum(ctx, 1, init);
+  | 
+  | 		let first_sum_then_double = double(ctx, first_sum);
+  | 
+  | 
+  | 
+  | 		let val1 = db.get(first_double_then_sum).value;
+  | 
+  | 		let val2 = db.get(first_sum_then_double).value;
+  | 
+  | 		assert_eq!(val1, val2);
+  | 
+  | 		assert_eq!(val1, 5050 * 2);
+  | 
+  | 
+
+--[ Match #42 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	fn query_storage(&self, index: u16) -> Option<&dyn ErasedQueryStorage> {
+  | 
+  | 		self.make();
+  | 
+  | 		match self.storage.borrow().get(&index) {
+  | 
+  | 			Some(StorageType::Query(storage)) => Some(unsafe { std::mem::transmute(storage.as_ref()) }),
+  | 
+  | 			_ => None,
+  | 
+  | 		}
+  | 
+  | 
+
+--[ Match #35 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | #[query]
+  | 
+  | fn double(db: &Ctx, id: Id<TrackedStruct>) -> TrackedStruct {
+  | 
+  | 	db.push(Accum);
+  | 
+  | 	let s = db.get(id);
+  | 
+  | 	TrackedStruct {
+  | 
+  | 		id: s.id,
+  | 
+  | 		value: s.value * 2,
+  | 
+  | 
+
+--[ Match #37 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\interned.rs
+   Pattern: \.(request|post|get)\(
+  | 	pub unsafe fn get<T: Interned>(&self, index: u32) -> Get<'_, T> {
+  | 
+  | 		unsafe {
+  | 
+  | 			let storage = self as *const dyn ErasedInternedStorage as *const InternedStorage<T>;
+  | 
+  | 			(*storage).get(index)
+  | 
+  | 		}
+  | 
+  | 	}
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #34 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | fn sum(db: &Ctx, id: u32, ids: Vec<Id<TrackedStruct>>) -> TrackedStruct {
+  | 
+  | 	db.push(Accum);
+  | 
+  | 	let mut value = 0;
+  | 
+  | 	for x in ids.into_iter().map(|x| db.get(x)) {
+  | 
+  | 		value += x.value;
+  | 
+  | 	}
+  | 
+  | 	TrackedStruct { id, value }
+  | 
+  | 
+
+--[ Match #10 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\routing.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	impl RoutingTable {
+  | 
+  | 		pub fn route<T: Storable>(&self) -> Route {
+  | 
+  | 			match self.routes.get(&TypeId::of::<T>()) {
+  | 
+  | 				Some(route) => *route,
+  | 
+  | 				None => panic!("Database does not contain `{}`", std::any::type_name::<T>()),
+  | 
+  | 			}
+  | 
+  | 
+
+--[ Match #25 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 	EXECUTED.store(false, Ordering::Relaxed);
+  | 
+  | 	let check = || {
+  | 
+  | 		let trip = db.execute(|ctx| triple(ctx, third));
+  | 
+  | 		assert_eq!(db.get(trip).value, 12);
+  | 
+  | 	};
+  | 
+  | 	check();
+  | 
+  | 	check();
+  | 
+  | 
+
+--[ Match #16 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 			id: value.id().clone(),
+  | 
+  | 			query,
+  | 
+  | 		};
+  | 
+  | 		match self.map.get(&ident) {
+  | 
+  | 			Some(index) => {
+  | 
+  | 				let index = *index;
+  | 
+  | 				let values = self.values.read();
+  | 
+  | 
+
+--[ Match #14 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 	}
+  | 
+  | 
+  | 
+  | 	pub(crate) fn get(self) -> ErasedId {
+  | 
+  | 		let index = self.0.get() as u32;
+  | 
+  | 		let route_storage = (self.0.get() >> 48) as u16;
+  | 
+  | 		let route_index = (self.0.get() >> 32) as u16;
+  | 
+  | 		ErasedId {
+  | 
+  | 
+
+--[ Match #39 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\interned.rs
+   Pattern: \.(request|post|get)\(
+  | impl<T: Interned> InternedStorage<T> {
+  | 
+  | 	/// Insert a new value into the storage.
+  | 
+  | 	pub fn insert(&self, value: T) -> u32 {
+  | 
+  | 		match self.map.get(&value) {
+  | 
+  | 			Some(index) => *index,
+  | 
+  | 			None => {
+  | 
+  | 				let mut values = self.values.write();
+  | 
+  | 
+
+--[ Match #26 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 	let dub = || db.execute(|ctx| double(ctx, input));
+  | 
+  | 	let second = dub();
+  | 
+  | 	let third = dub();
+  | 
+  | 	assert_eq!(db.get(second).value, db.get(third).value);
+  | 
+  | 
+  | 
+  | 	EXECUTED.store(false, Ordering::Relaxed);
+  | 
+  | 	let check = || {
+  | 
+  | 
+
+--[ Match #21 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\pushable.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	pub fn get_query(&self, query: Route) -> impl Iterator<Item = &'_ T> {
+  | 
+  | 		self.map
+  | 
+  | 			.get(&query)
+  | 
+  | 			.into_iter()
+  | 
+  | 			.flat_map(|x| {
+  | 
+  | 				let value = unsafe { std::mem::transmute::<_, std::slice::Iter<'_, _>>(x.iter()) };
+  | 
+  | 
+
+--[ Match #32 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 		let first_sum_then_double = double(ctx, first_sum);
+  | 
+  | 
+  | 
+  | 		let val1 = db.get(first_double_then_sum).value;
+  | 
+  | 		let val2 = db.get(first_sum_then_double).value;
+  | 
+  | 		assert_eq!(val1, val2);
+  | 
+  | 		assert_eq!(val1, 5050 * 2);
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #17 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | unsafe impl<T> Sync for Id<T> {}
+  | 
+  | impl<T> Debug for Id<T> {
+  | 
+  | 	fn fmt(&self, f: &mut std::fmt::Formatter<'_>) -> std::fmt::Result {
+  | 
+  | 		write!(f, "{}({})", std::any::type_name::<T>(), self.get().index)
+  | 
+  | 	}
+  | 
+  | }
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #11 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 		use crate::Id;
+  | 
+  | 
+  | 
+  | 		let id = Id::<i32>::new(1, Route { storage: 2, index: 3 });
+  | 
+  | 		let ret = id.get();
+  | 
+  | 		assert_eq!(ret.index, 1);
+  | 
+  | 		assert_eq!(ret.route.storage, 2);
+  | 
+  | 		assert_eq!(ret.route.index, 3);
+  | 
+  | 
+
+--[ Match #22 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	input2 = db.set_input(TrackedStruct { id: 2, value: 1 });
+  | 
+  | 	let trip = db.execute(|ctx| sum(ctx, 0, vec![doubled, input2]));
+  | 
+  | 	assert_eq!(db.get(trip).value, 21);
+  | 
+  | }
+  | 
+  | 
+  | 
+  | #[test]
+  | 
+  | 
+
+--[ Match #24 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	let mut input2 = db.set_input(TrackedStruct { id: 2, value: 2 });
+  | 
+  | 	let mut s = db.execute(|ctx| sum(ctx, 0, vec![doubled, input2]));
+  | 
+  | 	assert_eq!(db.get(s).value, 4);
+  | 
+  | 
+  | 
+  | 	for value in 2..=10 {
+  | 
+  | 		input1 = db.set_input(TrackedStruct { id: 1, value });
+  | 
+  | 
+
+--[ Match #2 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\db.rs
+   Pattern: \.(request|post|get)\(
+  | 			.storage_struct(id.route.storage)
+  | 
+  | 			.interned_storage(id.route.index)
+  | 
+  | 			.unwrap();
+  | 
+  | 		unsafe { storage.get(id.index) }
+  | 
+  | 	}
+  | 
+  | 
+  | 
+  | 	/// Intern a value.
+  | 
+  | 
+
+--[ Match #9 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\routing.rs
+   Pattern: \.(request|post|get)\(
+  | 			}
+  | 
+  | 		}
+  | 
+  | 
+  | 
+  | 		pub fn name(&self, route: Route) -> &str { self.type_names.get(&route).unwrap() }
+  | 
+  | 
+  | 
+  | 		pub fn pushables(&self) -> impl Iterator<Item = Route> + '_ { self.pushables.iter().copied() }
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #40 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	fn interned_storage(&self, index: u16) -> Option<&dyn ErasedInternedStorage> {
+  | 
+  | 		self.make();
+  | 
+  | 		match self.storage.borrow().get(&index) {
+  | 
+  | 			Some(StorageType::Interned(storage)) => Some(unsafe { std::mem::transmute(storage.as_ref()) }),
+  | 
+  | 			_ => None,
+  | 
+  | 		}
+  | 
+  | 
+
+--[ Match #43 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\test.rs
+   Pattern: \.(request|post|get)\(
+  | 	fn tracked_storage(&self, index: u16) -> Option<&dyn ErasedTrackedStorage> {
+  | 
+  | 		// SAFETY: Uh I think it should be fine.
+  | 
+  | 		self.make();
+  | 
+  | 		match self.storage.borrow().get(&index) {
+  | 
+  | 			Some(StorageType::Tracked(storage)) => Some(unsafe { std::mem::transmute(storage.as_ref()) }),
+  | 
+  | 			_ => None,
+  | 
+  | 		}
+  | 
+  | 
+
+43 matches found.
+
+
+--[ Match #15 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 	pub unsafe fn get<T: Tracked>(&self, index: u32) -> Get<'_, T> {
+  | 
+  | 		unsafe {
+  | 
+  | 			let storage = self as *const dyn ErasedTrackedStorage as *const TrackedStorage<T>;
+  | 
+  | 			(*storage).get(index)
+  | 
+  | 		}
+  | 
+  | 	}
+  | 
+  | }
+  | 
+  | 
+
+--[ Match--[ Match #1 of 43 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "5d99357bac609e2f4a02917e12cb6542cd7c8963"
+  |   },
+  |   "path_in_vcs": "compiler/verde"
+  | }
+
+--[ Match #28 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	let first = db.execute(|ctx| double(ctx, input));
+  | 
+  | 	let trip = db.execute(|ctx| triple(ctx, first));
+  | 
+  | 	assert_eq!(db.get(trip).value, 6);
+  | 
+  | 	assert_eq!(input, db.set_input(TrackedStruct { id: 0, value: 2 }));
+  | 
+  | 
+  | 
+  | 	let dub = || db.execute(|ctx| double(ctx, input));
+  | 
+  | 
+
+--[ Match #13 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	pub(crate) fn get(self) -> ErasedId {
+  | 
+  | 		let index = self.0.get() as u32;
+  | 
+  | 		let route_storage = (self.0.get() >> 48) as u16;
+  | 
+  | 		let route_index = (self.0.get() >> 32) as u16;
+  | 
+  | 		ErasedId {
+  | 
+  | 			index,
+  | 
+  | 
+
+--[ Match #29 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 		}
+  | 
+  | 		EXECUTED.store(true, Ordering::Relaxed);
+  | 
+  | 
+  | 
+  | 		let s = ctx.get(id);
+  | 
+  | 		TrackedStruct {
+  | 
+  | 			id: s.id,
+  | 
+  | 			value: s.value * 3,
+  | 
+  | 
+
+--[ Match #36 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\query.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | impl<T: Query> QueryStorage<T> {
+  | 
+  | 	pub fn start_query(&self, input: T::Input) -> u32 {
+  | 
+  | 		match self.map.get(&input) {
+  | 
+  | 			Some(index) => *index,
+  | 
+  | 			None => {
+  | 
+  | 				let mut values = self.values.write();
+  | 
+  | 
+
+--[ Match #23 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 		input1 = db.set_input(TrackedStruct { id: 1, value });
+  | 
+  | 		doubled = db.execute(|ctx| double(ctx, input1));
+  | 
+  | 		s = db.execute(|ctx| sum(ctx, 0, vec![doubled, input2]));
+  | 
+  | 		assert_eq!(db.get(s).value, value * 2 + 2);
+  | 
+  | 	}
+  | 
+  | 
+  | 
+  | 	input2 = db.set_input(TrackedStruct { id: 2, value: 1 });
+  | 
+  | 
+
+--[ Match #7 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\db.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	/// Get a reference to the value `id` points to.
+  | 
+  | 	pub fn get<T: Tracked>(&self, id: Id<T>) -> tracked::Get<'_, T> {
+  | 
+  | 		let id = id.get();
+  | 
+  | 		span!(
+  | 
+  | 			enter trace,
+  | 
+  | 			"fetching value",
+  | 
+  | 
+
+--[ Match #38 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\interned.rs
+   Pattern: \.(request|post|get)\(
+  | 		U: ToOwned<Owned = T> + Hash + Eq + ?Sized,
+  | 
+  | 		T: Borrow<U>,
+  | 
+  | 	{
+  | 
+  | 		match self.map.get(value) {
+  | 
+  | 			Some(index) => *index,
+  | 
+  | 			None => {
+  | 
+  | 				let mut values = self.values.write();
+  | 
+  | 
+
+--[ Match #3 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\db.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	/// Get a reference to the value `id` points to.
+  | 
+  | 	pub fn geti<T: Interned>(&self, id: Id<T>) -> interned::Get<'_, T> {
+  | 
+  | 		let id = id.get();
+  | 
+  | 		span!(
+  | 
+  | 			enter trace,
+  | 
+  | 			"fetching value",
+  | 
+  | 
+
+--[ Match #20 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\pushable.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	pub fn get_query_invocation(&self, query: ErasedQueryId) -> impl Iterator<Item = &'_ T> {
+  | 
+  | 		self.map
+  | 
+  | 			.get(&query.route)
+  | 
+  | 			.into_iter()
+  | 
+  | 			.flat_map(|x| {
+  | 
+  | 				let value = unsafe { std::mem::transmute::<_, std::slice::Iter<'_, _>>(x.iter()) };
+  | 
+  | 
+
+--[ Match #5 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\db.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	/// Get a reference to the value `id` points to.
+  | 
+  | 	pub fn get<T: Tracked>(&self, id: Id<T>) -> tracked::Get<'_, T> {
+  | 
+  | 		let id = id.get();
+  | 
+  | 		span!(
+  | 
+  | 			enter trace,
+  | 
+  | 			"fetching value",
+  | 
+  | 
+
+--[ Match #12 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\tracked.rs
+   Pattern: \.(request|post|get)\(
+  | 	pub(crate) fn get(self) -> ErasedId {
+  | 
+  | 		let index = self.0.get() as u32;
+  | 
+  | 		let route_storage = (self.0.get() >> 48) as u16;
+  | 
+  | 		let route_index = (self.0.get() >> 32) as u16;
+  | 
+  | 		ErasedId {
+  | 
+  | 			index,
+  | 
+  | 			route: Route {
+  | 
+  | 
+
+--[ Match #18 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\README.md
+   Pattern: \.(request|post|get)\(
+  |     let db = &mut db as &mut dyn verde::Db;
+  | 
+  |     let input = db.set(MyTrackedStruct { id: UniqueIdentifier::new(), value: 5 });
+  | 
+  |     let output = db.execute(|ctx| double(ctx, input));
+  | 
+  |     assert_eq!(db.get(output).value, 10);
+  | 
+  |     let mut pushables = db.get_all::<MyPushableStruct>();
+  | 
+  |     assert_eq!(pushables.next().map(|x| x.value), Some(5));
+  | 
+  |     assert_eq!(pushables.next(), None);
+  | 
+  | 
+
+--[ Match #41 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\test.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | 	fn pushable_storage(&self, index: u16) -> Option<&dyn ErasedPushableStorage> {
+  | 
+  | 		self.make();
+  | 
+  | 		match self.storage.borrow().get(&index) {
+  | 
+  | 			Some(StorageType::Pushable(storage)) => Some(unsafe { std::mem::transmute(storage.as_ref()) }),
+  | 
+  | 			_ => None,
+  | 
+  | 		}
+  | 
+  | 
+
+--[ Match #27 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 	let dub = || db.execute(|ctx| double(ctx, input));
+  | 
+  | 	let second = dub();
+  | 
+  | 	let third = dub();
+  | 
+  | 	assert_eq!(db.get(second).value, db.get(third).value);
+  | 
+  | 
+  | 
+  | 	EXECUTED.store(false, Ordering::Relaxed);
+  | 
+  | 	let check = || {
+  | 
+  | 
+
+--[ Match #4 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\db.rs
+   Pattern: \.(request|post|get)\(
+  | 			.storage_struct(id.route.storage)
+  | 
+  | 			.tracked_storage(id.route.index)
+  | 
+  | 			.unwrap();
+  | 
+  | 		unsafe { storage.get(id.index) }
+  | 
+  | 	}
+  | 
+  | 
+  | 
+  | 	/// Get a reference to the value `id` points to.
+  | 
+  | 
+
+--[ Match #8 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\src\internal\storage\routing.rs
+   Pattern: \.(request|post|get)\(
+  | 			})
+  | 
+  | 		}
+  | 
+  | 
+  | 
+  | 		pub fn name(&self, route: Route) -> &str { self.type_names.borrow().get(&route).unwrap() }
+  | 
+  | 
+  | 
+  | 		pub fn make(&self) -> Vec<Box<dyn FnOnce() -> (StorageType, u16)>> {
+  | 
+  | 			let mut m = self.make.lock();
+  | 
+  | 
+
+--[ Match #19 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\README.md
+   Pattern: \.(request|post|get)\(
+  |     let interned = ctx.add(MyInternedStruct { value: 5 });
+  | 
+  |     assert_eq!(ctx.geti(interned).value, 5);
+  | 
+  |     ctx.push(MyPushableStruct { value: 5 });
+  | 
+  |     let input = ctx.get(input);
+  | 
+  |     MyTrackedStruct {
+  | 
+  |         id: input.id,
+  | 
+  |         value: input.value * 2,
+  | 
+  | 
+
+--[ Match #30 of 43 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-verde@0.2\verde-0.2.0\tests\test.rs
+   Pattern: \.(request|post|get)\(
+  | 	db.execute(|ctx| {
+  | 
+  | 		let check = || {
+  | 
+  | 			let doubled = double(ctx, id);
+  | 
+  | 			assert_eq!(db.get(doubled).value, 2);
+  | 
+  | 		};
+  | 
+  | 
+  | 
+  | 		check();
+  | 
+  | 

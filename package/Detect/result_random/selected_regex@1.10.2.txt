@@ -1,0 +1,620 @@
+--[ Match #164 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  | /// assert_eq!(0..17, m.range());
+  | /// assert_eq!(Some((0, 17)), locs.get(0));
+  | /// assert_eq!(Some((0, 5)), locs.get(1));
+  | /// assert_eq!(Some((6, 17)), locs.get(2));
+  | ///
+  | /// // Asking for an invalid capture group always returns None.
+  | /// assert_eq!(None, locs.get(3));
+  | 
+
+--[ Match #150 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\record\compile-test\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | This directory contains the results of compilation tests. Specifically,
+  | the results are from testing both the from scratch compilation time and
+  | relative binary size increases of various features for both the `regex` and
+  | `regex-automata` crates.
+  | 
+  | 
+
+--[ Match #28 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | New features:
+  | 
+  | * [FEATURE #653](https://github.com/rust-lang/regex/pull/653):
+  |   Update `regex-syntax` to Unicode 13.
+  | 
+  | 
+  | 1.3.4 (2020-01-30)
+  | 
+
+--[ Match #104 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\regex-lite.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | matches = []
+  | unicode = true
+  | 
+  | # regex-lite uses ASCII definitions for Perl character classes.
+  | [[test]]
+  | name = "perl-class-space"
+  | regex = '\s'
+  | 
+
+--[ Match--[ Match #1 of 194 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\regression.toml
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  | #[[tests]]
+  | #name = "blank-matches-nothing-between-space-and-tab-inverted"
+  | #regex = '^[[:^blank:]]+$'
+  | #input = '\x0A\x0B\x0C\x0D\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F'
+  | #match = true
+  | #unescape = true
+  | 
+  | 
+
+--[ Match #59 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\string.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let re = Regex::new(r"[a-z]+(?:([0-9]+)|([A-Z]+))").unwrap();
+  |     /// let caps = re.captures("abc123").unwrap();
+  |     ///
+  |     /// let substr1 = caps.get(1).map_or("", |m| m.as_str());
+  |     /// let substr2 = caps.get(2).map_or("", |m| m.as_str());
+  |     /// assert_eq!(substr1, "123");
+  |     /// assert_eq!(substr2, "");
+  | 
+
+--[ Match #183 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let re = Regex::new(r"'([^']+)'\s+\((\d{4})\)").unwrap();
+  |     /// let hay = b"Not my favorite movie: 'Citizen Kane' (1941).";
+  |     /// let caps = re.captures(hay).unwrap();
+  |     /// assert_eq!(caps.get(0).unwrap().as_bytes(), b"'Citizen Kane' (1941)");
+  |     /// assert_eq!(caps.get(1).unwrap().as_bytes(), b"Citizen Kane");
+  |     /// assert_eq!(caps.get(2).unwrap().as_bytes(), b"1941");
+  |     /// // You can also access the groups by index using the Index notation.
+  | 
+
+--[ Match #179 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  |     ///     let mut new = Vec::with_capacity(haystack.len());
+  |     ///     let mut last_match = 0;
+  |     ///     for caps in re.captures_iter(haystack) {
+  |     ///         let m = caps.get(0).unwrap();
+  |     ///         new.extend_from_slice(&haystack[last_match..m.start()]);
+  |     ///         new.extend_from_slice(&replacement(&caps)?);
+  |     ///         last_match = m.end();
+  | 
+
+--[ Match #89 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\line-terminator.toml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | unescape = true
+  | line-terminator = 'Z'
+  | 
+  | # Like 'word-boundary', but does an anchored search at the point where ^
+  | # matches, but where \b should not.
+  | [[test]]
+  | name = "word-boundary-at"
+  | 
+
+--[ Match #151 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\overlapping.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # NOTE: We define a number of tests where the *match* kind is 'leftmost-first'
+  | # but the *search* kind is 'overlapping'. This is a somewhat nonsensical
+  | # combination and can produce odd results. Nevertheless, those results should
+  | # be consistent so we test them here. (At the time of writing this note, I
+  | # hadn't yet decided whether to make 'leftmost-first' with 'overlapping' result
+  | # in unspecified behavior.)
+  | 
+  | 
+
+--[ Match #70 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\string.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let caps = re.captures(hay).unwrap();
+  |     /// assert_eq!(caps.get(0).unwrap().as_str(), "'Citizen Kane' (1941)");
+  |     /// assert_eq!(caps.get(1).unwrap().as_str(), "Citizen Kane");
+  |     /// assert_eq!(caps.get(2).unwrap().as_str(), "1941");
+  |     /// // You can also access the groups by index using the Index notation.
+  |     /// // Note that this will panic on an invalid index. In this case, these
+  |     /// // accesses are always correct because the overall regex will only
+  | 
+
+--[ Match #180 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let re = Regex::new(r"'(?<title>[^']+)'\s+\((?<year>\d{4})\)").unwrap();
+  |     /// let hay = b"Not my favorite movie: 'Citizen Kane' (1941).";
+  |     /// let caps = re.captures(hay).unwrap();
+  |     /// assert_eq!(caps.get(0).unwrap().as_bytes(), b"'Citizen Kane' (1941)");
+  |     /// assert_eq!(caps.name("title").unwrap().as_bytes(), b"Citizen Kane");
+  |     /// assert_eq!(caps.name("year").unwrap().as_bytes(), b"1941");
+  |     /// // You can also access the groups by name using the Index notation.
+  | 
+
+--[ Match #19 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |   Improve performance for capture searches on anchored regex.
+  |   (Contributed by @ethanpailes. Nice work!)
+  | * [FEATURE #419](https://github.com/rust-lang/regex/pull/419):
+  |   Expand literal searching to include Tuned Boyer-Moore in some cases.
+  |   (Contributed by @ethanpailes. Nice work!)
+  | 
+  | Bug fixes:
+  | 
+
+--[ Match #103 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\regex-lite.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | matches = []
+  | unicode = true
+  | 
+  | # regex-lite uses ASCII definitions for Perl character classes.
+  | [[test]]
+  | name = "perl-class-word"
+  | regex = '\w'
+  | 
+
+--[ Match #122 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\utf8.toml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | match-kind = "all"
+  | search-kind = "overlapping"
+  | 
+  | # This tests that we find the match at the end of the haystack in UTF-8 mode
+  | # when our bounds only include the empty string at the end of the haystack.
+  | [[test]]
+  | name = "empty-utf8yes-anchored-endbound"
+  | 
+
+--[ Match #135 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\utf8.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | # Same as above, except with UTF-8 mode disabled. It almost doesn't change the
+  | # result, except for the fact that since this is an anchored search and we
+  | # always find all matches, the test harness will keep reporting matches until
+  | # none are found. Because it's anchored, matches will be reported so long as
+  | # they are directly adjacent. Since with UTF-8 mode the next anchored search
+  | # after the match at [0, 0] fails, iteration stops (and doesn't find the last
+  | 
+
+--[ Match #142 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\expensive.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # This file represent tests that may be expensive to run on some regex engines.
+  | # For example, tests that build a full DFA ahead of time and minimize it can
+  | # take a horrendously long time on regexes that are large (or result in an
+  | # explosion in the number of states). We group these tests together so that
+  | # such engines can simply skip these tests.
+  | 
+
+--[ Match #42 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | contain a soup-to-nuts rewrite of every regex engine. This will be done by
+  | bringing [`regex-automata`](https://github.com/BurntSushi/regex-automata) into
+  | this repository, and then changing the `regex` crate to be nothing but an API
+  | shim layer on top of `regex-automata`'s API.
+  | 
+  | These tandem releases are the culmination of about 3
+  | years of on-and-off work that [began in earnest in March
+  | 
+
+--[ Match #134 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\utf8.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # always find all matches, the test harness will keep reporting matches until
+  | # none are found. Because it's anchored, matches will be reported so long as
+  | # they are directly adjacent. Since with UTF-8 mode the next anchored search
+  | # after the match at [0, 0] fails, iteration stops (and doesn't find the last
+  | # match at [4, 4]).
+  | [[test]]
+  | name = "empty-utf8no-anchored"
+  | 
+
+--[ Match #96 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\tests\misc.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     assert_eq!("abc", cap.get(0).unwrap().as_str());
+  |     assert_eq!(None, cap.get(2));
+  |     assert_eq!("c", cap.get(4).unwrap().as_str());
+  | 
+  |     assert_eq!(None, cap.name("a"));
+  |     assert_eq!("c", cap.name("b").unwrap().as_str());
+  | 
+
+--[ Match #6 of 194 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\bytes.toml
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  | [[test]]
+  | name = "mixed-dot"
+  | regex = '(.+)(?-u)(.+)'
+  | haystack = '\xCE\x93\xCE\x94\xFF'
+  | matches = [
+  |   [[0, 5], [0, 4], [4, 5]],
+  | ]
+  | 
+
+--[ Match #90 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\word-boundary-special.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # \b{start}, \b{end}, \b{start-half}, \b{end-half}. These are specialty
+  | # assertions for more niche use cases, but hitting those cases without these
+  | # assertions is difficult. For example, \b{start-half} and \b{end-half} are
+  | # used to implement the -w/--word-regexp flag in a grep program.
+  | 
+  | # Tests for (?-u:\b{start})
+  | 
+  | 
+
+--[ Match #83 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\record\old-bench-log\05\pcre1-vs-rust
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |  name                                     pcre1 ns/iter          rust ns/iter           diff ns/iter
+  |  misc::anchored_literal_long_match        30 (13000 MB/s)        24 (16250 MB/s)                  -6
+  |  misc::anchored_literal_long_non_match    24 (16250 MB/s)        27 (14444 MB/s)                   3
+  |  misc::anchored_literal_short_match       29 (896 MB/s)          22 (1181 MB/s)                   -7
+  |  misc::anchored_literal_short_non_match   24 (1083 MB/s)         24 (1083 MB/s)                    0
+  |  misc::easy0_1K                           260 (4042 MB/s)        16 (65687 MB/s)                -244
+  |  misc::easy0_1MB                          202,849 (5169 MB/s)    20 (5243015
+
+--[ Match #30 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 1.4.0 (2020-10-11)
+  | ==================
+  | This releases has a few minor documentation fixes as well as some very minor
+  | API additions. The MSRV remains at Rust 1.28 for now, but this is intended to
+  | increase to at least Rust 1.41.1 soon.
+  | 
+  | This release also adds support for OSS-Fuzz. Kudos to
+  | 
+
+--[ Match #98 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\tests\misc.rs
+   Pattern: \.(request|post|get)\(
+  |         (m.start(), m.end())
+  |     });
+  | 
+  |     assert_eq!("abc", cap.get(0).unwrap().as_str());
+  |     assert_eq!(None, cap.get(2));
+  |     assert_eq!("c", cap.get(4).unwrap().as_str());
+  | 
+  | 
+
+--[ Match #186 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\anchored.toml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | matches = []
+  | anchored = true
+  | 
+  | # Like above, but at a non-zero start offset.
+  | [[test]]
+  | name = "no-match-at-start-reverse-anchored-bounds"
+  | regex = '.c[a-z]$'
+  | 
+
+--[ Match #162 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  | /// assert_eq!(None, locs.get(3));
+  | /// # // literals are too big for 32-bit usize: #1041
+  | /// # #[cfg(target_pointer_width = "64")]
+  | /// assert_eq!(None, locs.get(34973498648));
+  | /// # #[cfg(target_pointer_width = "64")]
+  | /// assert_eq!(None, locs.get(9944060567225171988));
+  | /// ```
+  | 
+
+--[ Match #32 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | Bug fixes:
+  | 
+  | * [BUG #999](https://github.com/rust-lang/regex/issues/999):
+  | Fix a bug where a match at every position is erroneously reported.
+  | 
+  | 
+  | 1.8.2 (2023-05-22)
+  | 
+
+--[ Match #100 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\tests\misc.rs
+   Pattern: \.(request|post|get)\(
+  |         let m = cap.get(0).unwrap();
+  |         (m.start(), m.end())
+  |     });
+  |     assert_eq!(None, cap.get(2));
+  |     assert_eq!((2, 3), {
+  |         let m = cap.get(4).unwrap();
+  |         (m.start(), m.end())
+  | 
+
+--[ Match #71 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\string.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let hay = "Not my favorite movie: 'Citizen Kane' (1941).";
+  |     /// let caps = re.captures(hay).unwrap();
+  |     /// assert_eq!(caps.get(0).unwrap().as_str(), "'Citizen Kane' (1941)");
+  |     /// assert_eq!(caps.get(1).unwrap().as_str(), "Citizen Kane");
+  |     /// assert_eq!(caps.get(2).unwrap().as_str(), "1941");
+  |     /// // You can also access the groups by index using the Index notation.
+  |     /// // Note that this will panic on an invalid index. In this case, these
+  | 
+
+--[ Match #22 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | * [FEATURE #490](https://github.com/rust-lang/regex/pull/490):
+  |   SIMD optimizations are now enabled automatically in Rust stable, for versions
+  |   1.27 and up. No compilation flags or features need to be set. CPU support
+  |   SIMD is detected automatically at runtime.
+  | 
+  | Bug fixes:
+  | 
+  | 
+
+--[ Match #9 of 194 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\expensive.toml
+   Pattern: ["'][a-z0-9]{40,}["']
+  | [[test]]
+  | name = "backtrack-blow-visited-capacity"
+  | regex = '\pL{50}'
+  | haystack = "abcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxyabcdefghijklmnopqrstuvwxyabcdefghijklm
+  | matches = [[0, 50], [50, 100], [100, 150]]
+  | 
+
+--[ Match #73 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\string.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     fn index<'a>(&'a self, i: usize) -> &'a str {
+  |         self.get(i)
+  |             .map(|m| m.as_str())
+  |             .unwrap_or_else(|| panic!("no group at index '{}'", i))
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #2 of 194 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\regression.toml
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  | #[[tests]]
+  | #name = "blank-matches-nothing-between-space-and-tab"
+  | #regex = '[[:blank:]]'
+  | #input = '\x0A\x0B\x0C\x0D\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F'
+  | #match = false
+  | #unescape = true
+  | 
+  | 
+
+--[ Match #115 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |        distribution, then any Derivative Works that You distribute must
+  |        include a readable copy of the attribution notices contained
+  |        within such NOTICE file, excluding those notices that do not
+  |        pertain to any part of the Derivative Works, in at least one
+  |        of the following places: within a NOTICE text file distributed
+  |        as part of the Derivative Works; within the Source form or
+  |        documentation, if provided along with the Derivative Works; or,
+  | 
+
+--[ Match #120 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\record\old-bench-log\05\onig-vs-rust
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |  name                                     onig ns/iter           rust ns/iter           diff ns/iter
+  |  misc::anchored_literal_long_match        158 (2468 MB/s)        24 (16250 MB/s)                -134
+  |  misc::anchored_literal_long_non_match    495 (787 MB/s)         27 (14444 MB/s)                -468
+  |  misc::anchored_literal_short_match       160 (162 MB/s)         22 (1181 MB/s)                 -138
+  |  misc::anchored_literal_short_non_match   44 (590 MB/s)          24 (1083 MB/s)                  -20
+  |  misc::easy0_1K                           315 (3336 MB/s)        16 (65687 MB/s)                -299
+  |  misc::easy0_1MB                          136,864 (7661 MB/s)    20 (5243015
+
+--[ Match #176 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  |     /// let mut locs = re.capture_locations();
+  |     /// assert!(re.captures_read(&mut locs, b"id=foo123").is_some());
+  |     /// assert_eq!(Some((0, 9)), locs.get(0));
+  |     /// assert_eq!(Some((0, 2)), locs.get(1));
+  |     /// assert_eq!(Some((3, 9)), locs.get(2));
+  |     /// ```
+  |     #[inline]
+  | 
+
+--[ Match #31 of 194 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ==================
+  | This release primarily updates to Rust 2018 (finally) and bumps the MSRV to
+  | Rust 1.41 (from Rust 1.28). Rust 1.41 was chosen because it's still reasonably
+  | old, and is what's in Debian stable at the time of writing.
+  | 
+  | This release also drops this crate's own bespoke substring search algorithms
+  | in favor of a new
+  | 
+
+--[ Match #133 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\utf8.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | match-kind = "all"
+  | search-kind = "overlapping"
+  | 
+  | # This tests that we find the match at the end of the string when the bounds
+  | # exclude the first match.
+  | [[test]]
+  | name = "empty-utf8yes-startbound"
+  | 
+
+--[ Match #84 of 194 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\record\old-bench-log\05\pcre1-vs-rust
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |  name                                     pcre1 ns/iter          rust ns/iter           diff ns/iter
+  |  misc::anchored_literal_long_match        30 (13000 MB/s)        24 (16250 MB/s)                  -6
+  |  misc::anchored_literal_long_non_match    24 (16250 MB/s)        27 (14444 MB/s)                   3
+  |  misc::anchored_literal_short_match       29 (896 MB/s)          22 (1181 MB/s)                   -7
+  |  misc::anchored_literal_short_non_match   24 (1083 MB/s)         24 (1083 MB/s)                    0
+  |  misc::easy0_1K                           260 (4042 MB/s)        16 (65687 MB/s)                -244
+  |  misc::easy0_1MB                          202,849 (5169 MB/s)    20 (5243015
+
+--[ Match #8 of 194 ]--
+   Rule Id: BD000805
+       Tag: Security.Backdoor.Obfuscation.LongBinaryStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\testdata\regression.toml
+   Pattern: (\\x[a-f0-9][a-f0-9]){10,}
+  | #[[tests]]
+  | #name = "blank-matches-nothing-between-space-and-tab"
+  | #regex = '[[:blank:]]'
+  | #input = '\x0A\x0B\x0C\x0D\x0E\x0F\x10\x11\x12\x13\x14\x15\x16\x17\x18\x19\x1A\x1B\x1C\x1D\x1E\x1F'
+  | #match = false
+  | #unescape = true
+  | 
+  | 
+
+--[ Match #168 of 194 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-regex@1.10\regex-1.10.2\src\regex\bytes.rs
+   Pattern: \.(request|post|get)\(
+  |                     self.caps.caps.group_info().pattern_names(PatternID::ZERO);
+  |                 for (group_index, maybe_name) in names.enumerate() {
+  |                     let key = Key(group_index, maybe_name);
+  |                     match self.caps.get(group_index) {
+  |                         None => map.entry(&key, &None::<()>),
+  |                         Some(mat) => map.entry(&key, &Value(mat)),
+  |                     };
+  | 

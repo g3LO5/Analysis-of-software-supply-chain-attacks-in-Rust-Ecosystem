@@ -1,0 +1,419 @@
+--[ Match--[ Match #1 of 28 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "7c8132479c39613969641ebe9c13c706bf0ae67f"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |         n2: Node,
+  |     ) -> BTreeSet<SubstringExpression> {
+  |         dag.substrings
+  |             .get(&(n1, n2))
+  |             .unwrap()
+  |             .iter()
+  |             .flat_map(|e| e.denote(&graph))
+  | 
+
+--[ Match #3 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |         for (v, labels) in &graph.labels {
+  |             if labels.get(&id) == Some(&l) {
+  |                 v_l.insert(GraphNode(*v));
+  |             } else if labels.get(&id) == Some(&r) {
+  |                 v_r.insert(GraphNode(*v));
+  |             }
+  |         }
+  | 
+
+--[ Match #4 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut v_l = BTreeSet::new();
+  |         let mut v_r = BTreeSet::new();
+  |         for (v, labels) in &graph.labels {
+  |             if labels.get(&id) == Some(&l) {
+  |                 v_l.insert(GraphNode(*v));
+  |             } else if labels.get(&id) == Some(&r) {
+  |                 v_r.insert(GraphNode(*v));
+  | 
+
+--[ Match #5 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |                                     // check out-edges
+  |                                     if let Some(vfs) = idg_adj.get(v) {
+  |                                         for vf in vfs {
+  |                                             if let Some(toks) = graph.tokens.get(&(*v, *vf)) {
+  |                                                 for (tok, occ) in toks {
+  |                                                     let weight = (tok.weight(), occ.weight());
+  |                                                     if best == None || weight > best_weight {
+  | 
+
+--[ Match #6 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |                                         }
+  |                                     }
+  |                                     // check out-edges
+  |                                     if let Some(vfs) = idg_adj.get(v) {
+  |                                         for vf in vfs {
+  |                                             if let Some(toks) = graph.tokens.get(&(*v, *vf)) {
+  |                                                 for (tok, occ) in toks {
+  | 
+
+--[ Match #7 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |                                     // tokens, and then matches near the start or end
+  |                                     if let Some(vss) = idg_inv.get(v) {
+  |                                         for vs in vss {
+  |                                             if let Some(toks) = graph.tokens.get(&(*vs, *v)) {
+  |                                                 for (tok, occ) in toks {
+  |                                                     let weight = (tok.weight(), occ.weight());
+  |                                                     if best == None || weight > best_weight {
+  | 
+
+--[ Match #8 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \.(request|post|get)\(
+  |                                     let mut best_weight = (0, 0);
+  |                                     // weight is (token.weight, -abs(occurence)), to favor certain
+  |                                     // tokens, and then matches near the start or end
+  |                                     if let Some(vss) = idg_inv.get(v) {
+  |                                         for vs in vss {
+  |                                             if let Some(toks) = graph.tokens.get(&(*vs, *v)) {
+  |                                                 for (tok, occ) in toks {
+  | 
+
+--[ Match #9 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         // uses roughly the same renumbering technique as InputDataGraph::intersection()
+  |         let mut renumber: HashMap<Edge, Node> = HashMap::new();
+  |         let mut curr = 0;
+  |         let mut number = |n1, n2| -> Node {
+  |             *renumber.entry((n1, n2)).or_insert_with(|| {
+  |                 let v = curr;
+  |                 curr += 1;
+  | 
+
+--[ Match #10 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\dag.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | const EPSILON: usize = 1;
+  | const KAPPA: usize = 15; // BlinkFill Section 7.3
+  | 
+  | type Node = usize;
+  | type Edge = (Node, Node);
+  | 
+  | #[derive(Debug)]
+  | 
+
+--[ Match #11 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |         ]
+  |         .into_iter()
+  |         .collect();
+  |         assert_eq!(graph.tokens.get(&(4, 5)).unwrap(), &toks);
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #12 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |         .collect();
+  |         assert_eq!(graph.tokens.get(&(1, 2)).unwrap(), &toks);
+  |         // check size of a_35
+  |         assert_eq!(graph.tokens.get(&(3, 5)).unwrap().len(), 12);
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #13 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |         ]
+  |         .into_iter()
+  |         .collect();
+  |         assert_eq!(graph.tokens.get(&(1, 2)).unwrap(), &toks);
+  |         // check size of a_35
+  |         assert_eq!(graph.tokens.get(&(3, 5)).unwrap().len(), 12);
+  |     }
+  | 
+
+--[ Match #14 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |         }
+  |         topo.reverse();
+  |         for v in &topo {
+  |             for vi in adj.get(&v).unwrap_or(&empty) {
+  |                 v_out.insert(*v, cmp::max(v_out[&v], v_out[&vi] + distances[&(*v, *vi)]));
+  |             }
+  |         }
+  | 
+
+--[ Match #15 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |         // NOTE this looks different from the paper, but that is because our topological sort order
+  |         // is the reverse of the order assumed in Figure 16
+  |         for v in &topo {
+  |             for vi in inv.get(&v).unwrap_or(&empty) {
+  |                 v_in.insert(*v, cmp::max(v_in[&v], v_in[&vi] + distances[&(*vi, *v)]));
+  |             }
+  |         }
+  | 
+
+--[ Match #16 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \.(request|post|get)\(
+  |                         // distance is not going to be used; if labels[v2] doesn't contain id, we
+  |                         // just use index1 (it doesn't matter what we use, the result is not going
+  |                         // to be used
+  |                         ((self.labels[v2].get(id).unwrap_or(index1).0 as isize)
+  |                             - (index1.0 as isize))
+  |                             .abs() as usize
+  |                     })
+  | 
+
+--[ Match #17 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         }
+  |         topo.reverse();
+  |         for v in &topo {
+  |             for vi in adj.get(&v).unwrap_or(&empty) {
+  |                 v_out.insert(*v, cmp::max(v_out[&v], v_out[&vi] + distances[&(*v, *vi)]));
+  |             }
+  |         }
+  | 
+
+--[ Match #18 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         // NOTE this looks different from the paper, but that is because our topological sort order
+  |         // is the reverse of the order assumed in Figure 16
+  |         for v in &topo {
+  |             for vi in inv.get(&v).unwrap_or(&empty) {
+  |                 v_in.insert(*v, cmp::max(v_in[&v], v_in[&vi] + distances[&(*vi, *v)]));
+  |             }
+  |         }
+  | 
+
+--[ Match #19 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     pub fn rank_nodes(&self, distances: &HashMap<Edge, usize>) -> HashMap<Node, usize> {
+  |         let mut v_out: HashMap<Node, usize> = HashMap::new();
+  |         let mut v_in: HashMap<Node, usize> = HashMap::new();
+  |         for node in self.nodes() {
+  |             v_out.insert(*node, 0);
+  |             v_in.insert(*node, 0);
+  |         }
+  | 
+
+--[ Match #20 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let mut curr = 0;
+  |         for graph in graphs {
+  |             let mut renumber: HashMap<Node, Node> = HashMap::new();
+  |             let mut number = |n| -> Node {
+  |                 *renumber.entry(n).or_insert_with(|| {
+  |                     let v = curr;
+  |                     curr += 1;
+  | 
+
+--[ Match #21 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     fn intersection(&self, other: &Self) -> Self {
+  |         let mut renumber: HashMap<Edge, Node> = HashMap::new();
+  |         let mut curr = 0;
+  |         let mut number = |n1, n2| -> Node {
+  |             *renumber.entry((n1, n2)).or_insert_with(|| {
+  |                 let v = curr;
+  |                 curr += 1;
+  | 
+
+--[ Match #22 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\input_data_graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | type Node = usize;
+  | type Edge = (Node, Node);
+  | 
+  | #[derive(Debug)]
+  | 
+
+--[ Match #23 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\graph.rs
+   Pattern: \.(request|post|get)\(
+  |         // check all other predecessors in topological order
+  |         for j in start_i + 1..i {
+  |             let intermediate = &topo[j];
+  |             if inv.get(here).unwrap_or(&empty).contains(&intermediate) {
+  |                 if let Some((c, _)) = best[j - start_i - 1] {
+  |                     let jump_cost = c + cost(intermediate, here);
+  |                     match best_here {
+  | 
+
+--[ Match #24 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\graph.rs
+   Pattern: \.(request|post|get)\(
+  |         let here = &topo[i];
+  |         let mut best_here = None;
+  |         // check to see if start node connects here
+  |         if inv.get(here).unwrap_or(&empty).contains(start) {
+  |             best_here = Some((cost(start, here), start));
+  |         }
+  |         // check all other predecessors in topological order
+  | 
+
+--[ Match #25 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\graph.rs
+   Pattern: \.(request|post|get)\(
+  |     let empty = BTreeSet::new();
+  |     while let Some(n) = pending.pop_front() {
+  |         results.push(*n);
+  |         for n2 in adj.get(n).unwrap_or(&empty) {
+  |             let deg = in_degree.get_mut(&n2).unwrap();
+  |             if *deg == 1 {
+  |                 pending.push_front(n2);
+  | 
+
+--[ Match #26 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\graph.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         ];
+  |         for edges in edges_list {
+  |             let adj = adjacency_map(edges.iter());
+  |             let sort = topological_sort(&adj);
+  |             assert!(check_topo(&edges, &sort));
+  |         }
+  |     }
+  | 
+
+--[ Match #27 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\src\blinkfill\language.rs
+   Pattern: \.(request|post|get)\(
+  |         match self {
+  |             SubstringExpression::ConstantString(s) => Some(s.clone()),
+  |             SubstringExpression::Substring(ci, p_start, p_end) => {
+  |                 let s = row.get(ci.0)?;
+  |                 let p_start = p_start.run(s.as_ref())?;
+  |                 let p_end = p_end.run(s.as_ref())?;
+  |                 if p_start.0 >= p_end.0 {
+  | 
+
+--[ Match #28 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-synox@0.1\synox-0.1.0\.github\workflows\build.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       - run: rustup component add rustfmt
+  |       - uses: actions-rs/cargo@v1
+  |         with:
+  |           command: fmt
+  |           args: --all -- --check
+  | 
+  |   clippy:
+  | 
+
+28 matches found.

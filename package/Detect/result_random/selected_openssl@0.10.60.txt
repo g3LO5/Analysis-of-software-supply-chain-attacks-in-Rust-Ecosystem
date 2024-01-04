@@ -1,0 +1,629 @@
+--[ Match #472 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey_ctx.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  | 
+  |         assert_eq!(
+  |             &out[..],
+  |             hex::decode("3cb25f25faacd57a90434f64d0362f2a2d2d0a90cf1a5a4c5db02d56ecc4c5bf34007208d5b
+  |                 .unwrap()
+  |         );
+  |     }
+  | 
+
+--[ Match #488 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\aes.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |         let raw_key = Vec::from_hex("000102030405060708090A0B0C0D0E0F").unwrap();
+  |         let key_data = Vec::from_hex("00112233445566778899AABBCCDDEEFF").unwrap();
+  |         let expected_ciphertext =
+  |             Vec::from_hex("1FA68B0A8112B447AEF34BD8FB5A7B829D3E862371D2CFE5").unwrap();
+  | 
+  |         let enc_key = AesKey::new_encrypt(&raw_key).unwrap();
+  |         let mut wrapped = [0; 24];
+  | 
+
+--[ Match #625 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                     hostname = &hostname[..hostname.len() - 1];
+  |                 }
+  | 
+  |                 matches_wildcard(pattern, hostname).unwrap_or_else(|| pattern.eq_ignore_ascii_case(h
+  |             }
+  | 
+  |             fn matches_wildcard(pattern: &str, hostname: &str) -> Option<bool> {
+  | 
+
+--[ Match #287 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\nid.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub const PKCS9_MESSAGEDIGEST: Nid = Nid(ffi::NID_pkcs9_messageDigest);
+  |     pub const PKCS9_SIGNINGTIME: Nid = Nid(ffi::NID_pkcs9_signingTime);
+  |     pub const PKCS9_COUNTERSIGNATURE: Nid = Nid(ffi::NID_pkcs9_countersignature);
+  |     pub const PKCS9_CHALLENGEPASSWORD: Nid = Nid(ffi::NID_pkcs9_challengePassword);
+  |     pub const PKCS9_UNSTRUCTUREDADDRESS: Nid = Nid(ffi::NID_pkcs9_unstructuredAddress);
+  |     pub const PKCS9_EXTCERTATTRIBUTES: Nid = Nid(ffi::NID_pkcs9_extCertAttributes);
+  |     pub const EXT_REQ: Nid = Nid(ffi::NID_ext_req);
+  | 
+
+--[ Match #170 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// The callback should copy the password into the provided buffer and return the number of
+  |     /// bytes written.
+  |     #[corresponds(d2i_PKCS8PrivateKey_bio)]
+  |     pub fn private_key_from_pkcs8_callback<F>(
+  |         der: &[u8],
+  |         callback: F,
+  |     ) -> Result<PKey<Private>, ErrorStack>
+  | 
+
+--[ Match #96 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// Like [`SslContext::private_key`].
+  |     ///
+  |     /// [`SslContext::private_key`]: struct.SslContext.html#method.private_key
+  |     #[corresponds(SSL_get_privatekey)]
+  |     pub fn private_key(&self) -> Option<&PKeyRef<Private>> {
+  |         unsafe {
+  |             let ptr = ffi::SSL_get_privatekey(self.as_ptr());
+  | 
+
+--[ Match #483 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\sign.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |                 Vec::from_hex("125d7342b9ac11cd91a39af48aa17b4f63f175d3").unwrap(),
+  |             ),
+  |             (
+  |                 Vec::from_hex("0102030405060708090a0b0c0d0e0f10111213141516171819").unwrap(),
+  |                 iter::repeat(0xcd_u8).take(50).collect(),
+  |                 Vec::from_hex("4c9007f4026250c6bc8414f9bf50c86c2d7235da").unwrap(),
+  |             ),
+  | 
+
+--[ Match #188 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     /// Generates a new private Ed448 key.
+  |     ///
+  |     /// To import a private key from raw bytes see [`PKey::private_key_from_raw_bytes`].
+  |     ///
+  |     /// # Examples
+  |     ///
+  | 
+
+--[ Match #320 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     fn test_from_password_callback() {
+  |         let mut password_queried = false;
+  |         let key = include_bytes!("../test/rsa-encrypted.pem");
+  |         Rsa::private_key_from_pem_callback(key, |password| {
+  |             password_queried = true;
+  |             password[..6].copy_from_slice(b"mypass");
+  |             Ok(6)
+  | 
+
+--[ Match #242 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\CHANGELOG.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  | ### Fixed
+  | 
+  | * `PKey::private_key_to_pkcs8_passphrase` no longer panics if a `passphrase` contains a NUL byte.
+  | 
+  | ## [v0.10.53] - 2023-05-30
+  | 
+  | 
+
+--[ Match #327 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |     from_der! {
+  |         /// Decodes a DER-encoded PKCS#1 RSAPrivateKey structure.
+  |         #[corresponds(d2i_RSAPrivateKey)]
+  |         private_key_from_der,
+  |         Rsa<Private>,
+  |         ffi::d2i_RSAPrivateKey
+  | 
+
+--[ Match #534 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "memchr"
+  | version = "2.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e01e64d9017d18e7fc09d8e4fe0e28ff6931019e979fb8019319db7ca827f8a6"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #637 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                     return preverify_ok;
+  |                 }
+  | 
+  |                 let hostname_idx =
+  |                     try_get_hostname_idx().expect("failed to initialize hostname index");
+  |                 let ok = match (
+  |                     x509_ctx.current_cert(),
+  | 
+
+--[ Match #621 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                 };
+  | 
+  |                 let pattern_after_wildcard = &pattern[wildcard_end..];
+  |                 let hostname_after_wildcard = &hostname[hostname_label_end..];
+  | 
+  |                 Some(pattern_after_wildcard.eq_ignore_ascii_case(hostname_after_wildcard))
+  |             }
+  | 
+
+--[ Match #552 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bitflags"
+  | version = "1.2.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf1de2fe8c75bc145a2f577add951f8134889b4795d47466a54a5c846d691693"
+  | 
+  | [[package]]
+  | name = "bitflags"
+  | 
+
+--[ Match #555 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\sha.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |     #[test]
+  |     fn standalone_256() {
+  |         let data = b"abc";
+  |         let expected = "ba7816bf8f01cfea414140de5dae2223b00361a396177a9cb410ff61f20015ad";
+  | 
+  |         assert_eq!(hex::encode(sha256(data)), expected);
+  |     }
+  | 
+
+--[ Match #316 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         })
+  |         .unwrap();
+  | 
+  |         assert!(password_queried);
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #153 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |         assert_eq!(
+  |             pkey2.private_key_to_der().unwrap(),
+  |             pkey.private_key_to_der().unwrap()
+  |         );
+  |     }
+  | 
+  | 
+
+--[ Match #88 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     #[corresponds(SSL_use_PrivateKey)]
+  |     pub fn set_private_key(&mut self, pkey: &PKeyRef<Private>) -> Result<(), ErrorStack> {
+  |         unsafe {
+  |             cvt(ffi::SSL_use_PrivateKey(self.as_ptr(), pkey.as_ptr()))?;
+  |         };
+  |         Ok(())
+  |     }
+  | 
+
+--[ Match #30 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ec.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         ///
+  |         /// The input should have a header of `-----BEGIN EC PRIVATE KEY-----`.
+  |         #[corresponds(PEM_read_bio_ECPrivateKey)]
+  |         private_key_from_pem,
+  | 
+  |         /// Deserializes a private key from a PEM-encoded encrypted ECPrivateKey structure.
+  |         ///
+  | 
+
+--[ Match #172 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     /// Deserializes a DER-formatted PKCS#8 private key, using a callback to retrieve the password
+  |     /// if the key is encrypted.
+  |     ///
+  |     /// The callback should copy the password into the provided buffer and return the number of
+  |     /// bytes written.
+  |     #[corresponds(d2i_PKCS8PrivateKey_bio)]
+  |     pub fn private_key_from_pkcs8_callback<F>(
+  | 
+
+--[ Match #360 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         /// Serializes the private key to a PEM-encoded PKCS#1 RSAPrivateKey structure.
+  |         ///
+  |         /// The output will have a header of `-----BEGIN RSA PRIVATE KEY-----`.
+  |         #[corresponds(PEM_write_bio_RSAPrivateKey)]
+  |         private_key_to_pem,
+  |         /// Serializes the private key to a PEM-encoded encrypted PKCS#1 RSAPrivateKey structure.
+  |         ///
+  | 
+
+--[ Match #417 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\symm.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |         let _provider = crate::provider::Provider::try_load(None, "legacy", true).unwrap();
+  | 
+  |         let pt = "5363686f6b6f6c6164656e6b756368656e0a";
+  |         let ct = "c2edf0fb2eb11bf7b2f39417a8528896d34b24b6fd79e5923b116dfcd2aba5a4";
+  |         let key = "41414141414141414141414141414141";
+  |         let iv = "41414141414141414141414141414141";
+  | 
+  | 
+
+--[ Match #312 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |             .private_key_to_pem_passphrase(Cipher::aes_128_cbc(), b"foobar")
+  |             .unwrap();
+  |         Rsa::private_key_from_pem_passphrase(&pem, b"foobar").unwrap();
+  |         assert!(Rsa::private_key_from_pem_passphrase(&pem, b"fizzbuzz").is_err());
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #589 of 666 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\asn1.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         unsafe {
+  |             let s = CString::new(s).unwrap();
+  | 
+  |             let time = Asn1Time::new()?;
+  |             cvt(ffi::ASN1_TIME_set_string(time.as_ptr(), s.as_ptr()))?;
+  | 
+  |             Ok(time)
+  | 
+
+--[ Match #341 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         dmq1: BigNum,
+  |         iqmp: BigNum,
+  |     ) -> Result<Rsa<Private>, ErrorStack> {
+  |         Ok(RsaPrivateKeyBuilder::new(n, e, d)?
+  |             .set_factors(p, q)?
+  |             .set_crt_params(dmp1, dmq1, iqmp)?
+  |             .build())
+  | 
+
+--[ Match #162 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> Result<PKey<Private>, ErrorStack> {
+  |         unsafe {
+  |             ffi::init();
+  |             cvt_p(ffi::EVP_PKEY_new_raw_private_key(
+  |                 key_type.as_raw(),
+  |                 ptr::null_mut(),
+  |                 bytes.as_ptr(),
+  | 
+
+--[ Match #448 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\symm.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |     fn test_aes256_ofb() {
+  |         // Lifted from http://csrc.nist.gov/publications/nistpubs/800-38a/sp800-38a.pdf
+  | 
+  |         let pt = "6bc1bee22e409f96e93d7e117393172aae2d8a571e03ac9c9eb76fac45af8e5130c81c46a35ce411e5
+  |         let ct = "dc7e84bfda79164b7ecd8486985d38604febdc6740d20b3ac88f6ad82a4fb08d71ab47a086e86eedf3
+  |         let key = "603deb1015ca71be2b73aef0857d77811f352c073b6108d72d9810a30914dff4";
+  |         let iv = "000102030405060708090a0b0c0d0e0f";
+  | 
+
+--[ Match #490 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\aes.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |     fn ige_vector_1() {
+  |         let raw_key = "000102030405060708090A0B0C0D0E0F";
+  |         let raw_iv = "000102030405060708090A0B0C0D0E0F101112131415161718191A1B1C1D1E1F";
+  |         let raw_pt = "0000000000000000000000000000000000000000000000000000000000000000";
+  |         let raw_ct = "1A8519A6557BE652E9DA8E43DA4EF4453CF456B4CA488AA383C79C98B34797CB";
+  | 
+  |         let key = AesKey::new_encrypt(&Vec::from_hex(raw_key).unwrap()).unwrap();
+  | 
+
+--[ Match #633 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                         .and_then(|idx| x509_ctx.ex_data(idx))
+  |                         .and_then(|ssl| ssl.ex_data(*hostname_idx)),
+  |                 ) {
+  |                     (Some(x509), Some(domain)) => verify_hostname(domain, &x509),
+  |                     _ => true,
+  |                 };
+  | 
+  | 
+
+--[ Match #618 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                 let pattern_after_wildcard = &pattern[wildcard_end..];
+  |                 let hostname_after_wildcard = &hostname[hostname_label_end..];
+  | 
+  |                 Some(pattern_after_wildcard.eq_ignore_ascii_case(hostname_after_wildcard))
+  |             }
+  | 
+  |             fn matches_ip(expected: &IpAddr, actual: &[u8]) -> bool {
+  | 
+
+--[ Match #523 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a250501c60d8ee37c3c8cd93d95344a4653ce4999136cc9b3eb4c98770a4aea3"
+  | dependencies = [
+  |  "regex-syntax",
+  | ]
+  | 
+
+--[ Match #505 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\hash.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |     #[test]
+  |     fn test_sha3_256() {
+  |         let tests = [(
+  |             "416c6c20796f75722062617365206172652062656c6f6e6720746f207573",
+  |             "b38e38f08bc1c0091ed4b5f060fe13e86aa4179578513ad11a6e3abba0062f61",
+  |         )];
+  | 
+  | 
+
+--[ Match #602 of 666 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ### Changed
+  | 
+  | * The Cargo features previously used to gate access to version-specific OpenSSL APIs have been
+  |     removed. Those APIs will be available automatically when building against an appropriate OpenSSL
+  |     version.
+  | * Fixed `PKey::private_key_from_der` to return a `PKey<Private>` rather than a `PKey<Public>`. This
+  |     is technically a breaking change but the function was pretty useless previously.
+  | 
+
+--[ Match #352 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     to_der! {
+  |         /// Serializes the private key to a DER-encoded PKCS#1 RSAPrivateKey structure.
+  |         #[corresponds(i2d_RSAPrivateKey)]
+  |         private_key_to_der,
+  |         ffi::i2d_RSAPrivateKey
+  |     }
+  | 
+  | 
+
+--[ Match #56 of 666 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\x509\tests.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  |     for (ext, expected) in [
+  |         (
+  |             BasicConstraints::new().critical().ca().build().unwrap(),
+  |             b"0\x0f\x06\x03U\x1d\x13\x01\x01\xff\x04\x050\x03\x01\x01\xff" as &[u8],
+  |         ),
+  |         (
+  |             SubjectAlternativeName::new()
+  | 
+
+--[ Match #613 of 666 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ### Fixed
+  | 
+  | * Fixed a potential null-pointer deref when parsing a PKCS#12 archive with no identity.
+  | * Fixed builds against OpenSSL built with `no-cast`.
+  | * Fixed debug formatting of `GeneralName`.
+  | 
+  | ### Deprecated
+  | 
+
+--[ Match #349 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\rsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     rsa: Rsa<Private>,
+  | }
+  | 
+  | impl RsaPrivateKeyBuilder {
+  |     /// Creates a new `RsaPrivateKeyBuilder`.
+  |     ///
+  |     /// `n` is the modulus common to both public and private key.
+  | 
+
+--[ Match #413 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\cipher_ctx.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |     #[cfg(ossl102)]
+  |     fn test_aes128_wrap() {
+  |         let pt = "00112233445566778899aabbccddeeff";
+  |         let ct = "7940ff694448b5bb5139c959a4896832e55d69aa04daa27e";
+  |         let key = "2b7e151628aed2a6abf7158809cf4f3c";
+  |         let iv = "0001020304050607";
+  | 
+  | 
+
+--[ Match #203 of 666 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\pkey.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         /// Serializes the private key to a DER-encoded key type specific format.
+  |         #[corresponds(i2d_PrivateKey)]
+  |         private_key_to_der,
+  |         ffi::i2d_PrivateKey
+  |     }
+  | 
+  |     /// Raw byte representation of a private key.
+  | 
+
+--[ Match #429 of 666 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\symm.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |         let aad = "2c16724296ff85e079627be3053ea95adf35722c21886baba343bd6c79b5cb57";
+  | 
+  |         let pt = "d71864877f2578db092daba2d6a1f9f4698a9c356c7830a1";
+  |         let ct = "b4dd74e7a0cc51aea45dfb401a41d5822c96901a83247ea0";
+  |         let tag = "d6965f5aa6e31302a9cc2b36";
+  | 
+  |         let mut actual_tag = [0; 12];
+  | 
+
+--[ Match #626 of 666 ]--
+   Rule Id: BD000704
+       Tag: Security.Backdoor.DataExfiltration.Hostname
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-openssl@0.10\openssl-0.10.60\src\ssl\connector.rs
+   Pattern: .hostname
+  |                     hostname = &hostname[..hostname.len() - 1];
+  |                 }
+  | 
+  |                 matches_wildcard(pattern, hostname).unwrap_or_else(|| pattern.eq_ignore_ascii_case(h
+  |             }
+  | 
+  |             fn matches_wildcard(pattern: &str, hostname: &str) -> Option<bool> {
+  | 

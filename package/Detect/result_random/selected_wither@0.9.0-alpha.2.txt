@@ -1,0 +1,641 @@
+--[ Match #161 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "http-body"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "13d5ff830006f7646652e057693569bfe0d51760c0085a071769d142a205111b"
+  | dependencies = [
+  |  "bytes",
+  |  "http",
+  | 
+
+--[ Match #199 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crypto-mac"
+  | version = "0.7.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4434400df11d95d556bac068ddfedd482915eb18fe8bea89bc80b6e4b1c179e5"
+  | dependencies = [
+  |  "generic-array",
+  |  "subtle",
+  | 
+
+--[ Match #32 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "want"
+  | version = "0.3.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1ce8a968cb1cd110d136ff8b819a556d6fb6d919363c61534f6860c7eb172ba0"
+  | dependencies = [
+  |  "log",
+  |  "try-lock",
+  | 
+
+--[ Match #265 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | </div>
+  | </br>
+  | 
+  | The primary goal of this project is to provide a simple, sane & predictable interface into MongoDB b
+  | 
+  | **GREAT NEWS!** Wither is now based on the official [MongoDB Rust driver](https://github.com/mongodb
+  | - `tokio-runtime` (default) activates [the tokio runtime](tokio.rs/).
+  | - `async-std-runtime` activates [the async-std runtime](https://async.rs/).
+  | 
+  | Due to updates in the underlying driver, there is a fair number of breaking changes in the `Model` t
+
+--[ Match #94 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "reqwest"
+  | version = "0.10.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e9eaa17ac5d7b838b7503d118fa16ad88f440498bf9ffe5424e621f93190d61e"
+  | dependencies = [
+  |  "base64 0.12.3",
+  |  "bytes",
+  | 
+
+--[ Match #144 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lock_api"
+  | version = "0.3.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c4da24a77a3d8a6d4862d95f72e6fdb9c09a643ecdb402d754004a557f2bec75"
+  | dependencies = [
+  |  "scopeguard",
+  | ]
+  | 
+
+--[ Match #220 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "atomic-waker"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "065374052e7df7ee4047b1160cca5e1467a12351a40b3da123c870ba0b8eda2a"
+  | 
+  | [[package]]
+  | name = "autocfg"
+  | 
+
+--[ Match #74 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "slab"
+  | version = "0.4.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c111b5bd5695e56cffe5129854aa230b39c93a305372fdbb2668ca2394eea9f8"
+  | 
+  | [[package]]
+  | name = "smallvec"
+  | 
+
+--[ Match #172 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "generic-array"
+  | version = "0.12.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "c68f0274ae0e023facc3c97b2e00f076be70e254bc851d972503b328db79b2ec"
+  | dependencies = [
+  |  "typenum",
+  | ]
+  | 
+
+--[ Match #85 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "scopeguard"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d29ab0c6d3fc0ee92fe66e2d99f700eab17a8d57d1c1d3b748380fb20baa78cd"
+  | 
+  | [[package]]
+  | name = "sct"
+  | 
+
+--[ Match #64 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "synstructure"
+  | version = "0.12.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b834f2d66f734cb897113e34aaff2f1ab4719ca946f9a7358dba8f8064148701"
+  | dependencies = [
+  |  "proc-macro2 1.0.19",
+  |  "quote 1.0.7",
+  | 
+
+--[ Match #37 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "url"
+  | version = "2.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "829d4a8476c35c9bf0bbce5a3b23f4106f79728039b726d292bb93bc106787cb"
+  | dependencies = [
+  |  "idna",
+  |  "matches",
+  | 
+
+--[ Match #65 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.39"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "891d8d6567fe7c7f8835a3a98af4208f3846fba258c1bc3c31d6e506239f11f9"
+  | dependencies = [
+  |  "proc-macro2 1.0.19",
+  |  "quote 1.0.7",
+  | 
+
+--[ Match #223 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "async-std"
+  | version = "1.6.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "46c8da367da62b8ff2313c406c9ac091c1b31d67a165becdd2de380d846260f7"
+  | dependencies = [
+  |  "async-attributes",
+  |  "async-executor",
+  | 
+
+--[ Match #21 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "webpki-roots"
+  | version = "0.18.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "91cd5736df7f12a964a5067a12c62fa38e1bd8080aff1f80bc29be7c80d19ab4"
+  | dependencies = [
+  |  "webpki",
+  | ]
+  | 
+
+--[ Match #247 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\tests\model.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         .await
+  |         .expect_err("Expected an errored update operation.");
+  | 
+  |     assert_eq!(err.to_string(), "An invalid argument was provided to a database operation: update do
+  | }
+  | 
+  | #[tokio::test]
+  | 
+
+--[ Match #255 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\docs\migrations-overview.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | With that said, schema migrations in this system:
+  | 
+  | - are defined in Rust code. Allowing them to live as child elements of your data models.
+  | - are executed per model, whenever [`Migrating::migrate`](../migration/trait.Migrating.html#method.m
+  | - require no downtime to perform.
+  | - require minimal configuration. The logic you use directly in your model for connecting to the back
+  | - require no imperative logic. Simply declare your `filter`, `$set` & `$unset` documents, and the re
+  | 
+  | An important question which you should be asking at this point is _"Well, how is this going to work 
+  | 
+  | - be sure that the queries used by your migrations are covered
+
+--[ Match #185 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fuchsia-zircon"
+  | version = "0.3.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2e9763c69ebaae630ba35f74888db465e49e259ba1bc0eda7d06f4a067615d82"
+  | dependencies = [
+  |  "bitflags",
+  |  "fuchsia-zircon-sys",
+  | 
+
+--[ Match #129 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-integer"
+  | version = "0.1.43"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8d59457e662d541ba17869cf51cf177c0b5f0cbf476c66bdc90bf1edac4f875b"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-traits",
+  | 
+
+--[ Match #58 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tinyvec"
+  | version = "0.3.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "238ce071d267c5710f9d31451efec16c5ee22de34df17cc05e56cbc92e967117"
+  | 
+  | [[package]]
+  | name = "tokio"
+  | 
+
+--[ Match #153 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ipconfig"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f7e2f18aece9709094573a9f24f483c4f65caa4298e2f7ae1b71cc65d853fad7"
+  | dependencies = [
+  |  "socket2",
+  |  "widestring",
+  | 
+
+--[ Match #187 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fastrand"
+  | version = "1.3.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c85295147490b8fcf2ea3d104080a105a8b2c63f9c319e82c02d8e952388919"
+  | 
+  | [[package]]
+  | name = "fnv"
+  | 
+
+--[ Match #176 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "futures-macro"
+  | version = "0.3.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d0b5a30a4328ab5473878237c447333c093297bded83a4983d10f4deea240d39"
+  | dependencies = [
+  |  "proc-macro-hack",
+  |  "proc-macro2 1.0.19",
+  | 
+
+--[ Match #34 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "version_check"
+  | version = "0.9.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b5a972e5669d67ba988ce3dc826706fb0a8b01471c088cb0b6110b805cc36aed"
+  | 
+  | [[package]]
+  | name = "waker-fn"
+  | 
+
+--[ Match #151 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "0.4.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dc6f3ad7b9d11a0c00842ff8de1b60ee58661048eb8049ed33c73594f359d7e6"
+  | 
+  | [[package]]
+  | name = "js-sys"
+  | 
+
+--[ Match #120 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "parking_lot"
+  | version = "0.10.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d3a704eb390aafdc107b0e392f56a82b668e3a71366993b5340f5833fd62505e"
+  | dependencies = [
+  |  "lock_api",
+  |  "parking_lot_core",
+  | 
+
+--[ Match #249 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\tests\model.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     opts.return_document = Some(ReturnDocument::After);
+  | 
+  |     let user = user.update(&db, None, update_doc, Some(opts))
+  |         .await.expect("Expected a successful update operation.");
+  | 
+  |     assert_eq!(user.email, String::from("new@test.com"));
+  | }
+  | 
+
+--[ Match #132 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "mongodb"
+  | version = "1.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a726495d7418c4579ecc9465b53ddade8187c0299e5db0e7250672b67d196913"
+  | dependencies = [
+  |  "async-std",
+  |  "async-trait",
+  | 
+
+--[ Match #197 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "darling_core"
+  | version = "0.10.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f0c960ae2da4de88a91b2d920c2a7233b400bc33cb28453a2987822d8392519b"
+  | dependencies = [
+  |  "fnv",
+  |  "ident_case",
+  | 
+
+--[ Match #103 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "0.6.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6ce23b6b870e8f94f81fb0a363d65d86675884b34a09043c81e5562f11c1f8e1"
+  | dependencies = [
+  |  "proc-macro2 0.4.30",
+  | ]
+  | 
+
+--[ Match #106 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "0.4.30"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cf3d2011ab5c909338f7887f4fc896d35932e29146c12c8d01da6b22a80ba759"
+  | dependencies = [
+  |  "unicode-xid 0.1.0",
+  | ]
+  | 
+
+--[ Match #188 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "fake-simd"
+  | version = "0.1.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e88a8acf291dafb59c2d96e8f59828f3838bb1a70398823ade51a84de6a6deed"
+  | 
+  | [[package]]
+  | name = "fastrand"
+  | 
+
+--[ Match #256 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\docs\migrations-overview.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | As your system evolves over time, you may find yourself needing to alter the data in your databases 
+  | 
+  | Migrations are controlled by implementing the [Migrating](./trait.Migrating.html) trait on your `Mod
+  | 
+  | ```rust
+  | # use chrono::prelude::*;
+  | 
+
+--[ Match #266 of 274 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ser's email address.
+  |     me.update(&db, None, doc!{"$set": doc!{"email": "new.email@example.com"}}, None).await?;
+  | 
+  |     // Fetch all users.
+  |     let mut cursor = User::find(&db, None, None).await?;
+  |     while let Some(user) = cursor.next().await {
+  |         println!("{:?}", user);
+  |     }
+  |     Ok(())
+  | }
+  | ```
+  | 
+  | **PLEASE NOTE:** as of the `0.9.0-alpha.0` release, corresponding to the mongodb `1.0` release, inde
+  | 
+  | If this is important to you, please head over to [wither#51](https://github.com/thedodd/wither/issue
+  | 
+  | #### next steps
+  | And that's all there is to it. Now you are ready to tackle some of the other important parts of the 
+  | 
+
+--[ Match #159 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hyper"
+  | version = "0.13.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3e68a8dd9716185d9e64ea473ea6ef63529252e3e27623295a0378a19665d5eb"
+  | dependencies = [
+  |  "bytes",
+  |  "futures-channel",
+  | 
+
+--[ Match #95 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex-syntax"
+  | version = "0.6.18"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "26412eb97c6b088a6997e05f69403a802a92d520de2f8e63c2b65f9e0f47c4e8"
+  | 
+  | [[package]]
+  | name = "reqwest"
+  | 
+
+--[ Match #219 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+  | 
+  | [[package]]
+  | name = "backtrace"
+  | 
+
+--[ Match #168 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hashbrown"
+  | version = "0.8.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e91b62f79061a0bc2e046024cb7ba44b08419ed238ecbd9adbd787434b9e8c25"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #109 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro-error-attr"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1be40180e52ecc98ad80b184934baf3d0d29f979574e439af5a55274b35f869"
+  | dependencies = [
+  |  "proc-macro2 1.0.19",
+  |  "quote 1.0.7",
+  | 
+
+--[ Match #15 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-build"
+  | version = "0.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2d315eee3b34aca4797b2da6b13ed88266e6d612562a0c46390af8299fc699bc"
+  | 
+  | [[package]]
+  | name = "winapi-i686-pc-windows-gnu"
+  | 
+
+--[ Match #268 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\examples\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ==============
+  | The example from the project's README.
+  | 
+  | This example expects a mongod instance to available at `localhost:27017`.
+  | 
+
+--[ Match #48 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wither@0.9.0-alpha\wither-0.9.0-alpha.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "trust-dns-resolver"
+  | version = "0.19.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0f23cdfdc3d8300b3c50c9e84302d3bd6d860fb9529af84ace6cf9665f181b77"
+  | dependencies = [
+  |  "backtrace",
+  |  "cfg-if",
+  | 

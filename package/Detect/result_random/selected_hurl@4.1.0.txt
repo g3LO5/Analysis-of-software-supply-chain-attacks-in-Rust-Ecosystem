@@ -1,0 +1,634 @@
+--[ Match #271 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\http\core.rs
+   Pattern: \.(request|post|get)\(
+  |         } else {
+  |             return Err(ParseCookieError);
+  |         };
+  |         let path = if let Some(&v) = tokens.get(2) {
+  |             v.to_string()
+  |         } else {
+  |             return Err(ParseCookieError);
+  | 
+
+--[ Match #188 of 275 ]--
+   Rule Id: BD000703
+       Tag: Security.Backdoor.DataExfiltration.Username
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\README.md
+   Pattern: .userInfo
+  | [Asserts]
+  | jsonpath "$.validated" == true
+  | jsonpath "$.userInfo.firstName" == "Franck"
+  | jsonpath "$.userInfo.lastName" == "Herbert"
+  | jsonpath "$.hasDevice" == false
+  | jsonpath "$.links" count == 12
+  | jsonpath "$.state" != null
+  | 
+
+--[ Match #156 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colorchoice"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "acbf1af155f9b9ef647e42cdc158db4b64a1b61f743629225fde6f3e0be2a7c7"
+  | 
+  | [[package]]
+  | name = "colored"
+  | 
+
+--[ Match #163 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "bumpalo"
+  | version = "3.14.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7f30e7476521f6f8af1a1c4c0b8cc94f0bee37d91763d0ca2665f299b6cd8aec"
+  | 
+  | [[package]]
+  | name = "cc"
+  | 
+
+--[ Match #190 of 275 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | #### Zip File
+  | 
+  | Hurl can be installed from a standalone zip file [hurl-4.1.0-win64.zip]. You will need to update you
+  | 
+  | #### Installer
+  | 
+  | 
+
+--[ Match #51 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_msvc"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "dc35310971f3b2dbbf3f0690a219f40e2d9afcf64f9ab7cc1be722937c26b4bc"
+  | 
+  | [[package]]
+  | name = "windows_i686_gnu"
+  | 
+
+--[ Match #66 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vcpkg"
+  | version = "0.2.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #5 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | csrf_token: xpath "normalize-space(//meta[@name='_csrf_token']/@content)"
+  | 
+  | # Do the login !
+  | POST https://example.org/login?user=toto&password=1234
+  | X-CSRF-TOKEN: {{csrf_token}}
+  | ```
+  | 
+  | 
+
+--[ Match #165 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "brotli"
+  | version = "3.3.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a1a0b1dbcc8ae29329621f8d4f0d835787c1c38bb1401979b49d13b0b305ff68"
+  | dependencies = [
+  |  "alloc-no-stdlib",
+  |  "alloc-stdlib",
+  | 
+
+--[ Match--[ Match #1 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\README.md
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                                                                                                     
+  | | <a href="#ssl-no-revoke" id="ssl-no-revoke"><code>--ssl-no-revoke</code></a>                      
+  | | <a href="#test" id="test"><code>--test</code></a>                                                 
+  | | <a href="#to-entry" id="to-entry"><code>--to-entry &lt;ENTRY_NUMBER&gt;</code></a>                
+  | | <a href="#user" id="user"><code>-u, --user &lt;USER:PASSWORD&gt;</code></a>                       
+  | | <a href="#user-agent" id="user-agent"><code>-A, --user-agent &lt;NAME&gt;</code></a>              
+  | | <a href="#variable" id="variable"><code>--variable &lt;NAME=VALUE&gt;</code></a>                  
+  | | <a href="#variables-file" id="variables-file"><code>--variables-file &lt;FILE&gt;</code></a>      
+  | | <a href="#verbose" id="verbose"><code>-v, --verbose</code></a>                                    
+
+--[ Match #30 of 275 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\request.rs
+   Pattern: base64|encodedcommand|obfuscate
+  | use std::collections::HashMap;
+  | 
+  | use base64::engine::general_purpose;
+  | use base64::Engine;
+  | use hurl_core::ast::*;
+  | 
+  | use crate::http;
+  | 
+
+--[ Match #107 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "numtoa"
+  | version = "0.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b8f8bdf33df195859076e54ab11ee78a1b208382d3a26ec40d142ffc1ecc49ef"
+  | 
+  | [[package]]
+  | name = "once_cell"
+  | 
+
+--[ Match #250 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\html\unescape.rs
+   Pattern: \.(request|post|get)\(
+  |                     // Find the longest matching name (as defined by the standard)
+  |                     for x in (1..s.len()).rev() {
+  |                         let name = &s[..x];
+  |                         if let Some(entity) = HTML5_ENTITIES.get(name) {
+  |                             return format!("{}{}", entity, &s[x..]);
+  |                         }
+  |                     }
+  | 
+
+--[ Match #74 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "toml"
+  | version = "0.5.11"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f4f7f0dd8d50a853a531c426359045b1998f04219d88799810762cd4ad314234"
+  | dependencies = [
+  |  "serde",
+  | ]
+  | 
+
+--[ Match #237 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\jsonpath\eval\selector.rs
+   Pattern: \.(request|post|get)\(
+  |                 .get(field)
+  |                 .map(|result| JsonpathResult::SingleEntry(result.clone())),
+  |             Selector::ArrayIndex(index) => root
+  |                 .get(index)
+  |                 .map(|result| JsonpathResult::SingleEntry(result.clone())),
+  | 
+  |             // Selectors returning a collection ("indefinite")
+  | 
+
+--[ Match #194 of 275 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | ny error occurs (asserts, captures, runtimes etc...).<br>                                           
+  | | <a href="#retry-interval" id="retry-interval"><code>--retry-interval &lt;MILLISECONDS&gt;</code></
+  | | <a href="#ssl-no-revoke" id="ssl-no-revoke"><code>--ssl-no-revoke</code></a>                      
+  | | <a href="#test" id="test"><code>--test</code></a>                                                 
+  | | <a href="#to-entry" id="to-entry"><code>--to-entry &lt;ENTRY_NUMBER&gt;</code></a>                
+  | | <a href="#user" id="user"><code>-u, --user &lt;USER:PASSWORD&gt;</code></a>                       
+  | | <a href="#user-agent" id="user-agent"><code>-A, --user-agent &lt;NAME&gt;</code></a>              
+  | | <a href="#variable" id="variable"><code>--variable &lt;NAME=VALUE&gt;</code></a>                  
+  | | <a href="#variables-file" id="variables-file"><code>--variables-file &lt;FILE&gt;</code></a>      
+
+--[ Match #264 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\http\certificate.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | fn parse_subject(attributes: &HashMap<String, String>) -> Result<String, String> {
+  |     match attributes.get("subject") {
+  |         None => Err(format!("missing Subject attribute in {attributes:?}")),
+  |         Some(value) => Ok(value.clone()),
+  |     }
+  | 
+
+--[ Match #245 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\filter.rs
+   Pattern: \.(request|post|get)\(
+  |     let re = eval_regex_value(regex_value, variables)?;
+  |     match value {
+  |         Value::String(s) => match re.captures(s.as_str()) {
+  |             Some(captures) => match captures.get(1) {
+  |                 Some(v) => Ok(Some(Value::String(v.as_str().to_string()))),
+  |                 None => Ok(None),
+  |             },
+  | 
+
+--[ Match #217 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\jsonpath\parser\reader.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     /// Returns the next char from the buffer without advancing the internal state.
+  |     pub fn peek(&mut self) -> Option<char> {
+  |         self.buffer.get(self.state.cursor).copied()
+  |     }
+  | 
+  |     /// Returns the `count` char from the buffer without advancing the internal state.
+  | 
+
+--[ Match #25 of 275 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\response.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |                 source_info: multi.value().source_info,
+  |             }
+  |         }
+  |         Bytes::Base64(Base64 {
+  |             value,
+  |             space0,
+  |             space1,
+  | 
+
+--[ Match #98 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "quote"
+  | version = "1.0.33"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5267fca4496028628a95160fc423a33e8b2e6af8a5302579e322e4b520293cae"
+  | dependencies = [
+  |  "proc-macro2",
+  | ]
+  | 
+
+--[ Match #99 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "proc-macro2"
+  | version = "1.0.67"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3d433d9f1a3e8c1263d9456598b16fec66f4acc9a74dacffd35c7bb09b3a1328"
+  | dependencies = [
+  |  "unicode-ident",
+  | ]
+  | 
+
+--[ Match #234 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\jsonpath\eval\selector.rs
+   Pattern: \.(request|post|get)\(
+  |             break;
+  |         }
+  |         let key = path.remove(0);
+  |         match value.get(key) {
+  |             None => return None,
+  |             Some(v) => value = v.clone(),
+  |         }
+  | 
+
+--[ Match #62 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen-backend"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5ef2b6d3c510e9625e5fe6f509ab07d66a760f0885d858736483c32ed7809abd"
+  | dependencies = [
+  |  "bumpalo",
+  |  "log",
+  | 
+
+--[ Match #101 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pkg-config"
+  | version = "0.3.27"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "26072860ba924cbfa98ea39c8c19b4dd6a4a25423dbdf219c1eca91aa0cf6964"
+  | 
+  | [[package]]
+  | name = "ppv-lite86"
+  | 
+
+--[ Match #63 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasm-bindgen"
+  | version = "0.2.87"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7706a72ab36d8cb1f80ffbf0e071533974a60d0a308d01a5d0375bf60499a342"
+  | dependencies = [
+  |  "cfg-if",
+  |  "wasm-bindgen-macro",
+  | 
+
+--[ Match #35 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\http\options.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 ssl_no_revoke: false,
+  |                 timeout: Duration::from_secs(10),
+  |                 connect_timeout: Duration::from_secs(20),
+  |                 user: Some("user:password".to_string()),
+  |                 user_agent: Some("my-useragent".to_string()),
+  |                 compressed: true,
+  |             }
+  | 
+
+--[ Match #244 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\filter.rs
+   Pattern: \.(request|post|get)\(
+  |     n: u64,
+  | ) -> Result<Option<Value>, Error> {
+  |     match value {
+  |         Value::List(values) => match values.get(n as usize) {
+  |             None => Err(Error {
+  |                 source_info: source_info.clone(),
+  |                 inner: RunnerError::FilterInvalidInput(format!(
+  | 
+
+--[ Match #269 of 275 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\http\core.rs
+   Pattern: \.(request|post|get)\(
+  |         } else {
+  |             return Err(ParseCookieError);
+  |         };
+  |         let expires = if let Some(&v) = tokens.get(4) {
+  |             v.to_string()
+  |         } else {
+  |             return Err(ParseCookieError);
+  | 
+
+--[ Match #183 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\query.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  |             .unwrap()
+  |             .unwrap(),
+  |             Value::Bytes(
+  |                 hex!("a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89").to_vec()
+  |             )
+  |         );
+  |     }
+  | 
+
+--[ Match #145 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "encoding"
+  | version = "0.2.33"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6b0d943856b990d12d3b55b359144ff341533e516d94098b1d3fc1ac666d36ec"
+  | dependencies = [
+  |  "encoding-index-japanese",
+  |  "encoding-index-korean",
+  | 
+
+--[ Match #96 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_chacha"
+  | version = "0.3.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e6c10a63a0fa32252be49d21e7709d4d4baf8d231c2dbce1eaa8141b9b127d88"
+  | dependencies = [
+  |  "ppv-lite86",
+  |  "rand_core",
+  | 
+
+--[ Match #275 of 275 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | [features]
+  | vendored-openssl = ["curl/static-ssl", "curl-sys/static-ssl"]
+  | 
+  | [dependencies]
+  | base64 = "0.21.4"
+  | brotli = "3.3.4"
+  | chrono = { version = "0.4.31", default-features = false, features = ["clock"] }
+  | 
+
+275 matches found.
+
+
+--[ Match #160 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "chrono"
+  | version = "0.4.31"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7f2c685bad3eb3d45a01354cedb7d5faa66194d1d58ba6e267a8de788f79db38"
+  | dependencies = [
+  |  "android-tzdata",
+  |  "iana-time-zone",
+  | 
+
+--[ Match #21 of 275 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\body.rs
+   Pattern: base64|encodedcommand|obfuscate
+  |             let value = eval_json_value(value, variables, true)?;
+  |             Ok(http::Body::Text(value))
+  |         }
+  |         Bytes::Base64(Base64 { value, .. }) => Ok(http::Body::Binary(value.clone())),
+  |         Bytes::Hex(Hex { value, .. }) => Ok(http::Body::Binary(value.clone())),
+  |         Bytes::File(File { filename, .. }) => {
+  |             let value = eval_file(filename, context_dir)?;
+  | 
+
+--[ Match #243 of 275 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\report\html\resources\nav.css
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | .error {
+  |     margin-top: 10px;
+  |     margin-bottom: 10px;
+  |     border-left: red 4px solid;
+  | }
+  | 
+  | .error-desc {
+  | 
+
+--[ Match #19 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\cli\options\commands.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         .short('E')
+  |         .long("cert")
+  |         .value_name("CERTIFICATE[:PASSWORD]")
+  |         .help("Client certificate file and password")
+  |         .num_args(1)
+  | }
+  | 
+  | 
+
+--[ Match #27 of 275 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\src\runner\request.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     if let Some(kv) = &request.basic_auth() {
+  |         let value = eval_template(&kv.value, variables)?;
+  |         let user_password = format!("{}:{}", kv.key.value, value);
+  |         let user_password = user_password.as_bytes();
+  |         let authorization = general_purpose::STANDARD.encode(user_password);
+  |         let value = format!("Basic {authorization}");
+  |         let header = http::Header::new("Authorization", &value);
+  | 
+
+--[ Match #92 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.9.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "697061221ea1b4a94a624f67d0ae2bfe4e22b8a17b6a192afb11046542cc8c47"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 
+
+--[ Match #41 of 275 ]--
+   Rule Id: BD000800
+       Tag: Security.Backdoor.Obfuscation
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.toml.orig
+   Pattern: base64|encodedcommand|obfuscate
+  | vendored-openssl = ["curl/static-ssl", "curl-sys/static-ssl"]
+  | 
+  | [dependencies]
+  | base64 = "0.21.4"
+  | brotli = "3.3.4"
+  | chrono = { version = "0.4.31", default-features = false, features = ["clock"] }
+  | clap = { version = "4.4.4", features = ["cargo", "string", "wrap_help"] }
+  | 
+
+--[ Match #180 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "aho-corasick"
+  | version = "1.1.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ea5d730647d4fadd988536d06fecce94b7b4f2a7efdae548f1cf4b63205518ab"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #95 of 275 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-hurl@4.1\hurl-4.1.0\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_core"
+  | version = "0.6.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ec0be4795e2f6a28069bec0b5ff3e2ac9bafc99e6a9a7dc3547996c5c816922c"
+  | dependencies = [
+  |  "getrandom",
+  | ]
+  | 

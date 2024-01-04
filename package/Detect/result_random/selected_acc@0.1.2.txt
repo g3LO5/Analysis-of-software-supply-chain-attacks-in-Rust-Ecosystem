@@ -1,0 +1,629 @@
+--[ Match #49 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mod.rs
+   Pattern: \.(request|post|get)\(
+  | 	}
+  | 
+  | 	fn balance_assertion(&mut self) -> Result<(), String> {
+  | 		if let Some(&c) = self.line_chars.get(self.line_pos) {
+  | 			if c == '=' {
+  | 				self.line_pos += 1;
+  | 
+  | 
+
+--[ Match #27 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 	}
+  | 
+  | 	fn parse_balance_assertion(&mut self) -> Result<(), String> {
+  | 		if let Some(token) = self.tokens.get(self.index) {
+  | 			if let Token::BalanceAssertion(_line) = token {
+  | 				self.index += 1;
+  | 
+  | 
+
+--[ Match #56 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | 				amount.push(c);
+  | 				tokenizer.line_pos += 1;
+  | 			}
+  | 			while let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 				if c == '=' {
+  | 					break;
+  | 				} else if c.is_whitespace() {
+  | 
+
+--[ Match #37 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 	}
+  | 
+  | 	fn parse_transaction(&mut self) -> Result<(), String> {
+  | 		if let Some(token) = self.tokens.get(self.index) {
+  | 			if let Token::TransactionDateYear(line, year) = token {
+  | 				self.index += 1;
+  | 
+  | 
+
+--[ Match #12 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-integer"
+  | version = "0.1.43"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8d59457e662d541ba17869cf51cf177c0b5f0cbf476c66bdc90bf1edac4f875b"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-traits",
+  | 
+
+--[ Match #8 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand"
+  | version = "0.4.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "552840b97013b1a26992c11eac34bdd778e464601a4c2054b5f0bff7c6761293"
+  | dependencies = [
+  |  "fuchsia-cprng",
+  |  "libc",
+  | 
+
+--[ Match #5 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rdrand"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "678054eb77286b51581ba43620cc911abf02758c91f93f479767aed0f90458b2"
+  | dependencies = [
+  |  "rand_core 0.3.1",
+  | ]
+  | 
+
+--[ Match #46 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\comment.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 				let mut value = String::new();
+  | 
+  | 				while let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 					value.push(c);
+  | 					tokenizer.line_pos += 1;
+  | 				}
+  | 
+
+--[ Match #16 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.71"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9457b06509d27052635f90d6466700c65095fdf75409b3fbdd903e988b886f49"
+  | 
+  | [[package]]
+  | name = "num"
+  | 
+
+--[ Match #66 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\chars.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub(super) fn is_char(tokenizer: &mut Tokenizer, char: char) -> bool {
+  | 	if let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		if c == char {
+  | 			return true;
+  | 		}
+  | 
+
+--[ Match #59 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | 		None => Err(format!("Unexpected end of line")),
+  | 		Some(_) => {
+  | 			let mut amount = String::new();
+  | 			if let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 				if c == '-' {
+  | 					amount.push(c);
+  | 					tokenizer.line_pos += 1;
+  | 
+
+--[ Match #21 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f8aac770f1885fd7e387acedd76065302551364496e46b3dd00860b2f8359b9d"
+  | 
+  | [[package]]
+  | name = "colored"
+  | 
+
+--[ Match #50 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mod.rs
+   Pattern: \.(request|post|get)\(
+  | 			Some(_) => {
+  | 				let mut value = String::new();
+  | 
+  | 				while let Some(&c) = self.line_chars.get(self.line_pos) {
+  | 					if chars::is_tab(&self.line_chars, self.line_pos)
+  | 						|| (chars::is_space(&self.line_chars, self.line_pos)
+  | 							&& chars::is_space(&self.line_chars, self.line_pos + 1))
+  | 
+
+--[ Match #30 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 	}
+  | 
+  | 	fn parse_posting(&mut self) -> Result<(), String> {
+  | 		if let Some(token) = self.tokens.get(self.index) {
+  | 			if let Token::PostingAccount(line, account) = token {
+  | 				self.index += 1;
+  | 
+  | 
+
+--[ Match #64 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\chars.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | fn is_pos_char(tokenizer: &mut Tokenizer, char: char, pos: &mut usize) -> Result<(), ()> {
+  | 	match tokenizer.line_chars.get(*pos) {
+  | 		None => Err(()),
+  | 		Some(&c) => {
+  | 			if c == char {
+  | 
+
+--[ Match #53 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mod.rs
+   Pattern: \.(request|post|get)\(
+  | 			self.line_chars = line_str.chars().collect();
+  | 			self.line_index = line_index;
+  | 			self.line_pos = 0;
+  | 			if self.line_chars.get(self.line_pos).is_some() {
+  | 				self.parse()?;
+  | 			}
+  | 		}
+  | 
+
+--[ Match #47 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\comment.rs
+   Pattern: \.(request|post|get)\(
+  | use super::Tokenizer;
+  | 
+  | pub(super) fn tokenize(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(&c) => {
+  | 			if c == ';' {
+  | 
+
+--[ Match #11 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-iter"
+  | version = "0.1.41"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7a6e6b7c748f995c4c29c5f5ae0248536e04a5739927c74ec0fa564805094b9f"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-integer",
+  | 
+
+--[ Match #42 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\directives.rs
+   Pattern: \.(request|post|get)\(
+  | 		Some(_) => {
+  | 			if chars::is_string(tokenizer, "alias ") {
+  | 				let mut alias = String::new();
+  | 				while let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 					alias.push(c);
+  | 					tokenizer.line_pos += 1;
+  | 				}
+  | 
+
+--[ Match #33 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 					},
+  | 				};
+  | 
+  | 				let code = match self.tokens.get(self.index) {
+  | 					None => return Err(format!("")),
+  | 					Some(token) => match token {
+  | 						Token::TransactionCode(_, code) => {
+  | 
+
+--[ Match #78 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\transaction.rs
+   Pattern: \.(request|post|get)\(
+  | use super::Tokenizer;
+  | 
+  | pub(super) fn tokenize(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(c) if c.is_numeric() => tokenize_date(tokenizer),
+  | 		Some(_) => Ok(()),
+  | 
+
+78 matches found.
+
+
+--[ Match #9 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac267bcc07f48ee5f8935ab0d24f316fb722d7a1292e2913f0cc196b29ffd611"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #55 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | fn tokenize_commodity(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(_) => {
+  | 			let mut commodity = String::new();
+  | 
+
+--[ Match--[ Match #1 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #67 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\chars.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub(super) fn expect_whitespace(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Err(String::from(
+  | 			"Unexpected end of line. Expected whitespace instead",
+  | 		)),
+  | 
+
+--[ Match #48 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mod.rs
+   Pattern: \.(request|post|get)\(
+  | 					.tokens
+  | 					.push(Token::BalanceAssertion(self.line_index));
+  | 
+  | 				if self.line_chars.get(self.line_pos).is_none() {
+  | 					return Err(String::from(""));
+  | 				} else {
+  | 					chars::consume_whitespaces(self);
+  | 
+
+--[ Match #6 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "rand_core"
+  | version = "0.4.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9c33a3c44ca05fa6f1807d8e6743f3824e8509beca625669633be0acbdf509dc"
+  | 
+  | [[package]]
+  | name = "rdrand"
+  | 
+
+--[ Match #38 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 	};
+  | 	match parser.parse() {
+  | 		Err(message) => Err(Error {
+  | 			line: match parser.tokens.get(parser.index) {
+  | 				None => parser.index + 1,
+  | 				Some(token) => match token {
+  | 					Token::TransactionDateYear(line, _value) => *line,
+  | 
+
+--[ Match #60 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | fn parse_amount(tokenizer: &mut Tokenizer) -> Result<Option<(char, String)>, String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Err(format!("Unexpected end of line")),
+  | 		Some(_) => {
+  | 			let mut amount = String::new();
+  | 
+
+--[ Match #34 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 					},
+  | 				};
+  | 
+  | 				let state = match self.tokens.get(self.index) {
+  | 					None => return Err(format!("")),
+  | 					Some(token) => match token {
+  | 						Token::TransactionState(_, state) => {
+  | 
+
+--[ Match #57 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | 					tokenizer.line_pos += 1;
+  | 				}
+  | 			}
+  | 			while let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 				if !c.is_numeric() && c != '.' {
+  | 					break;
+  | 				}
+  | 
+
+--[ Match #68 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\chars.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub(super) fn expect_char(tokenizer: &mut Tokenizer, char: char) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Err(format!(
+  | 			"Unexpected end of line. Expected \"{}\" instead",
+  | 			char
+  | 
+
+--[ Match #45 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\directives.rs
+   Pattern: \.(request|post|get)\(
+  | use std::path::PathBuf;
+  | 
+  | pub(super) fn is_include(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(_) => {
+  | 			if chars::is_string(tokenizer, "include ") {
+  | 
+
+--[ Match #2 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #76 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\transaction.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | fn tokenize_code(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(&c) => {
+  | 			chars::consume_whitespaces(tokenizer);
+  | 
+
+--[ Match #72 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\transaction.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 			let mut value = String::new();
+  | 
+  | 			while let Some(&c) = tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 				value.push(c);
+  | 				tokenizer.line_pos += 1;
+  | 			}
+  | 
+
+--[ Match #69 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\chars.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub(super) fn parse_numeric(tokenizer: &mut Tokenizer, value: &mut String) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Err(format!("Unexpected end of line. Expected number instead")),
+  | 		Some(c) if c.is_numeric() => {
+  | 			value.push(*c);
+  | 
+
+--[ Match #43 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\directives.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | pub(super) fn is_alias(tokenizer: &mut Tokenizer) -> Result<(), String> {
+  | 	match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 		None => Ok(()),
+  | 		Some(_) => {
+  | 			if chars::is_string(tokenizer, "alias ") {
+  | 
+
+--[ Match #29 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\modeler.rs
+   Pattern: \.(request|post|get)\(
+  | 			if let Token::PostingAccount(line, account) = token {
+  | 				self.index += 1;
+  | 
+  | 				let commodity = match self.tokens.get(self.index) {
+  | 					None => format!(""),
+  | 					Some(token) => match token {
+  | 						Token::PostingCommodity(_, commodity) => {
+  | 
+
+--[ Match #58 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\mixed_amount.rs
+   Pattern: \.(request|post|get)\(
+  | 					tokenizer.line_pos += 1;
+  | 				}
+  | 			}
+  | 			match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 				None => return Err(format!("Unexpected end of line")),
+  | 				Some(c) if !c.is_numeric() => {
+  | 					return Err(format!("received \"{}\", but expected number", c))
+  | 
+
+--[ Match #75 of 78 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\src\lib\parsers\tokenizer\transaction.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 				let mut value = String::new();
+  | 
+  | 				match tokenizer.line_chars.get(tokenizer.line_pos) {
+  | 					None => {
+  | 						return Err(String::from(""));
+  | 					}
+  | 
+
+--[ Match #20 of 78 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-acc@0.1\acc-0.1.2\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colored"
+  | version = "1.9.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f4ffc801dacf156c5854b9df4f425a626539c3a6ef7893cc0c5084a23f0b6c59"
+  | dependencies = [
+  |  "atty",
+  |  "lazy_static",
+  | 

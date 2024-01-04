@@ -1,0 +1,44 @@
+--[ Match--[ Match #1 of 3 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-matches2@1.2\matches2-1.2.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "828c9f5e058879afe0b30a8c8ebc4434fc744514"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-matches2@1.2\matches2-1.2.1\lib.rs
+   Pattern: \.(request|post|get)\(
+  | ///
+  | /// fn main() {
+  | ///     let data = [1, 2, 3];
+  | ///     debug_assert_matches!(data.get(1), Some(_), "This is not supposed to happen");
+  | /// }
+  | /// ```
+  | #[cfg(debug_assertions)]
+  | 
+
+--[ Match #3 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-matches2@1.2\matches2-1.2.1\lib.rs
+   Pattern: \.(request|post|get)\(
+  | ///
+  | /// fn main() {
+  | ///     let data = [1, 2, 3];
+  | ///     assert_matches!(data.get(1), Some(_));
+  | /// }
+  | /// ```
+  | #[macro_export]
+  | 
+
+3 matches found.

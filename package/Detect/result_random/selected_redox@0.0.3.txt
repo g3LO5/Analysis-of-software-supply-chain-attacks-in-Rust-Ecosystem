@@ -1,0 +1,835 @@
+--[ Match--[ Match #1 of 37 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\bencode\decode.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  |     // Negative Cases
+  | 
+  |     const BYTES_NEG_LEN: &'static [u8] = b"-4:test";
+  | 
+  |     const BYTES_EXTRA: &'static [u8] = b"l15:processed_bytese17:unprocessed_bytes";
+  | 
+  |     const BYTES_NOT_UTF8: &'static [u8] = b"5:\xC5\xE6\xBE\xE6\xF2";
+  | 
+  |     const INT_NAN: &'static [u8] = b"i500a500e";
+  | 
+  |     const INT_LEADING_ZERO: &'static [u8] = b"i0500e";
+  | 
+  |     const INT_DOUBLE_ZERO: &'static [u8] = b"i00e";
+  | 
+  | 
+
+--[ Match #2 of 37 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\bencode\decode.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  | ytesEmpty, err_msg) )
+  | 
+  | }
+  | 
+  | 
+  | 
+  | #[cfg(test)]
+  | 
+  | mod tests {
+  | 
+  |     use super::{Bencode};
+  | 
+  |     use bencode::{self, BencodeView, DecodeBencode};
+  | 
+  | 
+  | 
+  |     // Positive Cases
+  | 
+  |     const GENERAL: &'static [u8] = b"d0:12:zero_len_key8:location17:udp://test.com:8011:nested dictd
+  | 
+  |     const BYTES_UTF8: &'static [u8] = b"16:valid_utf8_bytes";
+  | 
+  |     const DICTIONARY: &'static [u8] = b"d9:test_dictd10:nested_key12:nested_value11:nested_listli500
+  | 
+  |     const LIST: &'static [u8] = b"l10:test_bytesi500ei0ei-500el12:nested_bytesed8:test_key10:test_va
+  | 
+  |     const BYTES: &'static [u8] = b"5:\xC5\xE6\xBE\xE6\xF2";
+  | 
+  |     const BYTES_ZERO_LEN: &'static [u8] = b"0:";
+  | 
+  |     const INT: &'static [u8] = b"i500e";
+  | 
+  |     const INT_NEGATIVE: &'static [u8] = b"i-500e";
+  | 
+  | 
+
+--[ Match #3 of 37 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\extension\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         let info_dict = parse::slice_info_dict(bencode);
+  | 
+  |         
+  | 
+  |         let entry = match info_dict {
+  | 
+  |             Ok(n)  => n.lookup(PRIVATE_KEY),
+  | 
+  |             Err(_) => return false
+  | 
+  |         };
+  | 
+  |         
+  | 
+  | 
+
+--[ Match #4 of 37 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\extension\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub mod announce_list;
+  | 
+  | 
+  | 
+  | const ANNOUNCE_LIST: &'static str = "announce-list";
+  | 
+  | const PRIVATE_KEY:   &'static str = "private";
+  | 
+  | 
+  | 
+  | pub trait TorrentExt<'a>: Torrent {
+  | 
+  |     /// BEP-0027: Private Torrents
+  | 
+  | 
+
+--[ Match #5 of 37 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\peer\handshake.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  |     }
+  | 
+  |     
+  | 
+  |     fn valid_info_hash_two() -> InfoHash {
+  | 
+  |         const VALID_INFO_HASH_TWO: &'static [u8] = b"\xd0\xd1\x4c\x92\x6e\x6e\x99\x76\x1a\x2f\xdc\xf
+  | 
+  |         
+  | 
+  |         InfoHash::from_bytes(VALID_INFO_HASH_TWO).unwrap()
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #6 of 37 ]--
+   Rule Id: BD000801
+       Tag: Security.Backdoor.ExecuteObfuscatedCode
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\peer\handshake.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){5,}
+  |     }
+  | 
+  |     
+  | 
+  |     fn valid_info_hash_one() -> InfoHash {
+  | 
+  |         const VALID_INFO_HASH_ONE: &'static [u8] = b"\xcf\x23\xdf\x22\x07\xd9\x9a\x74\xfb\xe1\x69\xe
+  | 
+  |         
+  | 
+  |         InfoHash::from_bytes(VALID_INFO_HASH_ONE).unwrap()
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #7 of 37 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\metainfo\parse.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | const INFO_KEY:          &'static str = "info";
+  | 
+  | 
+  | 
+  | // Info Dictionary Keys
+  | 
+  | const PRIVATE_KEY:      &'static str = "private";
+  | 
+  | const LENGTH_KEY:       &'static str = "length";
+  | 
+  | const MD5SUM_KEY:       &'static str = "md5sum";
+  | 
+  | const NAME_KEY:         &'static str = "name";
+  | 
+  | 
+
+--[ Match #8 of 37 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\metainfo\mod.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | const INFO_KEY:          &'static str = "info";
+  | 
+  | 
+  | 
+  | // Info Dictionary Keys
+  | 
+  | const PRIVATE_KEY:      &'static str = "private";
+  | 
+  | const LENGTH_KEY:       &'static str = "length";
+  | 
+  | const MD5SUM_KEY:       &'static str = "md5sum";
+  | 
+  | const NAME_KEY:         &'static str = "name";
+  | 
+  | 
+
+--[ Match #9 of 37 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\builder.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     fn set_private_tracker(&mut self, is_private: bool) {
+  | 
+  | 		let mut info_root = torrent_root[INFO_KEY];
+  | 
+  | 		
+  | 
+  | 		info_root[PRIVATE_KEY] = if is_private Bencode::Int(1) else Bencode::Int(0);
+  | 
+  |     }
+  | 
+  | 
+  | 
+  |     fn add_extension<T>(&mut self, extension: T) -> bool
+  | 
+  | 
+
+--[ Match #10 of 37 ]--
+   Rule Id: BD000805
+       Tag: Security.Backdoor.Obfuscation.LongBinaryStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\peer\handshake.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){10,}
+  |     }
+  | 
+  |     
+  | 
+  |     fn valid_info_hash_two() -> InfoHash {
+  | 
+  |         const VALID_INFO_HASH_TWO: &'static [u8] = b"\xd0\xd1\x4c\x92\x6e\x6e\x99\x76\x1a\x2f\xdc\xf
+  | 
+  |         
+  | 
+  |         InfoHash::from_bytes(VALID_INFO_HASH_TWO).unwrap()
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #11 of 37 ]--
+   Rule Id: BD000805
+       Tag: Security.Backdoor.Obfuscation.LongBinaryStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\peer\handshake.rs
+   Pattern: (\\x[a-f0-9][a-f0-9]){10,}
+  |     }
+  | 
+  |     
+  | 
+  |     fn valid_info_hash_one() -> InfoHash {
+  | 
+  |         const VALID_INFO_HASH_ONE: &'static [u8] = b"\xcf\x23\xdf\x22\x07\xd9\x9a\x74\xfb\xe1\x69\xe
+  | 
+  |         
+  | 
+  |         InfoHash::from_bytes(VALID_INFO_HASH_ONE).unwrap()
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #12 of 37 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\torrent\metainfo\metainfo.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let nodes = remove_dict!(root_dict, metainfo::NODES_KEY, Bencode::List);
+  | 
+  |     
+  | 
+  |     let mut nodes_list = Vec::with_capacity(nodes.len());
+  | 
+  |     for node in nodes {
+  | 
+  |         let mut node_tuple = move_ben!(node, metainfo::NODES_KEY, Bencode::List);
+  | 
+  |         
+  | 
+  |         if node_tuple.len() != metainfo::NODE_LEN {
+  | 
+  | 
+
+--[ Match #13 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\bencode\decode.rs
+   Pattern: \.(request|post|get)\(
+  |         let dict = super::decode_dict(DICTIONARY, 1).unwrap().0;
+  | 
+  |         assert_eq!(dict.get("test_key").unwrap().str().unwrap(), "test_value");
+  | 
+  |         
+  | 
+  |         let nested_dict = dict.get("test_dict").unwrap().dict().unwrap();
+  | 
+  |         assert_eq!(nested_dict.lookup("nested_key").unwrap().str().unwrap(), "nested_value");
+  | 
+  |         
+  | 
+  |         let nested_list = nested_dict.lookup("nested_list").unwrap().list().unwrap();
+  | 
+  | 
+
+--[ Match #14 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\bencode\decode.rs
+   Pattern: \.(request|post|get)\(
+  |     #[test]
+  | 
+  |     fn positive_decode_dict() {
+  | 
+  |         let dict = super::decode_dict(DICTIONARY, 1).unwrap().0;
+  | 
+  |         assert_eq!(dict.get("test_key").unwrap().str().unwrap(), "test_value");
+  | 
+  |         
+  | 
+  |         let nested_dict = dict.get("test_dict").unwrap().dict().unwrap();
+  | 
+  |         assert_eq!(nested_dict.lookup("nested_key").unwrap().str().unwrap(), "nested_value");
+  | 
+  | 
+
+--[ Match #15 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\bencode\decode.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | 
+  | 
+  | fn peek_byte(bytes: &[u8], pos: usize, err_msg: &'static str) -> BencodeResult<u8> {
+  | 
+  |     bytes.get(pos).map(|n| *n).ok_or( BencodeError::new(BencodeErrorKind::BytesEmpty, err_msg) )
+  | 
+  | }
+  | 
+  | 
+  | 
+  | #[cfg(test)]
+  | 
+  | 
+
+--[ Match #16 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \.(request|post|get)\(
+  | fn make_request(stream: &mut UdpStream, msg: &[u8], sent_id: TransID, sent_action: i32) -> IoResult<
+  | 
+  |     let mut verify_buffer = [0u8; VERIFY_RESPONSE_LEN];
+  | 
+  |     
+  | 
+  |     let bytes_read = try!(stream.request(msg, &mut verify_buffer, TRACKER_MAX_ATTEMPTS, udp_tracker_
+  | 
+  |     if bytes_read != verify_buffer.len() {
+  | 
+  |         return Err(util::simple_ioerror(OtherIoError, "UDP Tracker Sent An Incomplete Response"))
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #17 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     Ok((udp_stream, connect_id))
+  | 
+  | }
+  | 
+  | 
+  | 
+  | impl Tracker for UdpTracker {
+  | 
+  |     fn local_ip(&mut self) -> IpAddr {
+  | 
+  |         self.conn.local_sock().ip
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #18 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         },
+  | 
+  |         _ => IoError{
+  | 
+  |             kind: OtherIoError,
+  | 
+  |             desc: "UDP Tracker Sent Unexpected Unknown Response (Check Detail)",
+  | 
+  |             detail: Some(format!("Expected EventID {} Received EventID {}", expected, received)) 
+  | 
+  |         }
+  | 
+  |     }
+  | 
+  | 
+
+--[ Match #19 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         },
+  | 
+  |         SCRAPE_ACTION => IoError{
+  | 
+  |             kind: OtherIoError,
+  | 
+  |             desc: "UDP Tracker Sent Unexpected Scrape Response (Check Detail)",
+  | 
+  |             detail: Some(format!("Expected EventID {} Received EventID {}", expected, received)) 
+  | 
+  |         },
+  | 
+  |         _ => IoError{
+  | 
+  | 
+
+--[ Match #20 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |         },
+  | 
+  |         ANNOUNCE_ACTION => IoError{
+  | 
+  |             kind: OtherIoError,
+  | 
+  |             desc: "UDP Tracker Sent Unexpected Announce Response (Check Detail)",
+  | 
+  |             detail: Some(format!("Expected EventID {} Received EventID {}", expected, received)) 
+  | 
+  |         },
+  | 
+  |         SCRAPE_ACTION => IoError{
+  | 
+  | 
+
+--[ Match #21 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     match received {
+  | 
+  |         CONNECT_ACTION => IoError{
+  | 
+  |             kind: OtherIoError,
+  | 
+  |             desc: "UDP Tracker Sent Unexpected Connect Response (Check Detail)",
+  | 
+  |             detail: Some(format!("Expected EventID {} Received EventID {}", expected, received)) 
+  | 
+  |         },
+  | 
+  |         ANNOUNCE_ACTION => IoError{
+  | 
+  | 
+
+--[ Match #22 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     
+  | 
+  |     let bytes_read = try!(stream.recv(&mut recv_buffer[], Some(ASYNC_TIMEOUT_MILLI)));
+  | 
+  |     if bytes_read != recv_buffer.len() {
+  | 
+  |         return Err(util::simple_ioerror(OtherIoError, "UDP Tracker Sent An Incomplete Announce Respo
+  | 
+  |     }
+  | 
+  |     let mut buf_reader = BufReader::new(&recv_buffer[]);
+  | 
+  |     
+  | 
+  | 
+
+--[ Match #23 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     
+  | 
+  |     let bytes_read = try!(stream.recv(&mut recv_buffer[], Some(ASYNC_TIMEOUT_MILLI)));
+  | 
+  |     if bytes_read != recv_buffer.len() {
+  | 
+  |         return Err(util::simple_ioerror(OtherIoError, "UDP Tracker Sent An Incomplete Scrape Respons
+  | 
+  |     }
+  | 
+  |     let mut buf_reader = BufReader::new(&recv_buffer[]);
+  | 
+  |     
+  | 
+  | 
+
+--[ Match #24 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     
+  | 
+  |     let bytes_read = try!(stream.request(msg, &mut verify_buffer, TRACKER_MAX_ATTEMPTS, udp_tracker_
+  | 
+  |     if bytes_read != verify_buffer.len() {
+  | 
+  |         return Err(util::simple_ioerror(OtherIoError, "UDP Tracker Sent An Incomplete Response"))
+  | 
+  |     }
+  | 
+  |     let mut buf_reader = BufReader::new(&verify_buffer[]);
+  | 
+  |     
+  | 
+  | 
+
+--[ Match #25 of 37 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | 
+  |     { // Need to move tx in scope so that it gets destroyed before receiving
+  | 
+  |         let tx = tx;
+  | 
+  |         for ip in local_ip_addrs.into_iter() {
+  | 
+  |             let tx = tx.clone();
+  | 
+  |             
+  | 
+  |             Thread::spawn(move || {
+  | 
+  | 
+
+--[ Match #26 of 37 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let mut buf_reader = BufReader::new(&peers_buffer[]);
+  | 
+  |         
+  | 
+  |         for _ in (0..bytes_read / BYTES_PER_PEER) {
+  | 
+  |             let ip = Ipv4Addr(try!(buf_reader.read_u8()), 
+  | 
+  |                 try!(buf_reader.read_u8()),
+  | 
+  |                 try!(buf_reader.read_u8()), 
+  | 
+  |                 try!(buf_reader.read_u8())
+  | 
+  | 
+
+--[ Match #27 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\udp\connect.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut recv_buf = [0u8; RECV_MESSAGE_LEN];
+  | 
+  |         
+  | 
+  |         let trans_id = try!(write_connect_request(&mut send_buf));
+  | 
+  |         try!(conn.request(&send_buf, &mut recv_buf, super::TRACKER_MAX_ATTEMPTS, super::udp_tracker_
+  | 
+  |         
+  | 
+  |         let id = try!(read_connect_response(&recv_buf, trans_id));
+  | 
+  |         let expire = try!(Timepoint::new(Duration::seconds(ID_EXPIRE_SECONDS)));
+  | 
+  | 
+
+--[ Match #28 of 37 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\util.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  | 
+  | 
+  |     fn lookup(&self, key: &str) -> Option<&V> {
+  | 
+  |         self.get(key)
+  | 
+  |     }
+  | 
+  |     
+  | 
+  |     fn lookup_mut(&mut self, key: &str) -> Option<&mut V> {
+  | 
+  | 
+
+--[ Match #29 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\src\tracker\mod.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | }
+  | 
+  | 
+  | 
+  | /// Interface for communicating with an generic tracker.
+  | 
+  | pub trait Tracker {
+  | 
+  |     /// Returns the local ip address that is being used to communicate with the tracker.
+  | 
+  |     fn local_ip(&mut self) -> IpAddr;
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #30 of 37 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\.travis.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | 
+  | before_script:
+  | 
+  |     - |
+  | 
+  |         pip install 'travis-cargo<0.2' --user &&
+  | 
+  |         export PATH=$HOME/.local/bin:$PATH
+  | 
+  | 
+  | 
+  | script:
+  | 
+  | 
+
+--[ Match #31 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - [ ] BEP 38: [Finding Local Data Via Torrent File Hints](http://www.bittorrent.org/beps/bep_0038.ht
+  | 
+  | - [ ] BEP 39: [Updating Torrents Via Feed URL](http://www.bittorrent.org/beps/bep_0039.html)
+  | 
+  | - [ ] BEP 40: [Canonical Peer Priority](http://www.bittorrent.org/beps/bep_0040.html)
+  | 
+  | - [ ] BEP 41: [UDP Tracker Protocol Extensions](http://www.bittorrent.org/beps/bep_0041.html)
+  | 
+  | - [ ] BEP 42: [DHT Security Extension](http://www.bittorrent.org/beps/bep_0042.html)
+  | 
+  | - [ ] BEP 43: [Read-only DHT Nodes](http://www.bittorrent.org/beps/bep_0043.html)
+  | 
+  | - [ ] BEP 44: [Storing arbitrary data in the DHT](http://www.bittorrent.org/beps/bep_0044.html)
+  | 
+  | 
+
+--[ Match #32 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - [ ] BEP 31: [Tracker Failure Retry Extension](http://www.bittorrent.org/beps/bep_0031.html)
+  | 
+  | - [ ] BEP 32: [IPv6 extension for DHT](http://www.bittorrent.org/beps/bep_0032.html)
+  | 
+  | - [ ] BEP 33: [DHT scrape](http://www.bittorrent.org/beps/bep_0033.html)
+  | 
+  | - [ ] BEP 34: [DNS Tracker Preferences](http://www.bittorrent.org/beps/bep_0034.html)
+  | 
+  | - [ ] BEP 35: [Torrent Signing](http://www.bittorrent.org/beps/bep_0035.html)
+  | 
+  | - [ ] BEP 36: [Torrent RSS feeds](http://www.bittorrent.org/beps/bep_0036.html)
+  | 
+  | - [ ] BEP 38: [Finding Local Data Via Torrent File Hints](http://www.bittorrent.org/beps/bep_0038.ht
+  | 
+  | 
+
+--[ Match #33 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - [ ] BEP 19: [HTTP/FTP Seeding (GetRight-style)](http://www.bittorrent.org/beps/bep_0019.html)
+  | 
+  | - [ ] BEP 20: [Peer ID Conventions](http://www.bittorrent.org/beps/bep_0020.html)
+  | 
+  | - [ ] BEP 21: [Extension for Partial Seeds](http://www.bittorrent.org/beps/bep_0021.html)
+  | 
+  | - [ ] BEP 22: [BitTorrent Local Tracker Discovery Protocol](http://www.bittorrent.org/beps/bep_0022.
+  | 
+  | - [ ] BEP 23: [Tracker Returns Compact Peer Lists](http://www.bittorrent.org/beps/bep_0023.html)
+  | 
+  | - [ ] BEP 24: [Tracker Returns External IP](http://www.bittorrent.org/beps/bep_0024.html)
+  | 
+  | - [ ] BEP 26: [Zeroconf Peer Advertising and Discovery](http://www.bittorrent.org/beps/bep_0026.html
+  | 
+  | 
+
+--[ Match #34 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - [ ] BEP 09: [Extension for Peers to Send Metadata Files](http://www.bittorrent.org/beps/bep_0009.h
+  | 
+  | - [ ] BEP 10: [Extension Protocol](http://www.bittorrent.org/beps/bep_0010.html)
+  | 
+  | - [ ] BEP 12: [Multitracker Metadata Extension](http://www.bittorrent.org/beps/bep_0012.html)
+  | 
+  | - [ ] BEP 15: [UDP Tracker Protocol](http://www.bittorrent.org/beps/bep_0015.html)
+  | 
+  | - [ ] BEP 16: [Superseeding](http://www.bittorrent.org/beps/bep_0016.html)
+  | 
+  | - [ ] BEP 17: [HTTP Seeding (Hoffman-style)](http://www.bittorrent.org/beps/bep_0017.html)
+  | 
+  | - [ ] BEP 18: [Search Engine Specification](http://www.bittorrent.org/beps/bep_0018.html)
+  | 
+  | 
+
+--[ Match #35 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - [ ] BEP 04: [Known Number Allocations](http://www.bittorrent.org/beps/bep_0004.html)
+  | 
+  | - [ ] BEP 05: [DHT Protocol](http://www.bittorrent.org/beps/bep_0005.html)
+  | 
+  | - [ ] BEP 06: [Fast Extension](http://www.bittorrent.org/beps/bep_0006.html)
+  | 
+  | - [ ] BEP 07: [IPv6 Tracker Extension](http://www.bittorrent.org/beps/bep_0007.html)
+  | 
+  | - [ ] BEP 09: [Extension for Peers to Send Metadata Files](http://www.bittorrent.org/beps/bep_0009.h
+  | 
+  | - [ ] BEP 10: [Extension Protocol](http://www.bittorrent.org/beps/bep_0010.html)
+  | 
+  | - [ ] BEP 12: [Multitracker Metadata Extension](http://www.bittorrent.org/beps/bep_0012.html)
+  | 
+  | 
+
+--[ Match #36 of 37 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\extensions.txt
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | BEP_0012 - Multitracker Metadata Extension
+  | 
+  |     announce-list
+  | 
+  |     
+  | 
+  | BEP_0015 - UDP Tracker Protocol
+  | 
+  | 
+  | 
+  | BEP_0019 - HTTP/FTP Seeding (GetRight Style)
+  | 
+  | 
+  | 
+  | 
+
+--[ Match #37 of 37 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-redox@0.0\redox-0.0.3\Cargo.toml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | license = "Apache-2.0"
+  | 
+  | 
+  | 
+  | [dependencies]
+  | 
+  | byteorder = "*"
+  | 
+  | time = "*"
+  | 
+  | rand = "*"
+  | 
+  | sha1 = "*"
+  | 
+  | 
+
+37 matches found.

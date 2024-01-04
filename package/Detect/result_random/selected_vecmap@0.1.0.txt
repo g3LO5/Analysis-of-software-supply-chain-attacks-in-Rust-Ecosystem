@@ -1,0 +1,149 @@
+--[ Match--[ Match #1 of 10 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "f7973707b792a596dbd79c5b78c18b993d8e1fbf"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\benches\vecmap_benchmark.rs
+   Pattern: \.(request|post|get)\(
+  |         for i in 0..size {
+  |             map.insert(numbers[i as usize], i);
+  |         }
+  |         black_box(map.get(&0));
+  |     });
+  | }
+  | 
+  | 
+
+--[ Match #3 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\benches\vecmap_benchmark.rs
+   Pattern: \.(request|post|get)\(
+  |         for i in 0..size {
+  |             map.insert(numbers[i as usize], i);
+  |         }
+  |         black_box(map.get(&0));
+  |     });
+  | }
+  | 
+  | 
+
+--[ Match #4 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         *map.entry(5).or_insert(0) += 1;
+  |         map.entry(3).insert(2);
+  |         assert_eq!(map.get(&3), Some(&2));
+  |         assert_eq!(map.get(&5), Some(&1));
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #5 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         let mut map: VecMap<i32, i32> = VecMap::new();
+  |         *map.entry(5).or_insert(0) += 1;
+  |         map.entry(3).insert(2);
+  |         assert_eq!(map.get(&3), Some(&2));
+  |         assert_eq!(map.get(&5), Some(&1));
+  |     }
+  | 
+  | 
+
+--[ Match #6 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         assert_eq!(map.get(&1), Some(&11));
+  |         assert_eq!(map.get(&3), Some(&13));
+  |         assert_eq!(map.get(&5), Some(&15));
+  |         assert_eq!(map.get(&7), None);
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #7 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         map.insert(3, 13);
+  |         assert_eq!(map.get(&1), Some(&11));
+  |         assert_eq!(map.get(&3), Some(&13));
+  |         assert_eq!(map.get(&5), Some(&15));
+  |         assert_eq!(map.get(&7), None);
+  |     }
+  | 
+  | 
+
+--[ Match #8 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         map.insert(5, 15);
+  |         map.insert(3, 13);
+  |         assert_eq!(map.get(&1), Some(&11));
+  |         assert_eq!(map.get(&3), Some(&13));
+  |         assert_eq!(map.get(&5), Some(&15));
+  |         assert_eq!(map.get(&7), None);
+  |     }
+  | 
+
+--[ Match #9 of 10 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         map.insert(1, 11);
+  |         map.insert(5, 15);
+  |         map.insert(3, 13);
+  |         assert_eq!(map.get(&1), Some(&11));
+  |         assert_eq!(map.get(&3), Some(&13));
+  |         assert_eq!(map.get(&5), Some(&15));
+  |         assert_eq!(map.get(&7), None);
+  | 
+
+--[ Match #10 of 10 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-vecmap@0.1\vecmap-0.1.0\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | license = "MIT"
+  | edition = "2018"
+  | 
+  | # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+  | 
+  | [dependencies]
+  | 
+  | 
+
+10 matches found.

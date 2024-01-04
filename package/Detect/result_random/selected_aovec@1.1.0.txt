@@ -1,0 +1,46 @@
+--[ Match--[ Match #1 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-aovec@1.1\aovec-1.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         for i in 0..n {
+  |             assert_eq!(vec[i], i);
+  |             assert_eq!(vec.get(i), Some(&i));
+  |             unsafe {
+  |                 assert_eq!(vec.get_unchecked(i), &i);
+  |             }
+  | 
+
+--[ Match #2 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-aovec@1.1\aovec-1.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |         *guard += 1;
+  |         let (index, _) = self.allocation(idx);
+  |         unsafe {
+  |             let allocation = self.allocations[index].get();
+  |             if (*allocation).len() == 0 {
+  |                 *allocation = Vec::with_capacity(self.base << index);
+  |             }
+  | 
+
+--[ Match #3 of 3 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-aovec@1.1\aovec-1.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     #[inline]
+  |     fn _get(&self, idx: usize) -> &T {
+  |         let (index, offset) = self.allocation(idx);
+  |         unsafe { &(*self.allocations[index].get())[offset] }
+  |     }
+  | 
+  |     #[inline]
+  | 
+
+3 matches found.

@@ -1,0 +1,627 @@
+--[ Match #561 of 581 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\dwrite_1.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     values values_mut: [UINT8; 10],
+  |     familyKind familyKind_mut: UINT8,
+  |     text text_mut: DWRITE_PANOSE_text,
+  |     script script_mut: DWRITE_PANOSE_script,
+  |     decorative decorative_mut: DWRITE_PANOSE_decorative,
+  |     symbol symbol_mut: DWRITE_PANOSE_symbol,
+  | }}
+  | 
+
+--[ Match #226 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\ntsecapi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     Password: UNICODE_STRING,
+  | }}
+  | pub type PKERB_SETPASSWORD_REQUEST = *mut KERB_SETPASSWORD_REQUEST;
+  | STRUCT!{struct KERB_SETPASSWORD_EX_REQUEST {
+  |     MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
+  |     LogonId: LUID,
+  |     CredentialsHandle: SecHandle,
+  | 
+
+--[ Match #362 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmaccess.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const USER_PROFILE_PARMNUM: DWORD = 52;
+  | pub const USER_HOME_DIR_DRIVE_PARMNUM: DWORD = 53;
+  | pub const USER_NAME_INFOLEVEL: DWORD = PARMNUM_BASE_INFOLEVEL + USER_NAME_PARMNUM;
+  | pub const USER_PASSWORD_INFOLEVEL: DWORD = PARMNUM_BASE_INFOLEVEL + USER_PASSWORD_PARMNUM;
+  | pub const USER_PASSWORD_AGE_INFOLEVEL: DWORD =
+  |     PARMNUM_BASE_INFOLEVEL + USER_PASSWORD_AGE_PARMNUM;
+  | pub const USER_PRIV_INFOLEVEL: DWORD = PARMNUM_BASE_INFOLEVEL + USER_PRIV_PARMNUM;
+  | 
+
+--[ Match #72 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\adhoc.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | interface IDot11AdHocManager(IDot11AdHocManagerVtbl): IUnknown(IUnknownVtbl) {
+  |     fn CreateNetwork(
+  |         Name: LPCWSTR,
+  |         Password: LPCWSTR,
+  |         GeographicalId: LONG,
+  |         pInterface: *mut IDot11AdHocInterface,
+  |         pSecurity: *mut IDot11AdHocSecuritySettings,
+  | 
+
+--[ Match #124 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\winerror.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const EAS_E_CONNECTED_ADMINS_NEED_TO_CHANGE_PASSWORD: HRESULT = 0x8055000B;
+  | pub const EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CURRENT_CONNECTED_USER: HRESULT
+  |     = 0x8055000C;
+  | pub const EAS_E_CURRENT_CONNECTED_USER_NEED_TO_CHANGE_PASSWORD: HRESULT = 0x8055000D;
+  | pub const WEB_E_UNSUPPORTED_FORMAT: HRESULT = 0x83750001;
+  | pub const WEB_E_INVALID_XML: HRESULT = 0x83750002;
+  | pub const WEB_E_MISSING_REQUIRED_ELEMENT: HRESULT = 0x83750003;
+  | 
+
+--[ Match #147 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\winerror.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const ERROR_COLORSPACE_MISMATCH: DWORD = 2021;
+  | pub const ERROR_INVALID_COLORINDEX: DWORD = 2022;
+  | pub const ERROR_PROFILE_DOES_NOT_MATCH_DEVICE: DWORD = 2023;
+  | pub const ERROR_CONNECTED_OTHER_PASSWORD: DWORD = 2108;
+  | pub const ERROR_CONNECTED_OTHER_PASSWORD_DEFAULT: DWORD = 2109;
+  | pub const ERROR_BAD_USERNAME: DWORD = 2202;
+  | pub const ERROR_NOT_CONNECTED: DWORD = 2250;
+  | 
+
+--[ Match #130 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\winerror.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const EAS_E_REQUESTED_POLICY_PASSWORD_EXPIRATION_INCOMPATIBLE: HRESULT
+  |     = 0x80550005;
+  | pub const EAS_E_USER_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550006;
+  | pub const EAS_E_ADMINS_HAVE_BLANK_PASSWORD: HRESULT = 0x80550007;
+  | pub const EAS_E_ADMINS_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550008;
+  | pub const EAS_E_LOCAL_CONTROLLED_USERS_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550009;
+  | pub const EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CONNECTED_ADMINS: HRESULT
+  | 
+
+--[ Match #11 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmjoin.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         Server: LPCWSTR,
+  |         AlternateName: LPCWSTR,
+  |         DomainAccount: LPCWSTR,
+  |         DomainAccountPassword: LPCWSTR,
+  |         Reserved: ULONG,
+  |     ) -> NET_API_STATUS;
+  |     pub fn NetSetPrimaryComputerName(
+  | 
+
+--[ Match #277 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\ntsecapi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const DOMAIN_PASSWORD_NO_ANON_CHANGE: ULONG = 0x00000002;
+  | pub const DOMAIN_PASSWORD_NO_CLEAR_CHANGE: ULONG = 0x00000004;
+  | pub const DOMAIN_LOCKOUT_ADMINS: ULONG = 0x00000008;
+  | pub const DOMAIN_PASSWORD_STORE_CLEARTEXT: ULONG = 0x00000010;
+  | pub const DOMAIN_REFUSE_PASSWORD_CHANGE: ULONG = 0x00000020;
+  | pub const DOMAIN_NO_LM_OWF_CHANGE: ULONG = 0x00000040;
+  | FN!{stdcall PSAM_PASSWORD_NOTIFICATION_ROUTINE(
+  | 
+
+--[ Match #404 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wininet.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         lpszServerName: LPCSTR,
+  |         nServerPort: INTERNET_PORT,
+  |         lpszUserName: LPCSTR,
+  |         lpszPassword: LPCSTR,
+  |         dwService: DWORD,
+  |         dwFlags: DWORD,
+  |         dwContext: DWORD_PTR,
+  | 
+
+--[ Match #228 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\ntsecapi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     AccountName: UNICODE_STRING,
+  |     Password: UNICODE_STRING,
+  | }}
+  | pub type PKERB_SETPASSWORD_REQUEST = *mut KERB_SETPASSWORD_REQUEST;
+  | STRUCT!{struct KERB_SETPASSWORD_EX_REQUEST {
+  |     MessageType: KERB_PROTOCOL_MESSAGE_TYPE,
+  |     LogonId: LUID,
+  | 
+
+--[ Match #435 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> BOOL;
+  | }
+  | pub const REPORT_NO_PRIVATE_KEY: DWORD = 0x0001;
+  | pub const REPORT_NOT_ABLE_TO_EXPORT_PRIVATE_KEY: DWORD = 0x0002;
+  | pub const EXPORT_PRIVATE_KEYS: DWORD = 0x0004;
+  | pub const PKCS12_INCLUDE_EXTENDED_PROPERTIES: DWORD = 0x0010;
+  | pub const PKCS12_PROTECT_TO_DOMAIN_SIDS: DWORD = 0x0020;
+  | 
+
+--[ Match #167 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\eaptypes.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const EAP_UI_INPUT_FIELD_PROPS_READ_ONLY: DWORD = 0x00000004;
+  | ENUM!{enum EAP_CONFIG_INPUT_FIELD_TYPE {
+  |     EapConfigInputUsername = 0,
+  |     EapConfigInputPassword = 1,
+  |     EapConfigInputNetworkUsername = 2,
+  |     EapConfigInputNetworkPassword = 3,
+  |     EapConfigInputPin = 4,
+  | 
+
+--[ Match #33 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\mschapp.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         UserName: PWSTR,
+  |         LmOldPresent: BOOLEAN,
+  |         LmOldOwfPassword: PLM_OWF_PASSWORD,
+  |         LmNewOwfPassword: PLM_OWF_PASSWORD,
+  |         NtOldOwfPassword: PNT_OWF_PASSWORD,
+  |         NtNewOwfPassword: PNT_OWF_PASSWORD,
+  |     ) -> DWORD;
+  | 
+
+--[ Match #182 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\sspi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | STRUCT!{struct SEC_WINNT_AUTH_DATA_PASSWORD {
+  |     UnicodePassword: SEC_WINNT_AUTH_BYTE_VECTOR,
+  | }}
+  | pub type PSEC_WINNT_AUTH_DATA_PASSWORD = *mut SEC_WINNT_AUTH_DATA_PASSWORD;
+  | DEFINE_GUID!{SEC_WINNT_AUTH_DATA_TYPE_CSP_DATA,
+  |     0x68fd9879, 0x79c, 0x4dfe, 0x82, 0x81, 0x57, 0x8a, 0xad, 0xc1, 0xc1, 0x0}
+  | // GUID SEC_WINNT_AUTH_DATA_TYPE_SMARTCARD_CONTEXTS
+  | 
+
+--[ Match #34 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\mschapp.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         ServerName: PWSTR,
+  |         UserName: PWSTR,
+  |         LmOldPresent: BOOLEAN,
+  |         LmOldOwfPassword: PLM_OWF_PASSWORD,
+  |         LmNewOwfPassword: PLM_OWF_PASSWORD,
+  |         NtOldOwfPassword: PNT_OWF_PASSWORD,
+  |         NtNewOwfPassword: PNT_OWF_PASSWORD,
+  | 
+
+--[ Match #170 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\eaptypes.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     eatTunnelMediumType = 65,
+  |     eatTunnelClientEndpoint = 66,
+  |     eatTunnelServerEndpoint = 67,
+  |     eatARAPPassword = 70,
+  |     eatARAPFeatures = 71,
+  |     eatARAPZoneAccess = 72,
+  |     eatARAPSecurity = 73,
+  | 
+
+--[ Match #48 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\mschapp.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | }}
+  | pub type PLM_OWF_PASSWORD = *mut LM_OWF_PASSWORD;
+  | pub type NT_OWF_PASSWORD = LM_OWF_PASSWORD;
+  | pub type PNT_OWF_PASSWORD = *mut NT_OWF_PASSWORD;
+  | STRUCT!{struct SAMPR_ENCRYPTED_USER_PASSWORD {
+  |     Buffer: [UCHAR; (256 * 2) + 4],
+  | }}
+  | 
+
+--[ Match #163 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\eaptypes.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | }}
+  | STRUCT!{struct EapUsernamePasswordCredential {
+  |     username: LPWSTR,
+  |     password: LPWSTR,
+  | }}
+  | pub const CERTIFICATE_HASH_LENGTH: usize = 20;
+  | STRUCT!{struct EapCertificateCredential {
+  | 
+
+--[ Match #442 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pszUsername: LPWSTR,
+  |     pszPassword: LPWSTR,
+  | }}
+  | pub type PCRYPT_PASSWORD_CREDENTIALSW = *mut CRYPT_PASSWORD_CREDENTIALSW;
+  | pub const SCHEME_OID_RETRIEVE_ENCODED_OBJECT_FUNC: &'static str = "SchemeDllRetrieveEncodedObject";
+  | pub const SCHEME_OID_RETRIEVE_ENCODED_OBJECTW_FUNC: &'static str
+  |     = "SchemeDllRetrieveEncodedObjectW";
+  | 
+
+--[ Match #187 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\sspi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         pOutput: PSecBufferDesc,
+  |     ) -> SECURITY_STATUS;
+  | }
+  | FN!{stdcall CHANGE_PASSWORD_FN_A(
+  |     *mut SEC_CHAR,
+  |     *mut SEC_CHAR,
+  |     *mut SEC_CHAR,
+  | 
+
+--[ Match #123 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\winerror.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const WININET_E_OPTION_NOT_SETTABLE: HRESULT = 0x80072EEB;
+  | pub const WININET_E_SHUTDOWN: HRESULT = 0x80072EEC;
+  | pub const WININET_E_INCORRECT_USER_NAME: HRESULT = 0x80072EED;
+  | pub const WININET_E_INCORRECT_PASSWORD: HRESULT = 0x80072EEE;
+  | pub const WININET_E_LOGIN_FAILURE: HRESULT = 0x80072EEF;
+  | pub const WININET_E_INVALID_OPERATION: HRESULT = 0x80072EF0;
+  | pub const WININET_E_OPERATION_CANCELLED: HRESULT = 0x80072EF1;
+  | 
+
+--[ Match #211 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\bcrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> NTSTATUS;
+  |     pub fn BCryptDeriveKeyPBKDF2(
+  |         hPrf: BCRYPT_ALG_HANDLE,
+  |         pbPassword: PUCHAR,
+  |         cbPassword: ULONG,
+  |         pbSalt: PUCHAR,
+  |         cbSalt: ULONG,
+  | 
+
+--[ Match #543 of 581 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\portabledevice.rs
+   Pattern: ["'][a-z0-9]{40,}["']
+  | pub const PORTABLE_DEVICE_NAMESPACE_EXCLUDE_FROM_SHELL: &'static str
+  |     = "PortableDeviceNameSpaceExcludeFromShell";
+  | pub const PORTABLE_DEVICE_NAMESPACE_THUMBNAIL_CONTENT_TYPES: &'static str
+  |     = "PortableDeviceNameSpaceThumbnailContentTypes";
+  | pub const PORTABLE_DEVICE_IS_MASS_STORAGE: &'static str = "PortableDeviceIsMassStorage";
+  | pub const PORTABLE_DEVICE_DRM_SCHEME_WMDRM10_PD: &'static str = "WMDRM10-PD";
+  | pub const PORTABLE_DEVICE_DRM_SCHEME_PDDRM: &'static str = "PDDRM";
+  | 
+
+--[ Match #440 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | extern "system" {
+  |     pub fn PFXImportCertStore(
+  |         pPFX: *mut CRYPT_DATA_BLOB,
+  |         szPassword: LPCWSTR,
+  |         dwFlags: DWORD,
+  |     ) -> HCERTSTORE;
+  | }
+  | 
+
+--[ Match #17 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmjoin.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         lpDomain: LPCWSTR,
+  |         lpMachineAccountOU: LPCWSTR,
+  |         lpAccount: LPCWSTR,
+  |         lpPassword: LPCWSTR,
+  |         fJoinOptions: DWORD,
+  |     ) -> NET_API_STATUS;
+  |     pub fn NetUnjoinDomain(
+  | 
+
+--[ Match #456 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub fn CryptExportPKCS8(
+  |         hCryptProv: HCRYPTPROV,
+  |         dwKeySpec: DWORD,
+  |         pszPrivateKeyObjId: LPSTR,
+  |         dwFlags: DWORD,
+  |         pvAuxInfo: *mut c_void,
+  |         pbPrivateKeyBlob: *mut BYTE,
+  | 
+
+--[ Match #38 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\mschapp.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | }}
+  | pub type PENCRYPTED_LM_OWF_PASSWORD = *mut ENCRYPTED_LM_OWF_PASSWORD;
+  | pub type ENCRYPTED_NT_OWF_PASSWORD = ENCRYPTED_LM_OWF_PASSWORD;
+  | pub type PENCRYPTED_NT_OWF_PASSWORD = *mut ENCRYPTED_NT_OWF_PASSWORD;
+  | extern "system" {
+  |     pub fn MSChapSrvChangePassword(
+  |         ServerName: PWSTR,
+  | 
+
+--[ Match #367 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmaccess.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const UF_NOT_DELEGATED: DWORD = 0x100000;
+  | pub const UF_USE_DES_KEY_ONLY: DWORD = 0x200000;
+  | pub const UF_DONT_REQUIRE_PREAUTH: DWORD = 0x400000;
+  | pub const UF_PASSWORD_EXPIRED: DWORD = 0x800000;
+  | pub const UF_TRUSTED_TO_AUTHENTICATE_FOR_DELEGATION: DWORD = 0x1000000;
+  | pub const UF_NO_AUTH_DATA_REQUIRED: DWORD = 0x2000000;
+  | pub const UF_PARTIAL_SECRETS_ACCOUNT: DWORD = 0x4000000;
+  | 
+
+--[ Match #462 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | FN!{stdcall PFN_EXPORT_PRIV_KEY_FUNC(
+  |     hCryptProv: HCRYPTPROV,
+  |     dwKeySpec: DWORD,
+  |     pszPrivateKeyObjId: LPSTR,
+  |     dwFlags: DWORD,
+  |     pvAuxInfo: *mut c_void,
+  |     pPrivateKeyInfo: *mut CRYPT_PRIVATE_KEY_INFO,
+  | 
+
+--[ Match #438 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ) -> BOOL;
+  |     pub fn PFXVerifyPassword(
+  |         pPFX: *mut CRYPT_DATA_BLOB,
+  |         szPassword: LPCWSTR,
+  |         dwFlags: DWORD,
+  |     ) -> BOOL;
+  |     pub fn PFXExportCertStoreEx(
+  | 
+
+--[ Match #345 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmaccess.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const NET_VALIDATE_LOCKOUT_TIME: ULONG = 0x00000004;
+  | pub const NET_VALIDATE_BAD_PASSWORD_COUNT: ULONG = 0x00000008;
+  | pub const NET_VALIDATE_PASSWORD_HISTORY_LENGTH: ULONG = 0x00000010;
+  | pub const NET_VALIDATE_PASSWORD_HISTORY: ULONG = 0x00000020;
+  | STRUCT!{struct NET_VALIDATE_PERSISTED_FIELDS {
+  |     PresentFields: ULONG,
+  |     PasswordLastSet: FILETIME,
+  | 
+
+--[ Match #326 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\lmaccess.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     ClearPassword: LPWSTR,
+  |     UserAccountName: LPWSTR,
+  |     HashedPassword: NET_VALIDATE_PASSWORD_HASH,
+  |     PasswordMustChangeAtNextLogon: BOOLEAN,
+  |     ClearLockout: BOOLEAN,
+  | }}
+  | pub type PNET_VALIDATE_PASSWORD_RESET_INPUT_ARG = *mut NET_VALIDATE_PASSWORD_RESET_INPUT_ARG;
+  | 
+
+--[ Match #422 of 581 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |     SignedInfo: CMSG_SIGNED_ENCODE_INFO,
+  |     EnvelopedInfo: CMSG_ENVELOPED_ENCODE_INFO,
+  | }}
+  | pub type PCMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO = *mut CMSG_SIGNED_AND_ENVELOPED_ENCODE_INFO;
+  | STRUCT!{struct CMSG_HASHED_ENCODE_INFO {
+  |     cbSize: DWORD,
+  |     hCryptProv: HCRYPTPROV_LEGACY,
+  | 
+
+--[ Match #25 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\mschapp.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pub fn MSChapSrvChangePassword2(
+  |         ServerName: PWSTR,
+  |         UserName: PWSTR,
+  |         NewPasswordEncryptedWithOldNt: PSAMPR_ENCRYPTED_USER_PASSWORD,
+  |         OldNtOwfPasswordEncryptedWithNewNt: PENCRYPTED_NT_OWF_PASSWORD,
+  |         LmPresent: BOOLEAN,
+  |         NewPasswordEncryptedWithOldLm: PSAMPR_ENCRYPTED_USER_PASSWORD,
+  | 
+
+--[ Match #310 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\ntlsa.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     Offset: ULONG,
+  | }}
+  | pub type PTRUSTED_POSIX_OFFSET_INFO = *mut TRUSTED_POSIX_OFFSET_INFO;
+  | STRUCT!{struct TRUSTED_PASSWORD_INFO {
+  |     Password: LSA_UNICODE_STRING,
+  |     OldPassword: LSA_UNICODE_STRING,
+  | }}
+  | 
+
+--[ Match #70 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\ddrawi.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     0x9d792804, 0x5fa8, 0x11d1, 0x8c, 0xd0, 0x00, 0xa0, 0xc9, 0x06, 0x29, 0xa8}
+  | DEFINE_GUID!{GUID_UserModeDriverInfo,
+  |     0xf0b0e8e2, 0x5f97, 0x11d1, 0x8c, 0xd0, 0x00, 0xa0, 0xc9, 0x06, 0x29, 0xa8}
+  | DEFINE_GUID!{GUID_UserModeDriverPassword,
+  |     0x97f861b6, 0x60a1, 0x11d1, 0x8c, 0xd0, 0x00, 0xa0, 0xc9, 0x06, 0x29, 0xa8}
+  | 
+
+--[ Match #129 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\shared\winerror.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     = 0x80550005;
+  | pub const EAS_E_USER_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550006;
+  | pub const EAS_E_ADMINS_HAVE_BLANK_PASSWORD: HRESULT = 0x80550007;
+  | pub const EAS_E_ADMINS_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550008;
+  | pub const EAS_E_LOCAL_CONTROLLED_USERS_CANNOT_CHANGE_PASSWORD: HRESULT = 0x80550009;
+  | pub const EAS_E_PASSWORD_POLICY_NOT_ENFORCEABLE_FOR_CONNECTED_ADMINS: HRESULT
+  |     = 0x8055000A;
+  | 
+
+--[ Match #392 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wbemcli.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     fn ConnectServer(
+  |         strNetworkResource: BSTR,
+  |         strUser: BSTR,
+  |         strPassword: BSTR,
+  |         strLocale: BSTR,
+  |         lSecurityFlags: c_long,
+  |         strAuthority: BSTR,
+  | 
+
+--[ Match #88 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\subauth.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub const MSV1_0_SUBAUTH_WORKSTATIONS: ULONG = 0x00000004;
+  | pub const MSV1_0_SUBAUTH_LOGON_HOURS: ULONG = 0x00000008;
+  | pub const MSV1_0_SUBAUTH_ACCOUNT_EXPIRY: ULONG = 0x00000010;
+  | pub const MSV1_0_SUBAUTH_PASSWORD_EXPIRY: ULONG = 0x00000020;
+  | pub const MSV1_0_SUBAUTH_ACCOUNT_TYPE: ULONG = 0x00000040;
+  | pub const MSV1_0_SUBAUTH_LOCKOUT: ULONG = 0x00000080;
+  | // STATUS_*
+  | 
+
+--[ Match #500 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\wincrypt.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |     pAttributes: PCRYPT_ATTRIBUTES,
+  | }}
+  | pub type PCRYPT_PRIVATE_KEY_INFO = *mut CRYPT_PRIVATE_KEY_INFO;
+  | STRUCT!{struct CRYPT_ENCRYPTED_PRIVATE_KEY_INFO {
+  |     EncryptionAlgorithm: CRYPT_ALGORITHM_IDENTIFIER,
+  |     EncryptedPrivateKey: CRYPT_DATA_BLOB,
+  | }}
+  | 
+
+--[ Match #101 of 581 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-winapi@0.3\winapi-0.3.9\src\um\subauth.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | pub type PLM_OWF_PASSWORD = *mut LM_OWF_PASSWORD;
+  | pub type LM_CHALLENGE = CLEAR_BLOCK;
+  | pub type PLM_CHALLENGE = *mut LM_CHALLENGE;
+  | pub type NT_OWF_PASSWORD = LM_OWF_PASSWORD;
+  | pub type PNT_OWF_PASSWORD = *mut NT_OWF_PASSWORD;
+  | pub type NT_CHALLENGE = LM_CHALLENGE;
+  | pub type PNT_CHALLENGE = *mut NT_CHALLENGE;
+  | 

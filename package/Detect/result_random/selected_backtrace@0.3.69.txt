@@ -1,0 +1,627 @@
+--[ Match #6 of 133 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.toml.orig
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  | addr2line = { version = "0.21.0", default-features = false }
+  | libc = { version = "0.2.146", default-features = false }
+  | 
+  | [target.'cfg(not(all(windows, target_env = "msvc", not(target_vendor = "uwp"))))'.dependencies.objec
+  | version = "0.32.0"
+  | default-features = false
+  | features = ['read_core', 'elf', 'macho', 'pe', 'unaligned', 'archive']
+  | 
+
+--[ Match #12 of 133 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.toml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |     "winapi/winnt",
+  | ]
+  | 
+  | [target."cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))".dependencies.a
+  | version = "0.21.0"
+  | default-features = false
+  | 
+  | 
+
+--[ Match #58 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           script: |
+  |             const reference = process.env.SIZE_REFERENCE;
+  |             const updated = process.env.SIZE_UPDATED;
+  |             const diff = updated - reference;
+  |             const plus = diff > 0 ? "+" : "";
+  |             const diff_str = `${plus}${diff}B`;
+  | 
+  | 
+
+--[ Match #114 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\elf.rs
+   Pattern: \.(request|post|get)\(
+  |         let filename = &data[..len];
+  |         let offset = (len + 1 + 3) & !3;
+  |         let crc_bytes = data
+  |             .get(offset..offset + 4)
+  |             .and_then(|bytes| bytes.try_into().ok())?;
+  |         let crc = u32::from_ne_bytes(crc_bytes);
+  |         let path_debug = locate_debuglink(path, filename)?;
+  | 
+
+--[ Match #36 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "99faef833f890fe89f1a959d89b951954118828b"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #97 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       run: rustup update stable --no-self-update && rustup default stable
+  |       shell: bash
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  |     - run: rustup target add aarch64-pc-windows-msvc
+  |     - run: cargo test --no-run --target aarch64-pc-windows-msvc
+  |     - run: cargo test --no-run --target aarch64-pc-windows-msvc --features verify-winapi
+  | 
+
+--[ Match #25 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "object"
+  | version = "0.32.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "77ac5bbd07aea88c60a577a1ce218075ffd59208b2d7ca97adf9bfc5aeb21ebe"
+  | dependencies = [
+  |  "memchr",
+  | ]
+  | 
+
+--[ Match #40 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\libs_illumos.rs
+   Pattern: \.(request|post|get)\(
+  |             segments: phdr
+  |                 .iter()
+  |                 .map(|p| {
+  |                     let memsz = p.p_memsz.get(NativeEndian);
+  |                     let vaddr = p.p_vaddr.get(NativeEndian);
+  |                     LibrarySegment {
+  |                         len: memsz as usize,
+  | 
+
+--[ Match #117 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\elf.rs
+   Pattern: \.(request|post|get)\(
+  |         if data.read_bytes(8).ok()?.0 != b"ZLIB\0\0\0\0" {
+  |             return None;
+  |         }
+  |         let size = usize::try_from(data.read::<object::U32Bytes<_>>().ok()?.get(BigEndian)).ok()?;
+  |         let buf = stash.allocate(size);
+  |         decompress_zlib(data.0, buf)?;
+  |         Some(buf)
+  | 
+
+--[ Match #109 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         submodules: true
+  |     - name: Install Rust
+  |       run: rustup update stable --no-self-update && rustup default stable
+  |       shell: bash
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  |     - run: rustup target add aarch64-pc-windows-msvc
+  | 
+
+--[ Match #29 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.147"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b4668fb0ea861c1df094127ac5f1da3409a82116a4ba74fca2e58ef927159bb3"
+  | 
+  | [[package]]
+  | name = "libloading"
+  | 
+
+--[ Match #43 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\libs_illumos.rs
+   Pattern: \.(request|post|get)\(
+  |         // Use the ELF header for this object to locate the program
+  |         // header:
+  |         let e: *const EHdr = unsafe { (*l).l_addr as *const EHdr };
+  |         let phoff = unsafe { (*e).e_phoff }.get(NativeEndian);
+  |         let phnum = unsafe { (*e).e_phnum }.get(NativeEndian);
+  |         let etype = unsafe { (*e).e_type }.get(NativeEndian);
+  | 
+  | 
+
+--[ Match #85 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\macho.rs
+   Pattern: \.(request|post|get)\(
+  |             let mut header_data = data;
+  |             let endian = BigEndian;
+  |             let header = header_data.read::<macho::FatHeader>().ok()?;
+  |             let nfat = header.nfat_arch.get(endian);
+  |             let arch = (0..nfat)
+  |                 .filter_map(|_| header_data.read::<macho::FatArch64>().ok())
+  |                 .find(|arch| desired_cpu() == Some(arch.cputype.get(endian)))?;
+  | 
+
+--[ Match #7 of 133 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.toml.orig
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  | # Optionally demangle C++ frames' symbols in backtraces.
+  | cpp_demangle = { default-features = false, version = "0.4.0", optional = true, features = ["alloc"] 
+  | 
+  | [target.'cfg(not(all(windows, target_env = "msvc", not(target_vendor = "uwp"))))'.dependencies]
+  | miniz_oxide = { version = "0.7.0", default-features = false }
+  | addr2line = { version = "0.21.0", default-features = false }
+  | libc = { version = "0.2.146", default-features = false }
+  | 
+
+--[ Match #103 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       with:
+  |         submodules: true
+  |     - name: Install Rust (rustup)
+  |       run: rustup update ${{ matrix.rust }} --no-self-update && rustup default ${{ matrix.rust }}
+  |       shell: bash
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  | 
+
+--[ Match #42 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\libs_illumos.rs
+   Pattern: \.(request|post|get)\(
+  |         // header:
+  |         let e: *const EHdr = unsafe { (*l).l_addr as *const EHdr };
+  |         let phoff = unsafe { (*e).e_phoff }.get(NativeEndian);
+  |         let phnum = unsafe { (*e).e_phnum }.get(NativeEndian);
+  |         let etype = unsafe { (*e).e_type }.get(NativeEndian);
+  | 
+  |         let phdr: *const PHdr = (addr + phoff) as *const PHdr;
+  | 
+
+--[ Match #53 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     pub fn lock() -> LockGuard {
+  |         if LOCK_HELD.with(|l| l.get()) {
+  |             return LockGuard(None);
+  |         }
+  |         LOCK_HELD.with(|s| s.set(true));
+  | 
+
+--[ Match #65 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           repository: rust-lang/rust
+  |           fetch-depth: 1
+  |       - name: Fetch backtrace
+  |         run: git submodule update --init library/backtrace
+  |       - name: Create hello world program that uses backtrace
+  |         run: printf "fn main() { panic!(); }" > foo.rs
+  |       - name: Build binary with base version of backtrace
+  | 
+
+--[ Match #55 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |             if (diff !== 0) {
+  |               const percent = (((updated / reference) - 1) * 100).toFixed(2);
+  |               // The body is created here and wrapped so "weirdly" to avoid whitespace at the start 
+  |               // which is interpreted as a code block by Markdown.
+  |               const body = `Below is the size of a hello-world Rust program linked with libstd with 
+  | 
+  | 
+
+--[ Match #99 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       with:
+  |         submodules: true
+  |     - name: Install Rust
+  |       run: rustup update stable --no-self-update && rustup default stable
+  |       shell: bash
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  | 
+
+--[ Match #132 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ```rust
+  | fn main() {
+  |     backtrace::trace(|frame| {
+  |         let ip = frame.ip();
+  |         let symbol_address = frame.symbol_address();
+  | 
+  |         // Resolve this instruction pointer to a symbol name
+  | 
+
+--[ Match #51 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\LICENSE-APACHE
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  |    "Legal Entity" shall mean the union of the acting entity and all
+  |    other entities that control, are controlled by, or are under common
+  |    control with that entity. For the purposes of this definition,
+  |    "control" means (i) the power, direct or indirect, to cause the
+  |    direction or management of such entity, whether by contract or
+  |    otherwise, or (ii) ownership of fifty percent (50%) or more of the
+  | 
+
+--[ Match #118 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\coff.rs
+   Pattern: \.(request|post|get)\(
+  |             let section = sections
+  |                 .section(usize::try_from(section_number).ok()?)
+  |                 .ok()?;
+  |             let va = usize::try_from(section.virtual_address.get(LE)).ok()?;
+  |             symbols.push((addr + va + image_base, sym));
+  |         }
+  |         symbols.sort_unstable_by_key(|x| x.0);
+  | 
+
+--[ Match #112 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         submodules: true
+  |     - name: Install Rust (rustup)
+  |       run: rustup update ${{ matrix.rust }} --no-self-update && rustup default ${{ matrix.rust }}
+  |       shell: bash
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  | 
+  | 
+
+--[ Match #93 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |       with:
+  |         submodules: true
+  |     - name: Install Rust
+  |       run: rustup update nightly && rustup default nightly
+  |     - run: rustup target add ${{ matrix.target }}
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  | 
+
+--[ Match #59 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |           cd library/backtrace
+  |           git checkout ${{ github.event.pull_request.head.sha }}
+  |           cd ../..
+  |           git add library/backtrace
+  |           rm -rf build/x86_64-unknown-linux-gnu/stage0-std
+  |           python3 x.py build library --stage 0
+  |           ./build/x86_64-unknown-linux-gnu/stage0-sysroot/bin/rustc -O foo.rs -o binary-updated
+  | 
+
+--[ Match #120 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\coff.rs
+   Pattern: \.(request|post|get)\(
+  |         while i < len {
+  |             let sym = symtab.symbol(i).ok()?;
+  |             i += 1 + sym.number_of_aux_symbols as usize;
+  |             let section_number = sym.section_number.get(LE);
+  |             if sym.derived_type() != object::pe::IMAGE_SYM_DTYPE_FUNCTION || section_number == 0 {
+  |                 continue;
+  |             }
+  | 
+
+--[ Match #9 of 133 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.toml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  | version = "0.7.0"
+  | default-features = false
+  | 
+  | [target."cfg(not(all(windows, target_env = \"msvc\", not(target_vendor = \"uwp\"))))".dependencies.o
+  | version = "0.32.0"
+  | features = [
+  |     "read_core",
+  | 
+
+--[ Match #35 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "addr2line"
+  | version = "0.21.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8a30b2e23b9e17a9f90641c7ab1549cd9b44f296d3ccbf309d2863cfe398a0cb"
+  | dependencies = [
+  |  "gimli",
+  | ]
+  | 
+
+--[ Match #3 of 133 ]--
+   Rule Id: BD000702
+       Tag: Security.Backdoor.DataExfiltration.Environment
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: (env|environment).{1,50}(get|post|curl|nc|invoke-restmethod)
+  |         with:
+  |           script: |
+  |             const reference = process.env.SIZE_REFERENCE;
+  |             const updated = process.env.SIZE_UPDATED;
+  |             const diff = updated - reference;
+  |             const plus = diff > 0 ? "+" : "";
+  |             const diff_str = `${plus}${diff}B`;
+  | 
+
+--[ Match #125 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\parse_running_mmaps_unix.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         let (offset_str, s) = s.trim_start().split_once(' ').unwrap_or((s, ""));
+  |         if offset_str.is_empty() {
+  |             return Err("Couldn't find offset");
+  |         }
+  | 
+  |         let (dev_str, s) = s.trim_start().split_once(' ').unwrap_or((s, ""));
+  | 
+
+--[ Match #104 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\main.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |       run: rustup update nightly && rustup default nightly
+  |     - run: rustup target add ${{ matrix.target }}
+  |     - run: echo RUSTFLAGS=-Dwarnings >> $GITHUB_ENV
+  |       shell: bash
+  |     - run: cargo build --target ${{ matrix.target }}
+  |     - run: cargo build --manifest-path crates/as-if-std/Cargo.toml --target ${{ matrix.target }}
+  | 
+  | 
+
+--[ Match #20 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.136"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ce31e24b01e1e524df96f1c2fdd054405f8d7376249a5110886fb4b658484789"
+  | dependencies = [
+  |  "serde_derive",
+  | ]
+  | 
+
+--[ Match #30 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "gimli"
+  | version = "0.28.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6fb8d784f27acf97159b40fc4db5ecd8aa23b9ad5ef69cdd136d3bc80665f0c0"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #130 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |    https://www.apache.org/licenses/LICENSE-2.0)
+  |  * MIT license ([LICENSE-MIT](LICENSE-MIT) or
+  |    https://opensource.org/licenses/MIT)
+  | 
+  | at your option.
+  | 
+  | ### Contribution
+  | 
+
+--[ Match #75 of 133 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | homepage = "https://github.com/rust-lang/backtrace-rs"
+  | documentation = "https://docs.rs/backtrace"
+  | description = """
+  | A library to acquire a stack trace (backtrace) at runtime in a Rust program.
+  | """
+  | autoexamples = true
+  | autotests = true
+  | 
+
+--[ Match #18 of 133 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "syn"
+  | version = "1.0.86"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8a65b3f4ffa0092e9887669db0eae07941f023991ab58ea44da8fe8e2d511c6b"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #47 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\tests\accuracy\main.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         loop {
+  |             let sym = match symbols.next() {
+  |                 Some(sym) => sym,
+  |                 None => panic!("failed to find {}:{}", file, line),
+  |             };
+  |             if let Some(filename) = sym.filename() {
+  |                 if let Some(lineno) = sym.lineno() {
+  | 
+
+--[ Match #57 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\.github\workflows\check-binary-size.yml
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             const reference = process.env.SIZE_REFERENCE;
+  |             const updated = process.env.SIZE_UPDATED;
+  |             const diff = updated - reference;
+  |             const plus = diff > 0 ? "+" : "";
+  |             const diff_str = `${plus}${diff}B`;
+  | 
+  |             if (diff !== 0) {
+  | 
+
+--[ Match #66 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\examples\raw.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let mut cnt = 0;
+  |     backtrace::trace(|frame| {
+  |         let ip = frame.ip();
+  |         print!("frame #{:<2} - {:#02$x}", cnt, ip as usize, HEX_WIDTH);
+  |         cnt += 1;
+  | 
+  |         let mut resolved = false;
+  | 
+
+--[ Match #41 of 133 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\libs_illumos.rs
+   Pattern: \.(request|post|get)\(
+  |         let e: *const EHdr = unsafe { (*l).l_addr as *const EHdr };
+  |         let phoff = unsafe { (*e).e_phoff }.get(NativeEndian);
+  |         let phnum = unsafe { (*e).e_phnum }.get(NativeEndian);
+  |         let etype = unsafe { (*e).e_type }.get(NativeEndian);
+  | 
+  |         let phdr: *const PHdr = (addr + phoff) as *const PHdr;
+  |         let phdr = unsafe { core::slice::from_raw_parts(phdr, phnum as usize) };
+  | 
+
+--[ Match #124 of 133 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-backtrace@0.3\backtrace-0.3.69\src\symbolize\gimli\parse_running_mmaps_unix.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         let (dev_str, s) = s.trim_start().split_once(' ').unwrap_or((s, ""));
+  |         if dev_str.is_empty() {
+  |             return Err("Couldn't find dev");
+  |         }
+  | 
+  |         let (inode_str, s) = s.trim_start().split_once(' ').unwrap_or((s, ""));
+  | 

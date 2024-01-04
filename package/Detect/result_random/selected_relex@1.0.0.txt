@@ -1,0 +1,29 @@
+--[ Match--[ Match #1 of 2 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-relex@1.0\relex-1.0.0\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "c50d4826d563256b8359cf1367a3dfc21af071fc"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 2 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-relex@1.0\relex-1.0.0\src\lexer.rs
+   Pattern: \.(request|post|get)\(
+  |     let rule = &self.rules[first_idx];
+  |     let (re_match, maybe_captures) = if rule.capture {
+  |       let cap = rule.re.captures(&source[position..]).unwrap();
+  |       (cap.get(0).unwrap(), Some(cap))
+  |     } else {
+  |       let re_match = rule.re.find(&source[position..]).unwrap();
+  |       (re_match, None)
+  | 
+
+2 matches found.

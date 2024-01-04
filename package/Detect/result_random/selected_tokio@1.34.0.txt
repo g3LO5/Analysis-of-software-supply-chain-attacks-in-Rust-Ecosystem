@@ -1,0 +1,629 @@
+--[ Match #144 of 314 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | # 1.21.2 (September 27, 2022)
+  | 
+  | This release removes the dependency on the `once_cell` crate to restore the MSRV
+  | of 1.21.x, which is the latest minor version at the time of release. ([#5048])
+  | 
+  | [#5048]: https://github.com/tokio-rs/tokio/pull/5048
+  | 
+  | 
+
+--[ Match #278 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\coop.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Returns the remaining budget
+  |     pub(crate) fn stop() -> Budget {
+  |         context::budget(|cell| {
+  |             let prev = cell.get();
+  |             cell.set(Budget::unconstrained());
+  |             prev
+  |         }).unwrap_or(Budget::unconstrained())
+  | 
+
+--[ Match #163 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | ### Fixed
+  | 
+  | - io: add cooperative yielding support to `io::empty()` ([#4300])
+  | - time: make timeout robust against budget-depleting tasks ([#4314])
+  | 
+  | ### Changed
+  | 
+  | 
+
+--[ Match #296 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\tests\task_local_set.rs
+   Pattern: \.(request|post|get)\(
+  |         .run_until(async {
+  |             assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |             let join = task::spawn_local(async move {
+  |                 assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |                 task::spawn_blocking(|| {
+  |                     assert!(
+  |                         !ON_RT_THREAD.with(|cell| cell.get()),
+  | 
+
+--[ Match #259 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\process\unix\orphan.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         drain_orphan_queue(orphanage.queue.lock());
+  |         assert_eq!(orphanage.len(), 0);
+  |         assert_eq!(first_waits.get(), 1);
+  |         assert_eq!(second_waits.get(), 2);
+  |         assert_eq!(third_waits.get(), 3);
+  |         assert_eq!(fourth_waits.get(), 1);
+  | 
+
+--[ Match #98 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\rwlock.rs
+   Pattern: \.(request|post|get)\(
+  |             OwnedRwLockReadGuard {
+  |                 #[cfg(all(tokio_unstable, feature = "tracing"))]
+  |                 resource_span: self.resource_span.clone(),
+  |                 data: self.c.get(),
+  |                 lock: self,
+  |                 _p: PhantomData,
+  |             }
+  | 
+
+--[ Match #106 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\mutex.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl<T: ?Sized> DerefMut for MutexGuard<'_, T> {
+  |     fn deref_mut(&mut self) -> &mut Self::Target {
+  |         unsafe { &mut *self.lock.c.get() }
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #7 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread_alt\queue.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | impl<T> Inner<T> {
+  |     fn remaining_slots(&self) -> usize {
+  |         let (steal, _) = unpack(self.head.load(Acquire));
+  |         let tail = self.tail.load(Acquire);
+  | 
+  |         self.buffer.len() - (tail.wrapping_sub(steal) as usize)
+  |     }
+  | 
+
+--[ Match #249 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\Cargo.toml.orig
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | # - Update doc url
+  | #   - README.md
+  | # - Update CHANGELOG.md.
+  | # - Create "v1.x.y" git tag.
+  | version = "1.34.0"
+  | edition = "2021"
+  | rust-version = "1.63"
+  | 
+
+--[ Match #274 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\coop.rs
+   Pattern: \.(request|post|get)\(
+  |     use wasm_bindgen_test::wasm_bindgen_test as test;
+  | 
+  |     fn get() -> Budget {
+  |         context::budget(|cell| cell.get()).unwrap_or(Budget::unconstrained())
+  |     }
+  | 
+  |     #[test]
+  | 
+
+--[ Match #267 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\process\unix\orphan.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         drain_orphan_queue(orphanage.queue.lock());
+  |         assert_eq!(orphanage.len(), 2);
+  |         assert_eq!(first_waits.get(), 1);
+  |         assert_eq!(second_waits.get(), 1);
+  |         assert_eq!(third_waits.get(), 1);
+  |         assert_eq!(fourth_waits.get(), 1);
+  | 
+
+--[ Match #92 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\rwlock.rs
+   Pattern: \.(request|post|get)\(
+  |             #[cfg(all(tokio_unstable, feature = "tracing"))]
+  |             resource_span: self.resource_span.clone(),
+  |             permits_acquired: self.mr,
+  |             data: self.c.get(),
+  |             lock: self,
+  |             _p: PhantomData,
+  |         };
+  | 
+
+--[ Match #289 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\tests\task_local_set.rs
+   Pattern: \.(request|post|get)\(
+  |             task::spawn_local(async {
+  |                 assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |                 task::spawn_local(async {
+  |                     assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |                     task::spawn_local(async {
+  |                         assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |                         task::spawn_local(async {
+  | 
+
+--[ Match #310 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\tests\task_local.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |         tokio::time::sleep(std::time::Duration::from_millis(10)).await;
+  | 
+  |         assert_eq!(REQ_ID.get(), 2);
+  |     }));
+  | 
+  |     let j3 = tokio::spawn(FOO.scope(true, async move {
+  | 
+
+--[ Match #172 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | - chore: update windows-sys to 0.45 ([#5386])
+  | - net: use Message Read Mode for named pipes ([#5350])
+  | - sync: mark lock guards with `#[clippy::has_significant_drop]` ([#5422])
+  | - sync: reduce contention in watch channel ([#5464])
+  | - time: remove cache padding in timer entries ([#5468])
+  | - time: Improve `Instant::now()` perf with test-util ([#5513])
+  | 
+  | 
+
+--[ Match #186 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\task\task_local.rs
+   Pattern: \.(request|post|get)\(
+  |     /// }
+  |     ///
+  |     /// NUMBER.scope(1, async move {
+  |     ///     println!("task local value: {}", NUMBER.get());
+  |     /// }).await;
+  |     /// # }
+  |     /// ```
+  | 
+
+--[ Match #54 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread\queue.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         // values again, and we are the only producer.
+  |         let batch_iter = BatchTaskIter {
+  |             buffer: &self.inner.buffer,
+  |             head: head as UnsignedLong,
+  |             i: 0,
+  |         };
+  |         overflow.push_batch(batch_iter.chain(std::iter::once(task)));
+  | 
+
+--[ Match #82 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\time\mod.rs
+   Pattern: \.(request|post|get)\(
+  |                     Ok(when) => {
+  |                         if lock
+  |                             .next_wake
+  |                             .map(|next_wake| when < next_wake.get())
+  |                             .unwrap_or(true)
+  |                         {
+  |                             unpark.unpark();
+  | 
+
+--[ Match #235 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\time\tests\mod.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |         thread::yield_now();
+  | 
+  |         let time = handle.inner.driver().time();
+  |         let clock = handle.inner.driver().clock();
+  | 
+  |         // advance 2s
+  | 
+
+--[ Match #218 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\blocking\shutdown.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     pub(crate) fn wait(&mut self, timeout: Option<Duration>) -> bool {
+  |         use crate::runtime::context::try_enter_blocking_region;
+  | 
+  |         if timeout == Some(Duration::from_nanos(0)) {
+  |             return false;
+  |         }
+  | 
+  | 
+
+--[ Match #205 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\context\runtime_mt.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     let was = CONTEXT.with(|c| {
+  |         let e = c.runtime.get();
+  |         assert!(e.is_entered(), "asked to exit when not entered");
+  |         c.runtime.set(EnterRuntime::NotEntered);
+  |         e
+  | 
+
+--[ Match #229 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\util\once_cell.rs
+   Pattern: \.(request|post|get)\(
+  |         // There is also no race because the only `&self` method that modifies
+  |         // `value` is `do_init`, but if the `call_once` closure is still
+  |         // running, then no thread has gotten past the `call_once`.
+  |         unsafe { &*(self.value.get() as *const T) }
+  |     }
+  | 
+  |     #[cold]
+  | 
+
+--[ Match #56 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread\queue.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         assert_eq!(
+  |             tail.wrapping_sub(head) as usize,
+  |             LOCAL_QUEUE_CAPACITY,
+  |             "queue is not full; tail = {}; head = {}",
+  |             tail,
+  |             head
+  |         );
+  | 
+
+--[ Match #130 of 314 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | - doc: doc aliases for pre-1.0 function names ([#3523])
+  | - io: fix typos ([#3541])
+  | - io: note the EOF behaviour of `read_until` ([#3536])
+  | - io: update `AsyncRead::poll_read` doc ([#3557])
+  | - net: update `UdpSocket` splitting doc ([#3517])
+  | - runtime: add link to `LocalSet` on `new_current_thread` ([#3508])
+  | - runtime: update documentation of thread limits ([#3527])
+  | 
+
+--[ Match #273 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\loom\std\atomic_u16.rs
+   Pattern: \.(request|post|get)\(
+  |     /// All mutations must have happened before the unsynchronized load.
+  |     /// Additionally, there must be no concurrent mutations.
+  |     pub(crate) unsafe fn unsync_load(&self) -> u16 {
+  |         core::ptr::read(self.inner.get() as *const u16)
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #217 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\blocking\shutdown.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         // If blocking fails to wait, this indicates a problem parking the
+  |         // current thread (usually, shutting down a runtime stored in a
+  |         // thread-local).
+  |         if let Some(timeout) = timeout {
+  |             e.block_on_timeout(&mut self.rx, timeout).is_ok()
+  |         } else {
+  |             let _ = e.block_on(&mut self.rx);
+  | 
+
+--[ Match #6 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread_alt\queue.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  |     fn len(&self) -> UnsignedShort {
+  |         let (_, head) = unpack(self.head.load(Acquire));
+  |         let tail = self.tail.load(Acquire);
+  | 
+  |         tail.wrapping_sub(head)
+  |     }
+  | 
+
+--[ Match #226 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\util\try_lock.rs
+   Pattern: \.(request|post|get)\(
+  |     type Target = T;
+  | 
+  |     fn deref(&self) -> &T {
+  |         unsafe { &*self.lock.data.get() }
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #252 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\process\unix\orphan.rs
+   Pattern: \.(request|post|get)\(
+  |         orphanage.push_orphan(orphan);
+  | 
+  |         orphanage.reap_orphans(&handle);
+  |         assert_eq!(waits.get(), 0);
+  | 
+  |         drop(signal_guard);
+  |     }
+  | 
+
+--[ Match #119 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\broadcast.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | }
+  | 
+  | /// Next position to write a value.
+  | struct Tail {
+  |     /// Next position to write to.
+  |     pos: u64,
+  | 
+  | 
+
+--[ Match #44 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\util\linked_list.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |                     }
+  | 
+  |                     let idx = n % reference.len();
+  |                     let expect = reference.remove(idx).unwrap();
+  | 
+  |                     unsafe {
+  |                         let entry = ll.remove(ptr(&entries[expect as usize])).unwrap();
+  | 
+
+--[ Match #247 of 314 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\Cargo.toml.orig
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | name = "tokio"
+  | # When releasing to crates.io:
+  | # - Remove path dependencies
+  | # - Update doc url
+  | #   - README.md
+  | # - Update CHANGELOG.md.
+  | # - Create "v1.x.y" git tag.
+  | 
+
+--[ Match #64 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread\queue.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         let (steal, _) = unpack(head);
+  | 
+  |         // safety: this is the **only** thread that updates this cell.
+  |         let mut tail = unsafe { self.inner.tail.unsync_load() };
+  | 
+  |         if tail.wrapping_sub(steal) <= (LOCAL_QUEUE_CAPACITY - len) as UnsignedShort {
+  |             // Yes, this if condition is structured a bit weird (first block
+  | 
+
+--[ Match #5 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\scheduler\multi_thread_alt\worker.rs
+   Pattern: \.(request|post|get)\(
+  |                         .push_back_or_overflow(task, cx.shared(), &mut core.stats);
+  |                     // If we hit this point, the LIFO slot should be enabled.
+  |                     // There is no need to reset it.
+  |                     debug_assert!(cx.lifo_enabled.get());
+  |                     return Ok(core);
+  |                 }
+  | 
+  | 
+
+--[ Match #104 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\mutex.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl<T: ?Sized> DerefMut for OwnedMutexGuard<T> {
+  |     fn deref_mut(&mut self) -> &mut Self::Target {
+  |         unsafe { &mut *self.lock.c.get() }
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #118 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\sync\broadcast.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     /// }
+  |     /// ```
+  |     pub fn send(&self, value: T) -> Result<usize, SendError<T>> {
+  |         let mut tail = self.shared.tail.lock();
+  | 
+  |         if tail.rx_cnt == 0 {
+  |             return Err(SendError(value));
+  | 
+
+--[ Match #221 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\loom\std\atomic_usize.rs
+   Pattern: \.(request|post|get)\(
+  |     fn deref(&self) -> &Self::Target {
+  |         // safety: it is always safe to access `&self` fns on the inner value as
+  |         // we never perform unsafe mutations.
+  |         unsafe { &*self.inner.get() }
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #276 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\runtime\coop.rs
+   Pattern: \.(request|post|get)\(
+  |     #[inline]
+  |     pub(crate) fn poll_proceed(cx: &mut Context<'_>) -> Poll<RestoreOnPending> {
+  |         context::budget(|cell| {
+  |             let mut budget = cell.get();
+  | 
+  |             let decrement = budget.decrement();
+  | 
+  | 
+
+--[ Match #195 of 314 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\docs\reactor-refactor.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | Instead, we will use a strategy to prevent clearing readiness if an "unseen"
+  | readiness event has been received. The I/O driver will maintain a "tick" value.
+  | Every time the `mio` `poll()` function is called, the tick is incremented. Each
+  | readiness event has an associated tick. When the I/O driver sets the resource's
+  | readiness, the driver's tick is packed into the atomic `usize`.
+  | 
+  | 
+
+--[ Match #79 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\tests\sync_once_cell.rs
+   Pattern: \.(request|post|get)\(
+  | #[test]
+  | fn get_uninit() {
+  |     static ONCE: OnceCell<u32> = OnceCell::const_new();
+  |     let uninit = ONCE.get();
+  |     assert!(uninit.is_none());
+  | }
+  | 
+  | 
+
+--[ Match #86 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\src\signal\unix.rs
+   Pattern: \.(request|post|get)\(
+  |     handle.check_inner()?;
+  | 
+  |     let globals = globals();
+  |     let siginfo = match globals.storage().get(signal as EventId) {
+  |         Some(slot) => slot,
+  |         None => return Err(io::Error::new(io::ErrorKind::Other, "signal too large")),
+  |     };
+  | 
+
+--[ Match #291 of 314 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-tokio@1.34\tokio-1.34.0\tests\task_local_set.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     LocalSet::new()
+  |         .run_until(async {
+  |             assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |             task::spawn_local(async {
+  |                 assert!(ON_RT_THREAD.with(|cell| cell.get()));
+  |                 task::spawn_local(async {
+  | 

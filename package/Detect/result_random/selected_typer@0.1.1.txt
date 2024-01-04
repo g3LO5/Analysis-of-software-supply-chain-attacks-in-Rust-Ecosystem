@@ -1,0 +1,119 @@
+--[ Match--[ Match #1 of 8 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "fc20a47d33e3f45dbb627d7ffe7c5d6a97842804"
+  |   }
+  | }
+  | 
+
+--[ Match #2 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..7).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(7..).expect(err), 16).expect(err)
+  | 					];
+  | 				} else {
+  | 					println!("wrong value '{}' for attribute: '{}' => #xxxxxx or #xxxxxxxx", val, key);
+  | 
+
+--[ Match #3 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..7).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(7..).expect(err), 16).expect(err)
+  | 					];
+  | 				} else {
+  | 
+
+--[ Match #4 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 				} else if val.starts_with('#') && val.len() == 9 {
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..7).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(7..).expect(err), 16).expect(err)
+  | 					];
+  | 
+
+--[ Match #5 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 					];
+  | 				} else if val.starts_with('#') && val.len() == 9 {
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..7).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(7..).expect(err), 16).expect(err)
+  | 
+
+--[ Match #6 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..).expect(err), 16).expect(err),
+  | 						255
+  | 					];
+  | 				} else if val.starts_with('#') && val.len() == 9 {
+  | 
+
+--[ Match #7 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 				if val.starts_with('#') && val.len() == 7 {
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..).expect(err), 16).expect(err),
+  | 						255
+  | 					];
+  | 
+
+--[ Match #8 of 8 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-typer@0.1\typer-0.1.1\src\chunk.rs
+   Pattern: \.(request|post|get)\(
+  | 				let err = &format!("wrong color: {}", val);
+  | 				if val.starts_with('#') && val.len() == 7 {
+  | 					self.color = [
+  | 						u8::from_str_radix(val.get(1..3).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(3..5).expect(err), 16).expect(err),
+  | 						u8::from_str_radix(val.get(5..).expect(err), 16).expect(err),
+  | 						255
+  | 
+
+8 matches found.

@@ -1,0 +1,658 @@
+--[ Match #87 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "time-macros"
+  | version = "0.2.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "4ad70d68dba9e1f8aceda7aa6711965dfec1cac869f311a51bd08b3a2ccbce20"
+  | dependencies = [
+  |  "time-core",
+  | ]
+  | 
+
+--[ Match #166 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "futures-sink"
+  | version = "0.3.29"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e36d3378ee38c2a36ad710c5d30c2911d752cb941c00c72dbabfb786a7970817"
+  | 
+  | [[package]]
+  | name = "futures-task"
+  | 
+
+--[ Match #212 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "async-io"
+  | version = "2.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "10da8f3146014722c89e7859e1d7bb97873125d7346d10ca642ffab794355828"
+  | dependencies = [
+  |  "async-lock",
+  |  "cfg-if",
+  | 
+
+--[ Match #78 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "twox-hash"
+  | version = "1.6.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "97fee6b57c6a41524a810daee9286c02d7752c4253064d0b05472833a438f675"
+  | dependencies = [
+  |  "cfg-if",
+  |  "static_assertions",
+  | 
+
+--[ Match #155 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hex"
+  | version = "0.4.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7f24254aa9a54b5c858eaee2f5bccdb46aaf0e486a595ed5fd8f86ba55232a70"
+  | 
+  | [[package]]
+  | name = "hmac"
+  | 
+
+--[ Match #251 of 274 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\browser\chromium.rs
+   Pattern: \.(request|post|get)\(
+  |     let key_dict: serde_json::Value = serde_json::from_str(content.as_str()).or(Err(anyhow!("Cant re
+  | 
+  | 
+  | 
+  |     let os_crypt = key_dict
+  | 
+  |         .get("os_crypt")
+  | 
+  |         .ok_or(anyhow!("can't get os crypt"))?;
+  | 
+  | 
+  | 
+  |     let key64 = os_crypt.get("encrypted_key")
+  | 
+  | 
+
+--[ Match #63 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-util"
+  | version = "0.1.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f29e6f9198ba0d26b4c9f07dbe6f9ed633e1f3d5b8b414090084349e46a52596"
+  | dependencies = [
+  |  "winapi",
+  | ]
+  | 
+
+--[ Match #187 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "crunchy"
+  | version = "0.2.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "7a81dae078cea95a014a339291cec439d2f232ebe854a9d672b796c6afafa9b7"
+  | 
+  | [[package]]
+  | name = "crypto-common"
+  | 
+
+--[ Match #247 of 274 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\browser\mozilla.rs
+   Pattern: \.(request|post|get)\(
+  |             continue;
+  | 
+  |         }
+  | 
+  |         let host = host?;
+  | 
+  |         let path: String = row.get(1)?;
+  | 
+  |         let is_secure: bool = row.get(2)?;
+  | 
+  |         let expires: u64 = row.get(3)?;
+  | 
+  |         let expires = date::mozilla_timestamp(expires);
+  | 
+  | 
+
+--[ Match #96 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "smallvec"
+  | version = "1.11.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "942b4a808e05215192e39f4ab80813e599068285906cc91aa64f923db842bd5a"
+  | 
+  | [[package]]
+  | name = "socket2"
+  | 
+
+--[ Match #73 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "unicode-normalization"
+  | version = "0.1.22"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c5713f0fc4b5db668a2ac63cdb7bb4469d8c9fed047b1d0292cc7b0ce2ba921"
+  | dependencies = [
+  |  "tinyvec",
+  | ]
+  | 
+
+--[ Match #80 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tracing-attributes"
+  | version = "0.1.27"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "34704c8d6ebcbc939824180af020566b01a7c01f80641264eba0999f6c2b6be7"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #183 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "derivative"
+  | version = "2.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "fcc3dd5e9e9c0b295d6e1e4d811fb6f157d5ffd784b8d202fc62eac8035a770b"
+  | dependencies = [
+  |  "proc-macro2",
+  |  "quote",
+  | 
+
+--[ Match #82 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "toml_edit"
+  | version = "0.19.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1b5bb770da30e5cbfde35a2d7b9b8a2c4b8ef89548a7a6aeab5c9a576e3e7421"
+  | dependencies = [
+  |  "indexmap",
+  |  "toml_datetime",
+  | 
+
+--[ Match #274 of 274 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  |     else if #[cfg(target_os = "macos")] {
+  |         use std::process::Command;
+  |         pub fn get_osx_keychain_password(osx_key_service: &str, osx_key_user: &str) -> Result<String
+  |             let cmd = Command::new("/usr/bin/security")
+  |                 .args(&["-q", "find-generic-password", "-w", "-a", osx_key_user, "-s", osx_key_servi
+  |                 .output();
+  |         
+  | 
+
+274 matches found.
+
+
+--[ Match #64 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-util"
+  | 
+
+--[ Match #163 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "generic-array"
+  | version = "0.14.7"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "85649ca51fd72272d7821adaf274ad91c288277713d9c18820d8499a7ff69e9a"
+  | dependencies = [
+  |  "typenum",
+  |  "version_check",
+  | 
+
+--[ Match #32 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 }
+  |             }
+  |             // Attempt to get the password from kdewallet
+  |             if let Ok(password) = get_password_kdewallet(os_crypt_name) {
+  |                 passwords.push(password);
+  |             }
+  |         
+  | 
+
+--[ Match #18 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                         let password = String::from_utf8(output.stdout)?;
+  |                         Ok(password.trim().to_string())
+  |                     } else {
+  |                         bail!("Failed to retrieve password from OSX Keychain")
+  |                     }
+  |                 }
+  |                 Err(e) => Err(anyhow!("Error executing security command: {}", e)),
+  | 
+
+--[ Match #43 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "zvariant"
+  | version = "3.15.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "44b291bee0d960c53170780af148dca5fa260a63cdd24f1962fa82e03e53338c"
+  | dependencies = [
+  |  "byteorder",
+  |  "enumflags2",
+  | 
+
+--[ Match #235 of 274 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\browser\mozilla.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | 
+  | pub fn create_cookie(json_cookie: &Value) -> Result<Cookie> {
+  | 
+  |     let host = json_cookie
+  | 
+  |         .get("host")
+  | 
+  |         .and_then(|v| v.as_str())
+  | 
+  |         .unwrap_or("");
+  | 
+  |     let path = json_cookie
+  | 
+  | 
+
+--[ Match #38 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  | 
+  |         pub fn get_passwords(os_crypt_name: &str) -> Result<Vec<String>> {
+  |             // Attempt to get the password from libsecret
+  |             let mut passwords: Vec<String> = vec![];
+  |             for schema in ["chrome_libsecret_os_crypt_password_v2", "chrome_libsecret_os_crypt_passw
+  |                 if let Ok(libsecret_pass) = get_password_libsecret(schema, os_crypt_name) {
+  |                     passwords.push(libsecret_pass);
+  | 
+
+--[ Match #28 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 passwords.push(password);
+  |             }
+  |         
+  |             Ok(passwords)
+  |         }
+  |         
+  |         
+  | 
+
+--[ Match #226 of 274 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\lib.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |             }
+  |         }
+  |     }
+  |     bail!("cant find any cookies");
+  | }
+  | 
+
+--[ Match #208 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "async-signal"
+  | version = "0.2.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9e47d90f65a225c4527103a8d747001fc56e375203592b25ad103e1ca13124c5"
+  | dependencies = [
+  |  "async-io 2.1.0",
+  |  "async-lock",
+  | 
+
+--[ Match #70 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "vcpkg"
+  | version = "0.2.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "accd4ea62f7bb7a82fe23066fb0957d48ef677f6eeb8215f372f52e48bb32426"
+  | 
+  | [[package]]
+  | name = "version_check"
+  | 
+
+--[ Match #129 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "percent-encoding"
+  | version = "2.3.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "9b2a4787296e9989611394c33f193f676704af1686e70b8f8033ab5ba9a35a94"
+  | 
+  | [[package]]
+  | name = "pin-project-lite"
+  | 
+
+--[ Match #197 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "byteorder"
+  | version = "1.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1fd0f2584146f6f2ef48085050886acf353beff7305ebd1ae69500e27c67f64b"
+  | 
+  | [[package]]
+  | name = "cbc"
+  | 
+
+--[ Match #94 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "static_assertions"
+  | version = "1.1.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "a2eb9349b6444b326872e140eb1cf5e7c522154d69e7a0ffb0fb81c06b37543f"
+  | 
+  | [[package]]
+  | name = "subtle"
+  | 
+
+--[ Match #101 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.108"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3d1c7e3eac408d115102c4c24ad393e0821bb3a5df4d506a80f85f7a742a526b"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #252 of 274 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\browser\chromium.rs
+   Pattern: \.(request|post|get)\(
+  |         let decrypted_value = decrypt_encrypted_value(value, &encrypted_value, keys.to_owned())?;
+  | 
+  |         let http_only: bool = row.get(7)?;
+  | 
+  |         
+  | 
+  |         let same_site: i64 = row.get(8)?;
+  | 
+  |         let cookie = Cookie {
+  | 
+  |             domain: host_key.to_string(),
+  | 
+  |             path: path.to_string(),
+  | 
+  | 
+
+--[ Match #93 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "subtle"
+  | version = "2.5.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "81cdd64d312baedb58e21336b31bc043b77e01cc99033ce76ef539f78e965ebc"
+  | 
+  | [[package]]
+  | name = "syn"
+  | 
+
+--[ Match #31 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |                 }
+  |             }
+  |             // Attempt to get the password from kdewallet
+  |             if let Ok(password) = get_password_kdewallet(os_crypt_name) {
+  |                 passwords.push(password);
+  |             }
+  |         
+  | 
+
+--[ Match #27 of 274 ]--
+   Rule Id: BD000701
+       Tag: Security.Backdoor.DataExfiltration.Token
+  Severity: Important, Confidence: High
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\src\common\secrets.rs
+   Pattern: (npm owner|password|htpasswd|auth_?token|secret_?key|private_?key|authorized_keys?|npmrc|\.ssh|usersecrets?|api_?keys|nuget\.config|\.identityservice)
+  |         }
+  |         
+  |         
+  |         fn get_password_libsecret(schema: &str, crypt_name: &str) -> Result<String>  {
+  |             let connection = Connection::session()?;
+  |             let mut content = HashMap::<&str, &str>::new();
+  |             content.insert("xdg:schema", schema);
+  | 
+
+--[ Match #65 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.9"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "5c839a674fcd7a98952e593242ea400abe93992746761e38641405d28b00f419"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #213 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "async-io"
+  | version = "1.13.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "0fc5b45d93ef0529756f812ca52e44c221b35341892d3dcc34132ac02f3dd2af"
+  | dependencies = [
+  |  "async-lock",
+  |  "autocfg",
+  | 
+
+--[ Match #57 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "windows_aarch64_gnullvm"
+  | version = "0.48.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2b38e32f0abccf9987a4e3079dfb67dcd799fb61361e53e2882c3cbaf0d905d8"
+  | 
+  | [[package]]
+  | name = "windows_aarch64_msvc"
+  | 
+
+--[ Match #128 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "pin-project-lite"
+  | version = "0.2.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8afb450f006bf6385ca15ef45d71d2288452bc3683ce2e2cacc0d18e4be60b58"
+  | 
+  | [[package]]
+  | name = "pin-utils"
+  | 
+
+--[ Match #86 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "tiny-keccak"
+  | version = "2.0.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "2c9d3793400a45f954c52e73d068316d76b6f4e36977e3fcebb13a2721e80237"
+  | dependencies = [
+  |  "crunchy",
+  | ]
+  | 
+
+--[ Match #140 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "log"
+  | version = "0.4.20"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b5e6163cb8c49088c2c36f57875e58ccd8c87c7427f7fbd50ea6710b2f3f2e8f"
+  | 
+  | [[package]]
+  | name = "lz4_flex"
+  | 
+
+--[ Match #169 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "futures-core"
+  | version = "0.3.29"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "eb1d22c66e66d9d72e1758f0bd7d4fd0bee04cad842ee34587d68c07e45d088c"
+  | 
+  | [[package]]
+  | name = "futures-io"
+  | 
+
+--[ Match #112 of 274 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-rookie@0.3\rookie-0.3.3\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "regex"
+  | version = "1.10.2"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "380b951a9c5e80ddfd6136919eef32310721aa4aacd4889a8d39124b026ab343"
+  | dependencies = [
+  |  "aho-corasick",
+  |  "memchr",
+  | 

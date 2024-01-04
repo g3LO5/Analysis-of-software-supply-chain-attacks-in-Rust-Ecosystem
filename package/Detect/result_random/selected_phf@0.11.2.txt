@@ -1,0 +1,500 @@
+--[ Match--[ Match #1 of 28 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "c9c35fd8ba3f1bc228388b0cef6e3814a02a72c0"
+  |   },
+  |   "path_in_vcs": "phf"
+  | }
+
+--[ Match #2 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | b4122c4b0c10b23064ca380c))
+  |     - Add support for remaining literals ([`55ededf`](https://github.com/rust-phf/rust-phf/commit/55
+  |     - Byte and char key support ([`789990e`](https://github.com/rust-phf/rust-phf/commit/789990ede8d
+  |     - Support binary literal keys! ([`6bfb12b`](https://github.com/rust-phf/rust-phf/commit/6bfb12bf
+  |     - Parameterize the key type of PhfOrdered* ([`f6ce641`](https://github.com/rust-phf/rust-phf/com
+  |     - Parameterize the key type of PhfMap and Set ([`cb4ed93`](https://github.com/rust-phf/rust-phf/
+  |     - Update for crate_id removal ([`a0ab8d7`](https://github.com/rust-phf/rust-phf/commit/a0ab8d7f5
+  |     - Split to two separate Cargo packages ([`4ff3544`](https://github.com/rust-phf/rust-phf/commit/
+  | </details>
+  | 
+  | 
+
+--[ Match #3 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | t/d6e5d774a5ab6e796da0eb5e0cf062d0f0aebec0))
+  |     - Switch to where clause syntax ([`13b9389`](https://github.com/rust-phf/rust-phf/commit/13b9389
+  |     - Cargo update ([`2a650ef`](https://github.com/rust-phf/rust-phf/commit/2a650efcdb9f013906cdf097
+  |     - Re-disable in-crate tests ([`9c4d247`](https://github.com/rust-phf/rust-phf/commit/9c4d247cb82
+  |     - Properly support cross compiled builds ([`b2220d9`](https://github.com/rust-phf/rust-phf/commi
+  |     - Reenable tests for phf crate for docs ([`3ab5bd1`](https://github.com/rust-phf/rust-phf/commit
+  |     - Update for pattern changes ([`f79814a`](https://github.com/rust-phf/rust-phf/commit/f79814a6ab
+  |     - Move test to tests dir ([`c9ca9b1`](https://github.com/rust-phf/rust-phf/commit/c9ca9b118f77e0
+  |     - Add more _equiv methods ([`61eea75`](https://github.com/rust-phf/rust-phf/commit/61eea759b5378
+  |     - Elide lifetimes ([`20a1e83`](https://github.com/rust-phf/rust-phf/commit/20a1e838c01017d74ef48
+  |     - Impl Index for PhfMap and PhfOrderedMap ([`3995dbc`](https://github.com/rust-phf/rust-phf/comm
+  |     - Switch Travis to using cargo ([`95f3c90`](https://github.com/rust-phf/rust-phf/commit/95f3c907
+  |     - Rename module
+
+--[ Match #4 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | e3e7dcca8ba091af5459090de))
+  |     - Update for lifetime changes ([`af0a11c`](https://github.com/rust-phf/rust-phf/commit/af0a11c92
+  |     - Add back crate_name for rustdoc ([`92ec57a`](https://github.com/rust-phf/rust-phf/commit/92ec5
+  |     - More cleanup ([`20dea1d`](https://github.com/rust-phf/rust-phf/commit/20dea1d778a9e5226b6ffe2b
+  |     - One more where clause ([`d6e5d77`](https://github.com/rust-phf/rust-phf/commit/d6e5d774a5ab6e7
+  |     - Switch to where clause syntax ([`13b9389`](https://github.com/rust-phf/rust-phf/commit/13b9389
+  |     - Cargo update ([`2a650ef`](https://github.com/rust-phf/rust-phf/commit/2a650efcdb9f013906cdf097
+  |     - Re-disable in-crate tests ([`9c4d247`](https://github.com/rust-phf/rust-phf/commit/9c4d247cb82
+  |     - Properly support cross compiled builds ([`b2220d9`](https://github.com/rust-phf/rust-phf/commi
+  |     - Reenable tests for phf crate for docs ([`3ab5bd1`](https://github.com/rust-phf/rust-phf/commit
+  |     - Update for pattern changes ([`f79814a`](https://github.com/rust-phf/rust-phf/commit/f79814a6ab
+  |     - Move test to tests dir ([`c9ca9b1`](https://github.com/rust-phf/rust-phf/commit/c9ca9b118f77e0
+  |     - Add more _equiv methods ([`61eea
+
+--[ Match #5 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | it/68458d3255af0f58510c3b502dcff4d83af19ae8))
+  |     - Rephrase order guarantees ([`3c2661d`](https://github.com/rust-phf/rust-phf/commit/3c2661d8a42
+  |     - Update examples ([`85a3b28`](https://github.com/rust-phf/rust-phf/commit/85a3b28ea9ee24f080ff0
+  |     - Minor cleanup ([`2f75f5f`](https://github.com/rust-phf/rust-phf/commit/2f75f5fed1579c1f26c42f8
+  |     - Merge pull request #12 from kmcallister/find-index ([`d7ae880`](https://github.com/rust-phf/ru
+  |     - Provide find_index{,_equiv} on PhfOrdered{Set,Map} ([`b16d440`](https://github.com/rust-phf/ru
+  |     - Update for lifetime changes ([`af0a11c`](https://github.com/rust-phf/rust-phf/commit/af0a11c92
+  |     - Add back crate_name for rustdoc ([`92ec57a`](https://github.com/rust-phf/rust-phf/commit/92ec5
+  |     - More cleanup ([`20dea1d`](https://github.com/rust-phf/rust-phf/commit/20dea1d778a9e5226b6ffe2b
+  |     - One more where clause ([`d6e5d77`](https://github.com/rust-phf/rust-phf/commit/d6e5d774a5ab6e7
+  |     - Switch to where clause syntax ([`13b9389`](https://github.com/rust-phf/rust-phf/commit/13b9389
+  |     - Cargo update ([`2a650ef`](https://github.com/rust-phf/rust-phf/commit/2a650efcdb9f013906cdf097
+  |     - Re-disable in-crate tests ([`9c4d247`](
+
+--[ Match #6 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | it/bd10658648539a13553bd9ea8853f490ee424cc8))
+  |     - Use slice operators ([`a1b5030`](https://github.com/rust-phf/rust-phf/commit/a1b503023f516753f
+  |     - Fix warnings in tests ([`4bf6f82`](https://github.com/rust-phf/rust-phf/commit/4bf6f824795de3c
+  |     - Remove old crate_name attributes ([`35701e2`](https://github.com/rust-phf/rust-phf/commit/3570
+  |     - Fix typo ([`68458d3`](https://github.com/rust-phf/rust-phf/commit/68458d3255af0f58510c3b502dcf
+  |     - Rephrase order guarantees ([`3c2661d`](https://github.com/rust-phf/rust-phf/commit/3c2661d8a42
+  |     - Update examples ([`85a3b28`](https://github.com/rust-phf/rust-phf/commit/85a3b28ea9ee24f080ff0
+  |     - Minor cleanup ([`2f75f5f`](https://github.com/rust-phf/rust-phf/commit/2f75f5fed1579c1f26c42f8
+  |     - Merge pull request #12 from kmcallister/find-index ([`d7ae880`](https://github.com/rust-phf/ru
+  |     - Provide find_index{,_equiv} on PhfOrdered{Set,Map} ([`b16d440`](https://github.com/rust-phf/ru
+  |     - Update for lifetime changes ([`af0a11c`](https://github.com/rust-phf/rust-phf/commit/af0a11c92
+  |     - Add back crate_name for rustdoc ([`92ec57a`](https://github.com/rust-phf/rust-phf/commit/92ec5
+  |     - More cleanup ([`20dea1
+
+--[ Match #7 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | c934a23e7e25fd12014a123eea8f7707928338))
+  |     - Update for Equiv DST changes ([`719de47`](https://github.com/rust-phf/rust-phf/commit/719de47b
+  |     - Clean up warnings ([`b44065b`](https://github.com/rust-phf/rust-phf/commit/b44065b78dd31d2931d
+  |     - Fix docs ([`83a8116`](https://github.com/rust-phf/rust-phf/commit/83a8116c71bf1cbf28d51d269b4c
+  |     - Drop libstd requirement ([`dd3d0f1`](https://github.com/rust-phf/rust-phf/commit/dd3d0f1fedc19
+  |     - Remove unneeded import ([`15cc179`](https://github.com/rust-phf/rust-phf/commit/15cc17901777ef
+  |     - Update docs location ([`49647cd`](https://github.com/rust-phf/rust-phf/commit/49647cdd0c170be4
+  |     - Misc cleanup ([`2fe6940`](https://github.com/rust-phf/rust-phf/commit/2fe6940182240e39ecd283ee
+  |     - Use XXHash instead of SipHash ([`bd10658`](https://github.com/rust-phf/rust-phf/commit/bd10658
+  |     - Use slice operators ([`a1b5030`](https://github.com/rust-phf/rust-phf/commit/a1b503023f516753f
+  |     - Fix warnings in tests ([`4bf6f82`](https://github.com/rust-phf/rust-phf/commit/4bf6f824795de3c
+  |     - Remove old crate_name attributes ([`35701e2`](https://github.com/rust-phf/rust-phf/commit/3570
+  |     - Fix typo ([`68458d3`](https
+
+--[ Match #8 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 68a3811b434321f871892eab02c1))
+  |     - Fix docs ([`eadea0b`](https://github.com/rust-phf/rust-phf/commit/eadea0b2c2cb9e76d0be9a209819
+  |     - Convert PhfOrderedSet to new naming conventions ([`de193c7`](https://github.com/rust-phf/rust-
+  |     - Switch over PhfOrderedMap to new naming scheme ([`f17bae1`](https://github.com/rust-phf/rust-p
+  |     - Convert PhfSet to new naming conventions ([`b2416db`](https://github.com/rust-phf/rust-phf/com
+  |     - Move and rename PhfMap stuff ([`7fc934a`](https://github.com/rust-phf/rust-phf/commit/7fc934a2
+  |     - Update for Equiv DST changes ([`719de47`](https://github.com/rust-phf/rust-phf/commit/719de47b
+  |     - Clean up warnings ([`b44065b`](https://github.com/rust-phf/rust-phf/commit/b44065b78dd31d2931d
+  |     - Fix docs ([`83a8116`](https://github.com/rust-phf/rust-phf/commit/83a8116c71bf1cbf28d51d269b4c
+  |     - Drop libstd requirement ([`dd3d0f1`](https://github.com/rust-phf/rust-phf/commit/dd3d0f1fedc19
+  |     - Remove unneeded import ([`15cc179`](https://github.com/rust-phf/rust-phf/commit/15cc17901777ef
+  |     - Update docs location ([`49647cd`](https://github.com/rust-phf/rust-phf/commit/49647cdd0c170be4
+  |     - Misc cleanup ([`2fe6940`](https://gith
+
+--[ Match #9 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | rust-phf/commit/f6ce09a25c4468b76a48fe4e1070436121084786))
+  |     - More code review ([`aec5aab`](https://github.com/rust-phf/rust-phf/commit/aec5aab3a95bb96bd32b
+  |     - Code review ([`88d54c2`](https://github.com/rust-phf/rust-phf/commit/88d54c2b875830bb00170421f
+  |     - Added key+value equivalents for the map getters. ([`7ced000`](https://github.com/rust-phf/rust
+  |     - Switch from find to get ([`88abf6c`](https://github.com/rust-phf/rust-phf/commit/88abf6c8b0814
+  |     - Fix some deprecation warnings ([`af2dd53`](https://github.com/rust-phf/rust-phf/commit/af2dd53
+  |     - Update for collections traits removal ([`f585e4c`](https://github.com/rust-phf/rust-phf/commit
+  |     - Remove deprecated reexports ([`b697d13`](https://github.com/rust-phf/rust-phf/commit/b697d132b
+  |     - Hide deprecated reexports from docs ([`d120067`](https://github.com/rust-phf/rust-phf/commit/d
+  |     - Add deprecated reexports ([`5752604`](https://github.com/rust-phf/rust-phf/commit/5752604bfa3d
+  |     - Fix doc header size ([`8f5c0f0`](https://github.com/rust-phf/rust-phf/commit/8f5c0f0b491868a38
+  |     - Fix docs ([`eadea0b`](https://github.com/rust-phf/rust-phf/commit/eadea0b2c2cb9e76d0be9a209819
+  |     - Convert PhfOrderedSet to new naming conventions ([`de
+
+--[ Match #10 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | f4b58))
+  |     - Merge pull request #31 from jamesrhurst/exactsize ([`d20c311`](https://github.com/rust-phf/rus
+  |     - Make publishable on crates.io ([`4ad2bb2`](https://github.com/rust-phf/rust-phf/commit/4ad2bb2
+  |     - ExactSize is now ExactSizeIterator ([`6a7cc6e`](https://github.com/rust-phf/rust-phf/commit/6a
+  |     - Use repository packages ([`6e3a54d`](https://github.com/rust-phf/rust-phf/commit/6e3a54d1fee63
+  |     - Add license and descriptions ([`ff7dad4`](https://github.com/rust-phf/rust-phf/commit/ff7dad4c
+  |     - Update to use BorrowFrom ([`2f3c605`](https://github.com/rust-phf/rust-phf/commit/2f3c6053c2d7
+  |     - Merge pull request #28 from cgaebel/master ([`cc0d031`](https://github.com/rust-phf/rust-phf/c
+  |     - S/kv/entry/ ([`bf62eb8`](https://github.com/rust-phf/rust-phf/commit/bf62eb878981115492fbac99f
+  |     - Merge pull request #27 from cgaebel/master ([`f6ce09a`](https://github.com/rust-phf/rust-phf/c
+  |     - More code review ([`aec5aab`](https://github.com/rust-phf/rust-phf/commit/aec5aab3a95bb96bd32b
+  |     - Code review ([`88d54c2`](https://github.com/rust-phf/rust-phf/commit/88d54c2b875830bb00170421f
+  |     - Added key+value equivalents for the map getters. ([`7
+
+--[ Match #11 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | mmit/f678635378555b7d086014b0466aea12a3ae5701))
+  |     - Fix for upstream changes ([`2b4863f`](https://github.com/rust-phf/rust-phf/commit/2b4863fcb582
+  |     - Release v0.4.3 ([`4f5902c`](https://github.com/rust-phf/rust-phf/commit/4f5902c222a81da009bf79
+  |     - Fix for weird type inference breakage ([`3c36bfb`](https://github.com/rust-phf/rust-phf/commit
+  |     - Release v0.4.2 ([`69d92b8`](https://github.com/rust-phf/rust-phf/commit/69d92b869fab51a31fda61
+  |     - Merge pull request #37 from alexcrichton/update ([`b9f0a43`](https://github.com/rust-phf/rust-
+  |     - Update to rust master ([`4a0d48d`](https://github.com/rust-phf/rust-phf/commit/4a0d48d165d78d1
+  |     - Release v0.4.1 ([`0fba837`](https://github.com/rust-phf/rust-phf/commit/0fba8374fd6fb1b10d9d45
+  |     - Release v0.4.0 ([`49dbb36`](https://github.com/rust-phf/rust-phf/commit/49dbb3636621c0436e771a
+  |     - Fix for upstream changes and drop xxhash ([`fc2539f`](https://github.com/rust-phf/rust-phf/com
+  |     - Release v0.3.0 ([`0a80b06`](https://github.com/rust-phf/rust-phf/commit/0a80b06ecde77b33cec8c9
+  |     - Fix for unboxed closure changes ([`d96a1e5`](https://github.com/rust-phf/rust-phf/commit/d96a1
+  |     - Rename Set and OrderedSet iterators
+
+--[ Match #12 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 9bb2c07030b86761028))
+  |     - Merge branch 'release' ([`269b5dc`](https://github.com/rust-phf/rust-phf/commit/269b5dc41ebf82
+  |     - Merge branch 'release-v0.7.4' into release ([`7c093e8`](https://github.com/rust-phf/rust-phf/c
+  |     - Release v0.7.4 ([`c7c0d3c`](https://github.com/rust-phf/rust-phf/commit/c7c0d3c294126157f0275a
+  |     - Merge pull request #62 from SimonSapin/string-cache ([`6f59718`](https://github.com/rust-phf/r
+  |     - Add hash() and get_index() to phf_shared. ([`d3b2ea0`](https://github.com/rust-phf/rust-phf/co
+  |     - Update PhfHash to mirror std::hash::Hash ([`96ef156`](https://github.com/rust-phf/rust-phf/com
+  |     - Release v0.7.3 ([`77ea239`](https://github.com/rust-phf/rust-phf/commit/77ea23917e908b10c4c5c4
+  |     - Merge pull request #59 from alexcrichton/update ([`6bd5a93`](https://github.com/rust-phf/rust-
+  |     - Remove prelude imports ([`98183e1`](https://github.com/rust-phf/rust-phf/commit/98183e132a28b4
+  |     - Release v0.7.2 ([`642b69d`](https://github.com/rust-phf/rust-phf/commit/642b69d0100a4ee7ec6e43
+  |     - Merge pull request #55 from SimonSapin/indexing ([`0cc37b2`](https://github.com/rust-phf/rust-
+  |     - Add `index` methods
+
+--[ Match #13 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | .11.1, phf v0.11.1, phf_codegen v0.11.1 ([`3897b21`](https://github.com/rust-phf/rust-phf/commit/389
+  |     - Merge pull request #264 from rust-phf/tweak-changelog ([`97f997d`](https://github.com/rust-phf
+  |     - Replace handmade changelog with generated one by `cargo-smart-release` ([`cb84cf6`](https://gi
+  |     - Merge pull request #260 from JohnTitor/fix-repo-link ([`1407ebe`](https://github.com/rust-phf/
+  |     - Add category to crates ([`32a72c3`](https://github.com/rust-phf/rust-phf/commit/32a72c3859997f
+  |     - Update repository links on Cargo.toml ([`1af3b0f`](https://github.com/rust-phf/rust-phf/commit
+  |     - Merge pull request #258 from JohnTitor/release-0.11.0 ([`c0b9ef9`](https://github.com/rust-phf
+  |     - Release 0.11.0 ([`d2efdc0`](https://github.com/rust-phf/rust-phf/commit/d2efdc08a7eb1d0d6c414b
+  |     - Merge pull request #257 from JohnTitor/edition-2021 ([`36ec885`](https://github.com/rust-phf/r
+  |     - Make crates edition 2021 ([`b9d25da`](https://github.com/rust-phf/rust-phf/commit/b9d25da58b91
+  |     - Merge pull request #256 from NZXTCorp/remove-proc-macro-hack ([`a85f070`](https://github.com/r
+  |   
+
+--[ Match #14 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | t/3995dbc443f33571e15c18c45b38862a515a88c0))
+  |     - Switch Travis to using cargo ([`95f3c90`](https://github.com/rust-phf/rust-phf/commit/95f3c907
+  |     - Rename module ([`25aeba6`](https://github.com/rust-phf/rust-phf/commit/25aeba6aeeb9f14ebabf11c
+  |     - Rename phf_shared to phf ([`6372fa4`](https://github.com/rust-phf/rust-phf/commit/6372fa437f01
+  |     - Turn off tests for main crates ([`6718b60`](https://github.com/rust-phf/rust-phf/commit/6718b6
+  |     - Pull shared code into a module ([`19c4f8d`](https://github.com/rust-phf/rust-phf/commit/19c4f8
+  |     - Move iterator maps to construction time ([`a8bb815`](https://github.com/rust-phf/rust-phf/comm
+  |     - Implement more iterator traits for PhfMap iters ([`4b48972`](https://github.com/rust-phf/rust-
+  |     - Add support for remaining literals ([`55ededf`](https://github.com/rust-phf/rust-phf/commit/55
+  |     - Byte and char key support ([`789990e`](https://github.com/rust-phf/rust-phf/commit/789990ede8d
+  |     - Support binary literal keys! ([`6bfb12b`](https://github.com/rust-phf/rust-phf/commit/6bfb12bf
+  |     - Parameterize the key type of PhfOrdered* ([`f6ce641`](https://github.com/rust-phf/rust-phf/com
+  |     - Parameterize
+
+--[ Match #15 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | c1068781eaf64878ac2cd93499d6cf))
+  |     - S/kv/entry/ ([`bf62eb8`](https://github.com/rust-phf/rust-phf/commit/bf62eb878981115492fbac99f
+  |     - Merge pull request #27 from cgaebel/master ([`f6ce09a`](https://github.com/rust-phf/rust-phf/c
+  |     - More code review ([`aec5aab`](https://github.com/rust-phf/rust-phf/commit/aec5aab3a95bb96bd32b
+  |     - Code review ([`88d54c2`](https://github.com/rust-phf/rust-phf/commit/88d54c2b875830bb00170421f
+  |     - Added key+value equivalents for the map getters. ([`7ced000`](https://github.com/rust-phf/rust
+  |     - Switch from find to get ([`88abf6c`](https://github.com/rust-phf/rust-phf/commit/88abf6c8b0814
+  |     - Fix some deprecation warnings ([`af2dd53`](https://github.com/rust-phf/rust-phf/commit/af2dd53
+  |     - Update for collections traits removal ([`f585e4c`](https://github.com/rust-phf/rust-phf/commit
+  |     - Remove deprecated reexports ([`b697d13`](https://github.com/rust-phf/rust-phf/commit/b697d132b
+  |     - Hide deprecated reexports from docs ([`d120067`](https://github.com/rust-phf/rust-phf/commit/d
+  |     - Add deprecated reexports ([`5752604`](https://github.com/rust-phf/rust-phf/commit/5752604bfa3d
+  |     - Fix doc header size (
+
+--[ Match #16 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | mit/69ca376dc8daa094ab16f1fcbadb65f83a75939b))
+  |     - Fix for stability changes ([`f7fb510`](https://github.com/rust-phf/rust-phf/commit/f7fb510dfe6
+  |     - More sed fixes ([`81b54b2`](https://github.com/rust-phf/rust-phf/commit/81b54b22f2c87914a737fc
+  |     - Release v0.6.0 ([`09d6870`](https://github.com/rust-phf/rust-phf/commit/09d687053caf4d321f7290
+  |     - Rename phf_mac to phf_macros ([`c50d107`](https://github.com/rust-phf/rust-phf/commit/c50d1077
+  |     - More fixes for bad sed ([`28af2aa`](https://github.com/rust-phf/rust-phf/commit/28af2aa411cc41
+  |     - Fix silly sed error ([`39e098a`](https://github.com/rust-phf/rust-phf/commit/39e098a7fb333cc04
+  |     - Show -> Debug ([`384ead4`](https://github.com/rust-phf/rust-phf/commit/384ead41f21d0cb2c46f3b6
+  |     - Release v0.5.0 ([`8683be2`](https://github.com/rust-phf/rust-phf/commit/8683be260effe5605243ef
+  |     - Add type to Show implementations ([`c5a4f31`](https://github.com/rust-phf/rust-phf/commit/c5a4
+  |     - Merge pull request #41 from alexcrichton/update ([`79772f4`](https://github.com/rust-phf/rust-
+  |     - Remove unused features ([`88700a2`](https://github.com/rust-phf/rust-phf/commit/88700a2068c090
+  |     - Remove fmt:
+
+--[ Match #17 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 6b9c737f3d11bcad2f4624bb5603a8170e))
+  |     - Fix for upstream changes ([`69ca376`](https://github.com/rust-phf/rust-phf/commit/69ca376dc8da
+  |     - Fix for stability changes ([`f7fb510`](https://github.com/rust-phf/rust-phf/commit/f7fb510dfe6
+  |     - More sed fixes ([`81b54b2`](https://github.com/rust-phf/rust-phf/commit/81b54b22f2c87914a737fc
+  |     - Release v0.6.0 ([`09d6870`](https://github.com/rust-phf/rust-phf/commit/09d687053caf4d321f7290
+  |     - Rename phf_mac to phf_macros ([`c50d107`](https://github.com/rust-phf/rust-phf/commit/c50d1077
+  |     - More fixes for bad sed ([`28af2aa`](https://github.com/rust-phf/rust-phf/commit/28af2aa411cc41
+  |     - Fix silly sed error ([`39e098a`](https://github.com/rust-phf/rust-phf/commit/39e098a7fb333cc04
+  |     - Show -> Debug ([`384ead4`](https://github.com/rust-phf/rust-phf/commit/384ead41f21d0cb2c46f3b6
+  |     - Release v0.5.0 ([`8683be2`](https://github.com/rust-phf/rust-phf/commit/8683be260effe5605243ef
+  |     - Add type to Show implementations ([`c5a4f31`](https://github.com/rust-phf/rust-phf/commit/c5a4
+  |     - Merge pull request #41 from alexcrichton/update ([`79772f4`](https://github.com/rust-phf/rust-
+  |     - R
+
+--[ Match #18 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\CHANGELOG.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | f45b15ba812b0d3acedffb08e901742e56c4))
+  |     - Implement IntoIterator ([`2f63ded`](https://github.com/rust-phf/rust-phf/commit/2f63ded4b37f91
+  |     - Link to libstd by default ([`24555b1`](https://github.com/rust-phf/rust-phf/commit/24555b19e6b
+  |     - Release v0.6.1 ([`ca0e9f6`](https://github.com/rust-phf/rust-phf/commit/ca0e9f6b9c737f3d11bcad
+  |     - Fix for upstream changes ([`69ca376`](https://github.com/rust-phf/rust-phf/commit/69ca376dc8da
+  |     - Fix for stability changes ([`f7fb510`](https://github.com/rust-phf/rust-phf/commit/f7fb510dfe6
+  |     - More sed fixes ([`81b54b2`](https://github.com/rust-phf/rust-phf/commit/81b54b22f2c87914a737fc
+  |     - Release v0.6.0 ([`09d6870`](https://github.com/rust-phf/rust-phf/commit/09d687053caf4d321f7290
+  |     - Rename phf_mac to phf_macros ([`c50d107`](https://github.com/rust-phf/rust-phf/commit/c50d1077
+  |     - More fixes for bad sed ([`28af2aa`](https://github.com/rust-phf/rust-phf/commit/28af2aa411cc41
+  |     - Fix silly sed error ([`39e098a`](https://github.com/rust-phf/rust-phf/commit/39e098a7fb333cc04
+  |     - Show -> Debug ([`384ead4`](https://github.com/rust-phf/rust-phf/commit/384ead41f21d0cb2c46f3b6
+  |     - Release v0.5.0 ([`8683be2`](https://github.com/r
+
+--[ Match #19 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\ordered_map.rs
+   Pattern: \.(request|post|get)\(
+  |     /// Returns references to both the key and values at an index
+  |     /// within the list used to initialize the ordered map. See `.get_index(key)`.
+  |     pub fn index(&self, index: usize) -> Option<(&K, &V)> {
+  |         self.entries.get(index).map(|&(ref k, ref v)| (k, v))
+  |     }
+  | 
+  |     /// Like `get`, but returns both the key and the value.
+  | 
+
+--[ Match #20 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\ordered_map.rs
+   Pattern: \.(request|post|get)\(
+  |         T: Eq + PhfHash,
+  |         K: PhfBorrow<T>,
+  |     {
+  |         self.get(key).is_some()
+  |     }
+  | 
+  |     /// Returns the index of the key within the list used to initialize
+  | 
+
+--[ Match #21 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\ordered_map.rs
+   Pattern: \.(request|post|get)\(
+  |     type Output = V;
+  | 
+  |     fn index(&self, k: &'a T) -> &V {
+  |         self.get(k).expect("invalid key")
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #22 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\map.rs
+   Pattern: \.(request|post|get)\(
+  |         T: Eq + PhfHash,
+  |         K: PhfBorrow<T>,
+  |     {
+  |         self.get(key).is_some()
+  |     }
+  | 
+  |     /// Returns a reference to the value that `key` maps to.
+  | 
+
+--[ Match #23 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\map.rs
+   Pattern: \.(request|post|get)\(
+  |     type Output = V;
+  | 
+  |     fn index(&self, k: &'a T) -> &V {
+  |         self.get(k).expect("invalid key")
+  |     }
+  | }
+  | 
+  | 
+
+--[ Match #24 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | //! };
+  | //!
+  | //! pub fn parse_keyword(keyword: &str) -> Option<Keyword> {
+  | //!     KEYWORDS.get(keyword).cloned()
+  | //! }
+  | //! ```
+  | //!
+  | 
+
+--[ Match #25 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\README.md
+   Pattern: \.(request|post|get)\(
+  | include!(concat!(env!("OUT_DIR"), "/codegen.rs"));
+  | 
+  | pub fn parse_keyword(keyword: &str) -> Option<Keyword> {
+  |     KEYWORDS.get(keyword).cloned()
+  | }
+  | ```
+  | 
+
+--[ Match #26 of 28 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\README.md
+   Pattern: \.(request|post|get)\(
+  | };
+  | 
+  | pub fn parse_keyword(keyword: &str) -> Option<Keyword> {
+  |     KEYWORDS.get(keyword).cloned()
+  | }
+  | ```
+  | 
+  | 
+
+--[ Match #27 of 28 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | [Documentation](https://docs.rs/phf)
+  | 
+  | Rust-PHF is a library to generate efficient lookup tables at compile time using
+  | [perfect hash functions](http://en.wikipedia.org/wiki/Perfect_hash_function).
+  | 
+  | It currently uses the
+  | 
+
+--[ Match #28 of 28 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-phf@0.11\phf-0.11.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | 
+  | [Documentation](https://docs.rs/phf)
+  | 
+  | Rust-PHF is a library to generate efficient lookup tables at compile time using
+  | [perfect hash functions](http://en.wikipedia.org/wiki/Perfect_hash_function).
+  | 
+  | It currently uses the
+  | 
+
+28 matches found.

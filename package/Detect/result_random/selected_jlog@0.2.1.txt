@@ -1,0 +1,356 @@
+--[ Match--[ Match #1 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "a728e6fd9dd35fa1ab8b9e5dc81a745a1ddc84a3"
+  |   },
+  |   "path_in_vcs": ""
+  | }
+
+--[ Match #2 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "712e227841d057c1ee1cd2fb22fa7e5a5461ae8e48fa2ca79ec42cfc1931183f"
+  | 
+
+--[ Match #3 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi-i686-pc-windows-gnu"
+  | version = "0.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac3b87c63620426dd9b991e5ce0329eff545bccbbb34f3be09ff6fb6ab51b7b6"
+  | 
+  | [[package]]
+  | name = "winapi-x86_64-pc-windows-gnu"
+  | 
+
+--[ Match #4 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "winapi"
+  | version = "0.3.8"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8093091eeb260906a183e6ae1abdba2ef5ef2257a21801128899c3fc699229c6"
+  | dependencies = [
+  |  "winapi-i686-pc-windows-gnu",
+  |  "winapi-x86_64-pc-windows-gnu",
+  | 
+
+--[ Match #5 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "wasi"
+  | version = "0.10.0+wasi-snapshot-preview1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "1a143597ca7c7793eff794def352d41792a93c481eb1042423ff7ff72ba2c31f"
+  | 
+  | [[package]]
+  | name = "winapi"
+  | 
+
+--[ Match #6 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "time"
+  | version = "0.1.44"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "6db9e6914ab8b1ae1c260a4ae7a49b6c5611b40328a735b21862567685e73255"
+  | dependencies = [
+  |  "libc",
+  |  "wasi",
+  | 
+
+--[ Match #7 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "signal-hook-registry"
+  | version = "1.2.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "94f478ede9f64724c5d173d7bb56099ec3e2d9fc2774aac65d34b8b890405f41"
+  | dependencies = [
+  |  "arc-swap",
+  |  "libc",
+  | 
+
+--[ Match #8 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "signal-hook"
+  | version = "0.1.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8ff2db2112d6c761e12522c65f7768548bd6e8cd23d2a9dae162520626629bd6"
+  | dependencies = [
+  |  "libc",
+  |  "signal-hook-registry",
+  | 
+
+--[ Match #9 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde_json"
+  | version = "1.0.53"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "993948e75b189211a9b31a7528f950c6adc21f9720b6438ff80a7fa2f864cea2"
+  | dependencies = [
+  |  "itoa",
+  |  "ryu",
+  | 
+
+--[ Match #10 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "serde"
+  | version = "1.0.110"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "99e7b308464d16b56eba9964e4972a3eee817760ab60d88c3f86e1fecb08204c"
+  | 
+  | [[package]]
+  | name = "serde_json"
+  | 
+
+--[ Match #11 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "ryu"
+  | version = "1.0.4"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ed3d612bc64430efeb3f7ee6ef26d590dce0c43249217bddc62112540c7941e1"
+  | 
+  | [[package]]
+  | name = "serde"
+  | 
+
+--[ Match #12 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-traits"
+  | version = "0.2.12"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "ac267bcc07f48ee5f8935ab0d24f316fb722d7a1292e2913f0cc196b29ffd611"
+  | dependencies = [
+  |  "autocfg",
+  | ]
+  | 
+
+--[ Match #13 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "num-integer"
+  | version = "0.1.43"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "8d59457e662d541ba17869cf51cf177c0b5f0cbf476c66bdc90bf1edac4f875b"
+  | dependencies = [
+  |  "autocfg",
+  |  "num-traits",
+  | 
+
+--[ Match #14 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "libc"
+  | version = "0.2.70"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "3baa92041a6fec78c687fa0cc2b3fae8884f743d672cf551bed1d6dac6988d0f"
+  | 
+  | [[package]]
+  | name = "num-integer"
+  | 
+
+--[ Match #15 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "lazy_static"
+  | version = "1.4.0"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "e2abad23fbc42b3700f2f279844dc832adb2b2eb069b2df918f455c4e18cc646"
+  | 
+  | [[package]]
+  | name = "libc"
+  | 
+
+--[ Match #16 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "itoa"
+  | version = "0.4.5"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b8b7a7c0c47db5545ed3fef7468ee7bb5b74691498139e4b3f6a20685dc6dd8e"
+  | 
+  | [[package]]
+  | name = "jlog"
+  | 
+
+--[ Match #17 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "hermit-abi"
+  | version = "0.1.13"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "91780f809e750b0a89f5544be56617ff6b1227ee485bcb06ebe10cdf89bd3b71"
+  | dependencies = [
+  |  "libc",
+  | ]
+  | 
+
+--[ Match #18 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "colored"
+  | version = "1.9.3"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "f4ffc801dacf156c5854b9df4f425a626539c3a6ef7893cc0c5084a23f0b6c59"
+  | dependencies = [
+  |  "atty",
+  |  "lazy_static",
+  | 
+
+--[ Match #19 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "chrono"
+  | version = "0.4.15"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "942f72db697d8767c22d46a598e01f2d3b475501ea43d0db4f16d90259182d0b"
+  | dependencies = [
+  |  "num-integer",
+  |  "num-traits",
+  | 
+
+--[ Match #20 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "autocfg"
+  | version = "1.0.1"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "cdb031dd78e28731d87d56cc8ffef4a8f36ca26c38fe2de700543e627f8a464a"
+  | 
+  | [[package]]
+  | name = "chrono"
+  | 
+
+--[ Match #21 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "atty"
+  | version = "0.2.14"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "d9b39be18770d11421cdb1b9947a45dd3f37e93092cbf377614828a319d5fee8"
+  | dependencies = [
+  |  "hermit-abi",
+  |  "libc",
+  | 
+
+--[ Match #22 of 24 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\Cargo.lock
+   Pattern: ["'][a-z0-9]{40,}["']
+  | name = "arc-swap"
+  | version = "0.4.6"
+  | source = "registry+https://github.com/rust-lang/crates.io-index"
+  | checksum = "b585a98a234c46fc563103e9278c9391fde1f4e6850334da895d27edb9580f62"
+  | 
+  | [[package]]
+  | name = "atty"
+  | 
+
+--[ Match #23 of 24 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\src\main.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | fn get_level(m: &HashMap<String, json::Value>) -> Option<String> {
+  |     for key in vec!["level", "lvl", "lev", "l", "type"] {
+  |         match m.get(key) {
+  |             Some(value) =>
+  |                 match value.as_str() {
+  |                     Some(v) => return Some(String::from(v)),
+  | 
+
+--[ Match #24 of 24 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-jlog@0.2\jlog-0.2.1\src\main.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     for key in fields {
+  |         // Unpack string to remove quotes
+  |         let mut value = match parsed.get(&key) {
+  |             Some(v) => match v {
+  |                 json::Value::String(s) => format!("{}", s),
+  |                 _ => format!("{}", v),
+  | 
+
+24 matches found.

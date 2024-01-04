@@ -1,0 +1,450 @@
+--[ Match--[ Match #1 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | impl<'a, 'b: 'a, X: 'b, Z: 'b, A: InsecureAttr<X>, R: Traverse<'a, 'b, A::Output, Z>> Traverse<'a, '
+  |     #[inline]
+  |     fn traverse(&'a self, obj: X) -> Result<Z> {
+  |         let val = self.attr.get(obj);
+  |         match val {
+  |             Ok(v) => self.next.traverse(v),
+  |             Err(_) => Err("Something went wrong".into())
+  | 
+
+--[ Match #2 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\src\lib.rs
+   Pattern: \.(request|post|get)\(
+  | impl<'a, 'b: 'a, X: 'b, Z: 'b, A: Attr<X>, R: Traverse<'a, 'b, A::Output, Z>> Traverse<'a, 'b, X, Z>
+  |     #[inline]
+  |     fn traverse(&'a self, obj: X) -> Result<Z> {
+  |         let val = self.attr.get(obj);
+  |         self.next.traverse(val)
+  |     }
+  | }
+  | 
+
+--[ Match #3 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\nested.rs
+   Pattern: \.(request|post|get)\(
+  |         type Item = &'a mut i32;
+  | 
+  |         fn iter(&self, i: &'a mut Foo) -> Box<Iterator<Item=&'a mut i32> +'a> {
+  |             Box::new(self.get(i).iter_mut())
+  |         }
+  |     }
+  | }
+  | 
+
+--[ Match #4 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\nested.rs
+   Pattern: \.(request|post|get)\(
+  |         type Item = &'a i32;
+  | 
+  |         fn iter(&self, i: &'a Foo) -> Box<Iterator<Item=&'a i32> + 'a> {
+  |             Box::new(self.get(i).iter())
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #5 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\nested.rs
+   Pattern: \.(request|post|get)\(
+  |         type Output = &'a mut i32;
+  | 
+  |         fn at(&self, i: &'a mut Foo, idx: usize) -> &'a mut i32 {
+  |             unsafe { self.get(i).get_unchecked_mut(idx) }
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #6 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\nested.rs
+   Pattern: \.(request|post|get)\(
+  |         type Output = i32;
+  | 
+  |         fn at(&self, i: &'a Foo, idx: usize) -> i32 {
+  |             self.get(i)[idx]
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #7 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\benches\access_bench.rs
+   Pattern: \.(request|post|get)\(
+  |         type Item = &'a mut i32;
+  | 
+  |         fn iter(&self, i: &'a mut Foo) -> Box<Iterator<Item=&'a mut i32> +'a> {
+  |             Box::new(self.get(i).iter_mut())
+  |         }
+  |     }
+  | }
+  | 
+
+--[ Match #8 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\benches\access_bench.rs
+   Pattern: \.(request|post|get)\(
+  |         type Item = &'a i32;
+  | 
+  |         fn iter(&self, i: &'a Foo) -> Box<Iterator<Item=&'a i32> + 'a> {
+  |             Box::new(self.get(i).iter())
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #9 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\benches\access_bench.rs
+   Pattern: \.(request|post|get)\(
+  |         type Output = &'a mut i32;
+  | 
+  |         fn at(&self, i: &'a mut Foo, idx: usize) -> &'a mut i32 {
+  |             unsafe { self.get(i).get_unchecked_mut(idx) }
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #10 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\benches\access_bench.rs
+   Pattern: \.(request|post|get)\(
+  |         type Output = i32;
+  | 
+  |         fn at(&self, i: &'a Foo, idx: usize) -> i32 {
+  |             self.get(i)[idx]
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #11 of 30 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | typed path object, using all type information known about the data
+  | structure at hand.
+  | 
+  | This allows expressing queries on data structures not currently at hand without
+  | retrieving a handle on the data structure itself.
+  | 
+  | `attr` decouples access from data, by giving you ways to describe paths through
+  | 
+
+--[ Match #12 of 30 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\README.md
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | 
+  | `attr` is a library to provide external access to a datastructure through a
+  | typed path object, using all type information known about the data
+  | structure at hand.
+  | 
+  | This allows expressing queries on data structures not currently at hand without
+  | retrieving a handle on the data structure itself.
+  | 
+
+--[ Match #13 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \.(request|post|get)\(
+  |         type Item = &'a Bla;
+  | 
+  |         fn iter(&self, i: &'a Foo) -> Box<Iterator<Item=&'a Bla> + 'a> {
+  |             Box::new(self.get(i).iter())
+  |         }
+  |     }
+  | }
+  | 
+
+--[ Match #14 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \.(request|post|get)\(
+  |         type Output = &'a Bla;
+  | 
+  |         fn at(&self, i: &'a Foo, idx: usize) -> &'a Bla {
+  |             unsafe { self.get(i).get_unchecked(idx) }
+  |         }
+  |     }
+  | 
+  | 
+
+--[ Match #15 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let b2 = Bla { name: "bla".into() };
+  | 
+  |     let f = Foo { bar: "bar".into(), vector: vec![b1,b2] };
+  |     let top = Top { foo: f };
+  | 
+  |     let path = retrieve(bla::Name).mapped(foo::Vector).from(top::FooField);
+  | 
+  | 
+
+--[ Match #16 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let b2 = Bla { name: "bla".into() };
+  | 
+  |     let f = Foo { bar: "bar".into(), vector: vec![b1,b2] };
+  |     let top = Top { foo: f };
+  | 
+  |     let path = retrieve(bla::Name).mapped(foo::Vector).from(top::FooField);
+  | 
+  | 
+
+--[ Match #17 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let b2 = Bla { name: "bla".into() };
+  | 
+  |     let f = Foo { bar: "bar".into(), vector: vec![b1,b2] };
+  |     let top = Top { foo: f };
+  | 
+  |     let path = retrieve(foo::Vector).from(top::FooField);
+  | 
+  | 
+
+--[ Match #18 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     let b2 = Bla { name: "bla".into() };
+  | 
+  |     let f = Foo { bar: "bar".into(), vector: vec![b1,b2] };
+  |     let top = Top { foo: f };
+  | 
+  |     let path = retrieve(foo::Vector).from(top::FooField);
+  | 
+  | 
+
+--[ Match #19 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |         pub foo: FooField,
+  |     }
+  | 
+  |     impl Attributes<TopAttributes> for Top {
+  |         fn attrs() -> TopAttributes {
+  |             TopAttributes::default()
+  |         }
+  | 
+
+--[ Match #20 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  |     }
+  | }
+  | 
+  | pub mod top {
+  |     use attr::Attr;
+  |     use super::Attributes;
+  | 
+  | 
+
+--[ Match #21 of 30 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\mapping.rs
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | }
+  | 
+  | #[derive(Debug)]
+  | pub struct Top {
+  |     foo: Foo
+  | }
+  | 
+  | 
+
+--[ Match #22 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\simple.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     let mut f = Bar { batz: "foobar".into() };
+  | 
+  |     let mut batz = Bar::attrs().batz.get(&mut f);
+  |     batz.push('b');
+  | }
+  | 
+
+--[ Match #23 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\simple.rs
+   Pattern: \.(request|post|get)\(
+  |     Foo::attrs().batz.get(&f);
+  | 
+  |     let f = Bar { batz: "foobar".into() };
+  |     Bar::attrs().batz.get(&f);
+  | 
+  |     let mut f = Bar { batz: "foobar".into() };
+  | 
+  | 
+
+--[ Match #24 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\simple.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     let f = Foo { bar: "foobar".into(), batz: 20 };
+  |     Foo::attrs().bar.get(&f);
+  |     Foo::attrs().batz.get(&f);
+  | 
+  |     let f = Bar { batz: "foobar".into() };
+  |     Bar::attrs().batz.get(&f);
+  | 
+
+--[ Match #25 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\simple.rs
+   Pattern: \.(request|post|get)\(
+  |     }
+  | 
+  |     let f = Foo { bar: "foobar".into(), batz: 20 };
+  |     Foo::attrs().bar.get(&f);
+  |     Foo::attrs().batz.get(&f);
+  | 
+  |     let f = Bar { batz: "foobar".into() };
+  | 
+
+--[ Match #26 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\serde\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     type Output = &'a mut Value;
+  | 
+  |     fn at(&self, i: &'a mut Value, idx: usize) -> Result<&'a mut Value> {
+  |         let v = self.get(i);
+  |         match v {
+  |             Ok(&mut Value::Array(ref mut vec)) => { Ok(&mut vec[idx]) },
+  |             _ => Err("Not an object or array".into())
+  | 
+
+--[ Match #27 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\serde\mod.rs
+   Pattern: \.(request|post|get)\(
+  |     type Output = &'a Value;
+  | 
+  |     fn at(&self, i: &'a Value, idx: usize) -> Result<&'a Value> {
+  |         let v = self.get(i);
+  |         match v {
+  |             Ok(&Value::Array(ref vec)) => { Ok(& vec[idx]) },
+  |             _ => Err("Not an object or array".into())
+  | 
+
+--[ Match #28 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\serde\mod.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  |     fn get(&self, i: &'a Value) -> Result<&'a Value> {
+  |         match *i {
+  |             Value::Object(ref m) => { m.get(self.name).ok_or_else(|| {format!("{} it empty or not pr
+  |             _ => Err(format!("{} is not an non-object", self.name))
+  |         }
+  |     }
+  | 
+
+--[ Match #29 of 30 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\tests\serde_tests.rs
+   Pattern: \.(request|post|get)\(
+  |     let attr_x = SerdeAttribute::new("x");
+  |     let attr_y = SerdeAttribute::new("y");
+  | 
+  |     assert_eq!(attr_x.get(&obj).unwrap(), &Value::U64(1));
+  |     assert_eq!(attr_y.at(&obj, 1).unwrap(), &Value::U64(2));
+  | }
+  | 
+  | 
+
+--[ Match #30 of 30 ]--
+   Rule Id: BD000600
+       Tag: Security.Backdoor.LOLBAS.Windows
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-attr@0.1\attr-0.1.0\Cargo.toml
+   Pattern: \s(advpack\.dll|appvlp|at|atbroker|bash|bginfo|bitsadmin|cdb|certutil|cl_invocation\.ps1|cl_mutexverifiers\.ps1|cmd|cmdkey|cmstp|comsvcs\.dll|control|csc|cscript|csi|devtoolslauncher|dfsvc|diskshadow|dnscmd|dnx|dotnet|dxcap|esentutl|eventvwr|excel|expand|extexport|extrac32|findstr|forfiles|ftp|gfxdownloadwrapper|gpscript|hh|ie4uinit|ieadvpack\.dll|ieaframe\.dll|ic|infdefaultinstall|installutil|jsc|makecab|manage-bde\.wsf|mavinject|mftrace|microsoft\.workflow\.compiler|mmc|msbuild|msconfig|msdeploy|msdt|mshta|mshtml\.dll|msc|msxsl|netsh|odbcconf|pcalua|pcwrun|pcwutl\.dll|pester\.bat|powerpnt|presentationhost|pubprn\.vbs|rcsi|reg|regasm|regedit|register-cimprovider|regsvcs|regsvr32|rpcping|rundll32|runonce|runscripthelper|sc|schtasks|scriptrunner|setupapi\.dll|shdocvw\.dll|shell32\.dll|slmgr\.vbs|sqldumper|sqlps|sqltoolsps|squirrel|syncappvpublishingserver|syncappvpublishingserver\.vbs|syssetup\.dll|te|tracker|tttracer|update|url\.dll|verclsid|vsjitdebugger|wab|winrm\.vbs|winword|wmic|wscript|wsl|wsreset|xwizard|zipfldr\.dll)\s
+  | authors = ["Florian Gilcher <florian.gilcher@asquera.de>"]
+  | license = "MIT"
+  | license-file = "LICENSE"
+  | description = "`attr` is a library to provide external access to a datastructure through a typed pat
+  | documentation = "https://docs.rs/attr"
+  | repository = "https://github.com/skade/attr"
+  | homepage = "https://github.com/skade/attr"
+  | 
+
+30 matches found.

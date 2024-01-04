@@ -1,0 +1,208 @@
+--[ Match--[ Match #1 of 14 ]--
+   Rule Id: BD000804
+       Tag: Security.Backdoor.Obfuscation.LongStrings
+  Severity: Moderate, Confidence: Medium
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\.cargo_vcs_info.json
+   Pattern: ["'][a-z0-9]{40,}["']
+  | {
+  |   "git": {
+  |     "sha1": "f97aefbcf15004393f2ceb516c98f85b42d77097"
+  |   }
+  | }
+
+--[ Match #2 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  | impl Wakey {
+  |     fn bump_cloned(&self)  { self.cloned.set(self.cloned.get() + 1) }
+  |     fn bump_woken(&self)   { self.woken.set(self.woken.get() + 1) }
+  |     fn bump_dropped(&self) { self.dropped.set(self.dropped.get() + 1) }
+  | }
+  | 
+  | fn raw_waker(wakey: *const Wakey) -> RawWaker {
+  | 
+
+--[ Match #3 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  | 
+  | impl Wakey {
+  |     fn bump_cloned(&self)  { self.cloned.set(self.cloned.get() + 1) }
+  |     fn bump_woken(&self)   { self.woken.set(self.woken.get() + 1) }
+  |     fn bump_dropped(&self) { self.dropped.set(self.dropped.get() + 1) }
+  | }
+  | 
+  | 
+
+--[ Match #4 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  | }
+  | 
+  | impl Wakey {
+  |     fn bump_cloned(&self)  { self.cloned.set(self.cloned.get() + 1) }
+  |     fn bump_woken(&self)   { self.woken.set(self.woken.get() + 1) }
+  |     fn bump_dropped(&self) { self.dropped.set(self.dropped.get() + 1) }
+  | }
+  | 
+
+--[ Match #5 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     #[inline(always)]
+  |     pub fn live(self: &mut Pin<&mut Self>) -> u16 {
+  |         let wakey = &self.as_mut().project().wakey;
+  |         wakey.cloned.get() - wakey.dropped.get()
+  |     }
+  | 
+  |     /// Polls the contained future once.
+  | 
+
+--[ Match #6 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     #[inline(always)]
+  |     pub fn live(self: &mut Pin<&mut Self>) -> u16 {
+  |         let wakey = &self.as_mut().project().wakey;
+  |         wakey.cloned.get() - wakey.dropped.get()
+  |     }
+  | 
+  |     /// Polls the contained future once.
+  | 
+
+--[ Match #7 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |         Stats {
+  |             cloned:  wakey.cloned.get(),
+  |             dropped: wakey.dropped.get(),
+  |             woken:   wakey.woken.get(),
+  |         }
+  |     }
+  |     /// Returns how many times a clone of the waker has been
+  | 
+
+--[ Match #8 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |         let wakey = &self.as_mut().project().wakey;
+  |         Stats {
+  |             cloned:  wakey.cloned.get(),
+  |             dropped: wakey.dropped.get(),
+  |             woken:   wakey.woken.get(),
+  |         }
+  |     }
+  | 
+
+--[ Match #9 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     pub fn stats(self: &mut Pin<&mut Self>) -> Stats {
+  |         let wakey = &self.as_mut().project().wakey;
+  |         Stats {
+  |             cloned:  wakey.cloned.get(),
+  |             dropped: wakey.dropped.get(),
+  |             woken:   wakey.woken.get(),
+  |         }
+  | 
+
+--[ Match #10 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     /// allowed to overflow.
+  |     #[inline(always)]
+  |     pub fn dropped(self: &mut Pin<&mut Self>) -> u16 {
+  |         self.as_mut().project().wakey.dropped.get()
+  |     }
+  | 
+  |     /// Returns statistics about use of our wakers.
+  | 
+
+--[ Match #11 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     /// cumulative, it is never reset and is allowed to overflow.
+  |     #[inline(always)]
+  |     pub fn cloned(self: &mut Pin<&mut Self>) -> u16 {
+  |         self.as_mut().project().wakey.cloned.get()
+  |     }
+  | 
+  |     /// Returns how many times a clone of the waker has been
+  | 
+
+--[ Match #12 of 14 ]--
+   Rule Id: BD000700
+       Tag: Security.Backdoor.DataExfiltration
+  Severity: Important, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\src\local.rs
+   Pattern: \.(request|post|get)\(
+  |     /// cumulative, it is never reset and is allowed to overflow.
+  |     #[inline(always)]
+  |     pub fn woken(self: &mut Pin<&mut Self>) -> u16 {
+  |         self.as_mut().project().wakey.woken.get()
+  |     }
+  | 
+  |     /// Returns how many times the waker has been cloned. This count is
+  | 
+
+--[ Match #13 of 14 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | local!(future);
+  | assert_eq!(unsafe { future.poll() }, Poll::Ready(true));
+  | 
+  | // we can find out about the state of wakers any time:
+  | assert_eq!(future.cloned(), 0);
+  | assert_eq!(future.dropped(), 0);
+  | assert_eq!(future.woken(), 0);
+  | 
+
+--[ Match #14 of 14 ]--
+   Rule Id: BD000610
+       Tag: Security.Backdoor.LOLBAS.Linux
+  Severity: Moderate, Confidence: Low
+  Filename: \cargo-pkg-cargo-wookie@0.3\wookie-0.3.2\README.md
+   Pattern: \s(apt|apt\-get|aria2c|arp|ash|awk|base64|bash|bpftrace|busybox|cat|chmod|chown|cp|cpan|cpulimit|crontab|csh|curl|cut|dash|dd|diff|dmesg|dmsetup|dnf|docker|dpkg|easy_install|ed|emacs|env|expand|expect|facter|find|finger|flock|fmt|ftp|gawk|gdb|gimp|git|grep|head|iftop|ionice|ip|irb|jjs|journalctl|jrunscript|ksh|ld\.so|ldconfig|logsave|ltrace|lua|mail|mawk|mount|mtr|mv|mysql|nano|nawk|nc|nice|nl|nmap|node|od|openssl|perl|pg|php|pic|pico|pip|puppet|readelf|red|rlogin|rlwrap|rpm|rpmquery|rsync|ruby|run\-mailcap|run\-parts|rvim|scp|screen|script|sed|service|setarch|sftp|shuf|smbclient|socat|sort|sqlite3|ssh|start\-stop\-daemon|stdbuf|strace|systemctl|tail|tar|taskset|tclsh|tcpdump|tee|telnet|tftp|time|timeout|tmux|top|ul|unexpand|uniq|unshare|vi|vim|watch|wget|whois|wish|xargs|xxd|yum|zsh|zypper)\s
+  | wookie!(future);
+  | assert_eq!(future.poll(), Poll::Ready(true));
+  | 
+  | // we can find out about the state of wakers any time:
+  | assert_eq!(future.cloned(), 0);
+  | assert_eq!(future.dropped(), 0);
+  | assert_eq!(future.woken(), 0);
+  | 
+
+14 matches found.
