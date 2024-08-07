@@ -1,0 +1,350 @@
+#include <windows.h>
+#include <tlhelp32.h>
+#include <psapi.h>
+#include <iostream>
+#include <string>
+#include <vector>
+#include <winternl.h>
+#include <fstream>
+#include <sstream>
+
+#pragma comment(lib, "ntdll.lib")
+#pragma comment(lib, "psapi.lib")
+
+typedef NTSTATUS(WINAPI* PFN_NTQUERYINFORMATIONPROCESS)(
+    HANDLE ProcessHandle,
+    PROCESSINFOCLASS ProcessInformationClass,
+    PVOID ProcessInformation,
+    ULONG ProcessInformationLength,
+    PULONG ReturnLength
+    );
+
+struct ProcessInfo {
+    DWORD pid;
+    DWORD ppid;
+    std::wstring name;
+    std::wstring path;
+    std::wstring cmdLine;
+    std::wstring architecture;
+    std::vector<std::pair<DWORD, std::wstring>> threads;
+    std::vector<std::pair<std::wstring, std::wstring>> dlls;
+};
+
+struct ImportInfo {
+    std::wstring dllName;
+    std::vector<std::string> functions;
+};
+
+bool EnableDebugPrivilege() {
+    HANDLE hToken;
+    LUID luid;
+    TOKEN_PRIVILEGES tp;
+    if (!OpenProcessToken(GetCurrentProcess(), TOKEN_ADJUST_PRIVILEGES | TOKEN_QUERY, &hToken)) return false;
+    if (!LookupPrivilegeValue(NULL, SE_DEBUG_NAME, &luid)) { CloseHandle(hToken); return false; }
+    tp.PrivilegeCount = 1;
+    tp.Privileges[0].Luid = luid;
+    tp.Privileges[0].Attributes = SE_PRIVILEGE_ENABLED;
+    bool result = AdjustTokenPrivileges(hToken, FALSE, &tp, sizeof(TOKEN_PRIVILEGES), NULL, NULL);
+    CloseHandle(hToken);
+    return result;
+}
+
+std::wstring GetThreadState(DWORD threadId) {
+    HANDLE hThread = OpenThread(THREAD_QUERY_INFORMATION, FALSE, threadId);
+    if (hThread == NULL) return L"Unknown";
+
+    DWORD suspendCount = SuspendThread(hThread);
+    if (suspendCount == (DWORD)-1) {
+        CloseHandle(hThread);
+        return L"Error";
+    }
+    ResumeThread(hThread);
+
+    std::wstring state;
+    if (suspendCount > 0) {
+        state = L"Suspended";
+    }
+    else {
+        DWORD exitCode;
+        if (GetExitCodeThread(hThread, &exitCode)) {
+            state = (exitCode == STILL_ACTIVE) ? L"Running" : L"Terminated";
+        }
+        else {
+            state = L"Unknown";
+        }
+    }
+
+    CloseHandle(hThread);
+    return state;
+}
+
+ProcessInfo GetProcessInfo(DWORD pid) {
+    ProcessInfo info = { pid };
+    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
+    if (!hProcess) return info;
+
+    // Get process name and PPID
+    HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPPROCESS, 0);
+    if (hSnapshot != INVALID_HANDLE_VALUE) {
+        PROCESSENTRY32 pe32;
+        pe32.dwSize = sizeof(PROCESSENTRY32);
+        if (Process32First(hSnapshot, &pe32)) {
+            do {
+                if (pe32.th32ProcessID == pid) {
+                    info.name = pe32.szExeFile;
+                    info.ppid = pe32.th32ParentProcessID;
+                    break;
+                }
+            } while (Process32Next(hSnapshot, &pe32));
+        }
+        CloseHandle(hSnapshot);
+    }
+
+    // Get process path
+    WCHAR path[MAX_PATH];
+    DWORD pathSize = MAX_PATH;
+    if (QueryFullProcessImageNameW(hProcess, 0, path, &pathSize)) {
+        info.path = path;
+    }
+
+    // Get process architecture
+    BOOL isWow64;
+    if (IsWow64Process(hProcess, &isWow64)) {
+        info.architecture = isWow64 ? L"32-bit" : L"64-bit";
+    }
+
+    // Get command line
+    PFN_NTQUERYINFORMATIONPROCESS NtQueryInformationProcess =
+        (PFN_NTQUERYINFORMATIONPROCESS)GetProcAddress(GetModuleHandleW(L"ntdll.dll"), "NtQueryInformationProcess");
+    if (NtQueryInformationProcess) {
+        PROCESS_BASIC_INFORMATION pbi;
+        ULONG returnLength;
+        if (NtQueryInformationProcess(hProcess, ProcessBasicInformation, &pbi, sizeof(pbi), &returnLength) == 0) {
+            PEB peb;
+            if (ReadProcessMemory(hProcess, pbi.PebBaseAddress, &peb, sizeof(PEB), NULL)) {
+                RTL_USER_PROCESS_PARAMETERS upp;
+                if (ReadProcessMemory(hProcess, peb.ProcessParameters, &upp, sizeof(RTL_USER_PROCESS_PARAMETERS), NULL)) {
+                    WCHAR* cmdLine = new WCHAR[upp.CommandLine.Length / sizeof(WCHAR) + 1];
+                    if (ReadProcessMemory(hProcess, upp.CommandLine.Buffer, cmdLine, upp.CommandLine.Length, NULL)) {
+                        cmdLine[upp.CommandLine.Length / sizeof(WCHAR)] = L'\0';
+                        info.cmdLine = cmdLine;
+                    }
+                    delete[] cmdLine;
+                }
+            }
+        }
+    }
+
+    // Get threads
+    HANDLE hThreadSnap = CreateToolhelp32Snapshot(TH32CS_SNAPTHREAD, 0);
+    if (hThreadSnap != INVALID_HANDLE_VALUE) {
+        THREADENTRY32 te32;
+        te32.dwSize = sizeof(THREADENTRY32);
+        if (Thread32First(hThreadSnap, &te32)) {
+            do {
+                if (te32.th32OwnerProcessID == pid) {
+                    std::wstring threadState = GetThreadState(te32.th32ThreadID);
+                    info.threads.push_back({ te32.th32ThreadID, threadState });
+                }
+            } while (Thread32Next(hThreadSnap, &te32));
+        }
+        CloseHandle(hThreadSnap);
+    }
+
+    // Get DLLs
+    HMODULE hMods[1024];
+    DWORD cbNeeded;
+    if (EnumProcessModules(hProcess, hMods, sizeof(hMods), &cbNeeded)) {
+        for (unsigned int i = 0; i < (cbNeeded / sizeof(HMODULE)); i++) {
+            WCHAR szModName[MAX_PATH];
+            WCHAR szModPath[MAX_PATH];
+            if (GetModuleBaseName(hProcess, hMods[i], szModName, sizeof(szModName) / sizeof(WCHAR))) {
+                if (GetModuleFileNameEx(hProcess, hMods[i], szModPath, sizeof(szModPath) / sizeof(WCHAR))) {
+                    info.dlls.push_back({ szModName, szModPath });
+                }
+            }
+        }
+    }
+
+    CloseHandle(hProcess);
+    return info;
+}
+
+std::vector<ImportInfo> GetImportInformation(DWORD pid) {
+    std::vector<ImportInfo> imports;
+    HANDLE hProcess = OpenProcess(PROCESS_QUERY_INFORMATION | PROCESS_VM_READ, FALSE, pid);
+    if (!hProcess) return imports;
+
+    HMODULE hMod;
+    DWORD cbNeeded;
+    if (EnumProcessModules(hProcess, &hMod, sizeof(hMod), &cbNeeded)) {
+        BYTE* pBase = (BYTE*)hMod;
+        IMAGE_DOS_HEADER dosHeader;
+        IMAGE_NT_HEADERS ntHeaders;
+
+        if (ReadProcessMemory(hProcess, pBase, &dosHeader, sizeof(dosHeader), NULL) &&
+            ReadProcessMemory(hProcess, pBase + dosHeader.e_lfanew, &ntHeaders, sizeof(ntHeaders), NULL)) {
+
+            auto importDir = ntHeaders.OptionalHeader.DataDirectory[IMAGE_DIRECTORY_ENTRY_IMPORT];
+            IMAGE_IMPORT_DESCRIPTOR importDesc;
+            BYTE* pImportDesc = pBase + importDir.VirtualAddress;
+
+            while (ReadProcessMemory(hProcess, pImportDesc, &importDesc, sizeof(importDesc), NULL) && importDesc.Name) {
+                ImportInfo import;
+                char dllName[MAX_PATH];
+                if (ReadProcessMemory(hProcess, pBase + importDesc.Name, dllName, MAX_PATH, NULL)) {
+import.dllName = std::wstring(dllName, dllName + strlen(dllName));
+                }
+
+                IMAGE_THUNK_DATA thunk;
+                BYTE* pThunk = pBase + importDesc.OriginalFirstThunk;
+                while (ReadProcessMemory(hProcess, pThunk, &thunk, sizeof(thunk), NULL) && thunk.u1.AddressOfData) {
+                    if (!(thunk.u1.Ordinal & IMAGE_ORDINAL_FLAG)) {
+                        IMAGE_IMPORT_BY_NAME importByName;
+                        if (ReadProcessMemory(hProcess, pBase + thunk.u1.AddressOfData, &importByName, sizeof(importByName), NULL)) {
+                            char functionName[256];
+                            if (ReadProcessMemory(hProcess, pBase + thunk.u1.AddressOfData + sizeof(WORD), functionName, 255, NULL)) {
+                                functionName[255] = '\0';
+import.functions.push_back(functionName);
+                            }
+                        }
+                    }
+                    pThunk += sizeof(IMAGE_THUNK_DATA);
+                }
+                if (!import.functions.empty()) {
+                    imports.push_back(import);
+                }
+                pImportDesc += sizeof(IMAGE_IMPORT_DESCRIPTOR);
+            }
+        }
+    }
+    CloseHandle(hProcess);
+    return imports;
+}
+std::wstring CreateFileName(const std::wstring& processName, DWORD pid) {
+    return processName + L"-" + std::to_wstring(pid) + L".txt";
+}
+void WriteToFile(const std::wstring& fileName, const std::wstring& content) {
+    std::wofstream file(fileName);
+    if (file.is_open()) {
+        file << content;
+        file.close();
+        std::wcout << L"Results have been written to " << fileName << L"\n";
+    }
+    else {
+        std::wcout << L"Unable to open file for writing.\n";
+    }
+}
+void PrintProcessInfo(const ProcessInfo& info) {
+    std::wcout << L"Process Information:\n";
+    std::wcout << L"- Name: " << info.name << L"\n";
+    std::wcout << L"- PID: " << info.pid << L"\n";
+    std::wcout << L"- PPID: " << info.ppid << L"\n";
+    std::wcout << L"- Architecture: " << info.architecture << L"\n";
+    std::wcout << L"- Path: " << info.path << L"\n";
+    std::wcout << L"- Command Line: " << info.cmdLine << L"\n";
+}
+
+void PrintThreadInfo(const std::vector<std::pair<DWORD, std::wstring>>& threads) {
+    std::wcout << L"\nThread Information:\n";
+    for (const auto& thread : threads) {
+        std::wcout << L"- Thread ID: " << thread.first << L", State: " << thread.second << L"\n";
+    }
+}
+
+void PrintDllInfo(const std::vector<std::pair<std::wstring, std::wstring>>& dlls) {
+    std::wcout << L"\nDLL Information:\n";
+    for (const auto& dll : dlls) {
+        std::wcout << L"- DLL Name: " << dll.first << L", Path: " << dll.second << L"\n";
+    }
+}
+
+void PrintImportInformation(const std::vector<ImportInfo>& imports) {
+    std::wcout << L"\nImport Table Information:\n";
+    for (const auto & import : imports) {
+        std::wcout << L"DLL: " << import.dllName << L"\n";
+        std::wcout << L"Imported Functions:\n";
+        for (const auto & function : import.functions) {
+            std::wcout << L"  - " << std::wstring(function.begin(), function.end()) << L"\n";
+        }
+        std::wcout << L"\n";
+    }
+}
+
+std::wstring CollectProcessInfo(const ProcessInfo& info) {
+    std::wstringstream ss;
+    ss << L"Process Information:\n";
+    ss << L"- Name: " << info.name << L"\n";
+    ss << L"- PID: " << info.pid << L"\n";
+    ss << L"- PPID: " << info.ppid << L"\n";
+    ss << L"- Architecture: " << info.architecture << L"\n";
+    ss << L"- Path: " << info.path << L"\n";
+    ss << L"- Command Line: " << info.cmdLine << L"\n";
+    return ss.str();
+}
+
+std::wstring CollectThreadInfo(const std::vector<std::pair<DWORD, std::wstring>>& threads) {
+    std::wstringstream ss;
+    ss << L"\nThread Information:\n";
+    for (const auto& thread : threads) {
+        ss << L"- Thread ID: " << thread.first << L", State: " << thread.second << L"\n";
+    }
+    return ss.str();
+}
+
+std::wstring CollectDllInfo(const std::vector<std::pair<std::wstring, std::wstring>>& dlls) {
+    std::wstringstream ss;
+    ss << L"\nDLL Information:\n";
+    for (const auto& dll : dlls) {
+        ss << L"- DLL Name: " << dll.first << L", Path: " << dll.second << L"\n";
+    }
+    return ss.str();
+}
+
+std::wstring CollectImportInformation(const std::vector<ImportInfo>& imports) {
+    std::wstringstream ss;
+    ss << L"\nImport Table Information:\n";
+    for (const auto & import : imports) {
+        ss << L"DLL: " << import.dllName << L"\n";
+        ss << L"Imported Functions:\n";
+        for (const auto & function : import.functions) {
+            ss << L"  - " << std::wstring(function.begin(), function.end()) << L"\n";
+        }
+        ss << L"\n";
+    }
+    return ss.str();
+}
+
+int main() {
+    DWORD pid;
+    std::wcout << L"Enter process ID: ";
+    std::wcin >> pid;
+
+    if (!EnableDebugPrivilege()) {
+        std::wcout << L"Failed to enable debug privilege\n";
+        return 1;
+    }
+
+    ProcessInfo info = GetProcessInfo(pid);
+
+    std::wstring output;
+    output += CollectProcessInfo(info);
+    output += CollectThreadInfo(info.threads);
+    output += CollectDllInfo(info.dlls);
+
+    std::vector<ImportInfo> imports = GetImportInformation(pid);
+    if (!imports.empty()) {
+        output += CollectImportInformation(imports);
+    }
+    else {
+        output += L"\nFailed to retrieve import information or no imports found.\n";
+    }
+
+    std::wcout << output;  // Print to console
+
+    // Write to file
+    std::wstring fileName = CreateFileName(info.name, pid);
+    WriteToFile(fileName, output);
+
+    return 0;
+}
